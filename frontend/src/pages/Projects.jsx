@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
     return (
-        <div className="min-h-screen p-20">
+        <div className="min-h-screen p-10">
             <h1 className="text-3xl text-center font-bold text-gray-300">My Projects</h1>
             <p className="text-center mt-5 font-bold text-xl text-gray-500">
                 A showcase of my web development journey, featuring full-stack<br />
@@ -17,7 +17,7 @@ export default function Projects() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                 >
                     <div className="bg-gray-500 h-50 rounded-xl overflow-hidden relative group cursor-pointer">
                         <img
