@@ -5,7 +5,7 @@ import Techstack from "./pages/Techstack";
 
 export default function App() {
   return(
-    <div className="bg-gray-950">
+    <div className="bg-black">
       <Home />
       <Projects />
       <Techstack />
