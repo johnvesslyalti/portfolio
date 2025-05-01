@@ -25,8 +25,9 @@ export default function Projects() {
                             alt="Task Master Project Screenshot"
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 backdrop-blur-xs bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p className="text-gray-300 text-xl font-bold">Task Manager App 🔗</p>
+                        <div className="absolute inset-0 backdrop-blur-xs bg-opacity-60 flex flex-col text-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5">
+                            <p className="text-gray-500 text-xl font-bold">Task Manager App 🔗</p>
+                            <p className="text-xs">Task Master is a simple and efficient task management app built with React.</p>
                         </div>
                     </div>
                 </motion.a>
