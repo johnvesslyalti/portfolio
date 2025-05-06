@@ -11,7 +11,7 @@ export default function Projects() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-10">
                 <motion.a
-                    href="https://task-master-lime.vercel.app/"
+                    href="https://task-master-delta-nine.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0.9 }}
