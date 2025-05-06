@@ -27,7 +27,7 @@ export default function Projects() {
                         />
                         <div className="absolute inset-0 backdrop-blur-xs bg-opacity-60 flex flex-col text-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5">
                             <p className="text-gray-100 text-xl font-bold">Task Manager App 🔗</p>
-                            <p className="text-xs text-gray-300">Task Master is a simple and efficient task management app built with React.</p>
+                            <p className="text-xs text-gray-300">Task Master is an intuitive and efficient task management application built with the MERN stack, enabling users to easily add, view, and organize tasks with features like user authentication and seamless data handling</p>
                         </div>
                     </div>
                 </motion.a>
