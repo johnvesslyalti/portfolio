@@ -43,7 +43,7 @@ export default function Projects() {
                 >
                     <div className="bg-gray-500 h-50 rounded-xl overflow-hidden relative group cursor-pointer">
                         <img
-                            src="/images/go-cart.png"
+                            src="/images/go-cart1.png"
                             alt="Go-Cart Project"
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
