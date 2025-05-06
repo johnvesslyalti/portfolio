@@ -26,8 +26,8 @@ export default function Projects() {
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 backdrop-blur-xs bg-opacity-60 flex flex-col text-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5">
-                            <p className="text-gray-500 text-xl font-bold">Task Manager App 🔗</p>
-                            <p className="text-xs">Task Master is a simple and efficient task management app built with React.</p>
+                            <p className="text-gray-100 text-xl font-bold">Task Manager App 🔗</p>
+                            <p className="text-xs text-gray-300">Task Master is a simple and efficient task management app built with React.</p>
                         </div>
                     </div>
                 </motion.a>
@@ -44,12 +44,12 @@ export default function Projects() {
                     <div className="bg-gray-500 h-50 rounded-xl overflow-hidden relative group cursor-pointer">
                         <img
                             src="/images/go-cart.png"
-                            alt="Task Master Project Screenshot"
+                            alt="Go-Cart Project"
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 backdrop-blur-xs bg-opacity-60 flex flex-col text-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-5">
-                            <p className="text-gray-500 text-xl font-bold">Task Manager App 🔗</p>
-                            <p className="text-xs">Task Master is a simple and efficient task management app built with React.</p>
+                            <p className="text-gray-100 text-xl font-bold">Go-Cart 🔗</p>
+                            <p className="text-xs text-gray-300">Go Cart is a sleek and user-friendly shopping cart application built with the MERN stack, offering a seamless e-commerce experience with features like product selection, cart management, and user authentication.</p>
                         </div>
                     </div>
                 </motion.a>
