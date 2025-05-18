@@ -4,7 +4,7 @@ import './globals.css'
 export default function RootLayout({ children }) {
   return(
     <html lang="en">
-      <body className='bg-gradient-to-br from-blue-900 via-purple-900 to-gray-500 text-white z-700'>
+      <body className='bg-gradient-to-br from-blue-950 via-purple-950 to-gray-950 text-white z-1000'>
         <ThemeProvider 
         attribute="class"
         defaultTheme="system"
