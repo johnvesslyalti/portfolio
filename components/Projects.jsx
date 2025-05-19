@@ -39,9 +39,13 @@ export default function Projects() {
                             </div>
                             <div className="absolute bottom-0 left-0 w-full h-full flex flex-col justify-end bg-gradient-to-t from-black/100 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 p-4">
                                 <p className="text-white text-xl font-bold">{project.name}</p>
-                                <p className="flex items-center gap-2"><span className="font-bold text-sm">Tech Stack: </span>{project.techStack.map((icon, index) => (
-                                    <span key={index} className="flex gap-2">{icon}</span>
-                                ) )}</p>
+                                <p className="flex items-center gap-2"><span className="font-bold text-sm">Tech Stack: </span><span className="flex gap-2">{project.techStack.map((icon, index) => (
+                                    <span key={index}>
+                                        {icon}
+                                    </span>
+                                    ))}
+                                    </span>
+                                </p>
                             </div>
                             <div className="absolute flex gap-5 top-0 right-0 p-5 opacity-0 group-hover:opacity-100">
                                 <button className="text-2xl">
