@@ -16,7 +16,12 @@ export default function Contact() {
     return (
         <div className="h-screen p-10 flex flex-col items-center justify-center">
             <div>
-                <h1 className="text-3xl font-bold text-center mb-8">Contact</h1>
+                <motion.div 
+                    initial={{ opacity: 0, y: 30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 0.4, delay: 1 * 0.05}}
+                    viewport={{ once: false }}
+                    ><h1 className="text-5xl font-bold text-center mb-8">Contact</h1></motion.div>
                 <div className="flex flex-col gap-4">
                 {contacts.map((contact) => (
                     <motion.div

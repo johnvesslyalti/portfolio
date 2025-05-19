@@ -30,7 +30,12 @@ export default function Skills() {
     return(
         <div className="h-screen flex justify-center items-center p-5">
             <div className="w-3/4">
-                <h1 className="text-3xl font-bold text-center">Skills</h1>
+                <motion.div 
+                    initial={{ opacity: 0, y: 30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 0.4, delay: 1 * 0.05}}
+                    viewport={{ once: false }}
+                    ><h1 className="text-5xl font-bold text-center">Skills</h1></motion.div>
                 <div className="grid grid-cols-3 max-[401px]:grid-cols-2 gap-5 mt-10">
                     {skills.map((skill) => (
                         <motion.div

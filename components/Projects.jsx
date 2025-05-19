@@ -18,7 +18,12 @@ export default function Projects() {
     ]
     return(
         <div className="h-screen flex flex-col p-10">
-                <h1 className="text-3xl font-bold text-center">Projects</h1>
+                <motion.div 
+                    initial={{ opacity: 0, y: 30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    transition={{duration: 0.4, delay: 1 * 0.05}}
+                    viewport={{ once: false }}
+                    ><h1 className="text-5xl font-bold text-center">Projects</h1></motion.div>
                 <div className="grid grid-cols-3 gap-5 my-30">
                 {projects.map((project) => (
                     <motion.div 
