@@ -28,7 +28,7 @@ export default function Skills() {
     ]
 
     return(
-        <div className="h-screen flex justify-center items-center p-5 z-1001">
+        <div className="h-screen flex justify-center items-center p-5">
             <div className="w-3/4">
                 <h1 className="text-3xl font-bold text-center">Skills</h1>
                 <div className="grid grid-cols-3 max-[401px]:grid-cols-2 gap-5 mt-10">

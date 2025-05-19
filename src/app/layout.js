@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>Johnvessly Alti</title>
       </head>
-      <body className='bg-gradient-to-br from-blue-950 via-purple-950 to-gray-950 text-white z-1000'>
+      <body className='bg-gradient-to-br from-blue-950 via-purple-950 to-gray-950 text-white'>
         <ThemeProvider 
         attribute="class"
         defaultTheme="system"
