@@ -17,14 +17,14 @@ export default function Projects() {
         {id: 3, name: "Cine-Scope", href: "https://cine-scope-six.vercel.app/", src: "/cine-scope.png", techStack: [<RiNextjsFill />], ghHref: "https://github.com/johnvesslyalti/cine-scope"},
     ]
     return(
-        <div className="h-screen flex flex-col p-10">
+        <div className="flex flex-col justify-center items-center px-5 py-16">
                 <motion.div 
                     initial={{ opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
                     transition={{duration: 0.4, delay: 1 * 0.05}}
                     viewport={{ once: false }}
                     ><h1 className="text-5xl font-bold text-center">Projects</h1></motion.div>
-                <div className="grid grid-cols-3 gap-5 my-30">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
                 {projects.map((project) => (
                     <motion.div 
                     key={project.id}
@@ -33,7 +33,7 @@ export default function Projects() {
                     transition={{duration: 0.4, delay: project.id * 0.05}}
                     viewport={{ once: false }}
                     >
-                        <Card className="h-[200px] py-5 backdrop-blur-2xl bg-black/20 shadow-xl border-white/30 overflow-hidden relative group">
+                        <Card className="h-auto py-5 backdrop-blur-2xl bg-black/20 shadow-xl border-white/30 overflow-hidden relative group">
                         <CardContent>
                             <div>
                                 <img 

@@ -14,7 +14,7 @@ export default function Contact() {
     ];
 
     return (
-        <div className="h-screen p-10 flex flex-col items-center justify-center">
+        <div className="min-h-screen p-10 flex flex-col items-center justify-center">
             <div>
                 <motion.div 
                     initial={{ opacity: 0, y: 30}}
