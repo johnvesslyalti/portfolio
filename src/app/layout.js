@@ -4,6 +4,9 @@ import './globals.css'
 export default function RootLayout({ children }) {
   return(
     <html lang="en">
+      <head>
+        <title>Johnvessly Alti</title>
+      </head>
       <body className='bg-gradient-to-br from-blue-950 via-purple-950 to-gray-950 text-white z-1000'>
         <ThemeProvider 
         attribute="class"

@@ -1,3 +1,5 @@
+'use client'
+
 import { Card, CardContent, CardHeader } from "@/styles/components/ui/card";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3 } from "react-icons/fa";
@@ -8,6 +10,7 @@ import { FaNode } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 import { RiNextjsFill } from "react-icons/ri";
+import { motion } from "framer-motion";
 
 export default function Skills() {
 
@@ -30,12 +33,20 @@ export default function Skills() {
                 <h1 className="text-3xl font-bold text-center">Skills</h1>
                 <div className="grid grid-cols-3 max-[401px]:grid-cols-2 gap-5 mt-10">
                     {skills.map((skill) => (
-                        <Card key={skill.id} className="backdrop-blur-2xl bg-black/20 shadow-xl border-white/30">
+                        <motion.div
+                        key={skill.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: skill.id * 0.05 }}
+                            viewport={{ once: false }}
+                            >
+                            <Card className="backdrop-blur-2xl bg-black/20 shadow-xl border-white/30">
                             <CardContent className="flex flex-col justify-center items-center gap-3">
                                 <div className="text-5xl">{skill.icon}</div>
                                 <p className="font-bold">{skill.name}</p>
                             </CardContent>
-                        </Card>
+                            </Card>
+                        </motion.div>
                     ))}
                 </div>
             </div>
