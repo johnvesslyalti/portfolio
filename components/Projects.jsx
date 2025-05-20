@@ -20,7 +20,7 @@ export default function Projects() {
     ];
 
     return (
-        <div className="flex flex-col justify-center items-center px-20 py-20 mb-10">
+        <div className="flex flex-col justify-center items-center px-5 py-16">
             <motion.div 
                 initial={{ opacity: 0, y: 30}}
                 whileInView={{opacity: 1, y: 0}}
