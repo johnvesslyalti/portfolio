@@ -29,7 +29,7 @@ export default function Skills() {
     ]
 
     return(
-        <div className="flex justify-center items-center px-5 py-16">
+        <div className="min-h-screen flex justify-center items-center px-5 py-16">
             <div className="w-full">
                 <motion.div 
                     initial={{ opacity: 0, y: 30}}

@@ -14,13 +14,13 @@ export default function Projects() {
     const [activeCard, setActiveCard] = useState(null);
 
     const projects = [
-        {id: 1, name: "Task-Master", href: "https://task-master-tau-five.vercel.app/", src: "/task-master.png", techStack: [<DiMongodb />, <SiExpress />, <FaReact />, <FaNode />], ghHref: "https://github.com/johnvesslyalti/task-master"},
-        {id: 2, name: "Go-Cart", href: "https://go-cart-rust.vercel.app/", src: "/go-cart.png", techStack: [<DiMongodb />, <SiExpress />, <FaReact />, <FaNode />], ghHref: "https://github.com/johnvesslyalti/go-cart"},
-        {id: 3, name: "Cine-Scope", href: "https://cine-scope-six.vercel.app/", src: "/cine-scope.png", techStack: [<RiNextjsFill />], ghHref: "https://github.com/johnvesslyalti/cine-scope"},
+        {id: 1, name: "Task Master", href: "https://task-master-tau-five.vercel.app/", src: "/task-master.png", techStack: [<DiMongodb />, <SiExpress />, <FaReact />, <FaNode />], ghHref: "https://github.com/johnvesslyalti/task-master"},
+        {id: 2, name: "Go Cart", href: "https://go-cart-rust.vercel.app/", src: "/go-cart.png", techStack: [<DiMongodb />, <SiExpress />, <FaReact />, <FaNode />], ghHref: "https://github.com/johnvesslyalti/go-cart"},
+        {id: 3, name: "Cine Scope", href: "https://cine-scope-six.vercel.app/", src: "/cine-scope.png", techStack: [<RiNextjsFill />], ghHref: "https://github.com/johnvesslyalti/cine-scope"},
     ];
 
     return (
-        <div className="flex flex-col justify-center items-center px-5 py-16">
+        <div className="min-h-screen flex flex-col justify-center items-center px-5 py-16">
             <motion.div 
                 initial={{ opacity: 0, y: 30}}
                 whileInView={{opacity: 1, y: 0}}
