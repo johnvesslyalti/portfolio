@@ -11,6 +11,7 @@ import { SiExpress } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 import { RiNextjsFill } from "react-icons/ri";
 import { motion } from "framer-motion";
+import { TbBrandTypescript } from "react-icons/tb";
 
 export default function Skills() {
 
@@ -24,19 +25,19 @@ export default function Skills() {
         { id: 7, name: "ExpressJS", icon: <SiExpress />},
         { id: 8, name: "NextJS", icon: <RiNextjsFill />},
         { id: 9, name: "MongoDB", icon: <DiMongodb />},
-        
+        { id: 9, name: "TypeScript", icon: <TbBrandTypescript />}
     ]
 
     return(
         <div className="flex justify-center items-center px-5 py-16">
-            <div className="w-full max-w-4xl">
+            <div className="w-full">
                 <motion.div 
                     initial={{ opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
                     transition={{duration: 0.4, delay: 1 * 0.05}}
                     viewport={{ once: false }}
                     ><h1 className="text-5xl font-bold text-center">Skills</h1></motion.div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-5 mt-10">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 mt-10">
                     {skills.map((skill) => (
                         <motion.div
                         key={skill.id}
