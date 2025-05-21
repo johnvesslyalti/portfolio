@@ -6,7 +6,7 @@ import { FaCss3 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { FaReact } from "react-icons/fa";
-import { FaNode } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
 import { SiExpress } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 import { RiNextjsFill } from "react-icons/ri";
@@ -21,7 +21,7 @@ export default function Skills() {
         { id: 3, name: "JavaScript", icon: <IoLogoJavascript />},
         { id: 4, name: "Tailwind CSS", icon: <RiTailwindCssFill />},
         { id: 5, name: "ReactJS", icon: <FaReact />},
-        { id: 6, name: "NodeJS", icon: <FaNode />},
+        { id: 6, name: "NodeJS", icon: <FaNodeJs />},
         { id: 7, name: "ExpressJS", icon: <SiExpress />},
         { id: 8, name: "NextJS", icon: <RiNextjsFill />},
         { id: 9, name: "MongoDB", icon: <DiMongodb />},
