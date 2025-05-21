@@ -25,7 +25,7 @@ export default function Skills() {
         { id: 7, name: "ExpressJS", icon: <SiExpress />},
         { id: 8, name: "NextJS", icon: <RiNextjsFill />},
         { id: 9, name: "MongoDB", icon: <DiMongodb />},
-        { id: 9, name: "TypeScript", icon: <TbBrandTypescript />}
+        { id: 10, name: "TypeScript", icon: <TbBrandTypescript />}
     ]
 
     return(
