@@ -11,7 +11,7 @@ import { SiExpress } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 import { RiNextjsFill } from "react-icons/ri";
 import { motion } from "framer-motion";
-import { TbBrandTypescript } from "react-icons/tb";
+import { FaPython } from "react-icons/fa";
 
 export default function Skills() {
 
@@ -25,7 +25,7 @@ export default function Skills() {
         { id: 7, name: "ExpressJS", icon: <SiExpress />},
         { id: 8, name: "NextJS", icon: <RiNextjsFill />},
         { id: 9, name: "MongoDB", icon: <DiMongodb />},
-        { id: 10, name: "TypeScript", icon: <TbBrandTypescript />}
+        { id: 10, name: "Python", icon: <FaPython />}
     ]
 
     return(
