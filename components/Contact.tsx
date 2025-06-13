@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from 'framer-motion';
-import 
+import { Card, CardContent } from "@/styles/components/ui/card";
 
 export default function Contact() {
     const contacts = [

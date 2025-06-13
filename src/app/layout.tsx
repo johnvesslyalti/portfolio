@@ -1,5 +1,5 @@
+import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';
-import ThemeProvider from '../../components/ThemeProvider';
 import React, { JSX } from 'react';
 
 interface RootLayoutProps {
