@@ -7,7 +7,7 @@ export default function Hero() {
         <span className="typewriter-text">Hi! I'm Johnvessly Alti</span>
       </div>
       <p className="text-lg md:text-xl text-purple-100 max-w-xl">
-        Full Stack Developer | MERN | Next JS <br />
+        Full Stack Developer | Modern Tech Stack <br />
         Building Scalable Web Apps 
       </p>
     </section>
