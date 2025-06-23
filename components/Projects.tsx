@@ -8,6 +8,7 @@ import { DiMongodb } from "react-icons/di";
 import { SiExpress } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { Card, CardContent } from "@/styles/components/ui/card";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 interface ICard {
   id: number;
@@ -24,27 +25,27 @@ export default function Projects() {
   const projects: ICard[] = [
     {
       id: 1,
-      name: "Task Master",
-      href: "https://task-master-tau-five.vercel.app/",
-      src: "/task-master.png",
-      techStack: [<DiMongodb key="mongo" />, <SiExpress key="express" />, <FaReact key="react" />, <FaNode key="node" />],
-      ghHref: "https://github.com/johnvesslyalti/task-master"
-    },
-    {
-      id: 2,
       name: "Go Cart",
-      href: "https://go-cart-rust.vercel.app/",
-      src: "/go-cart.png",
+      href: "",
+      src: "/go-cart-readme.png",
       techStack: [<DiMongodb key="mongo" />, <SiExpress key="express" />, <FaReact key="react" />, <FaNode key="node" />],
       ghHref: "https://github.com/johnvesslyalti/go-cart"
     },
     {
-      id: 3,
+      id: 2,
       name: "Cine Scope",
-      href: "https://cine-scope-six.vercel.app/",
-      src: "/cine-scope.png",
-      techStack: [<RiNextjsFill key="nextjs" />],
+      href: "",
+      src: "/cine-scope-demo.png",
+      techStack: [<RiNextjsFill key="nextjs" />, <BiLogoPostgresql key="postgres" />],
       ghHref: "https://github.com/johnvesslyalti/cine-scope"
+    },
+    {
+      id: 3,
+      name: "Fin Sage",
+      href: "",
+      src: "/finsage-demo.png",
+      techStack: [<RiNextjsFill key="nextjs" />, <BiLogoPostgresql key="postgres" />],
+      ghHref: "https://github.com/johnvesslyalti/fin-sage"
     }
   ];
 
