@@ -22,8 +22,6 @@ const techIcons = [
     { id: 8, name: "NodeJS", icon: <FaNodeJs className="text-green-600" /> },
     { id: 9, name: "ExpressJS", icon: <SiExpress className="text-gray-300" /> },
     { id: 10, name: "MongoDB", icon: <DiMongodb className="text-green-500" /> },
-    { id: 11, name: "Git", icon: <SiGit className="text-orange-400" /> },
-    { id: 12, name: "GitHub", icon: <FaGithub className="text-white" /> },
 ];
 
 export default function Skills() {
