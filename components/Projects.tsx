@@ -17,6 +17,7 @@ interface ICard {
     src: string;
     techStack: ReactElement[];
     ghHref: string;
+    description: string;
 }
 
 export default function Projects() {
@@ -34,7 +35,9 @@ export default function Projects() {
                 <FaReact key="react" />,
                 <FaNode key="node" />
             ],
-            ghHref: "https://github.com/johnvesslyalti/go-cart"
+            ghHref: "https://github.com/johnvesslyalti/go-cart",
+            description:
+                "A full-featured e-commerce web app with user auth, product CRUD, cart system, and role-based admin panel. Built using MERN stack with JWT & bcrypt for secure authentication."
         },
         {
             id: 2,
@@ -45,7 +48,9 @@ export default function Projects() {
                 <RiNextjsFill key="nextjs" />,
                 <BiLogoPostgresql key="postgres" />
             ],
-            ghHref: "https://github.com/johnvesslyalti/cine-scope"
+            ghHref: "https://github.com/johnvesslyalti/cine-scope",
+            description:
+                "A movie discovery platform with trending carousel, watchlist, session-based auth, and theme toggle. Built using Next.js (App Router), PostgreSQL, Prisma, and Zustand."
         },
         {
             id: 3,
@@ -56,7 +61,9 @@ export default function Projects() {
                 <RiNextjsFill key="nextjs" />,
                 <BiLogoPostgresql key="postgres" />
             ],
-            ghHref: "https://github.com/johnvesslyalti/fin-sage"
+            ghHref: "https://github.com/johnvesslyalti/fin-sage",
+            description:
+                "A personal finance tracker with charts, budgets, recurring transactions, filters, and PWA support. Built with Next.js Server Actions, PostgreSQL, Prisma, Zustand, and Recharts."
         }
     ];
 
@@ -114,11 +121,11 @@ export default function Projects() {
                                     y: activeCard === project.id ? 0 : 30
                                 }}
                                 transition={{ duration: 0.4 }}
-                                className="absolute bottom-0 left-0 w-full px-5 py-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20
-                pointer-events-none"
+                                className="absolute bottom-0 left-0 w-full px-5 py-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20 pointer-events-none"
                             >
                                 <p className="text-white text-xl font-bold">{project.name}</p>
-                                <p className="flex items-center gap-2 mt-1 text-white text-sm">
+                                <p className="text-sm text-white mt-2">{project.description}</p>
+                                <p className="flex items-center gap-2 mt-2 text-white text-sm">
                                     <span className="font-semibold">Tech Stack:</span>
                                     <span className="flex gap-2 text-lg">
                                         {project.techStack.map((icon, index) => (
