@@ -35,19 +35,16 @@ export default function Skills() {
                 viewport={{ once: true }}
                 className="text-center"
             >
-                <h1 className="text-6xl font-black uppercase text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 tracking-wider drop-shadow-[0_0_20px_#f0f]">
-                    Dev Arsenal
+                <h1 className="text-5xl font-bold text-white relative inline-block">
+                    Skills
+                    <motion.div
+                        layoutId="underline"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 mt-2 rounded-full"
+                    />
                 </h1>
-                <p className="text-neutral-400 text-lg mt-3 uppercase tracking-wide">
-                    These aren't skills. These are weapons.
-                </p>
-                <motion.div
-                    layoutId="skills-underline"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="h-1 mt-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-lg"
-                />
             </motion.div>
 
             {/* Grid of Weapons */}
