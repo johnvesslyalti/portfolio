@@ -124,7 +124,6 @@ export default function Projects() {
                                 className="absolute bottom-0 left-0 w-full px-5 py-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-20 pointer-events-none"
                             >
                                 <p className="text-white text-xl font-bold">{project.name}</p>
-                                <p className="text-sm text-white mt-2">{project.description}</p>
                                 <p className="flex items-center gap-2 mt-2 text-white text-sm">
                                     <span className="font-semibold">Tech Stack:</span>
                                     <span className="flex gap-2 text-lg">

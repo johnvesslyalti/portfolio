@@ -23,7 +23,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.3 }}
                 className="text-lg md:text-xl text-purple-100 max-w-xl leading-relaxed"
             >
-                Full Stack Developer <span className="hidden md:inline">|</span> Modern Tech Stack <br />
+                Full Stack Developer | Modern Tech Stack <br />
                 <span className="text-purple-300 font-medium">
                     Building Scalable Web Apps
                 </span>
