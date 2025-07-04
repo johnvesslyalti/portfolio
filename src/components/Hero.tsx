@@ -13,7 +13,7 @@ export default function Hero() {
                 className="typewriter-container text-2xl md:text-5xl font-extrabold text-purple-300 mb-4 drop-shadow-lg"
             >
                 <span className="typewriter-text border-b-4 border-purple-400 pb-1 px-2 rounded">
-                    Hi! I'm Johnvessly Alti
+                    Hi! I&apos;m Johnvessly Alti
                 </span>
             </motion.div>
 
