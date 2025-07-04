@@ -9,6 +9,7 @@ import { SiExpress } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { Card, CardContent } from "@/styles/components/ui/card";
+import Image from "next/image";
 
 interface ICard {
     id: number;
@@ -106,7 +107,7 @@ export default function Projects() {
                             }
                         >
                             <CardContent className="p-5">
-                                <img
+                                <Image
                                     src={project.src}
                                     alt={project.name}
                                     className="w-full h-full object-contain rounded-md"

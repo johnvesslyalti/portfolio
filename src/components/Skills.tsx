@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
-import { SiExpress, SiGit } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
 import { DiMongodb } from "react-icons/di";
 import { TbBrandTypescript } from "react-icons/tb";
 

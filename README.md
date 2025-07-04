@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Here’s a professional and complete `README.md` file for your **portfolio** repository, tailored to your current project stack, deployed site, and personal branding.
 
-## Getting Started
+---
 
-First, run the development server:
+````markdown
+# 🧠 Johnvessly Alti — Developer Portfolio
+
+Welcome to my personal developer portfolio built using modern full-stack tools. This portfolio showcases my projects, tech stack, and experience as a Full Stack Developer. It’s designed with performance, accessibility, and aesthetics in mind.
+
+---
+
+## 🚀 Live Site
+
+🌐 [portfolio-zeta-ecru-3sfn3ix7hw.vercel.app](https://portfolio-zeta-ecru-3sfn3ix7hw.vercel.app)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS, Shadcn UI
+- **State Management**: Zustand
+- **Animation**: Framer Motion
+- **Icons**: Lucide, React Icons
+- **Deployment**: Vercel
+
+---
+
+## 📁 Folder Structure
 
 ```bash
+src/
+├── app/                # App router structure
+│   └── layout.tsx      # Root layout
+│   └── page.tsx        # Home page
+├── components/         # Reusable UI components
+├── styles/             # Global styles
+├── assets/             # Static assets (images, svgs)
+├── lib/                # Utility functions and helpers
+├── constants/          # Static data and config
+````
+
+---
+
+## 📸 Featured Projects
+
+| Project                                 | Stack                                      | Demo                                         | Repo                                                 |
+| --------------------------------------- | ------------------------------------------ | -------------------------------------------- | ---------------------------------------------------- |
+| **Go Cart** - E-commerce App            | React, Vite, Node.js, MongoDB              | [Live](https://go-cart-ebon.vercel.app/)     | [Repo](https://github.com/johnvesslyalti/go-cart)    |
+| **Cine Scope** - Movie Explorer         | Next.js, PostgreSQL, Prisma                | [Live](https://cine-scope-eosin.vercel.app/) | [Repo](https://github.com/johnvesslyalti/cine-scope) |
+| **Fin Sage** - Personal Finance Tracker | Next.js (App Router), PostgreSQL, Recharts | [Live](https://fin-sage-rust.vercel.app/)    | [Repo](https://github.com/johnvesslyalti/fin-sage)   |
+
+---
+
+## 📇 Contact Me
+
+* 📧 Email: [altijohnvessly@gmail.com](mailto:altijohnvessly@gmail.com)
+* 🔗 LinkedIn: [linkedin.com/in/johnvesslyalti](https://linkedin.com/in/johnvesslyalti)
+* 💻 GitHub: [github.com/johnvesslyalti](https://github.com/johnvesslyalti)
+
+---
+
+## 📌 Features
+
+* ⚡ Blazing fast with App Router and code-splitting
+* 🎯 SEO optimized with metadata and dynamic Open Graph
+* 💡 Smooth transitions with Framer Motion
+* 🔒 Accessible, responsive, and mobile-first design
+* 🧠 Modular and scalable architecture
+
+---
+
+## 🛠️ Running Locally
+
+```bash
+git clone https://github.com/johnvesslyalti/portfolio.git
+cd portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🙏 Acknowledgements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* [Next.js](https://nextjs.org)
+* [Tailwind CSS](https://tailwindcss.com)
+* [Shadcn UI](https://ui.shadcn.com)
+* [Framer Motion](https://www.framer.com/motion/)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📃 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is open source and available under the [MIT License](LICENSE).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Let me know if you want a minimal version or to include a "dark monster-mode developer" section that reflects your Q3 goals.
+```
