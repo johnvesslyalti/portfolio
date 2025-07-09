@@ -106,7 +106,7 @@ export default function Projects() {
                 setActiveCard(activeCard === project.id ? null : project.id)
               }
             >
-              <CardContent className="p-5">
+            <CardContent className="p-5">
                 <div className="relative w-full h-64">
                   {" "}
                   {/* Adjust height as needed */}
