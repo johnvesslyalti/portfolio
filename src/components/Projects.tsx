@@ -106,15 +106,17 @@ export default function Projects() {
                 setActiveCard(activeCard === project.id ? null : project.id)
               }
             >
-              <CardContent className="p-5 relative h-48">
-                {" "}
-                {/* or whatever height you want */}
-                <Image
-                  src={project.src}
-                  alt={project.name}
-                  fill
-                  className="object-contain rounded-md px-5"
-                />
+            <CardContent className="p-5">
+                <div className="relative w-full h-64">
+                  {" "}
+                  {/* Adjust height as needed */}
+                  <Image
+                    src={project.src}
+                    alt={project.name}
+                    fill
+                    className="object-contain rounded-md"
+                  />
+                </div>
               </CardContent>
 
               {/* Sliding Overlay from Bottom */}
