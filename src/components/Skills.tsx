@@ -57,7 +57,7 @@ export default function Skills() {
                         transition={{ duration: 0.3, delay: index * 0.08 }}
                         viewport={{ once: true }}
                     >
-                        <Card className="bg-zinc-900/70 border border-white/10 rounded-xl hover:scale-110 hover:shadow-[0_0_20px_#f0f] transition duration-300 backdrop-blur-md group">
+                        <Card className="bg-white/10 border border-white/10 rounded-xl hover:scale-101 hover:shadow-[0_0_20px_#f0f] transition duration-300 group">
                             <CardContent className="flex flex-col items-center justify-center py-8 px-4 gap-3">
                                 <div className="text-5xl group-hover:animate-pingOnce">
                                     {skill.icon}
