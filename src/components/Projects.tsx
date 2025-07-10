@@ -101,7 +101,7 @@ export default function Projects() {
             viewport={{ once: true }}
           >
             <Card
-              className="relative h-auto backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl overflow-hidden shadow-xl group cursor-pointer transition-transform hover:scale-[1.02]"
+              className="relative h-auto bg-white/10 border border-white/20 rounded-xl overflow-hidden shadow-xl group cursor-pointer transition-transform hover:scale-[1.02]"
               onClick={() =>
                 setActiveCard(activeCard === project.id ? null : project.id)
               }
