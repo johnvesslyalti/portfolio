@@ -57,7 +57,7 @@ export default function Skills() {
                         transition={{ duration: 0.3, delay: index * 0.08 }}
                         viewport={{ once: true }}
                     >
-                        <Card className="bg-white/10 border border-white/10 rounded-xl hover:scale-101 hover:shadow-[0_0_20px_#f0f] transition duration-300 group">
+                        <Card className="bg-white/10 border border-white/10 rounded-xl hover:scale-105 transition duration-300 group">
                             <CardContent className="flex flex-col items-center justify-center py-8 px-4 gap-3">
                                 <div className="text-5xl group-hover:animate-pingOnce">
                                     {skill.icon}
@@ -70,28 +70,6 @@ export default function Skills() {
                     </motion.div>
                 ))}
             </div>
-
-            {/* Animation */}
-            <style jsx>{`
-                @keyframes pingOnce {
-                    0% {
-                        transform: scale(1);
-                        opacity: 1;
-                    }
-                    50% {
-                        transform: scale(1.25);
-                        opacity: 0.75;
-                    }
-                    100% {
-                        transform: scale(1);
-                        opacity: 1;
-                    }
-                }
-
-                .group-hover\\:animate-pingOnce:hover {
-                    animation: pingOnce 0.4s ease-in-out forwards;
-                }
-            `}</style>
         </div>
     );
 }

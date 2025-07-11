@@ -107,7 +107,7 @@ export default function Projects() {
               }
             >
             <CardContent className="p-5">
-                <div className="relative w-full h-64">
+                <div className="relative w-full h-50">
                   {" "}
                   {/* Adjust height as needed */}
                   <Image
