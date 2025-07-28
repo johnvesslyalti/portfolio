@@ -2,6 +2,7 @@
 
 import "@/styles/Hero.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -10,7 +11,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="typewriter-container text-2xl md:text-5xl font-extrabold text-purple-300 mb-4 drop-shadow-lg"
+                className="typewriter-container text-3xl md:text-6xl font-extrabold text-purple-300 mb-6 drop-shadow-lg"
             >
                 <span className="typewriter-text border-b-4 border-purple-400 pb-1 px-2 rounded">
                     Hi! I&apos;m Johnvessly Alti
@@ -21,11 +22,12 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                className="text-lg md:text-xl text-purple-100 max-w-xl leading-relaxed"
+                className="text-base md:text-xl text-purple-100 max-w-2xl leading-relaxed mb-6"
             >
-                Full Stack Developer | Modern Tech Stack <br />
+                Full Stack Developer focused on building modern, performant, and scalable web applications using the latest technologies.
+                <br />
                 <span className="text-purple-300 font-medium">
-                    Building Scalable Web Apps
+                    React · Next.js · TypeScript · Node.js · PostgreSQL · Tailwind
                 </span>
             </motion.p>
         </section>

@@ -2,7 +2,7 @@
 
 import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/styles/components/ui/card";
 
 export default function Contact() {
@@ -11,30 +11,35 @@ export default function Contact() {
             id: 1,
             name: "Email",
             href: "mailto:altijohnvessly@gmail.com",
-            icon: <MdEmail className="text-red-400" />
+            icon: <MdEmail className="text-red-400" />,
+            aria: "Send an email to Johnvessly Alti"
         },
         {
             id: 2,
             name: "LinkedIn",
             href: "https://www.linkedin.com/in/johnvesslyalti",
-            icon: <FaLinkedin className="text-blue-500" />
+            icon: <FaLinkedin className="text-blue-500" />,
+            aria: "View Johnvessly's LinkedIn profile"
         },
         {
             id: 3,
             name: "GitHub",
             href: "https://github.com/johnvesslyalti",
-            icon: <FaGithub className="text-white" />
+            icon: <FaGithub className="text-white" />,
+            aria: "Visit Johnvessly's GitHub profile"
         },
         {
             id: 4,
             name: "LeetCode",
             href: "https://leetcode.com/johnvesslyalti/",
-            icon: <FaCode className="text-yellow-400" />
+            icon: <FaCode className="text-yellow-400" />,
+            aria: "Check out Johnvessly's LeetCode profile"
         }
     ];
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center px-5 py-16">
+        <section className="min-h-screen flex flex-col items-center justify-center px-5 py-20">
+            {/* Title */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +47,7 @@ export default function Contact() {
                 viewport={{ once: true }}
                 className="text-center"
             >
-                <h1 className="text-5xl font-bold text-white relative inline-block">
+                <h2 className="text-5xl font-bold text-white relative inline-block">
                     Contact
                     <motion.div
                         layoutId="underline"
@@ -51,13 +56,14 @@ export default function Contact() {
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="h-1 bg-gradient-to-r from-purple-500 to-pink-500 mt-2 rounded-full"
                     />
-                </h1>
-                <p className="text-gray-400 mt-4 text-lg">
-                    Feel free to reach out or connect with me
+                </h2>
+                <p className="text-gray-400 mt-4 text-lg max-w-md mx-auto">
+                    Let’s connect — whether you have a question, a project, or just want to say hi!
                 </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-10 w-full max-w-2xl">
+            {/* Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 w-full max-w-2xl">
                 {contacts.map((contact, index) => (
                     <motion.div
                         key={contact.id}
@@ -70,18 +76,27 @@ export default function Contact() {
                             href={contact.href}
                             target="_blank"
                             rel="noopener noreferrer"
+                            aria-label={contact.aria}
                             className="block w-full"
                         >
-                            <Card className="w-full hover:scale-[1.03] transition-transform duration-300 bg-white/10 border border-white/20 shadow-md">
+                            <Card className="w-full hover:scale-[1.04] transition-transform duration-300 bg-white/10 border border-white/20 shadow-md">
                                 <CardContent className="flex items-center gap-4 py-5 px-6">
-                                    <div className="text-3xl">{contact.icon}</div>
-                                    <p className="text-lg font-semibold text-white">{contact.name}</p>
+                                    <motion.div
+                                        whileHover={{ rotate: 10, scale: 1.2 }}
+                                        transition={{ type: "spring", stiffness: 200 }}
+                                        className="text-3xl"
+                                    >
+                                        {contact.icon}
+                                    </motion.div>
+                                    <p className="text-lg font-semibold text-white">
+                                        {contact.name}
+                                    </p>
                                 </CardContent>
                             </Card>
                         </a>
                     </motion.div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
