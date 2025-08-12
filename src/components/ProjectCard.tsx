@@ -26,7 +26,7 @@ export default function ProjectCard({
           src={image}
           alt={title}
           fill
-          className="object-contain"
+          className="object-contain p-5"
         />
       </div>
 
