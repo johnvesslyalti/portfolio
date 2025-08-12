@@ -16,7 +16,7 @@ export default function Contact() {
       label: "GitHub",
       href: "https://github.com/johnvesslyalti",
       icon: Github,
-      color: "text-gray-100 bg-gray-100 dark:bg-gray-800",
+      color: "text-gray-100 bg-gray-900 dark:bg-gray-800",
     },
     {
       label: "LinkedIn",
