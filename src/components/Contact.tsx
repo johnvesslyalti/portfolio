@@ -1,7 +1,7 @@
 "use client";
 
 import { Mail, Github, Linkedin } from "lucide-react";
-import { SiX, SiLeetcode } from "react-icons/si";
+import { SiX, SiLeetcode, SiYoutube } from "react-icons/si"; // added SiYoutube
 import Link from "next/link";
 
 export default function Contact() {
@@ -16,7 +16,7 @@ export default function Contact() {
       label: "GitHub",
       href: "https://github.com/johnvesslyalti",
       icon: Github,
-      color: "text-gray-700 bg-gray-100 dark:bg-gray-800",
+      color: "text-gray-100 bg-gray-100 dark:bg-gray-800",
     },
     {
       label: "LinkedIn",
@@ -28,13 +28,19 @@ export default function Contact() {
       label: "X",
       href: "https://x.com/johnvesslyalti",
       icon: SiX,
-      color: "text-black bg-gray-200 dark:bg-white/10 dark:text-white",
+      color: "text-black bg-gray-200 dark:bg-black/20 dark:text-white",
     },
     {
       label: "LeetCode",
       href: "https://leetcode.com/u/johnvesslyalti",
       icon: SiLeetcode,
       color: "text-yellow-600 bg-yellow-100 dark:bg-yellow-900/30",
+    },
+    {
+      label: "YouTube", // New YouTube entry
+      href: "https://youtube.com/@johnvesslyalti", // replace with your actual channel URL
+      icon: SiYoutube,
+      color: "text-red-600 bg-red-100 dark:bg-red-900/30",
     },
   ];
 
@@ -44,7 +50,7 @@ export default function Contact() {
         Let’s Connect
       </h3>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
         {contacts.map(({ label, href, icon: Icon, color }) => (
           <Link
             key={label}
