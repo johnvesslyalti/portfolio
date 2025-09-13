@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="mt-8 flex gap-4 flex-wrap">
           <a
             href="#projects"
-            className="px-6 py-2.5 rounded-xl font-medium text-white relative overflow-hidden
+            className="px-6 py-2.5 rounded-xl font-medium relative overflow-hidden
               backdrop-blur-md bg-white/10 border border-white/20
               hover:bg-white/20 transition-all duration-300 shadow-md"
           >
