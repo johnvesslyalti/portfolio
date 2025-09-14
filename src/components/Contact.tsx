@@ -3,6 +3,7 @@
 import { Mail, Github, Linkedin } from "lucide-react";
 import { SiX, SiLeetcode, SiYoutube } from "react-icons/si";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const contacts = [
@@ -10,78 +11,93 @@ export default function Contact() {
       label: "Email",
       href: "mailto:altijohnvessly@gmail.com",
       icon: Mail,
-      color: "text-red-500 bg-red-100 dark:bg-red-900/30",
+      color: "from-red-400 to-red-600",
     },
     {
       label: "GitHub",
       href: "https://github.com/johnvesslyalti",
       icon: Github,
-      color: "text-gray-900 bg-gray-100 dark:bg-gray-800 dark:text-gray-100",
+      color: "from-gray-700 to-gray-900",
     },
     {
       label: "LinkedIn",
       href: "https://linkedin.com/in/johnvesslyalti",
       icon: Linkedin,
-      color: "text-blue-600 bg-blue-100 dark:bg-blue-900/30",
+      color: "from-blue-500 to-blue-700",
     },
     {
       label: "X",
       href: "https://x.com/johnvesslyalti",
       icon: SiX,
-      color: "text-black bg-gray-200 dark:bg-black/30 dark:text-white",
+      color: "from-gray-800 to-black",
     },
     {
       label: "LeetCode",
       href: "https://leetcode.com/u/johnvesslyalti",
       icon: SiLeetcode,
-      color: "text-yellow-600 bg-yellow-100 dark:bg-yellow-900/30",
+      color: "from-yellow-400 to-yellow-600",
     },
     {
       label: "YouTube",
       href: "https://youtube.com/@johnvesslyalti",
       icon: SiYoutube,
-      color: "text-red-600 bg-red-100 dark:bg-red-900/30",
+      color: "from-red-500 to-red-700",
     },
   ];
 
   return (
-    <section id="contact" className="mt-20">
-      <h3 className="text-3xl font-extrabold text-center text-gray-900 dark:text-white mb-12">
+    <section id="contact" className="mt-24">
+      <motion.h3
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-4xl font-extrabold text-center text-gray-900 dark:text-white mb-14"
+      >
         Let’s Connect
-      </h3>
+      </motion.h3>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-5xl mx-auto">
-        {contacts.map(({ label, href, icon: Icon, color }) => (
-          <Link
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
+        {contacts.map(({ label, href, icon: Icon, color }, i) => (
+          <motion.div
             key={label}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={label}
-            className={`flex flex-col items-center justify-center p-6 rounded-2xl
-              bg-white/70 dark:bg-gray-900/50
-              border border-gray-200/40 dark:border-white/10
-              backdrop-blur-md
-              shadow-sm hover:shadow-xl
-              hover:-translate-y-2
-              transition-all duration-300 group relative overflow-hidden`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            viewport={{ once: true }}
           >
-            {/* Gloss effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/40 to-transparent opacity-10 group-hover:opacity-20 transition-opacity" />
-
-            {/* Icon */}
-            <div
-              className={`w-14 h-14 flex items-center justify-center rounded-full ${color} 
-              transition-transform duration-300 group-hover:scale-110 group-hover:shadow-md z-10`}
+            <Link
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="group relative flex flex-col items-center justify-center p-6 rounded-2xl
+                bg-white/70 dark:bg-gray-900/40
+                border border-gray-200/40 dark:border-white/10
+                backdrop-blur-xl
+                shadow-lg hover:shadow-2xl
+                hover:-translate-y-2
+                transition-all duration-500 overflow-hidden"
             >
-              <Icon className="w-7 h-7" />
-            </div>
+              {/* Animated gradient glow */}
+              <div
+                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${color} opacity-0 group-hover:opacity-20 blur-xl transition duration-500`}
+              />
 
-            {/* Label */}
-            <p className="mt-3 text-sm font-medium text-gray-800 dark:text-gray-200 z-10">
-              {label}
-            </p>
-          </Link>
+              {/* Icon */}
+              <div
+                className={`w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br ${color} 
+                text-white shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:shadow-2xl relative z-10`}
+              >
+                <Icon className="w-8 h-8" />
+              </div>
+
+              {/* Label */}
+              <p className="mt-4 text-sm font-semibold text-gray-900 dark:text-gray-100 z-10 group-hover:text-primary transition">
+                {label}
+              </p>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </section>
