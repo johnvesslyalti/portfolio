@@ -78,7 +78,7 @@ export default function Page() {
     },
     {
       name: "discord",
-      link: "https://discord.com/users/Johnvessly#0001",
+      link: "https://discord.gg/T99fCZVh",
       icon: <FaDiscord />,
     },
   ];
