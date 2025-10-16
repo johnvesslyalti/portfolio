@@ -77,10 +77,10 @@ export default function Page() {
       icon: <SiLeetcode />,
     },
     {
-        name: "discord",
-        link: "https://discord.com/users/Johnvessly#0001",
-        icon: <FaDiscord />
-    }
+      name: "discord",
+      link: "https://discord.com/users/Johnvessly#0001",
+      icon: <FaDiscord />,
+    },
   ];
 
   return (
@@ -144,24 +144,33 @@ export default function Page() {
                 height={300} // proportional height
                 className="object-contain w-full h-48 sm:h-56 md:h-64"
               />
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 p-1">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  className="text-sm flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+              <Badge className="flex text-white-800 bg-black/50 items-center gap-5">
+                <AuroraText
+                  className="font-bold tracking-tight"
+                  speed={0.6}
+                  colors={["#000000", "#555555", "#AAAAAA", "#FFFFFF"]}
                 >
-                  <FaGithub className="inline mr-1" />
-                  <span>GitHub</span>
-                </a>
-                <a
-                  href={project.live}
-                  target="_blank"
-                  className="text-sm flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
-                >
-                  <LiaExternalLinkAltSolid className="inline mr-1" />
-                  <span>Live</span>
-                </a>
-              </div>
+                  {project.name}
+                </AuroraText>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 p-1">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                  >
+                    <FaGithub className="inline mr-1" />
+                    <span>GitHub</span>
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                  >
+                    <LiaExternalLinkAltSolid className="inline mr-1" />
+                    <span>Live</span>
+                  </a>
+                </div>
+              </Badge>
             </div>
           ))}
         </div>
@@ -169,9 +178,6 @@ export default function Page() {
 
       {/* Contact */}
       <section>
-        {/* <h2 className="text-xl font-semibold mb-3 border-b border-neutral-400 pb-1">
-          Contact
-        </h2> */}
         <div className="flex flex-wrap gap-3">
           {contact.map((item, index) => (
             <a
