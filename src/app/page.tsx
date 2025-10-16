@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dot } from "lucide-react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
+import { LiaExternalLinkAltSolid } from "react-icons/lia";
 
 export default function Page() {
   const skills = [
@@ -122,14 +123,14 @@ export default function Page() {
 
       {/* Projects - only images */}
       <section>
-        <h2 className="text-xl font-semibold border-b border-neutral-400 pb-1">
+        <h2 className="text-xl font-semibold border-b border-neutral-400">
           Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-3">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="overflow-hidden rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300"
+              className="overflow-hidden transition-all duration-300"
             >
               <Image
                 src={project.src}
@@ -138,6 +139,24 @@ export default function Page() {
                 height={150}
                 className="object-contain w-full h-1/2 sm:w-72 sm:h-48"
               />
+              <div className="flex items-center justify-end gap-2">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  className="text-sm flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                >
+                  <FaGithub className="inline mr-1" />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href={project.live}
+                  target="_blank"
+                  className="text-sm flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                >
+                  <LiaExternalLinkAltSolid className="inline mr-1" />
+                  <span>Live</span>
+                </a>
+              </div>
             </div>
           ))}
         </div>
