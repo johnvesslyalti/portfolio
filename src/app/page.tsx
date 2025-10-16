@@ -90,9 +90,9 @@ export default function Page() {
           Johnvessly Alti
         </AuroraText>
 
-        <Dot className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />
+        <Dot className="w-4 h-4 opacity-0 md:opacity-100 text-neutral-500 dark:text-neutral-400" />
         <div>altijohnvessly@gmail.com</div>
-        <Dot className="w-4 h-4 text-neutral-500 dark:text-neutral-400" />
+        <Dot className="w-4 h-4 opacity-0 md:opacity-100 text-neutral-500 dark:text-neutral-400" />
         <AnimatedThemeToggler />
       </div>
 
@@ -123,23 +123,23 @@ export default function Page() {
 
       {/* Projects - only images */}
       <section>
-        <h2 className="text-xl font-semibold border-b border-neutral-400">
+        <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
           Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="overflow-hidden transition-all duration-300"
+              className="overflow-hidden transition-all duration-300 rounded-lg"
             >
               <Image
                 src={project.src}
                 alt={project.name}
-                width={250}
-                height={150}
-                className="object-contain w-full h-1/2 sm:w-72 sm:h-48"
+                width={500} // larger width for responsive scaling
+                height={300} // proportional height
+                className="object-contain w-full h-48 sm:h-56 md:h-64"
               />
-              <div className="flex items-center justify-end gap-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 p-1">
                 <a
                   href={project.github}
                   target="_blank"
