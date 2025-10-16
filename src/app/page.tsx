@@ -3,7 +3,7 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { Badge } from "@/components/ui/badge";
 import { Dot } from "lucide-react";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 
@@ -76,6 +76,11 @@ export default function Page() {
       link: "https://leetcode.com/johnvesslyalti",
       icon: <SiLeetcode />,
     },
+    {
+        name: "discord",
+        link: "https://discord.com/users/Johnvessly#0001",
+        icon: <FaDiscord />
+    }
   ];
 
   return (
