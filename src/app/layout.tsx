@@ -6,7 +6,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head>
+            <title>Johnvessly Alti | Portfolio</title>
+        </head>
         <body>
           <ThemeProvider
             attribute="class"
