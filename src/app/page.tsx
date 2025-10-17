@@ -41,7 +41,7 @@ export default function Page() {
   const projects = [
     {
       name: "Lift Log",
-      src: "/cinescope.png",
+      src: "/liftlog.png",
       github: "https://github.com/johnvesslyalti/lift-log",
       live: "https://johnvesslyalti-liftlog.vercel.app",
     },
@@ -86,7 +86,7 @@ export default function Page() {
   return (
     <div className="min-h-screen flex flex-col gap-10 max-w-2xl mx-auto p-6 text-neutral-900 dark:text-neutral-100 transition-colors">
       {/* Header */}
-      <div className="flex items-center justify-between flex-wrap gap-2">
+      <div className="flex items-center justify-between flex-wrap gap-2 mt-5">
         <AuroraText
           className="text-3xl sm:text-4xl font-bold tracking-tight"
           speed={0.6}
@@ -99,6 +99,16 @@ export default function Page() {
         <div>altijohnvessly@gmail.com</div>
         <Dot className="w-4 h-4 opacity-0 md:opacity-100 text-neutral-500 dark:text-neutral-400" />
         <AnimatedThemeToggler />
+      </div>
+      <div className="flex items-center gap-2">
+        <div className="relative flex items-center justify-center w-4 h-4">
+          {/* green dot */}
+          <span className="w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
+          <span className="absolute w-3 h-3 bg-green-500 rounded-full"></span>
+        </div>
+        <span className="text-sm font-medium">
+          Open to work on exciting projects!
+        </span>
       </div>
 
       {/* Intro */}
@@ -144,7 +154,7 @@ export default function Page() {
                 height={300} // proportional height
                 className="object-contain w-full h-48 sm:h-56 md:h-64"
               />
-              <Badge className="flex text-white-800 bg-black/50 items-center gap-5">
+              <Badge className="flex text-white-800 dark:bg-black/50 items-center gap-5">
                 <AuroraText
                   className="font-bold tracking-tight"
                   speed={0.6}
@@ -156,7 +166,7 @@ export default function Page() {
                   <a
                     href={project.github}
                     target="_blank"
-                    className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                    className="text-xs text-white flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
                   >
                     <FaGithub className="inline mr-1" />
                     <span>GitHub</span>
@@ -164,7 +174,7 @@ export default function Page() {
                   <a
                     href={project.live}
                     target="_blank"
-                    className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                    className="text-xs text-white flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
                   >
                     <LiaExternalLinkAltSolid className="inline mr-1" />
                     <span>Live</span>
