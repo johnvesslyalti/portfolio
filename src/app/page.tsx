@@ -183,14 +183,14 @@ export default function Page() {
       </section>
 
       {/* Contact */}
-      <section>
+      <section className="flex justify-between items-center">
         <div className="flex flex-wrap gap-3">
           {contact.map((item, index) => (
             <a
               key={index}
               href={item.link}
               target="_blank"
-              className="text-sm underline hover:text-neutral-700 dark:hover:text-neutral-300"
+              className="text-md underline hover:text-neutral-700 dark:hover:text-neutral-300"
             >
               {item.icon}
             </a>
@@ -198,6 +198,7 @@ export default function Page() {
         </div>
         <SpotifyWidget />
       </section>
+      
     </div>
   );
 }

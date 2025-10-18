@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { FaSpotify } from 'react-icons/fa';
-import Image from 'next/image';
+import { useEffect, useState } from "react";
+import { FaSpotify } from "react-icons/fa";
+import Image from "next/image";
 
 interface Track {
   name: string;
@@ -26,19 +26,19 @@ export function SpotifyWidget() {
   useEffect(() => {
     const fetchSpotifyData = async () => {
       try {
-        const response = await fetch('/api/spotify');
-        if (!response.ok) throw new Error('Failed to fetch Spotify data');
+        const response = await fetch("/api/spotify");
+        if (!response.ok) throw new Error("Failed to fetch Spotify data");
         const data = await response.json();
         setSpotifyData(data);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Unknown error');
+        setError(err instanceof Error ? err.message : "Unknown error");
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchSpotifyData();
-    const interval = setInterval(fetchSpotifyData, 30000); // Refresh every 30s
+    const interval = setInterval(fetchSpotifyData, 30000);
     return () => clearInterval(interval);
   }, []);
 
@@ -47,7 +47,6 @@ export function SpotifyWidget() {
 
   const { currentTrack, recentTracks } = spotifyData;
 
-  // Show current track if playing, otherwise show last listened
   const displayTrack =
     currentTrack && currentTrack.isPlaying
       ? currentTrack
@@ -56,11 +55,11 @@ export function SpotifyWidget() {
       : null;
 
   return (
-    <div className="fixed bottom-6 right-6 w-72 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-3 shadow-lg z-50">
+    <div className="w-72 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-3 shadow-sm">
       <div className="flex items-center gap-2 mb-2">
         <FaSpotify className="text-green-500 text-sm" />
         <span className="font-semibold text-xs">
-          {currentTrack?.isPlaying ? 'Now Playing' : 'Last Listened'}
+          {currentTrack?.isPlaying ? "Now Playing" : "Last Listened"}
         </span>
       </div>
 
@@ -93,15 +92,26 @@ export function SpotifyWidget() {
           </div>
 
           {/* Animated bars */}
-          <div className="flex flex-col justify-end h-4 gap-0.5">
-            {[0, 1, 2].map((i) => (
-              <span
-                key={i}
-                className={`block w-1 rounded bg-green-500 ${
-                  currentTrack?.isPlaying ? `animate-bounce${i}` : 'h-2'
-                }`}
-              />
-            ))}
+          <div className="flex items-end justify-end h-4 gap-0.5">
+            {[0, 1, 2].map((i) => {
+              const heights = [0.5, 1, 0.5];
+              return (
+                <span
+                  key={i}
+                  className="block w-1 rounded bg-green-500"
+                  style={{
+                    height: currentTrack?.isPlaying
+                      ? `${heights[i]}rem`
+                      : "0.5rem",
+                    animation: currentTrack?.isPlaying
+                      ? `bounce ${0.8 + i * 0.1}s ${
+                          i * 0.1
+                        }s infinite ease-in-out`
+                      : "none",
+                  }}
+                />
+              );
+            })}
           </div>
         </div>
       ) : (
