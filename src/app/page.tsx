@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { Badge } from "@/components/ui/badge";
+import { SpotifyWidget } from "@/components/spotify-widget";
 import { Dot } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
@@ -195,6 +196,7 @@ export default function Page() {
             </a>
           ))}
         </div>
+        <SpotifyWidget />
       </section>
     </div>
   );
