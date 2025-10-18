@@ -7,7 +7,7 @@ export default function SpotifySetup() {
   const [clientId, setClientId] = useState('');
   const [clientSecret, setClientSecret] = useState('');
   const [redirectUri, setRedirectUri] = useState('https://johnvesslyalti.vercel.app/callback');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
 
   const handleGetTokens = () => {
     if (!clientId || !clientSecret) {
