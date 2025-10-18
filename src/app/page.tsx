@@ -46,10 +46,10 @@ export default function Page() {
       live: "https://johnvesslyalti-liftlog.vercel.app",
     },
     {
-      name: "Travel Pal",
-      src: "/cinescope.png",
-      github: "https://github.com/johnvesslyalti/travel-pal",
-      live: "https://johnvesslyalti-travelpal.vercel.app",
+      name: "Sub Trakr",
+      src: "/subtrackr.png",
+      github: "https://github.com/johnvesslyalti/sub-trackr",
+      live: "https://sub-trackr-sigma.vercel.app",
     },
     {
       name: "Cine Scope",
@@ -90,7 +90,6 @@ export default function Page() {
         <AuroraText
           className="text-3xl sm:text-4xl font-bold tracking-tight"
           speed={0.6}
-          colors={["#000000", "#555555", "#AAAAAA", "#FFFFFF"]}
         >
           Johnvessly Alti
         </AuroraText>
@@ -141,7 +140,7 @@ export default function Page() {
         <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
           Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center gap-3">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -155,11 +154,7 @@ export default function Page() {
                 className="object-contain w-full h-48 sm:h-56 md:h-64"
               />
               <Badge className="flex text-white-800 dark:bg-black/50 items-center gap-5">
-                <AuroraText
-                  className="font-bold tracking-tight"
-                  speed={0.6}
-                  colors={["#000000", "#555555", "#AAAAAA", "#FFFFFF"]}
-                >
+                <AuroraText className="font-bold tracking-tight" speed={0.6}>
                   {project.name}
                 </AuroraText>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 p-1">
