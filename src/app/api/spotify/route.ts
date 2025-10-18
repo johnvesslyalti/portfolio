@@ -75,7 +75,14 @@ export async function GET() {
     ]);
 
     let currentTrack = null;
-    let recentTracks: RecentTrack[] = [];
+    let recentTracks: Array<{
+      name: string;
+      artists: string;
+      album: string;
+      image: string;
+      url: string;
+      playedAt: string;
+    }> = [];
 
     if (currentPlayingResponse.ok) {
       const currentData: SpotifyResponse = await currentPlayingResponse.json();

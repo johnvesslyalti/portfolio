@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FaSpotify, FaCheck, FaCopy } from 'react-icons/fa';
+import { FaSpotify, FaCopy } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function SpotifyCallback() {
   const [tokens, setTokens] = useState<{
@@ -175,12 +176,12 @@ SPOTIFY_REFRESH_TOKEN=${tokens.refresh_token}`;
             </div>
 
             <div className="text-center">
-              <a
+              <Link
                 href="/"
                 className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
               >
                 Go to Portfolio
-              </a>
+              </Link>
             </div>
           </div>
         </div>
