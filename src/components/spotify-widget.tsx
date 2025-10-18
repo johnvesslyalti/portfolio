@@ -42,7 +42,28 @@ export function SpotifyWidget() {
     return () => clearInterval(interval);
   }, []);
 
-  if (isLoading) return <p>Loading Spotify...</p>;
+  if (isLoading)
+    return (
+      <div className="w-50 animate-pulse">
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <div className="w-4 h-4 bg-green-500/30 rounded-full" />
+          <div className="h-3 w-20 bg-neutral-300 dark:bg-neutral-700 rounded" />
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="w-10 h-10 bg-neutral-300 dark:bg-neutral-700 rounded" />
+          <div className="flex flex-col gap-1 flex-1">
+            <div className="h-3 w-24 bg-neutral-300 dark:bg-neutral-700 rounded" />
+            <div className="h-3 w-16 bg-neutral-300 dark:bg-neutral-700 rounded" />
+          </div>
+          <div className="flex items-end justify-end h-4 gap-0.5">
+            <div className="w-1 h-2 bg-green-500/30 rounded" />
+            <div className="w-1 h-3 bg-green-500/30 rounded" />
+            <div className="w-1 h-2 bg-green-500/30 rounded" />
+          </div>
+        </div>
+      </div>
+    );
   if (error || !spotifyData) return <p>Unable to load Spotify data.</p>;
 
   const { currentTrack, recentTracks } = spotifyData;
@@ -55,8 +76,8 @@ export function SpotifyWidget() {
       : null;
 
   return (
-    <div className="w-72 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-3 shadow-sm">
-      <div className="flex items-center gap-2 mb-2">
+    <div className="w-50">
+      <div className="flex items-center justify-center gap-2 mb-2">
         <FaSpotify className="text-green-500 text-sm" />
         <span className="font-semibold text-xs">
           {currentTrack?.isPlaying ? "Now Playing" : "Last Listened"}
