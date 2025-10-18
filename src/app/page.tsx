@@ -7,6 +7,7 @@ import { Dot } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
+import { FaYoutube } from "react-icons/fa";
 
 export default function Page() {
   const skills = [
@@ -76,6 +77,11 @@ export default function Page() {
       name: "leetcode",
       link: "https://leetcode.com/johnvesslyalti",
       icon: <SiLeetcode />,
+    },
+    {
+        name: "youtube",
+        link: "https://youtube.com/@johnvesslyalti",
+        icon: <FaYoutube />
     },
     {
       name: "discord",
