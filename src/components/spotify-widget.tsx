@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FaSpotify, FaPlay, FaPause } from 'react-icons/fa';
+import { FaSpotify } from 'react-icons/fa';
 import Image from 'next/image';
 
 interface Track {
@@ -11,8 +11,6 @@ interface Track {
   image: string;
   url: string;
   isPlaying?: boolean;
-  progress?: number;
-  playedAt?: string;
 }
 
 interface SpotifyData {
@@ -40,47 +38,21 @@ export function SpotifyWidget() {
     };
 
     fetchSpotifyData();
-    const interval = setInterval(fetchSpotifyData, 30000);
+    const interval = setInterval(fetchSpotifyData, 30000); // Refresh every 30s
     return () => clearInterval(interval);
   }, []);
 
-  if (isLoading) {
-    return (
-      <div className="w-72 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-3 shadow-lg z-50">
-        <div className="flex items-center gap-2 mb-2">
-          <FaSpotify className="text-green-500 text-sm" />
-          <span className="font-semibold text-xs">Spotify</span>
-        </div>
-        <div className="animate-pulse">
-          <div className="h-3 bg-neutral-200 dark:bg-neutral-700 rounded mb-1"></div>
-          <div className="h-2 bg-neutral-200 dark:bg-neutral-700 rounded w-2/3"></div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !spotifyData) {
-    return (
-      <div className="fixed bottom-6 right-6 w-72 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-3 shadow-lg z-50">
-        <div className="flex items-center gap-2 mb-2">
-          <FaSpotify className="text-green-500 text-sm" />
-          <span className="font-semibold text-xs">Spotify</span>
-        </div>
-        <p className="text-xs text-neutral-600 dark:text-neutral-400">
-          Unable to load music data
-        </p>
-      </div>
-    );
-  }
+  if (isLoading) return <p>Loading Spotify...</p>;
+  if (error || !spotifyData) return <p>Unable to load Spotify data.</p>;
 
   const { currentTrack, recentTracks } = spotifyData;
 
-  // Decide what to display
+  // Show current track if playing, otherwise show last listened
   const displayTrack =
     currentTrack && currentTrack.isPlaying
       ? currentTrack
       : recentTracks.length > 0
-      ? recentTracks[0] // last listened track
+      ? recentTracks[0]
       : null;
 
   return (
@@ -88,21 +60,22 @@ export function SpotifyWidget() {
       <div className="flex items-center gap-2 mb-2">
         <FaSpotify className="text-green-500 text-sm" />
         <span className="font-semibold text-xs">
-          {currentTrack && currentTrack.isPlaying ? 'Now Playing' : 'Last Listened'}
+          {currentTrack?.isPlaying ? 'Now Playing' : 'Last Listened'}
         </span>
       </div>
 
       {displayTrack ? (
-        <div className="mb-3 flex items-center gap-2">
+        <div className="flex items-center gap-2">
           {displayTrack.image && (
             <Image
-            width={10}
-            height={10}
               src={displayTrack.image}
               alt={displayTrack.album}
+              width={40}
+              height={40}
               className="w-10 h-10 rounded object-cover"
             />
           )}
+
           <div className="flex-1 min-w-0">
             <a
               href={displayTrack.url}
@@ -118,15 +91,18 @@ export function SpotifyWidget() {
               </p>
             </a>
           </div>
-          {displayTrack.isPlaying !== undefined && (
-            <div className="flex items-center gap-1">
-              {displayTrack.isPlaying ? (
-                <FaPlay className="text-green-500 text-xs" />
-              ) : (
-                <FaPause className="text-neutral-400 text-xs" />
-              )}
-            </div>
-          )}
+
+          {/* Animated bars */}
+          <div className="flex flex-col justify-end h-4 gap-0.5">
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                className={`block w-1 rounded bg-green-500 ${
+                  currentTrack?.isPlaying ? `animate-bounce${i}` : 'h-2'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       ) : (
         <p className="text-xs text-neutral-600 dark:text-neutral-400">

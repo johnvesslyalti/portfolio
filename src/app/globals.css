@@ -158,3 +158,23 @@
     animation: none;
     mix-blend-mode: normal;
 }
+
+/* Animate three bars like a music visualizer */
+@keyframes bounce1 {
+  0%, 40%, 100% { transform: scaleY(0.3); }
+  20% { transform: scaleY(1); }
+}
+
+@keyframes bounce2 {
+  0%, 40%, 100% { transform: scaleY(0.3); }
+  20% { transform: scaleY(0.6); }
+}
+
+@keyframes bounce3 {
+  0%, 40%, 100% { transform: scaleY(0.3); }
+  20% { transform: scaleY(0.9); }
+}
+
+.animate-bounce0 { animation: bounce1 1s infinite ease-in-out; }
+.animate-bounce1 { animation: bounce2 1s infinite ease-in-out; }
+.animate-bounce2 { animation: bounce3 1s infinite ease-in-out; }
