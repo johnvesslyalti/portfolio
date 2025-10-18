@@ -49,8 +49,8 @@ export default function SpotifyAuth() {
               <h3 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Important:</h3>
               <ul className="text-sm space-y-1 text-yellow-700 dark:text-yellow-300">
                 <li>• Make sure your Spotify app has this redirect URI: <code className="bg-yellow-100 dark:bg-yellow-800 px-1 rounded">{redirectUri}</code></li>
-                <li>• You'll be redirected to Spotify to authorize</li>
-                <li>• After authorization, you'll get a fresh authorization code</li>
+                <li>• You&quot;ll be redirected to Spotify to authorize</li>
+                <li>• After authorization, you&quot;ll get a fresh authorization code</li>
               </ul>
             </div>
 
