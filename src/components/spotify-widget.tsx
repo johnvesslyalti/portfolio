@@ -64,7 +64,15 @@ export function SpotifyWidget() {
         </div>
       </div>
     );
-  if (error || !spotifyData) return <p>Unable to load Spotify data.</p>;
+  if (error || !spotifyData) {
+    const now = new Date();
+    const DOB = new Date(2003, 5, 20); // Month is 0-indexed
+    let age = now.getFullYear() - DOB.getFullYear();
+    const m = now.getMonth() - DOB.getMonth();
+    if (m < 0 || (m === 0 && now.getDate() < DOB.getDate())) age--;
+
+    return <p>Made with ❤️ by Johnvessly Alti - {age}</p>;
+  }
 
   const { currentTrack, recentTracks } = spotifyData;
 
