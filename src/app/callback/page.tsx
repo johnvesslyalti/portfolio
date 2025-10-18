@@ -61,6 +61,12 @@ export default function Callback() {
 
         if (!response.ok) {
           const errorData = await response.text();
+          console.error('Spotify API Error:', errorData);
+          console.error('Request details:', {
+            clientId,
+            redirectUri,
+            code: code.substring(0, 20) + '...'
+          });
           throw new Error(`Failed to exchange code for tokens: ${errorData}`);
         }
 
