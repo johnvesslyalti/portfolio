@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { AuroraText } from "@/components/ui/aurora-text";
 import { Badge } from "@/components/ui/badge";
 import { SpotifyWidget } from "@/components/spotify-widget";
 import { Dot } from "lucide-react";
@@ -94,12 +93,11 @@ export default function Page() {
     <div className="min-h-screen flex flex-col gap-10 max-w-2xl mx-auto p-6 text-neutral-900 dark:text-neutral-100 transition-colors">
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-2 mt-5">
-        <AuroraText
+        <div
           className="text-3xl sm:text-4xl font-bold tracking-tight"
-          speed={0.6}
         >
           Johnvessly Alti
-        </AuroraText>
+        </div>
 
         <Dot className="w-4 h-4 opacity-0 md:opacity-100 text-neutral-500 dark:text-neutral-400" />
         <div>altijohnvessly@gmail.com</div>
@@ -161,9 +159,9 @@ export default function Page() {
                 className="object-contain w-full h-48 sm:h-56 md:h-64"
               />
               <Badge className="flex text-white-800 dark:bg-black/50 items-center gap-5">
-                <AuroraText className="font-bold tracking-tight" speed={0.6}>
+                <div className="font-bold tracking-tight">
                   {project.name}
-                </AuroraText>
+                </div>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 p-1">
                   <a
                     href={project.github}
@@ -196,7 +194,7 @@ export default function Page() {
               key={index}
               href={item.link}
               target="_blank"
-              className="text-md underline hover:text-neutral-700 dark:hover:text-neutral-300"
+              className="text-xl underline hover:text-neutral-700 dark:hover:text-neutral-300"
             >
               {item.icon}
             </a>

@@ -85,7 +85,7 @@ export function SpotifyWidget() {
 
   return (
     <div className="w-50">
-      <div className="flex items-center justify-center gap-2 mb-2">
+      <div className="flex items-center gap-2 mb-2">
         <FaSpotify className="text-green-500 text-sm" />
         <span className="font-semibold text-xs">
           {currentTrack?.isPlaying ? "Now Playing" : "Last Listened"}
