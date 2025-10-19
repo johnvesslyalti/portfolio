@@ -187,7 +187,7 @@ export default function Page() {
       </section>
 
       {/* Contact */}
-      <section className="flex justify-between items-center">
+      <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center">
         <div className="flex flex-wrap gap-3">
           {contact.map((item, index) => (
             <a
