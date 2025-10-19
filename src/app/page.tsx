@@ -158,11 +158,11 @@ export default function Page() {
                 height={300} // proportional height
                 className="object-contain w-full h-48 sm:h-56 md:h-64"
               />
-              <Badge className="flex text-white dark:bg-black/50 items-center gap-5">
+              <Badge className="w-full flex justify-between text-white dark:bg-black/50 items-center gap-5">
                 <div className="font-bold tracking-tight">
                   {project.name}
                 </div>
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-end gap-2 p-1">
+                <div className="flex items-center gap-2 p-1">
                   <a
                     href={project.github}
                     target="_blank"
