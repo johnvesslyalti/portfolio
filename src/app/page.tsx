@@ -4,39 +4,55 @@ import { Badge } from "@/components/ui/badge";
 import { SpotifyWidget } from "@/components/spotify-widget";
 import { Dot } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { SiLeetcode } from "react-icons/si";
+import { SiExpress, SiLeetcode, SiPrisma } from "react-icons/si";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
-import { FaYoutube } from "react-icons/fa";
+import { FaLinux, FaYoutube } from "react-icons/fa";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiPython,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiPostgresql,
+  SiMongodb,
+} from "react-icons/si";
+import { FaGitAlt } from "react-icons/fa";
 
 export default function Page() {
   const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript",
-    "Python",
-    "React",
-    "Next.js (App Router + Server Actions)",
-    "Tailwind CSS",
-    "Zustand",
-    "Shadcn UI",
-    "Node.js",
-    "Express.js",
-    "Next.js API Routes",
-    "PostgreSQL",
-    "MongoDB",
-    "Prisma ORM",
-    "NextAuth.js",
-    "JWT",
-    "bcrypt",
-    "Git",
-    "GitHub",
-    "Vercel",
-    "Recharts",
-    "Postman",
-    "VS Code",
-    "PWA",
-    "CSV/PDF Export",
+    { name: "HTML", icon: <SiHtml5 /> },
+    { name: "CSS", icon: <SiCss3 /> },
+    { name: "JavaScript", icon: <SiJavascript /> },
+    { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "Python", icon: <SiPython /> },
+    { name: "React", icon: <SiReact /> },
+    { name: "Next.js (App Router + Server Actions)", icon: <SiNextdotjs /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    { name: "Node.js", icon: <SiNodedotjs /> },
+    { name: "Express.js", icon: <SiExpress /> },
+    { name: "Next.js API Routes", icon: <SiNextdotjs /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "Prisma ORM", icon: <SiPrisma /> },
+    { name: "Git", icon: <FaGitAlt /> },
+    { name: "GitHub", icon: <FaGithub /> },
+    { name: "linux", icon: <FaLinux /> },
+
+    // Null icon skills at the bottom
+    { name: "Zustand", icon: null },
+    { name: "Shadcn UI", icon: null },
+    { name: "NextAuth.js", icon: null },
+    { name: "JWT", icon: null },
+    { name: "bcrypt", icon: null },
+    { name: "Vercel", icon: null },
+    { name: "Recharts", icon: null },
+    { name: "Postman", icon: null },
+    { name: "VS Code", icon: null },
+    { name: "PWA", icon: null },
   ];
 
   const projects = [
@@ -50,7 +66,7 @@ export default function Page() {
       name: "Sub Trakr",
       src: "/subtrackr.png",
       github: "https://github.com/johnvesslyalti/sub-trackr",
-      live: "https://sub-trackr-sigma.vercel.app",
+      live: "https://johnvesslyalti-subtrackr.vercel.app",
     },
     {
       name: "Cine Scope",
@@ -78,9 +94,9 @@ export default function Page() {
       icon: <SiLeetcode />,
     },
     {
-        name: "youtube",
-        link: "https://youtube.com/@johnvesslyalti",
-        icon: <FaYoutube />
+      name: "youtube",
+      link: "https://youtube.com/@johnvesslyalti",
+      icon: <FaYoutube />,
     },
     {
       name: "discord",
@@ -93,9 +109,7 @@ export default function Page() {
     <div className="min-h-screen flex flex-col gap-10 max-w-2xl mx-auto p-6 text-neutral-900 dark:text-neutral-100 transition-colors">
       {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-2 mt-5">
-        <div
-          className="text-3xl sm:text-4xl font-bold tracking-tight"
-        >
+        <div className="text-3xl sm:text-4xl font-bold tracking-tight">
           Johnvessly Alti
         </div>
 
@@ -117,9 +131,20 @@ export default function Page() {
 
       {/* Intro */}
       <p className="text-lg leading-relaxed">
-        Hi 👋 I’m a <span className="font-semibold">Software Engineer</span>{" "}
+        Hi 👋 I’m a <span className="font-semibold">Full Stack Developer</span>{" "}
         passionate about building secure, scalable, and user-friendly web
-        applications.
+        applications. I specialize in{" "}
+        <span className="font-semibold">
+          React, Next.js, Node.js, and PostgreSQL
+        </span>
+        , and I enjoy turning complex problems into intuitive digital
+        experiences.
+      </p>
+
+      <p className="text-lg leading-relaxed mt-2">
+        I’m always looking to collaborate on meaningful projects and solve
+        real-world problems through technology. Let’s build something amazing
+        together!
       </p>
 
       {/* Skills */}
@@ -132,9 +157,11 @@ export default function Page() {
             <Badge
               key={index}
               variant="outline"
-              className="border-neutral-400 text-neutral-800 dark:text-neutral-100 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
+              className="border-neutral-400 text-neutral-800 dark:text-neutral-100 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition flex items-center gap-2"
             >
-              {skill}
+              {/* Render icon if it exists */}
+              {skill.icon && <span className="text-lg">{skill.icon}</span>}
+              <span>{skill.name}</span>
             </Badge>
           ))}
         </div>
@@ -159,9 +186,7 @@ export default function Page() {
                 className="object-contain w-full h-48 sm:h-56 md:h-64"
               />
               <Badge className="w-full flex justify-between text-white dark:bg-black/50 items-center gap-5">
-                <div className="font-bold tracking-tight">
-                  {project.name}
-                </div>
+                <div className="font-bold tracking-tight">{project.name}</div>
                 <div className="flex items-center gap-2 p-1">
                   <a
                     href={project.github}
@@ -202,7 +227,6 @@ export default function Page() {
         </div>
         <SpotifyWidget />
       </section>
-      
     </div>
   );
 }
