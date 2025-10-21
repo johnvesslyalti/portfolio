@@ -1,13 +1,17 @@
-import './globals.css'
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/next";
 
-import { ThemeProvider } from "@/components/theme-provider"
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
         <head>
-            <title>Johnvessly Alti | Portfolio</title>
+          <title>Johnvessly Alti | Portfolio</title>
         </head>
         <body>
           <ThemeProvider
@@ -17,9 +21,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             disableTransitionOnChange
           >
             {children}
+            <Analytics />
           </ThemeProvider>
         </body>
       </html>
     </>
-  )
+  );
 }
