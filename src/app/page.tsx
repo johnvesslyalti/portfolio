@@ -258,7 +258,7 @@ export default function Page() {
           Track of my GitHub contributions and open-source activity over the
           past year.
         </p>
-        <div className="github-calendar-container p-4 rounded-2xl shadow-md w-full">
+        <div className="github-calendar-wrapper w-full">
           <GitHubCalendar
             username="johnvesslyalti"
             blockSize={12}
