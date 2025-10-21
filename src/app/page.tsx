@@ -224,7 +224,7 @@ export default function Page() {
       {/* Problem Solving & DSA */}
       <section>
         <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
-          Problem Solving & DSA
+          Problem Solving
         </h2>
         <p className="text-lg leading-relaxed">
           I love solving problems and exploring{" "}
@@ -243,8 +243,8 @@ export default function Page() {
             <SiLeetcode className="text-2xl" />
             <span>LeetCode Profile</span>
           </a>
-          <Badge className="text-sm">Solved: 450+ problems</Badge>
-          <Badge className="text-sm">Streak: 120 days</Badge>
+          <Badge className="text-sm">Solved: 110+ problems</Badge>
+          <Badge className="text-sm">Streak: 91 days</Badge>
         </div>
       </section>
 
