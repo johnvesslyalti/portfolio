@@ -33,7 +33,7 @@ import { IoLogoVercel } from "react-icons/io5";
 import { LuFileJson, LuSquareChartGantt } from "react-icons/lu";
 import { MdNoEncryptionGmailerrorred } from "react-icons/md";
 import { VscVscode } from "react-icons/vsc";
-import Contributions from "@/components/contributions";
+import GitHubCalendar from "react-github-calendar";
 
 export default function Page() {
   const skills = [
@@ -258,8 +258,14 @@ export default function Page() {
           Track of my GitHub contributions and open-source activity over the
           past year.
         </p>
-
-        <Contributions />
+        <div className="github-calendar-container p-4 rounded-2xl shadow-md w-full">
+          <GitHubCalendar
+            username="johnvesslyalti"
+            blockSize={12}
+            blockMargin={4}
+            fontSize={14}
+          />
+        </div>
       </section>
 
       {/* Contact */}

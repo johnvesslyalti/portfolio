@@ -164,3 +164,28 @@
   20% { transform: scaleX(1); }
 }
 
+.github-calendar-container {
+  overflow: hidden !important;
+}
+
+.github-calendar-container * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.github-calendar-container *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Target the specific element that's likely causing the scroll */
+.github-calendar-container > div,
+.github-calendar-container svg {
+  overflow: visible !important;
+}
+
+/* If there's a wrapper inside */
+.github-calendar-container article {
+  overflow: hidden !important;
+}
