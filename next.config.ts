@@ -2,11 +2,19 @@
 const nextConfig = {
   images: {
     remotePatterns: [
+      // GitHub contributions chart (SVG)
       {
-        protocol: 'https',
-        hostname: 'i.scdn.co',
-        port: '', // leave empty
-        pathname: '/**', // allow all paths
+        protocol: "https",
+        hostname: "ghchart.rshah.org",
+        port: "",        // leave empty
+        pathname: "/**", // allow all paths
+      },
+      // Spotify album images
+      {
+        protocol: "https",
+        hostname: "i.scdn.co",
+        port: "",
+        pathname: "/**",
       },
     ],
   },

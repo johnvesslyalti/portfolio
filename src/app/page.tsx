@@ -151,9 +151,9 @@ export default function Page() {
       </p>
 
       <p className="text-lg leading-relaxed mt-2">
-        I’m always looking to collaborate on meaningful projects and solve
-        real-world problems through technology. Let’s build something amazing
-        together!
+        I love solving challenging problems and turning ideas into real,
+        functional applications. I enjoy building things that make a difference
+        and continuously learning along the way.
       </p>
 
       {/* Skills */}
@@ -253,17 +253,13 @@ export default function Page() {
           GitHub Contributions
         </h2>
 
-        <p className="text-lg leading-relaxed">
-          Here’s a snapshot of my activity on GitHub over the past year. I
-          regularly commit code, contribute to projects, and stay consistent
-          with open source contributions.
-        </p>
-
-        <div className="mt-5">
-          <img
+        <div className="mt-5 w-full">
+          <Image
             src="https://ghchart.rshah.org/johnvesslyalti"
-            alt="GitHub Contribution Graph"
-            className="w-full max-w-md rounded-lg shadow-md"
+            alt="GitHub Contributions"
+            width={800}
+            height={200}
+            unoptimized // necessary for SVG
           />
         </div>
       </section>
