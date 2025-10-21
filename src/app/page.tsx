@@ -34,7 +34,6 @@ import { LuFileJson, LuSquareChartGantt } from "react-icons/lu";
 import { MdNoEncryptionGmailerrorred } from "react-icons/md";
 import { VscVscode } from "react-icons/vsc";
 import GitHubCalendar from "react-github-calendar";
-import { LeetCodeSection } from "@/components/leetcode-section";
 
 export default function Page() {
   const skills = [
@@ -234,10 +233,6 @@ export default function Page() {
           has helped me sharpen my problem-solving skills and improve coding
           efficiency.
         </p>
-
-        <div className="w-full">
-          <LeetCodeSection />
-        </div>
       </section>
 
       {/* GitHub Contributions */}
