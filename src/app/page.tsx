@@ -4,7 +4,15 @@ import { Badge } from "@/components/ui/badge";
 import { SpotifyWidget } from "@/components/spotify-widget";
 import { Dot } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { SiExpress, SiLeetcode, SiPrisma } from "react-icons/si";
+import {
+  SiBetterstack,
+  SiExpress,
+  SiLeetcode,
+  SiPostman,
+  SiPrisma,
+  SiShadcnui,
+  SiZulip,
+} from "react-icons/si";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import { FaLinux, FaYoutube } from "react-icons/fa";
 import {
@@ -21,6 +29,10 @@ import {
   SiMongodb,
 } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa";
+import { IoLogoVercel } from "react-icons/io5";
+import { LuFileJson, LuSquareChartGantt } from "react-icons/lu";
+import { MdNoEncryptionGmailerrorred } from "react-icons/md";
+import { VscVscode } from "react-icons/vsc";
 
 export default function Page() {
   const skills = [
@@ -41,18 +53,15 @@ export default function Page() {
     { name: "Git", icon: <FaGitAlt /> },
     { name: "GitHub", icon: <FaGithub /> },
     { name: "linux", icon: <FaLinux /> },
-
-    // Null icon skills at the bottom
-    { name: "Zustand", icon: null },
-    { name: "Shadcn UI", icon: null },
-    { name: "NextAuth.js", icon: null },
-    { name: "JWT", icon: null },
-    { name: "bcrypt", icon: null },
-    { name: "Vercel", icon: null },
-    { name: "Recharts", icon: null },
-    { name: "Postman", icon: null },
-    { name: "VS Code", icon: null },
-    { name: "PWA", icon: null },
+    { name: "Zustand", icon: <SiZulip /> },
+    { name: "Shadcn UI", icon: <SiShadcnui /> },
+    { name: "Better-auth", icon: <SiBetterstack /> },
+    { name: "JWT", icon: <LuFileJson /> },
+    { name: "bcrypt", icon: <MdNoEncryptionGmailerrorred /> },
+    { name: "Vercel", icon: <IoLogoVercel /> },
+    { name: "Recharts", icon: <LuSquareChartGantt /> },
+    { name: "Postman", icon: <SiPostman /> },
+    { name: "VS Code", icon: <VscVscode /> },
   ];
 
   const projects = [
@@ -208,6 +217,54 @@ export default function Page() {
               </Badge>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Problem Solving & DSA */}
+      <section>
+        <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
+          Problem Solving & DSA
+        </h2>
+        <p className="text-lg leading-relaxed">
+          I love solving problems and exploring{" "}
+          <span className="font-semibold">Data Structures & Algorithms</span>.
+          Regular practice on <span className="font-semibold">LeetCode</span>{" "}
+          has helped me sharpen my problem-solving skills and improve coding
+          efficiency.
+        </p>
+
+        <div className="flex flex-wrap gap-4 mt-3 items-center">
+          <a
+            href="https://leetcode.com/johnvesslyalti"
+            target="_blank"
+            className="flex items-center gap-2 underline hover:text-neutral-700 dark:hover:text-neutral-300"
+          >
+            <SiLeetcode className="text-2xl" />
+            <span>LeetCode Profile</span>
+          </a>
+          <Badge className="text-sm">Solved: 450+ problems</Badge>
+          <Badge className="text-sm">Streak: 120 days</Badge>
+        </div>
+      </section>
+
+      {/* GitHub Contribution Graph */}
+      <section>
+        <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
+          GitHub Contributions
+        </h2>
+
+        <p className="text-lg leading-relaxed">
+          Here’s a snapshot of my activity on GitHub over the past year. I
+          regularly commit code, contribute to projects, and stay consistent
+          with open source contributions.
+        </p>
+
+        <div className="mt-5">
+          <img
+            src="https://ghchart.rshah.org/johnvesslyalti"
+            alt="GitHub Contribution Graph"
+            className="w-full max-w-md rounded-lg shadow-md"
+          />
         </div>
       </section>
 
