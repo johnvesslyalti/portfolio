@@ -136,20 +136,21 @@ export function SpotifyWidget() {
             </a>
           </div>
 
-          {/* Playing indicator - only show when actively playing */}
-          {isPlaying && (
-            <div className="flex items-end gap-0.5 h-4">
-              {[0, 1, 2, 0].map((_, i) => (
-                <span
-                  key={i}
-                  className="w-0.5 bg-green-500 rounded-full animate-pulse"
-                  style={{
-                    animation: `musicBar 0.6s ease-in-out ${i * 0.1}s infinite alternate`,
-                  }}
-                />
-              ))}
-            </div>
-          )}
+          {/* Audio bars - animated when playing, static when not */}
+          <div className="flex items-end gap-0.5 h-4">
+            {[0, 1, 2, 0].map((_, i) => (
+              <span
+                key={i}
+                className="w-0.5 bg-green-500 rounded-full"
+                style={{
+                  height: isPlaying ? undefined : '30%',
+                  animation: isPlaying
+                    ? `musicBar 0.6s ease-in-out ${i * 0.1}s infinite alternate`
+                    : 'none',
+                }}
+              />
+            ))}
+          </div>
           
           <style jsx>{`
             @keyframes musicBar {

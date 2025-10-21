@@ -159,11 +159,6 @@
     mix-blend-mode: normal;
 }
 
-@keyframes bounce {
-  0%, 40%, 100% { transform: scaleX(0.5); }
-  20% { transform: scaleX(1); }
-}
-
 .github-calendar-wrapper {
   width: 100%;
   overflow: hidden;
