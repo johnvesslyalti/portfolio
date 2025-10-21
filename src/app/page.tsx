@@ -34,6 +34,7 @@ import { LuFileJson, LuSquareChartGantt } from "react-icons/lu";
 import { MdNoEncryptionGmailerrorred } from "react-icons/md";
 import { VscVscode } from "react-icons/vsc";
 import GitHubCalendar from "react-github-calendar";
+import { LeetCodeSection } from "@/components/leetcode-section";
 
 export default function Page() {
   const skills = [
@@ -234,17 +235,8 @@ export default function Page() {
           efficiency.
         </p>
 
-        <div className="flex flex-wrap gap-4 mt-3 items-center">
-          <a
-            href="https://leetcode.com/johnvesslyalti"
-            target="_blank"
-            className="flex items-center gap-2 underline hover:text-neutral-700 dark:hover:text-neutral-300"
-          >
-            <SiLeetcode className="text-2xl" />
-            <span>LeetCode Profile</span>
-          </a>
-          <Badge className="text-sm">Solved: 110+ problems</Badge>
-          <Badge className="text-sm">Streak: 91 days</Badge>
+        <div className="w-full">
+          <LeetCodeSection />
         </div>
       </section>
 
