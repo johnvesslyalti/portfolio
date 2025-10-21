@@ -163,3 +163,12 @@
   0%, 40%, 100% { transform: scaleX(0.5); }
   20% { transform: scaleX(1); }
 }
+
+/* Hide scrollbar for all browsers */
+.overflow-x-hidden::-webkit-scrollbar {
+  display: none;
+}
+.overflow-x-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}

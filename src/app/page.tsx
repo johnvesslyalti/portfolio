@@ -33,6 +33,7 @@ import { IoLogoVercel } from "react-icons/io5";
 import { LuFileJson, LuSquareChartGantt } from "react-icons/lu";
 import { MdNoEncryptionGmailerrorred } from "react-icons/md";
 import { VscVscode } from "react-icons/vsc";
+import Contributions from "@/components/contributions";
 
 export default function Page() {
   const skills = [
@@ -247,21 +248,18 @@ export default function Page() {
         </div>
       </section>
 
-      {/* GitHub Contribution Graph */}
+      {/* GitHub Contributions */}
       <section>
         <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
           GitHub Contributions
         </h2>
 
-        <div className="mt-5 w-full">
-          <Image
-            src="https://ghchart.rshah.org/johnvesslyalti"
-            alt="GitHub Contributions"
-            width={800}
-            height={200}
-            unoptimized // necessary for SVG
-          />
-        </div>
+        <p className="text-sm text-neutral-700 dark:text-neutral-300 mt-2">
+          Track of my GitHub contributions and open-source activity over the
+          past year.
+        </p>
+
+        <Contributions />
       </section>
 
       {/* Contact */}
