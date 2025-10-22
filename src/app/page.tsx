@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { SpotifyWidget } from "@/components/spotify-widget";
 import { Dot } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaFire, FaBrain } from "react-icons/fa6";
+import { PiTargetBold } from "react-icons/pi";
 import {
   SiBetterstack,
   SiExpress,
@@ -34,6 +36,7 @@ import { LuFileJson, LuSquareChartGantt } from "react-icons/lu";
 import { MdNoEncryptionGmailerrorred } from "react-icons/md";
 import { VscVscode } from "react-icons/vsc";
 import GitHubCalendar from "react-github-calendar";
+import { TweetCard } from "@/components/ui/tweet-card";
 
 export default function Page() {
   const skills = [
@@ -113,6 +116,12 @@ export default function Page() {
       link: "https://discord.gg/T99fCZVh",
       icon: <FaDiscord />,
     },
+  ];
+
+  const stats = [
+    { title: "Problems", number: "115+", icon: <PiTargetBold /> },
+    { title: "Streak", number: "46", icon: <FaFire /> },
+    { title: "Hard", number: "14", icon: <FaBrain /> },
   ];
 
   return (
@@ -233,6 +242,16 @@ export default function Page() {
           has helped me sharpen my problem-solving skills and improve coding
           efficiency.
         </p>
+
+        <div className="flex justify-center items-center gap-5">
+            {stats.map((stat, i) => (
+                <div className="flex flex-col items-center p-5" key={i}>
+                    <div>{stat.icon}</div>
+                    <div>{stat.title}</div>
+                    <div>{stat.number}</div>
+                </div>
+            ))}
+        </div>
       </section>
 
       {/* GitHub Contributions */}
@@ -254,6 +273,10 @@ export default function Page() {
           />
         </div>
       </section>
+
+      <div className="flex items-center justify-center">
+        <TweetCard id="1968877194001723824" />
+      </div>
 
       {/* Contact */}
       <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center">
