@@ -4,8 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { SpotifyWidget } from "@/components/spotify-widget";
 import { Dot } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { FaFire, FaBrain } from "react-icons/fa6";
-import { PiTargetBold } from "react-icons/pi";
 import {
   SiBetterstack,
   SiExpress,
@@ -119,9 +117,9 @@ export default function Page() {
   ];
 
   const stats = [
-    { title: "Problems", number: "115+", icon: <PiTargetBold /> },
-    { title: "Streak", number: "46", icon: <FaFire /> },
-    { title: "Hard", number: "14", icon: <FaBrain /> },
+    { title: "Problems", number: "115+" },
+    { title: "Streak", number: "46" },
+    { title: "Hard", number: "14" },
   ];
 
   return (
@@ -246,7 +244,6 @@ export default function Page() {
         <div className="flex justify-center items-center gap-10">
             {stats.map((stat, i) => (
                 <div className="flex flex-col items-center p-5" key={i}>
-                    <div className="">{stat.icon}</div>
                     <div className="">{stat.title}</div>
                     <div className="text-xl font-bold">{stat.number}</div>
                 </div>
