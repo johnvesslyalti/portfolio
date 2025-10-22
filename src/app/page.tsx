@@ -243,12 +243,12 @@ export default function Page() {
           efficiency.
         </p>
 
-        <div className="flex justify-center items-center gap-5">
+        <div className="flex justify-center items-center gap-10">
             {stats.map((stat, i) => (
                 <div className="flex flex-col items-center p-5" key={i}>
-                    <div>{stat.icon}</div>
-                    <div>{stat.title}</div>
-                    <div>{stat.number}</div>
+                    <div className="">{stat.icon}</div>
+                    <div className="">{stat.title}</div>
+                    <div className="text-xl font-bold">{stat.number}</div>
                 </div>
             ))}
         </div>
