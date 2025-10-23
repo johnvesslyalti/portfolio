@@ -117,7 +117,7 @@ export default function Page() {
   ];
 
   const stats = [
-    { title: "Problems", number: "115+" },
+    { title: "Problems", number: "116" },
     { title: "Streak", number: "46" },
     { title: "Hard", number: "14" },
   ];
