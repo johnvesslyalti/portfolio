@@ -131,8 +131,8 @@ export default function Page() {
         <Dot className="w-4 h-4 opacity-0 md:opacity-100 text-neutral-500 dark:text-neutral-400" />
         <AnimatedThemeToggler />
       </div>
-      <div className="flex items-center gap-2">
-        <div>
+      <div className="hidden md:flex md:items-center md:justify-between">
+        <div className="flex gap-2">
           <div className="relative flex items-center justify-center w-4 h-4">
             {/* green dot */}
             <span className="w-3 h-3 bg-green-500 rounded-full animate-ping"></span>

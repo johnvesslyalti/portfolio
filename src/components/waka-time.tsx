@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Badge } from "./ui/badge";
 
 interface DayStat {
   range: { date: string };
@@ -45,8 +46,14 @@ export default function WakaTimeButton() {
 
   if (loading)
     return (
-      <div className="inline-flex items-center px-4 py-2 rounded-2xl bg-gray-800 text-gray-400 shadow">
-        ⏳ Loading week stats...
+      <div
+        className="
+          inline-flex items-center justify-center
+          px-4 py-2 rounded-xl bg-black/80 text-white
+          shadow-md animate-pulse
+        "
+      >
+        <div className="w-40 h-4 bg-white/30 rounded-md"></div>
       </div>
     );
 
@@ -68,8 +75,7 @@ export default function WakaTimeButton() {
     const normalize = (d: Date) =>
       new Date(d.getFullYear(), d.getMonth(), d.getDate());
 
-    const diffTime =
-      normalize(today).getTime() - normalize(date).getTime();
+    const diffTime = normalize(today).getTime() - normalize(date).getTime();
     const diffDays = diffTime / (1000 * 60 * 60 * 24);
 
     if (diffDays === 0) return "Today";
@@ -81,16 +87,18 @@ export default function WakaTimeButton() {
   const label = getReadableDayName(dateString);
 
   return (
-    <button
+    <Badge
       onClick={handleClick}
       className="
-        inline-flex items-center gap-2 px-5 py-2
-        rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600
-        text-white font-semibold shadow-md hover:scale-[1.04]
-        transition-transform select-none
-      "
+    cursor-pointer
+    bg-transparent border border-white/50 text-white
+    px-4 py-2 rounded-xl
+    font-medium shadow-md
+    hover:shadow-lg
+    transition-all duration-200 select-none
+  "
     >
-      💻 {label}: {total}
-    </button>
+      💻 {`Coded for ${total} ${label.toLowerCase()}`}
+    </Badge>
   );
 }
