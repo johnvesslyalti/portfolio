@@ -35,6 +35,7 @@ import { MdNoEncryptionGmailerrorred } from "react-icons/md";
 import { VscVscode } from "react-icons/vsc";
 import GitHubCalendar from "react-github-calendar";
 import { TweetCard } from "@/components/ui/tweet-card";
+import WakaTimeButton from "@/components/waka-time";
 
 export default function Page() {
   const skills = [
@@ -131,14 +132,19 @@ export default function Page() {
         <AnimatedThemeToggler />
       </div>
       <div className="flex items-center gap-2">
-        <div className="relative flex items-center justify-center w-4 h-4">
-          {/* green dot */}
-          <span className="w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
-          <span className="absolute w-3 h-3 bg-green-500 rounded-full"></span>
+        <div>
+          <div className="relative flex items-center justify-center w-4 h-4">
+            {/* green dot */}
+            <span className="w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
+            <span className="absolute w-3 h-3 bg-green-500 rounded-full"></span>
+          </div>
+          <span className="text-sm font-medium">
+            Open to work on exciting projects!
+          </span>
         </div>
-        <span className="text-sm font-medium">
-          Open to work on exciting projects!
-        </span>
+        <div>
+          <WakaTimeButton />
+        </div>
       </div>
 
       {/* Intro */}
