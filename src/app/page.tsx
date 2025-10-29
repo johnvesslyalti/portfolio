@@ -3,7 +3,7 @@ import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Badge } from "@/components/ui/badge";
 import { SpotifyWidget } from "@/components/spotify-widget";
 import { Dot } from "lucide-react";
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import {
   SiBetterstack,
   SiExpress,
@@ -109,16 +109,11 @@ export default function Page() {
       link: "https://youtube.com/@johnvesslyalti",
       icon: <FaYoutube />,
     },
-    {
-      name: "discord",
-      link: "https://discord.gg/T99fCZVh",
-      icon: <FaDiscord />,
-    },
   ];
 
   const stats = [
-    { title: "Problems", number: "116" },
-    { title: "Streak", number: "46" },
+    { title: "Problems", number: "128" },
+    { title: "Streak", number: "53" },
     { title: "Hard", number: "14" },
   ];
 
@@ -242,12 +237,12 @@ export default function Page() {
         </p>
 
         <div className="flex justify-center items-center gap-10">
-            {stats.map((stat, i) => (
-                <div className="flex flex-col items-center p-5" key={i}>
-                    <div className="">{stat.title}</div>
-                    <div className="text-xl font-bold">{stat.number}</div>
-                </div>
-            ))}
+          {stats.map((stat, i) => (
+            <div className="flex flex-col items-center p-5" key={i}>
+              <div className="">{stat.title}</div>
+              <div className="text-xl font-bold">{stat.number}</div>
+            </div>
+          ))}
         </div>
       </section>
 
