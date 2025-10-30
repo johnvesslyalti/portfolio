@@ -14,7 +14,7 @@ import {
   SiZulip,
 } from "react-icons/si";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
-import { FaLinux, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaLinux, FaYoutube } from "react-icons/fa";
 import {
   SiHtml5,
   SiCss3,
@@ -109,6 +109,11 @@ export default function Page() {
       name: "youtube",
       link: "https://youtube.com/@johnvesslyalti",
       icon: <FaYoutube />,
+    },
+    {
+      name: "discord",
+      link: "https://discord.com/users/johnvesslyalti",
+      icon: <FaDiscord />,
     },
   ];
 
