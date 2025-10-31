@@ -36,6 +36,7 @@ import { VscVscode } from "react-icons/vsc";
 import GitHubCalendar from "react-github-calendar";
 import { TweetCard } from "@/components/ui/tweet-card";
 import WakaTimeButton from "@/components/waka-time";
+import { BadgeCarousel } from "@/components/badges-carousel";
 
 export default function Page() {
   const skills = [
@@ -117,11 +118,11 @@ export default function Page() {
     },
   ];
 
-  const stats = [
-    { title: "Problems", number: "128" },
-    { title: "Streak", number: "53" },
-    { title: "Hard", number: "14" },
-  ];
+//   const stats = [
+//     { title: "Problems", number: "128" },
+//     { title: "Streak", number: "53" },
+//     { title: "Hard", number: "14" },
+//   ];
 
   return (
     <div className="min-h-screen flex flex-col gap-10 max-w-2xl mx-auto p-6 text-neutral-900 dark:text-neutral-100 transition-colors">
@@ -247,14 +248,15 @@ export default function Page() {
           efficiency.
         </p>
 
-        <div className="flex justify-center items-center gap-10">
+        {/* <div className="flex justify-center items-center gap-10">
           {stats.map((stat, i) => (
             <div className="flex flex-col items-center p-5" key={i}>
               <div className="">{stat.title}</div>
               <div className="text-xl font-bold">{stat.number}</div>
             </div>
           ))}
-        </div>
+        </div> */}
+        <BadgeCarousel />
       </section>
 
       {/* GitHub Contributions */}
