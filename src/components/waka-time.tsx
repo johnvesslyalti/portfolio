@@ -91,7 +91,8 @@ export default function WakaTimeButton() {
       onClick={handleClick}
       className="
     cursor-pointer
-    bg-transparent border border-white/50 text-white
+    border border-white/50
+    dark:shadow-2xl dark:shadow-blue-300
     px-4 py-2 rounded-xl
     font-medium shadow-md
     hover:shadow-lg

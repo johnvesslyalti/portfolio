@@ -209,13 +209,13 @@ export default function Page() {
                 height={300} // proportional height
                 className="object-contain w-full h-48 sm:h-56 md:h-64"
               />
-              <Badge className="w-full flex justify-between text-white dark:bg-black/50 items-center gap-5">
+              <Badge className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border-2 border-black dark:border-white/10 dark:shadow-2xl items-center gap-5">
                 <div className="font-bold tracking-tight">{project.name}</div>
                 <div className="flex items-center gap-2 p-1">
                   <a
                     href={project.github}
                     target="_blank"
-                    className="text-xs text-white flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                    className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
                   >
                     <FaGithub className="inline mr-1" />
                     <span>GitHub</span>
@@ -223,7 +223,7 @@ export default function Page() {
                   <a
                     href={project.live}
                     target="_blank"
-                    className="text-xs text-white flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                    className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
                   >
                     <LiaExternalLinkAltSolid className="inline mr-1" />
                     <span>Live</span>
