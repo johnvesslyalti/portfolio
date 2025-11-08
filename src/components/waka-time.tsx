@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import BobHello from "./bob-hello";
 
 interface DayStat {
   range: { date: string };
@@ -73,73 +74,7 @@ export default function WakaTimeButton() {
       onClick={handleClick}
       className="relative w-[170px] cursor-pointer select-none group"
     >
-      {/* Dog Mascot */}
-      <svg
-        width="70"
-        height="70"
-        viewBox="0 0 200 260"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          id="bob-body"
-          stroke="black"
-          stroke-width="4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <ellipse cx="100" cy="150" rx="45" ry="55" fill="#fff" />
-          <circle cx="100" cy="90" r="35" fill="#fff" />
-
-          <circle cx="88" cy="85" r="4" fill="black" />
-          <circle cx="112" cy="85" r="4" fill="black" />
-
-          <path
-            d="M90 102 Q100 110 110 102"
-            stroke="black"
-            stroke-width="4"
-            fill="none"
-          />
-
-          <path d="M70 75 C50 100 60 120 75 110" fill="#9F6B3F" />
-          <path d="M130 75 C150 100 140 120 125 110" fill="#9F6B3F" />
-
-          <line
-            x1="85"
-            y1="200"
-            x2="85"
-            y2="250"
-            stroke="black"
-            stroke-width="6"
-          />
-          <line
-            x1="115"
-            y1="200"
-            x2="115"
-            y2="250"
-            stroke="black"
-            stroke-width="6"
-          />
-        </g>
-        <g
-          id="bob-arm"
-          stroke="black"
-          stroke-width="4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          transform-origin="120px 140px"
-        >
-          <path d="M120 140 Q145 130 160 150" fill="#fff" />
-          <circle
-            cx="165"
-            cy="150"
-            r="8"
-            fill="#fff"
-            stroke="black"
-            stroke-width="4"
-          />
-        </g>
-      </svg>
+      <BobHello />
 
       {/* Board Text */}
       <div
