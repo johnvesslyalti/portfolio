@@ -192,3 +192,13 @@
   width: 100% !important;
   overflow: hidden !important;
 }
+#bob-arm {
+  animation: wave 1.4s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  30% { transform: rotate(12deg); }
+  60% { transform: rotate(-8deg); }
+  100% { transform: rotate(0deg); }
+}
