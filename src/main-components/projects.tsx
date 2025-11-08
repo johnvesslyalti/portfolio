@@ -26,7 +26,7 @@ export default function Projects() {
   ];
 
   return (
-    <section>
+    <section className="border p-5 rounded-lg">
       <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
         Projects
       </h2>
