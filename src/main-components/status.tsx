@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { FaTerminal } from "react-icons/fa";
 
 type Activity = {
-  start: string; // "HH:MM"
-  end: string; // "HH:MM"
+  start: string;
+  end: string;
   desc: string;
 };
 
@@ -19,7 +19,7 @@ const schedule: Activity[] = [
   { start: "17:00", end: "18:00", desc: "Workout Session" },
   { start: "18:00", end: "19:00", desc: "Cool Down / Reset" },
   { start: "19:00", end: "22:00", desc: "Job Applications & Portfolio Work" },
-  { start: "22:00", end: "06:00", desc: "😴 Sleep / Offline" }, // overnight
+  { start: "22:00", end: "06:00", desc: "😴 Sleep / Offline" },
 ];
 
 function toMinutes(hhmm: string) {
@@ -32,11 +32,7 @@ function pickCurrentBlock(now: Date): Activity | null {
   for (const block of schedule) {
     const s = toMinutes(block.start);
     const e = toMinutes(block.end);
-
-    // normal block
     if (s < e && n >= s && n < e) return block;
-
-    // overnight block (start > end)
     if (s > e && (n >= s || n < e)) return block;
   }
   return null;
@@ -51,7 +47,6 @@ export default function Status() {
   const [currentBlock, setCurrentBlock] = useState<Activity | null>(null);
   const [typed, setTyped] = useState("");
 
-  // update current block every minute
   useEffect(() => {
     const update = () => setCurrentBlock(pickCurrentBlock(new Date()));
     update();
@@ -59,7 +54,6 @@ export default function Status() {
     return () => clearInterval(t);
   }, []);
 
-  // typing effect when block changes
   useEffect(() => {
     const full = currentBlock
       ? `${formatRange(currentBlock)}  ${currentBlock.desc}`
@@ -77,20 +71,22 @@ export default function Status() {
   }, [currentBlock]);
 
   return (
-    <section className="flex items-center justify-between gap-5 border p-5 rounded-lg">
-      <div className="flex items-center gap-5">
-      <div className="flex items-center gap-2">
-        <h2 className="font-semibold text-xl">Status</h2>
-        <span className="font-mono">
-          <FaTerminal />
-        </span>
+    <section className="border p-4 sm:p-5 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6 flex-wrap">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5">
+        <div className="flex items-center gap-2">
+          <h2 className="font-semibold text-lg sm:text-xl">Status</h2>
+          <span className="font-mono text-base">
+            <FaTerminal />
+          </span>
+        </div>
+
+        <div className="text-xs sm:text-sm text-green-400 font-mono font-medium break-words">
+          {typed}
+          <span className="animate-pulse">|</span>
+        </div>
       </div>
-      <div className="text-sm text-green-400 font-mono font-medium">
-        {typed}
-        <span className="animate-pulse">|</span>
-      </div>
-      </div>
-      <div>
+
+      <div className="w-full sm:w-auto">
         <WakaTimeToday />
       </div>
     </section>
