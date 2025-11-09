@@ -6,7 +6,7 @@ import NameSection from "@/main-components/name";
 import ProblemSolving from "@/main-components/problem-solving";
 import Intro from "@/main-components/intro";
 import CustomTweet from "@/main-components/custom-tweet";
-import Status from "@/components/status";
+import Status from "@/main-components/status";
 
 export default function Page() {
   return (

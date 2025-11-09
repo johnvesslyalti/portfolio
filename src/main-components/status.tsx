@@ -1,8 +1,8 @@
 "use client";
 
+import WakaTimeToday from "@/components/waka-time";
 import { useEffect, useState } from "react";
 import { FaTerminal } from "react-icons/fa";
-import WakaTimeToday from "./waka-time";
 
 type Activity = {
   start: string; // "HH:MM"
@@ -77,17 +77,22 @@ export default function Status() {
   }, [currentBlock]);
 
   return (
-    <section className="flex items-center gap-5 border p-5 rounded-lg">
+    <section className="flex items-center justify-between gap-5 border p-5 rounded-lg">
+      <div className="flex items-center gap-5">
       <div className="flex items-center gap-2">
         <h2 className="font-semibold text-xl">Status</h2>
         <span className="font-mono">
           <FaTerminal />
         </span>
       </div>
-      <p className="text-sm text-green-400 font-mono font-medium">
+      <div className="text-sm text-green-400 font-mono font-medium">
         {typed}
         <span className="animate-pulse">|</span>
-      </p>
+      </div>
+      </div>
+      <div>
+        <WakaTimeToday />
+      </div>
     </section>
   );
 }

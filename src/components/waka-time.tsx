@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { IoAlarm } from "react-icons/io5";
 
 interface TodayStat {
   text: string;
@@ -27,9 +28,7 @@ export default function WakaTimeToday() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="w-[160px] h-[160px] animate-pulse rounded-xl bg-black/40" />
-    );
+    return <div className="animate-pulse rounded-xl bg-black/40" />;
   }
 
   if (!stat) {
@@ -39,8 +38,12 @@ export default function WakaTimeToday() {
   }
 
   return (
-    <div className="relative text-sm cursor-default select-none border p-2 rounded-full">
-      {stat.text} — today
+    <div className="text-sm cursor-default p-2">
+      <div className="text-center font-semibold">Coded Today</div>
+      <div className="flex items-center gap-2">
+        <IoAlarm className="animate-accordion-up" />
+        {stat.text}
+      </div>
     </div>
   );
 }
