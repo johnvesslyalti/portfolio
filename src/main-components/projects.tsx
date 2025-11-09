@@ -43,7 +43,7 @@ export default function Projects() {
               height={300} // proportional height
               className="object-contain w-full h-48 sm:h-56 md:h-64"
             />
-            <Badge className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border-2 border-black dark:border-white/10 dark:shadow-2xl items-center gap-5">
+            <Badge className="w-full flex bg-white text-black dark:text-white dark:bg-transparent border-2 border-black dark:border-white/10 dark:shadow-2xl items-center">
               <div className="font-bold tracking-tight">{project.name}</div>
               <div className="flex items-center gap-2 p-1">
                 <a
