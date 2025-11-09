@@ -11,15 +11,15 @@ type Activity = {
 };
 
 const schedule: Activity[] = [
-  { start: "06:00", end: "07:00", desc: "Morning Reset / Meditation" },
+  { start: "06:00", end: "07:00", desc: "Morning Meditation" },
   { start: "07:00", end: "10:00", desc: "Deep DSA Focus" },
   { start: "10:00", end: "13:00", desc: "Development Work" },
   { start: "13:00", end: "14:00", desc: "Mid-day Recharge" },
   { start: "14:00", end: "17:00", desc: "Dev Continuation" },
   { start: "17:00", end: "18:00", desc: "Workout Session" },
-  { start: "18:00", end: "19:00", desc: "Cool Down / Reset" },
-  { start: "19:00", end: "22:00", desc: "Job Applications & Portfolio Work" },
-  { start: "22:00", end: "06:00", desc: "😴 Sleep / Offline" },
+  { start: "18:00", end: "19:00", desc: "Cool Down" },
+  { start: "19:00", end: "22:00", desc: "Job Applications" },
+  { start: "22:00", end: "06:00", desc: "Sleep" },
 ];
 
 function toMinutes(hhmm: string) {
