@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FaTerminal } from "react-icons/fa";
+import WakaTimeToday from "./waka-time";
 
 type Activity = {
   start: string; // "HH:MM"

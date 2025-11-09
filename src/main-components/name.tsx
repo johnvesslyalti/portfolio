@@ -1,5 +1,5 @@
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import WakaTimeButton from "@/components/waka-time";
+import WakaTimeToday from "@/components/waka-time";
 import { Dot } from "lucide-react";
 
 export default function NameSection() {
@@ -15,20 +15,22 @@ export default function NameSection() {
         <Dot className="w-4 h-4 opacity-0 md:opacity-100 text-neutral-500 dark:text-neutral-400" />
         <AnimatedThemeToggler />
       </div>
-      <div className="hidden md:flex md:items-center md:justify-between">
-        <div className="flex gap-2">
-          <div className="relative flex items-center justify-center w-4 h-4">
-            {/* green dot */}
-            <span className="w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
-            <span className="absolute w-3 h-3 bg-green-500 rounded-full"></span>
+
+      {/* Status + WakaTime close together */}
+      <div className="flex items-center gap-2 my-5">
+        {/* Status Indicator */}
+        <div className="flex items-center gap-2 border rounded-lg p-2">
+          <div className="relative flex items-center justify-center w-3 h-3">
+            <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
+            <span className="absolute w-2.5 h-2.5 bg-green-500 rounded-full"></span>
           </div>
-          <span className="text-sm font-medium">
+          <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
             Open to work on exciting projects!
           </span>
         </div>
-        <div>
-          <WakaTimeButton />
-        </div>
+
+        {/* space remains on right for your future component */}
+        <div className="flex-1"></div>
       </div>
     </section>
   );
