@@ -19,7 +19,7 @@ export default function NameSection() {
       {/* Status + WakaTime close together */}
       <div className="flex items-center gap-2 my-5">
         {/* Status Indicator */}
-        <div className="flex items-center gap-2 border rounded-lg p-2">
+        <div className="flex items-center gap-2">
           <div className="relative flex items-center justify-center w-3 h-3">
             <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
             <span className="absolute w-2.5 h-2.5 bg-green-500 rounded-full"></span>
@@ -28,9 +28,6 @@ export default function NameSection() {
             Open to work on exciting projects!
           </span>
         </div>
-
-        {/* space remains on right for your future component */}
-        <div className="flex-1"></div>
       </div>
     </section>
   );
