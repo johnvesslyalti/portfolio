@@ -2,7 +2,7 @@ import GitHubCalendar from "react-github-calendar";
 
 export default function GitHub() {
   return (
-    <section>
+    <section className="border p-5 rounded-lg">
       <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
         GitHub Contributions
       </h2>

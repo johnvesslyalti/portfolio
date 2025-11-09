@@ -33,7 +33,7 @@ export default function Contact() {
     },
   ];
   return (
-    <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center">
+    <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border p-5 rounded-lg">
       <div className="flex flex-wrap gap-3">
         {contact.map((item, index) => (
           <a

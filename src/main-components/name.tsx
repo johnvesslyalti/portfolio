@@ -1,0 +1,37 @@
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import WakaTimeToday from "@/components/waka-time";
+import { Dot } from "lucide-react";
+
+export default function NameSection() {
+  return (
+    <section className="border p-5 rounded-lg">
+      <div className="flex items-center justify-between flex-wrap gap-2 mt-5">
+        <div className="text-3xl sm:text-4xl font-bold tracking-tight">
+          Johnvessly Alti
+        </div>
+
+        <Dot className="w-4 h-4 opacity-0 md:opacity-100 text-neutral-500 dark:text-neutral-400" />
+        <div>altijohnvessly@gmail.com</div>
+        <Dot className="w-4 h-4 opacity-0 md:opacity-100 text-neutral-500 dark:text-neutral-400" />
+        <AnimatedThemeToggler />
+      </div>
+
+      {/* Status + WakaTime close together */}
+      <div className="flex items-center gap-2 my-5">
+        {/* Status Indicator */}
+        <div className="flex items-center gap-2 border rounded-lg p-2">
+          <div className="relative flex items-center justify-center w-3 h-3">
+            <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
+            <span className="absolute w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+          </div>
+          <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Open to work on exciting projects!
+          </span>
+        </div>
+
+        {/* space remains on right for your future component */}
+        <div className="flex-1"></div>
+      </div>
+    </section>
+  );
+}

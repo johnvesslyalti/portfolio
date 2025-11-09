@@ -1,105 +1,46 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Badge } from "./ui/badge";
 
-interface DayStat {
-  range: { date: string };
-  grand_total: { text: string; total_seconds: number };
+interface TodayStat {
+  text: string;
+  total_seconds: number;
 }
 
-export default function WakaTimeButton() {
-  const [days, setDays] = useState<DayStat[]>([]);
-  const [index, setIndex] = useState(0);
+export default function WakaTimeToday() {
+  const [stat, setStat] = useState<TodayStat | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetchData() {
+    async function load() {
       try {
-        const res = await fetch("/api/wakatime");
+        const res = await fetch("/api/wakatime", { cache: "no-store" });
         const json = await res.json();
-
-        // Sort the days so that the most recent day (today) is first
-        const sorted = (json.data || []).sort(
-          (a: DayStat, b: DayStat) =>
-            new Date(b.range.date).getTime() - new Date(a.range.date).getTime()
-        );
-
-        setDays(sorted);
+        setStat(json); // directly store returned data
       } catch (err) {
-        console.error("Error fetching WakaTime:", err);
+        console.error("Failed to load today's WakaTime", err);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchData();
-
-    // Reset index to 0 (today) whenever page refreshes
-    setIndex(0);
+    load();
   }, []);
 
-  const handleClick = () => {
-    if (days.length > 0) {
-      setIndex((prev) => (prev + 1) % days.length);
-    }
-  };
-
-  if (loading)
+  if (loading) {
     return (
-      <div
-        className="
-          inline-flex items-center justify-center
-          px-4 py-2 rounded-xl bg-black/80 text-white
-          shadow-md animate-pulse
-        "
-      >
-        <div className="w-40 h-4 bg-white/30 rounded-md"></div>
-      </div>
+      <div className="w-[160px] h-[160px] animate-pulse rounded-xl bg-black/40" />
     );
+  }
 
-  if (!days.length)
+  if (!stat) {
     return (
-      <div className="inline-flex items-center px-4 py-2 rounded-2xl bg-red-700 text-white shadow">
-        ⚠️ No data found
-      </div>
+      <div className="text-red-400 text-sm font-medium">⚠️ No data today</div>
     );
-
-  const day = days[index];
-  const dateString = day?.range?.date;
-  const total = day?.grand_total?.text || "0 sec";
-
-  const getReadableDayName = (dateString: string) => {
-    const date = new Date(dateString);
-    const today = new Date();
-
-    const normalize = (d: Date) =>
-      new Date(d.getFullYear(), d.getMonth(), d.getDate());
-
-    const diffTime = normalize(today).getTime() - normalize(date).getTime();
-    const diffDays = diffTime / (1000 * 60 * 60 * 24);
-
-    if (diffDays === 0) return "Today";
-    if (diffDays === 1) return "Yesterday";
-
-    return date.toLocaleDateString("en-US", { weekday: "long" });
-  };
-
-  const label = getReadableDayName(dateString);
+  }
 
   return (
-    <Badge
-      onClick={handleClick}
-      className="
-    cursor-pointer
-    border border-white/50
-    dark:shadow-2xl dark:shadow-blue-300
-    px-4 py-2 rounded-xl
-    font-medium shadow-md
-    hover:shadow-lg
-    transition-all duration-200 select-none
-  "
-    >
-      💻 {`Coded for ${total} ${label.toLowerCase()}`}
-    </Badge>
+    <div className="relative text-sm cursor-default select-none border p-2 rounded-full">
+      {stat.text} — today
+    </div>
   );
 }
