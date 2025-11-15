@@ -1,3 +1,4 @@
+import Emoji from "@/components/emoji";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import WakaTimeToday from "@/components/waka-time";
 import { Dot } from "lucide-react";
@@ -17,7 +18,7 @@ export default function NameSection() {
       </div>
 
       {/* Status + WakaTime close together */}
-      <div className="flex items-center gap-2 my-5">
+      <div className="flex items-center my-5">
         {/* Status Indicator */}
         <div className="flex items-center gap-2">
           <div className="relative flex items-center justify-center w-3 h-3">
@@ -27,6 +28,9 @@ export default function NameSection() {
           <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
             Open to work on exciting projects!
           </span>
+        </div>
+        <div className="bg-white flex">
+          <Emoji />
         </div>
       </div>
     </section>
