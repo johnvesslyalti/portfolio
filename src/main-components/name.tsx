@@ -18,15 +18,15 @@ export default function NameSection() {
       </div>
 
       {/* Status + WakaTime close together */}
-      <div className="flex items-center">
+      <div className="flex items-center my-5 md:my-0">
         {/* Status Indicator */}
-        <div className="flex items-center gap-2 w-1/2">
+        <div className="flex items-center gap-2 w-1/2 border p-2 rounded-lg md:border-none md:p-0">
           <div className="relative flex items-center justify-center w-3 h-3">
             <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
             <span className="absolute w-2.5 h-2.5 bg-green-500 rounded-full"></span>
           </div>
-          <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-            Open to work on exciting projects!
+          <span className="text-sm flex font-medium text-neutral-700 dark:text-neutral-300">
+            <span>Open to work</span><span className="hidden md:block ml-1">on exciting projects!</span>
           </span>
         </div>
         <div className="flex items-center justify-center w-1/2">
