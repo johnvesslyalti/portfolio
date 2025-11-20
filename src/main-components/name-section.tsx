@@ -1,5 +1,7 @@
 "use client";
 
+import CyberCodeWizard from "@/components/characters/code-wizard";
+import CoolAstronaut from "@/components/characters/cool-astronaut";
 import CyberCat from "@/components/characters/cyber-cat";
 import CyberNinjaScene from "@/components/characters/cyber-ninja";
 import CyberPathfinder from "@/components/characters/cyber-pathfinder";
@@ -13,6 +15,8 @@ export default function NameSection() {
   const [randomCharacter, setRandomCharacter] = useState<React.ReactElement | null>(null);
 
   const characters = [
+    <CyberCodeWizard key="codewizard" />,
+    <CoolAstronaut key="astronaut" />,
     <RoboHelper key="robo" />,
     <CyberCat key="cat" />,
     <CyberNinjaScene key="ninja" />,
