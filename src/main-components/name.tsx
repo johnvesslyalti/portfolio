@@ -1,3 +1,4 @@
+import CodeWizard from "@/components/characters/code-wizard";
 import CoolAstronaut from "@/components/characters/cool-astronaut";
 import Astro from "@/components/characters/cool-astronaut";
 import CyberCat from "@/components/characters/cyber-cat";
@@ -36,7 +37,7 @@ export default function NameSection() {
           </span>
         </div>
         <div className="flex items-center justify-center w-1/2 my-5">
-          <CyberNinja />
+          <CodeWizard />
         </div>
       </div>
     </section>
