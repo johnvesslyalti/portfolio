@@ -3,6 +3,7 @@
 import CyberCodeWizard from "@/components/characters/code-wizard";
 import CoolAstronaut from "@/components/characters/cool-astronaut";
 import CyberCat from "@/components/characters/cyber-cat";
+import CyberCat2 from "@/components/characters/cyber-cat-2";
 import CyberNinjaScene from "@/components/characters/cyber-ninja";
 import CyberNinja2 from "@/components/characters/cyber-ninja-2";
 import CyberPathfinder from "@/components/characters/cyber-pathfinder";
@@ -20,6 +21,7 @@ export default function NameSection() {
     <CoolAstronaut key="astronaut" />,
     <RoboHelper key="robo" />,
     <CyberCat key="cat" />,
+    <CyberCat2 key="cat2" />,
     <CyberNinjaScene key="ninja" />,
     <CyberNinja2 key="CyberNinja2" />,
     <CyberPathfinder key="path" />,
