@@ -54,8 +54,9 @@ export default function NameSection() {
           </span>
         </div>
 
-        <div className="flex items-center justify-center w-1/2 my-5">
-          {randomCharacter}
+        <div className="flex items-center justify-center w-1/2 my-2">
+          <CyberNinjaScene />
+          {/*randomCharacter*/}
         </div>
       </div>
     </section>

@@ -2,8 +2,8 @@ export default function RoboHelper() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="85"
-            height="85"
+            width="120"
+            height="120"
             viewBox="0 0 320 320"
             role="img"
             aria-labelledby="roboTitle roboDesc"

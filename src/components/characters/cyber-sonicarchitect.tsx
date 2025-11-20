@@ -2,161 +2,190 @@ export default function CyberSonicArchitect() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="85"
-            height="85"
+            width="120"
+            height="120"
             viewBox="0 0 320 320"
             role="img"
             aria-labelledby="djTitle djDesc"
-            style={{ maxWidth: "320px", margin: "0 auto", display: "block" }}
+            style={{
+                maxWidth: "100%",
+                height: "auto",
+                margin: "0 auto",
+                display: "block",
+                // Transparent background preserved
+            }}
         >
             <title id="djTitle">Cyber Sonic Architect</title>
-            <desc id="djDesc">A futuristic musician with advanced holographic sound controls,
-                glowing headphones, and a cybernetic vocalizer, creating digital beats.</desc>
+            <desc id="djDesc">
+                A cybernetic DJ manipulating a holographic mixing desk with an equalizer visor.
+            </desc>
 
             <defs>
-                {/* Main Glow Filter */}
-                <filter id="sonicGlow" x="-50%" y="-50%" width="200%" height="200%">
+                {/* --- FILTERS --- */}
+                <filter id="soundGlow" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                    <feComponentTransfer in="coloredBlur" result="brightBlur">
+                        <feFuncA type="linear" slope="1.5" />
+                    </feComponentTransfer>
                     <feMerge>
-                        <feMergeNode in="coloredBlur" />
+                        <feMergeNode in="brightBlur" />
                         <feMergeNode in="SourceGraphic" />
                     </feMerge>
                 </filter>
 
-                {/* Head/Helmet Gradient - sleek, dark cyber */}
-                <linearGradient id="helmetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#1e293b" />
-                    <stop offset="100%" stopColor="#0f172a" />
+                {/* --- GRADIENTS --- */}
+                <linearGradient id="visorEq" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#ff00cc" />
+                    <stop offset="50%" stopColor="#00e5ff" />
+                    <stop offset="100%" stopColor="#ff00cc" />
                 </linearGradient>
 
-                {/* Visor Gradient - vibrant, dynamic */}
-                <linearGradient id="visorGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#8C00FF" stopOpacity="0.2" />
-                    <stop offset="50%" stopColor="#8C00FF" stopOpacity="0.9" />
-                    <stop offset="100%" stopColor="#8C00FF" stopOpacity="0.2" />
+                <linearGradient id="suitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#240046" /> {/* Deep Purple */}
+                    <stop offset="100%" stopColor="#10002b" /> {/* Darker Purple */}
                 </linearGradient>
 
-                {/* Jacket/Body Gradient - flexible, tech-infused */}
-                <linearGradient id="jacketGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#300060" />
-                    <stop offset="50%" stopColor="#6000C0" />
-                    <stop offset="100%" stopColor="#300060" />
-                </linearGradient>
-
-                {/* Holographic Record Gradient - blues/cyans */}
-                <radialGradient id="hologramRecordGradient">
-                    <stop offset="0%" stopColor="#00e5ff" />
-                    <stop offset="50%" stopColor="#00e5ff" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#00e5ff" stopOpacity="0.3" />
-                </radialGradient>
-
-                {/* Mic Glow */}
-                <linearGradient id="micGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#00e5ff" stopOpacity="0.2" />
-                    <stop offset="50%" stopColor="#00e5ff" stopOpacity="1" />
-                    <stop offset="100%" stopColor="#00e5ff" stopOpacity="0.2" />
-                </linearGradient>
-
-                {/* Background Soundwave Gradient */}
-                <linearGradient id="bgSoundwave" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#8C00FF" stopOpacity="0.0" />
-                    <stop offset="50%" stopColor="#8C00FF" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#8C00FF" stopOpacity="0.0" />
+                <linearGradient id="holoDeck" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stopColor="#00e5ff" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#00e5ff" stopOpacity="0.1" />
                 </linearGradient>
             </defs>
 
-            {/* --- BACKGROUND DIGITAL SOUNDSCAPE --- */}
-            <g opacity="0.5" filter="url(#sonicGlow)">
-                {/* Pulsating Abstract Soundwaves */}
-                <path d="M0 100 C80 80, 160 120, 240 100 C300 80, 320 120, 320 100" fill="none" stroke="url(#bgSoundwave)" strokeWidth="2" strokeLinecap="round">
-                    <animate attributeName="d" values="M0 100 C80 80, 160 120, 240 100 C300 80, 320 120, 320 100; M0 90 C80 110, 160 70, 240 90 C300 110, 320 70, 320 90; M0 100 C80 80, 160 120, 240 100 C300 80, 320 120, 320 100" dur="6s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="6s" repeatCount="indefinite" />
-                </path>
-                <path d="M0 220 C80 240, 160 200, 240 220 C300 240, 320 200, 320 220" fill="none" stroke="url(#bgSoundwave)" strokeWidth="2" strokeLinecap="round" begin="1s">
-                    <animate attributeName="d" values="M0 220 C80 240, 160 200, 240 220 C300 240, 320 200, 320 220; M0 210 C80 190, 160 230, 240 210 C300 190, 320 230, 320 210; M0 220 C80 240, 160 200, 240 220 C300 240, 320 200, 320 220" dur="7s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="7s" repeatCount="indefinite" />
-                </path>
+            {/* ========================================== */}
+            {/* LAYER 1: BACKGROUND AUDIO VISUALIZER */}
+            {/* ========================================== */}
+            <g transform="translate(0, 50)" opacity="0.4">
+                {/* Bar 1 */}
+                <rect x="60" y="100" width="10" height="60" rx="2" fill="#ff00cc">
+                    <animate attributeName="y" values="100;140;80;100" dur="1.2s" repeatCount="indefinite" />
+                    <animate attributeName="height" values="60;20;80;60" dur="1.2s" repeatCount="indefinite" />
+                </rect>
+                {/* Bar 2 */}
+                <rect x="80" y="80" width="10" height="80" rx="2" fill="#7000ff">
+                    <animate attributeName="y" values="80;120;60;80" dur="0.9s" repeatCount="indefinite" />
+                    <animate attributeName="height" values="80;40;100;80" dur="0.9s" repeatCount="indefinite" />
+                </rect>
+                {/* Bar 3 (Center) */}
+                <rect x="230" y="90" width="10" height="70" rx="2" fill="#00e5ff">
+                    <animate attributeName="y" values="90;130;50;90" dur="1.5s" repeatCount="indefinite" />
+                    <animate attributeName="height" values="70;30;110;70" dur="1.5s" repeatCount="indefinite" />
+                </rect>
+                {/* Bar 4 */}
+                <rect x="250" y="110" width="10" height="50" rx="2" fill="#ff00cc">
+                    <animate attributeName="y" values="110;140;90;110" dur="1.1s" repeatCount="indefinite" />
+                    <animate attributeName="height" values="50;20;70;50" dur="1.1s" repeatCount="indefinite" />
+                </rect>
 
-                {/* Floating Data Glyphs */}
-                <text x="50" y="30" fontSize="14" fill="#00e5ff" opacity="0.3" fontFamily="monospace">SYNC</text>
-                <text x="250" y="290" fontSize="14" fill="#8C00FF" opacity="0.3" fontFamily="monospace" begin="0.5s">BPM</text>
+                {/* Bass Pulse Ring behind character */}
+                <circle cx="160" cy="120" r="60" fill="none" stroke="#7000ff" strokeWidth="1" opacity="0.3">
+                    <animate attributeName="r" values="60;75;60" dur="0.5s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.3;0;0.3" dur="0.5s" repeatCount="indefinite" />
+                </circle>
             </g>
 
-            {/* --- MAIN SONIC ARCHITECT GROUP --- */}
-            <g transform="translate(40,20)">
+            {/* ========================================== */}
+            {/* LAYER 2: THE DJ (ARCHITECT) */}
+            {/* ========================================== */}
+            <g transform="translate(60, 40)">
+                {/* Hover Animation */}
                 <animateTransform
                     attributeName="transform"
                     type="translate"
-                    values="40,20; 40,18; 40,20"
-                    dur="5s"
+                    values="60,40; 60,35; 60,40"
+                    dur="3s"
                     repeatCount="indefinite"
                     calcMode="spline"
                     keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
                 />
 
-                {/* Headphones - sleek, glowing, soundwave visualizer */}
-                <g filter="url(#sonicGlow)">
-                    <rect x="66" y="36" rx="22" ry="22" width="108" height="70" fill="none" stroke="#6000C0" strokeWidth="2" />
-                    <path d="M70 70 A20 20 0 0 1 100 70 A20 20 0 0 1 70 70 Z" fill="#00e5ff" opacity="0.6">
-                        <animate attributeName="d" values="M70 70 A20 20 0 0 1 100 70 A20 20 0 0 1 70 70 Z; M70 70 A10 10 0 0 1 100 70 A10 10 0 0 1 70 70 Z; M70 70 A20 20 0 0 1 100 70 A20 20 0 0 1 70 70 Z" dur="0.8s" repeatCount="indefinite" />
-                    </path> {/* Left earcup visualizer */}
-                    <path d="M130 70 A20 20 0 0 1 160 70 A20 20 0 0 1 130 70 Z" fill="#00e5ff" opacity="0.6" begin="0.4s">
-                        <animate attributeName="d" values="M130 70 A20 20 0 0 1 160 70 A20 20 0 0 1 130 70 Z; M130 70 A10 10 0 0 1 160 70 A10 10 0 0 1 130 70 Z; M130 70 A20 20 0 0 1 160 70 A20 20 0 0 1 130 70 Z" dur="0.8s" repeatCount="indefinite" />
-                    </path> {/* Right earcup visualizer */}
+                {/* --- HEADPHONES (Massive Tech Units) --- */}
+                <rect x="45" y="65" width="20" height="50" rx="6" fill="#10002b" stroke="#00e5ff" strokeWidth="1" />
+                <rect x="135" y="65" width="20" height="50" rx="6" fill="#10002b" stroke="#00e5ff" strokeWidth="1" />
+                {/* Headband */}
+                <path d="M55 70 C55 30, 145 30, 145 70" fill="none" stroke="#333" strokeWidth="8" strokeLinecap="round" />
+                <path d="M55 70 C55 30, 145 30, 145 70" fill="none" stroke="#ff00cc" strokeWidth="2" strokeDasharray="4 4" opacity="0.8" />
 
-                    <rect x="54" y="30" rx="6" ry="6" width="12" height="48" fill="#3A0CA3" />
-                    <rect x="170" y="30" rx="6" ry="6" width="12" height="48" fill="#3A0CA3" />
-                </g>
+                {/* --- HELMET --- */}
+                <path d="M65 70 C65 50, 135 50, 135 70 L135 110 C135 130, 65 130, 65 110 Z" fill="url(#suitGradient)" stroke="#4b5563" strokeWidth="1" />
 
-                {/* Head/Helmet - dark, sleek, integrated with headphones */}
-                <circle cx="120" cy="90" r="36" fill="url(#helmetGradient)" stroke="#0f172a" strokeWidth="2" />
-
-                {/* Visor - wide, expressive, pulsating */}
-                <g filter="url(#sonicGlow)">
-                    <rect x="90" y="80" width="60" height="15" rx="7" fill="url(#visorGradient)" />
-                    <rect x="90" y="80" width="10" height="15" rx="5" fill="#FFF" opacity="0.3">
-                        <animate attributeName="x" values="90; 140; 90" dur="2s" repeatCount="indefinite" />
+                {/* --- VISOR (The Equalizer Eyes) --- */}
+                <path d="M70 85 H130 V105 H70 Z" fill="#000" />
+                {/* Animated EQ Bars inside Visor */}
+                <g fill="url(#visorEq)" filter="url(#soundGlow)">
+                    <rect x="75" y="90" width="8" height="10">
+                        <animate attributeName="height" values="10;5;12;8" dur="0.4s" repeatCount="indefinite" />
+                        <animate attributeName="y" values="90;95;88;92" dur="0.4s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="87" y="90" width="8" height="10">
+                        <animate attributeName="height" values="8;12;4;10" dur="0.3s" repeatCount="indefinite" />
+                        <animate attributeName="y" values="92;88;96;90" dur="0.3s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="99" y="90" width="8" height="10">
+                        <animate attributeName="height" values="12;6;14;12" dur="0.5s" repeatCount="indefinite" />
+                        <animate attributeName="y" values="88;94;86;88" dur="0.5s" repeatCount="indefinite" />
+                    </rect>
+                    <rect x="111" y="90" width="8" height="10">
+                        <animate attributeName="height" values="5;10;6;5" dur="0.4s" repeatCount="indefinite" />
+                        <animate attributeName="y" values="95;90;94;95" dur="0.4s" repeatCount="indefinite" />
                     </rect>
                 </g>
 
-                {/* Jacket/Body - flowing, data-infused with glowing lines */}
-                <path d="M60 140 C120 250, 180 250, 180 140 L180 220 C180 240, 60 240, 60 220 Z" fill="url(#jacketGradient)" stroke="#300060" strokeWidth="2" />
-                {/* Glowing circuit lines on jacket */}
-                <g filter="url(#sonicGlow)">
-                    <line x1="120" y1="150" x2="100" y2="180" stroke="#00e5ff" strokeWidth="1.5" opacity="0.7">
-                        <animate attributeName="stroke-dasharray" from="0 30" to="30 0" dur="1.5s" repeatCount="indefinite" />
-                    </line>
-                    <line x1="120" y1="150" x2="140" y2="180" stroke="#00e5ff" strokeWidth="1.5" opacity="0.7" begin="0.3s">
-                        <animate attributeName="stroke-dasharray" from="0 30" to="30 0" dur="1.5s" repeatCount="indefinite" />
-                    </line>
-                </g>
+                {/* --- TORSO --- */}
+                <path d="M65 120 L135 120 L150 220 L50 220 Z" fill="url(#suitGradient)" />
+                {/* Glowing Collar */}
+                <path d="M75 120 L125 120 L100 150 Z" fill="none" stroke="#ff00cc" strokeWidth="1" opacity="0.7" filter="url(#soundGlow)" />
 
-                {/* Holographic Turntable / Sound Mixer (replaces record) */}
-                <g transform="translate(100,160) rotate(-15 0 0)" filter="url(#sonicGlow)">
-                    <rect x="-60" y="-60" width="120" height="120" rx="10" ry="10" fill="url(#hologramRecordGradient)" opacity="0.7">
-                        <animate attributeName="rx" values="10;15;10" dur="3s" repeatCount="indefinite" />
-                    </rect>
-                    {/* Central data core */}
-                    <circle cx="0" cy="0" r="20" fill="#FFF" opacity="0.2">
-                        <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite" />
-                    </circle>
-                    {/* Dynamic sound waveform */}
-                    <path d="M-40 0 C-20 -20, 20 -20, 40 0 C20 20, -20 20, -40 0 Z" fill="none" stroke="#FFF" strokeWidth="2" opacity="0.8">
-                        <animate attributeName="d" values="M-40 0 C-20 -20, 20 -20, 40 0 C20 20, -20 20, -40 0 Z; M-40 0 C-20 -10, 20 -10, 40 0 C20 10, -20 10, -40 0 Z; M-40 0 C-20 -20, 20 -20, 40 0 C20 20, -20 20, -40 0 Z" dur="1.5s" repeatCount="indefinite" />
+
+                {/* ========================================== */}
+                {/* LAYER 3: THE HOLOGRAPHIC MIXER */}
+                {/* ========================================== */}
+                <g transform="translate(100, 170)">
+
+                    {/* Floating Disc 1 (Left) */}
+                    <g transform="translate(-40, 0)">
+                        <ellipse cx="0" cy="0" rx="35" ry="12" fill="url(#holoDeck)" stroke="#00e5ff" strokeWidth="1" opacity="0.6" filter="url(#soundGlow)">
+                            <animateTransform attributeName="transform" type="rotate" values="0 0 0; 360 0 0" dur="8s" repeatCount="indefinite" />
+                        </ellipse>
+                        <ellipse cx="0" cy="0" rx="20" ry="6" fill="none" stroke="#ff00cc" strokeWidth="1" opacity="0.8">
+                            <animateTransform attributeName="transform" type="rotate" values="360 0 0; 0 0 0" dur="4s" repeatCount="indefinite" />
+                        </ellipse>
+                        {/* Rising Beat Particles */}
+                        <circle cx="0" cy="0" r="2" fill="#00e5ff">
+                            <animate attributeName="cy" values="0;-40" dur="1s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite" />
+                        </circle>
+                    </g>
+
+                    {/* Floating Disc 2 (Right) */}
+                    <g transform="translate(40, 10)">
+                        <ellipse cx="0" cy="0" rx="35" ry="12" fill="url(#holoDeck)" stroke="#00e5ff" strokeWidth="1" opacity="0.6" filter="url(#soundGlow)">
+                            <animateTransform attributeName="transform" type="rotate" values="360 0 0; 0 0 0" dur="8s" repeatCount="indefinite" />
+                        </ellipse>
+                        <ellipse cx="0" cy="0" rx="25" ry="8" fill="none" stroke="#ff00cc" strokeWidth="1" strokeDasharray="2 4" opacity="0.8">
+                            <animateTransform attributeName="transform" type="rotate" values="0 0 0; 360 0 0" dur="3s" repeatCount="indefinite" />
+                        </ellipse>
+                        <circle cx="0" cy="0" r="2" fill="#ff00cc">
+                            <animate attributeName="cy" values="0;-40" dur="1.2s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite" />
+                        </circle>
+                    </g>
+
+                    {/* Connecting Data Stream */}
+                    <path d="M-40 0 Q0 20 40 10" fill="none" stroke="#00e5ff" strokeWidth="2" strokeDasharray="5 5" opacity="0.5">
+                        <animate attributeName="stroke-dashoffset" values="10;0" dur="0.5s" repeatCount="indefinite" />
                     </path>
                 </g>
 
-                {/* Cybernetic Vocalizer / Mic */}
-                <g transform="translate(8,140)">
-                    <rect x="0" y="0" rx="6" ry="6" width="18" height="60" fill="url(#helmetGradient)" stroke="#0f172a" strokeWidth="2" />
-                    <rect x="2" y="-8" width="14" height="16" rx="6" fill="url(#micGlow)" filter="url(#sonicGlow)">
-                        <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite" />
-                    </rect>
-                    {/* Mic Stand glow */}
-                    <line x1="9" y="60" x2="9" y1="90" stroke="#00e5ff" strokeWidth="1" opacity="0.4">
-                        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" />
-                    </line>
+                {/* Hands interacting with hologram */}
+                <g transform="translate(60, 165)">
+                    <circle cx="0" cy="0" r="5" fill="#10002b" stroke="#00e5ff" strokeWidth="1" />
+                    <animateTransform attributeName="transform" type="translate" values="60,165; 60,160; 60,165" dur="0.5s" repeatCount="indefinite" />
                 </g>
+                <g transform="translate(140, 175)">
+                    <circle cx="0" cy="0" r="5" fill="#10002b" stroke="#ff00cc" strokeWidth="1" />
+                    <animateTransform attributeName="transform" type="translate" values="140,175; 140,180; 140,175" dur="0.5s" begin="0.2s" repeatCount="indefinite" />
+                </g>
+
             </g>
         </svg>
     );

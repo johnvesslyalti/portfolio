@@ -1,213 +1,202 @@
+import { useState, useEffect } from 'react';
+
 export default function CyberCat() {
+    // State to hold random data safely (prevents hydration errors)
+    const [particles, setParticles] = useState([]);
+
+    useEffect(() => {
+        // Generate floating data dust ONLY on the client side
+        const generatedParticles = [...Array(15)].map((_, i) => ({
+            id: i,
+            x: Math.random() * 320,
+            y: Math.random() * 320,
+            size: Math.random() * 2 + 0.5,
+            opacity: Math.random() * 0.5 + 0.2,
+            duration: Math.random() * 3 + 2,
+            delay: Math.random() * 2
+        }));
+        setParticles(generatedParticles as any);
+    }, []);
+
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="85"
-            height="85"
+            width="120"
+            height="120"
             viewBox="0 0 320 320"
             role="img"
             aria-labelledby="catTitle catDesc"
-            style={{ maxWidth: "320px", margin: "0 auto", display: "block" }}
+            style={{
+                maxWidth: "100%",
+                height: "auto",
+                margin: "0 auto",
+                display: "block",
+                // Transparent background
+            }}
         >
-            <title id="catTitle">Cyber-Cat</title>
+            <title id="catTitle">Cyber-Cat v3.0</title>
             <desc id="catDesc">
-                A futuristic, glowing cyber-cat with animated features and a sleek design,
-                set against a transparent, data center-like background. (No tail version)
+                A sleek cyber-cat sitting in a symmetrical server room with glowing data pillars.
             </desc>
 
             <defs>
-                {/* Glow Filter */}
-                <filter id="catGlow" x="-50%" y="-50%" width="200%" height="200%">
+                {/* --- FILTERS --- */}
+                <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                    <feComponentTransfer in="coloredBlur" result="brightBlur">
+                        <feFuncA type="linear" slope="1.5" />
+                    </feComponentTransfer>
                     <feMerge>
-                        <feMergeNode in="coloredBlur" />
+                        <feMergeNode in="brightBlur" />
                         <feMergeNode in="SourceGraphic" />
                     </feMerge>
                 </filter>
 
-                {/* Body Gradient (Slightly metallic/glossy) */}
-                <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f0f2f5" />
-                    <stop offset="50%" stopColor="#e0e3e6" />
-                    <stop offset="100%" stopColor="#c5c8cc" />
+                {/* --- GRADIENTS --- */}
+                <linearGradient id="metalBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#e2e8f0" />
+                    <stop offset="50%" stopColor="#94a3b8" />
+                    <stop offset="100%" stopColor="#475569" />
                 </linearGradient>
 
-                {/* Head Gradient (Softer, but still sleek) */}
-                <linearGradient id="headGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#d5dae0" />
-                    <stop offset="100%" stopColor="#b5bcc2" />
-                </linearGradient>
-
-                {/* Cyber Element Glow (for background lines/shapes) */}
-                <linearGradient id="cyberGlowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <linearGradient id="blueBeam" x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#00e5ff" stopOpacity="0" />
-                    <stop offset="50%" stopColor="#00e5ff" stopOpacity="0.7" />
+                    <stop offset="50%" stopColor="#00e5ff" stopOpacity="0.5" />
                     <stop offset="100%" stopColor="#00e5ff" stopOpacity="0" />
+                </linearGradient>
+
+                <linearGradient id="serverDark" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#0f172a" />
+                    <stop offset="50%" stopColor="#1e293b" />
+                    <stop offset="100%" stopColor="#0f172a" />
                 </linearGradient>
             </defs>
 
-            {/* --- CYBER DATA CENTER BACKGROUND ELEMENTS (Transparent) --- */}
-            <g opacity="0.4" filter="url(#catGlow)">
-                {/* Holographic Floor Grid - perspective effect */}
-                <path d="M0 280 L80 160 L240 160 L320 280 Z" fill="none" stroke="#00e5ff" strokeWidth="1" opacity="0.1" />
-                <line x1="160" y1="160" x2="160" y2="280" stroke="#00e5ff" strokeWidth="0.5" opacity="0.1" />
-                <line x1="80" y1="160" x2="0" y2="280" stroke="#00e5ff" strokeWidth="0.5" opacity="0.1" />
-                <line x1="240" y1="160" x2="320" y2="280" stroke="#00e5ff" strokeWidth="0.5" opacity="0.1" />
+            {/* ========================================== */}
+            {/* LAYER 1: DATA CENTER BACKGROUND (Structured) */}
+            {/* ========================================== */}
 
-                <path d="M0 280 L320 280 M40 220 L280 220 M80 160 L240 160" fill="none" stroke="#00e5ff" strokeWidth="0.5" opacity="0.1" />
-
-                {/* Floating Data Packets/Cubes */}
-                <rect x="20" y="50" width="15" height="15" fill="#00e5ff" opacity="0.1" transform="rotate(30 27.5 57.5)">
-                    <animateTransform attributeName="transform" type="translate" values="0 0; 20 10; 0 0" dur="5s" repeatCount="indefinite" additive="sum" />
-                    <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite" />
-                </rect>
-                <rect x="270" y="90" width="10" height="10" fill="#00e5ff" opacity="0.08" transform="rotate(60 275 95)">
-                    <animateTransform attributeName="transform" type="translate" values="0 0; -15 25; 0 0" dur="6s" repeatCount="indefinite" additive="sum" />
-                    <animate attributeName="opacity" values="0.08;0.3;0.08" dur="2.5s" repeatCount="indefinite" />
-                </rect>
-                <rect x="100" y="20" width="12" height="12" fill="#00e5ff" opacity="0.12" transform="rotate(15 106 26)">
-                    <animateTransform attributeName="transform" type="translate" values="0 0; -5 30; 0 0" dur="4.5s" repeatCount="indefinite" additive="sum" />
-                    <animate attributeName="opacity" values="0.12;0.5;0.12" dur="1.8s" repeatCount="indefinite" />
-                </rect>
-
-                {/* Dynamic Circuit Traces */}
-                <path d="M20 200 C50 180, 100 220, 150 200 C200 180, 270 220, 300 200"
-                    fill="none" stroke="url(#cyberGlowGradient)" strokeWidth="2" strokeLinecap="round">
-                    <animate attributeName="stroke-dasharray" from="0 100" to="100 0" dur="4s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" />
-                </path>
-                <path d="M300 50 C250 70, 200 30, 150 50 C100 70, 50 30, 20 50"
-                    fill="none" stroke="url(#cyberGlowGradient)" strokeWidth="1.5" strokeLinecap="round" begin="1s">
-                    <animate attributeName="stroke-dasharray" from="0 100" to="100 0" dur="5s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite" />
-                </path>
+            {/* Perspective Floor Grid */}
+            <g opacity="0.4" filter="url(#neonGlow)">
+                <path d="M0 320 L120 200 L200 200 L320 320" fill="none" stroke="#00e5ff" strokeWidth="1" />
+                <line x1="160" y1="200" x2="160" y2="320" stroke="#00e5ff" strokeWidth="0.5" />
+                <line x1="60" y1="260" x2="260" y2="260" stroke="#00e5ff" strokeWidth="0.5" />
+                <line x1="30" y1="290" x2="290" y2="290" stroke="#00e5ff" strokeWidth="0.5" />
             </g>
 
-            {/* --- MAIN CAT GROUP --- */}
-            <g transform="translate(40,40)">
+            {/* Server Pillars (Left & Right) */}
+            <g>
+                {/* Left Pillar */}
+                <rect x="0" y="40" width="40" height="240" fill="url(#serverDark)" stroke="#334155" />
+                <rect x="10" y="50" width="20" height="220" fill="none" stroke="#00e5ff" strokeWidth="0.5" opacity="0.3" />
+                {/* Blinking Lights Left */}
+                <rect x="15" y="60" width="10" height="2" fill="#00e5ff">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite" />
+                </rect>
+                <rect x="15" y="80" width="10" height="2" fill="#ff00cc">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite" />
+                </rect>
+                <rect x="15" y="120" width="10" height="2" fill="#00e5ff">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite" />
+                </rect>
+
+                {/* Right Pillar */}
+                <rect x="280" y="40" width="40" height="240" fill="url(#serverDark)" stroke="#334155" />
+                <rect x="290" y="50" width="20" height="220" fill="none" stroke="#00e5ff" strokeWidth="0.5" opacity="0.3" />
+                {/* Blinking Lights Right */}
+                <rect x="295" y="70" width="10" height="2" fill="#00e5ff">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="2.5s" repeatCount="indefinite" />
+                </rect>
+                <rect x="295" y="150" width="10" height="2" fill="#ff00cc">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="1s" repeatCount="indefinite" />
+                </rect>
+            </g>
+
+            {/* Rear Data Streams (Waterfall Effect) */}
+            <g opacity="0.3">
+                <rect x="100" y="40" width="2" height="160" fill="url(#blueBeam)">
+                    <animate attributeName="y" values="40;200" dur="2s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+                </rect>
+                <rect x="220" y="40" width="2" height="160" fill="url(#blueBeam)">
+                    <animate attributeName="y" values="40;200" dur="3s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                </rect>
+            </g>
+
+            {/* Safe Hydrated Particles */}
+            <g fill="#fff">
+                {particles.map((p: any) => (
+                    <circle key={p.id} cx={p.x} cy={p.y} r={p.size} opacity={p.opacity}>
+                        <animate attributeName="opacity" values={`${p.opacity}; 1; ${p.opacity}`} dur={`${p.duration}s`} repeatCount="indefinite" />
+                        <animate attributeName="cy" values={`${p.y}; ${p.y - 20}`} dur={`${p.duration}s`} repeatCount="indefinite" />
+                    </circle>
+                ))}
+            </g>
+
+            {/* ========================================== */}
+            {/* LAYER 2: THE CYBER CAT */}
+            {/* ========================================== */}
+            <g transform="translate(60, 60)">
+                {/* Breathing Animation */}
                 <animateTransform
                     attributeName="transform"
                     type="translate"
-                    values="40,40; 40,30; 40,40"
+                    values="60,60; 60,55; 60,60"
                     dur="4s"
                     repeatCount="indefinite"
-                    calcMode="spline"
-                    keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
                 />
+
+                {/* Tail (Curled) */}
+                <path d="M140 180 Q180 180 180 140 T160 100" fill="none" stroke="#94a3b8" strokeWidth="12" strokeLinecap="round" />
 
                 {/* Body */}
-                <ellipse cx="120" cy="170" rx="78" ry="58" fill="url(#bodyGradient)" />
+                <ellipse cx="100" cy="160" rx="60" ry="50" fill="url(#metalBody)" stroke="#1e293b" strokeWidth="2" />
+                {/* Body Circuitry */}
+                <path d="M60 160 L140 160 M100 120 L100 200" stroke="#00e5ff" strokeWidth="1" opacity="0.3" />
 
                 {/* Head */}
-                <circle cx="120" cy="92" r="56" fill="url(#headGradient)" />
+                <circle cx="100" cy="90" r="45" fill="url(#metalBody)" stroke="#1e293b" strokeWidth="2" />
 
-                {/* Ears - Glowing - FIXED ALIGNMENT (Symmetric around x=120) */}
-                <g filter="url(#catGlow)">
-                    <path d="M76 60 L90 24 L104 60 Z" fill="#00e5ff" /> {/* Left Ear */}
-                    <path d="M136 60 L150 24 L164 60 Z" fill="#00e5ff" /> {/* Right Ear */}
-                </g>
+                {/* Ears */}
+                <path d="M65 65 L55 25 L85 50 Z" fill="#64748b" stroke="#1e293b" strokeWidth="2" />
+                <path d="M135 65 L145 25 L115 50 Z" fill="#64748b" stroke="#1e293b" strokeWidth="2" />
+                {/* Ear Inner Glow */}
+                <path d="M68 60 L62 35 L80 55 Z" fill="#ff00cc" filter="url(#neonGlow)" opacity="0.8" />
+                <path d="M132 60 L138 35 L120 55 Z" fill="#ff00cc" filter="url(#neonGlow)" opacity="0.8" />
 
-                {/* Inner Ears - Metallic Detail - FIXED ALIGNMENT */}
-                <path d="M82 55 L90 34 L98 55 Z" fill="#b0bec5" />
-                <path d="M142 55 L150 34 L158 55 Z" fill="#b0bec5" />
-
-                {/* Eyes - Glowing and Blinking */}
-                <g filter="url(#catGlow)">
-                    {/* Left Eye */}
-                    <circle cx="104" cy="92" r="8" fill="#FFF">
-                        <animate
-                            attributeName="r"
-                            values="8; 0.5; 8"
-                            dur="3s"
-                            repeatCount="indefinite"
-                            keyTimes="0; 0.05; 0.1"
-                        />
+                {/* Eyes (The Cool Part) */}
+                <g filter="url(#neonGlow)">
+                    {/* Sclera */}
+                    <ellipse cx="85" cy="90" rx="12" ry="10" fill="#0f172a" />
+                    <ellipse cx="115" cy="90" rx="12" ry="10" fill="#0f172a" />
+                    {/* Iris */}
+                    <circle cx="85" cy="90" r="6" fill="#00e5ff">
+                        <animate attributeName="r" values="6;2;6" dur="3s" repeatCount="indefinite" />
                     </circle>
-                    {/* Right Eye */}
-                    <circle cx="136" cy="92" r="8" fill="#FFF">
-                        <animate
-                            attributeName="r"
-                            values="8; 0.5; 8"
-                            dur="3s"
-                            repeatCount="indefinite"
-                            keyTimes="0; 0.05; 0.1"
-                        />
+                    <circle cx="115" cy="90" r="6" fill="#00e5ff">
+                        <animate attributeName="r" values="6;2;6" dur="3s" repeatCount="indefinite" />
                     </circle>
-
-                    {/* Digital Pupils */}
-                    <circle cx="104" cy="92" r="4" fill="#00e5ff" opacity="0.8" />
-                    <circle cx="136" cy="92" r="4" fill="#00e5ff" opacity="0.8" />
                 </g>
 
-                {/* Nose */}
-                <ellipse cx="120" cy="110" rx="8" ry="6" fill="#F94144" />
+                {/* Nose & Mouth */}
+                <path d="M95 105 L105 105 L100 112 Z" fill="#1e293b" />
+                <path d="M100 112 L100 118 M100 118 Q90 125 85 118 M100 118 Q110 125 115 118" fill="none" stroke="#1e293b" strokeWidth="1.5" />
 
-                {/* Whiskers - Animated and Glowing */}
-                <g
-                    stroke="#2B2D42"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    filter="url(#catGlow)"
-                    opacity="0.8"
-                >
-                    {/* Left Side Whiskers */}
-                    <path d="M70 100 h-36">
-                        <animate
-                            attributeName="x2"
-                            values="34; 29; 34"
-                            dur="2s"
-                            repeatCount="indefinite"
-                        />
-                    </path>
-                    <path d="M70 112 h-36">
-                        <animate
-                            attributeName="x2"
-                            values="34; 29; 34"
-                            dur="2s"
-                            begin="0.2s"
-                            repeatCount="indefinite"
-                        />
-                    </path>
-
-                    {/* Right Side Whiskers */}
-                    <path d="M170 100 h36">
-                        <animate
-                            attributeName="x2"
-                            values="206; 211; 206"
-                            dur="2s"
-                            repeatCount="indefinite"
-                        />
-                    </path>
-                    <path d="M170 112 h36">
-                        <animate
-                            attributeName="x2"
-                            values="206; 211; 206"
-                            dur="2s"
-                            begin="0.2s"
-                            repeatCount="indefinite"
-                        />
-                    </path>
+                {/* Whiskers (Neon) */}
+                <g stroke="#00e5ff" strokeWidth="1" opacity="0.8" filter="url(#neonGlow)">
+                    <line x1="40" y1="100" x2="80" y2="105" />
+                    <line x1="40" y1="110" x2="80" y2="110" />
+                    <line x1="160" y1="100" x2="120" y2="105" />
+                    <line x1="160" y1="110" x2="120" y2="110" />
                 </g>
 
-                {/* Futuristic Collar */}
-                <rect
-                    x="90"
-                    y="145"
-                    width="60"
-                    height="10"
-                    rx="5"
-                    fill="#546e7a"
-                    stroke="#37474f"
-                    strokeWidth="1"
-                />
-                <circle cx="120" cy="150" r="5" fill="#00e5ff" filter="url(#catGlow)">
-                    <animate
-                        attributeName="opacity"
-                        values="1;0.5;1"
-                        dur="1s"
-                        repeatCount="indefinite"
-                    />
+                {/* Collar */}
+                <path d="M70 135 Q100 155 130 135" fill="none" stroke="#1e293b" strokeWidth="8" strokeLinecap="round" />
+                <circle cx="100" cy="145" r="6" fill="#00e5ff" filter="url(#neonGlow)">
+                    <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite" />
                 </circle>
+
             </g>
         </svg>
     );
