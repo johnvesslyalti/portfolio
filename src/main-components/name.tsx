@@ -1,3 +1,7 @@
+import CoolAstronaut from "@/components/characters/astro";
+import Astro from "@/components/characters/astro";
+import RoboHelper from "@/components/characters/robo-helper";
+import AnimatedRobo from "@/components/characters/robo-helper";
 import Emoji from "@/components/emoji";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import WakaTimeToday from "@/components/waka-time";
@@ -29,8 +33,8 @@ export default function NameSection() {
             <span>Open to work</span><span className="hidden sm:block ml-1">on exciting projects!</span>
           </span>
         </div>
-        <div className="flex items-center justify-center w-1/2">
-          <Emoji />
+        <div className="flex items-center justify-center w-1/2 my-5">
+          <RoboHelper />
         </div>
       </div>
     </section>
