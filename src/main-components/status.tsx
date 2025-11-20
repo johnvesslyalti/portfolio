@@ -86,7 +86,7 @@ export default function Status() {
         </div>
       </div>
 
-      <div className="w-full sm:w-auto">
+      <div className="w-full hidden sm:block sm:w-auto">
         <WakaTimeToday />
       </div>
     </section>

@@ -101,7 +101,7 @@ export function SpotifyWidget() {
   }
 
   return (
-    <div className="w-50">
+    <div className="w-50 hidden sm:block">
       <div className="flex items-center justify-between gap-2 mb-2">
         <FaSpotify className="text-green-500 text-sm" />
         <div className="font-semibold text-xs">Johnvessly Alti</div>
