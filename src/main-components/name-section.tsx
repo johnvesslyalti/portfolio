@@ -9,6 +9,7 @@ import CyberNinja2 from "@/components/characters/cyber-ninja-2";
 import CyberPathfinder from "@/components/characters/cyber-pathfinder";
 import CyberSonicArchitect from "@/components/characters/cyber-sonicarchitect";
 import RoboHelper from "@/components/characters/robo-helper";
+import SynthSquirrel from "@/components/characters/synth-squirrel";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Dot } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -26,6 +27,7 @@ export default function NameSection() {
     <CyberNinja2 key="7" />,
     <CyberPathfinder key="8" />,
     <CyberSonicArchitect key="9" />,
+    <SynthSquirrel key="10" />
   ];
 
   useEffect(() => {
