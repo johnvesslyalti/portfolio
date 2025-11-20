@@ -17,15 +17,15 @@ export default function NameSection() {
   const [randomCharacter, setRandomCharacter] = useState<React.ReactElement | null>(null);
 
   const characters = [
-    <CyberCodeWizard key="codewizard" />,
-    <CoolAstronaut key="astronaut" />,
-    <RoboHelper key="robo" />,
-    <CyberCat key="cat" />,
-    <CyberCat2 key="cat2" />,
-    <CyberNinjaScene key="ninja" />,
-    <CyberNinja2 key="CyberNinja2" />,
-    <CyberPathfinder key="path" />,
-    <CyberSonicArchitect key="dj" />,
+    <CyberCodeWizard key="1" />,
+    <CoolAstronaut key="2" />,
+    <RoboHelper key="3" />,
+    <CyberCat key="4" />,
+    <CyberCat2 key="5" />,
+    <CyberNinjaScene key="6" />,
+    <CyberNinja2 key="7" />,
+    <CyberPathfinder key="8" />,
+    <CyberSonicArchitect key="9" />,
   ];
 
   useEffect(() => {
