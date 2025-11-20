@@ -2,7 +2,7 @@ import Skills from "@/main-components/skills";
 import Projects from "@/main-components/projects";
 import GitHub from "@/main-components/github";
 import Contact from "@/main-components/contact";
-import NameSection from "@/main-components/name";
+import NameSection from "@/main-components/name-section";
 import ProblemSolving from "@/main-components/problem-solving";
 import Intro from "@/main-components/intro";
 import CustomTweet from "@/main-components/custom-tweet";
