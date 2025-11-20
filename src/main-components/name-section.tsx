@@ -4,6 +4,7 @@ import CyberCodeWizard from "@/components/characters/code-wizard";
 import CoolAstronaut from "@/components/characters/cool-astronaut";
 import CyberCat from "@/components/characters/cyber-cat";
 import CyberNinjaScene from "@/components/characters/cyber-ninja";
+import CyberNinja2 from "@/components/characters/cyber-ninja-2";
 import CyberPathfinder from "@/components/characters/cyber-pathfinder";
 import CyberSonicArchitect from "@/components/characters/cyber-sonicarchitect";
 import RoboHelper from "@/components/characters/robo-helper";
@@ -20,6 +21,7 @@ export default function NameSection() {
     <RoboHelper key="robo" />,
     <CyberCat key="cat" />,
     <CyberNinjaScene key="ninja" />,
+    <CyberNinja2 key="CyberNinja2" />,
     <CyberPathfinder key="path" />,
     <CyberSonicArchitect key="dj" />,
   ];
@@ -55,8 +57,7 @@ export default function NameSection() {
         </div>
 
         <div className="flex items-center justify-center w-1/2 my-2">
-          <CyberNinjaScene />
-          {/*randomCharacter*/}
+          {randomCharacter}
         </div>
       </div>
     </section>
