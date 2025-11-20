@@ -4,7 +4,6 @@ import Astro from "@/components/characters/cool-astronaut";
 import CyberCat from "@/components/characters/cyber-cat";
 import CyberNinja from "@/components/characters/cyber-ninja";
 import CyberPathfinder from "@/components/characters/cyber-pathfinder";
-import CyberSonicArchitect from "@/components/characters/cyber-sonic-architect";
 import RoboHelper from "@/components/characters/robo-helper";
 import AnimatedRobo from "@/components/characters/robo-helper";
 import Emoji from "@/components/emoji";
@@ -39,7 +38,7 @@ export default function NameSection() {
           </span>
         </div>
         <div className="flex items-center justify-center w-1/2 my-5">
-          <CyberSonicArchitect />
+          
         </div>
       </div>
     </section>

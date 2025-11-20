@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function CyberCodeWizard() {
     return (
         <svg
@@ -80,7 +78,7 @@ export default function CyberCodeWizard() {
                 </rect>
 
                 {/* Floating Data Runes/Particles */}
-                <text x="30" y="50" font-size="16" fill="#00e5ff" opacity="0.3" fontFamily="monospace">
+                <text x="30" y="50" fontSize="16" fill="#00e5ff" opacity="0.3" fontFamily="monospace">
                     {/* FIXED: Escaped characters below */}
                     <tspan x="30" dy="0">const init = () =&gt; &#123;</tspan>
                     <tspan x="30" dy="18">  await activate();</tspan>
@@ -88,7 +86,7 @@ export default function CyberCodeWizard() {
                     <animateTransform attributeName="transform" type="translate" values="0 0; 10 5; 0 0" dur="10s" repeatCount="indefinite" additive="sum" />
                     <animate attributeName="opacity" values="0.3;0.6;0.3" dur="5s" repeatCount="indefinite" />
                 </text>
-                <text x="200" y="280" font-size="14" fill="#8C00FF" opacity="0.2" fontFamily="monospace">
+                <text x="200" y="280" fontSize="14" fill="#8C00FF" opacity="0.2" fontFamily="monospace">
                     {/* FIXED: Escaped characters below */}
                     <tspan x="200" dy="0">if (state === ready) &#123;</tspan>
                     <tspan x="200" dy="16">  render();</tspan>
@@ -168,7 +166,7 @@ export default function CyberCodeWizard() {
                     {/* Holographic Code Projection */}
                     <g transform="translate(5, -40)" filter="url(#wizardGlow)">
                         <rect x="-20" y="-20" width="40" height="40" rx="5" fill="url(#hologramTextGlow)" opacity="0.7" />
-                        <text x="-15" y="0" font-size="14" fill="#00e5ff" fontFamily="monospace">
+                        <text x="-15" y="0" fontSize="14" fill="#00e5ff" fontFamily="monospace">
                             <tspan x="-15" dy="0">0101</tspan>
                             <tspan x="-15" dy="16">1010</tspan>
                             <tspan x="-15" dy="16">0101</tspan>
