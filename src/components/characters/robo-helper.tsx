@@ -49,7 +49,7 @@ export default function RoboHelper() {
                 </clipPath>
             </defs>
 
-            {/* Background Rotating Ring - now a slightly thicker dashed line */}
+            {/* Background Rotating Ring */}
             <circle
                 cx="160"
                 cy="160"
@@ -70,7 +70,7 @@ export default function RoboHelper() {
                 />
             </circle>
 
-            {/* Outer Orbiting Element 1 - Larger and Slower */}
+            {/* Outer Orbiting Element 1 */}
             <g transform="translate(160,160)">
                 <animateTransform
                     attributeName="transform"
@@ -93,7 +93,7 @@ export default function RoboHelper() {
                 <circle cx="120" cy="10" r="6" fill="#00E5FF" opacity="0.5" filter="url(#glow)" />
             </g>
 
-            {/* Inner Orbiting Element 2 - Smaller and Faster */}
+            {/* Inner Orbiting Element 2 */}
             <g transform="translate(160,160)">
                 <animateTransform
                     attributeName="transform"
@@ -116,7 +116,8 @@ export default function RoboHelper() {
                 />
             </g>
 
-            <ellipse cx="160" cy="270" rx="50" ry="8" fill="url(#shadowGradient)">
+            {/* Shadow (Adjusted slightly lower to match new body position) */}
+            <ellipse cx="160" cy="290" rx="50" ry="8" fill="url(#shadowGradient)">
                 <animate
                     attributeName="rx"
                     dur="4s"
@@ -135,6 +136,7 @@ export default function RoboHelper() {
                 />
             </ellipse>
 
+            {/* Main Robot Group - Animation Wrapper */}
             <g>
                 <animateTransform
                     attributeName="transform"
@@ -146,7 +148,13 @@ export default function RoboHelper() {
                     calcMode="spline"
                 />
 
-                <g transform="translate(60,50)">
+                {/* FIX: Changed 'transform' from translate(60,50) to translate(60,80).
+                   This lowers the robot so the antenna doesn't clip out of the top 
+                   when it floats up. 
+                */}
+                <g transform="translate(60,80)">
+
+                    {/* Arms */}
                     <rect
                         x="64"
                         y="190"
@@ -166,6 +174,7 @@ export default function RoboHelper() {
                         fill="url(#metalGradient)"
                     />
 
+                    {/* Body */}
                     <rect
                         x="0"
                         y="40"
@@ -178,6 +187,7 @@ export default function RoboHelper() {
                         strokeWidth="2"
                     />
 
+                    {/* Screen Area */}
                     <g clipPath="url(#screenClip)">
                         <rect
                             x="26"
@@ -203,6 +213,7 @@ export default function RoboHelper() {
                                 repeatCount="indefinite"
                             />
                         </rect>
+                        {/* Screen Detail Lines */}
                         <rect
                             x="40"
                             y="140"
@@ -223,6 +234,7 @@ export default function RoboHelper() {
                         />
                     </g>
 
+                    {/* Chest Buttons */}
                     <g transform="translate(40,40)" filter="url(#glow)">
                         <circle cx="0" cy="0" r="5" fill="#FFD700">
                             <animate
@@ -252,6 +264,7 @@ export default function RoboHelper() {
                         </circle>
                     </g>
 
+                    {/* Shoulders */}
                     <g transform="translate(-18, 90)">
                         <rect
                             x="0"
@@ -295,7 +308,9 @@ export default function RoboHelper() {
                         </rect>
                     </g>
 
+                    {/* HEAD GROUP */}
                     <g>
+                        {/* Head Back */}
                         <rect
                             x="52"
                             y="-26"
@@ -305,6 +320,8 @@ export default function RoboHelper() {
                             height="64"
                             fill="url(#metalGradient)"
                         />
+
+                        {/* Face Plate */}
                         <rect
                             x="68"
                             y="-6"
@@ -314,34 +331,38 @@ export default function RoboHelper() {
                             fill="#141625"
                         />
 
+                        {/* Antenna (Previously clipping at top) */}
                         <g transform="translate(100, -26)">
-                            <line
-                                x1="0"
-                                y1="0"
-                                x2="0"
-                                y2="-20"
-                                stroke="#A0A7C2"
-                                strokeWidth="4"
-                                strokeLinecap="round"
-                            />
-                            <circle cx="0" cy="-24" r="6" fill="#FF4081" filter="url(#glow)">
-                                <animate
-                                    attributeName="fill"
-                                    values="#FF4081;#FF80AB;#FF4081"
-                                    dur="1s"
-                                    repeatCount="indefinite"
+                            <g>
+                                <line
+                                    x1="0"
+                                    y1="0"
+                                    x2="0"
+                                    y2="-20"
+                                    stroke="#A0A7C2"
+                                    strokeWidth="4"
+                                    strokeLinecap="round"
                                 />
-                            </circle>
-                            <animateTransform
-                                attributeName="transform"
-                                type="rotate"
-                                values="0 0 0; 5 0 0; 0 0 0; -5 0 0; 0 0 0"
-                                dur="5s"
-                                repeatCount="indefinite"
-                                keyTimes="0; 0.1; 0.2; 0.3; 1"
-                            />
+                                <circle cx="0" cy="-24" r="6" fill="#FF4081" filter="url(#glow)">
+                                    <animate
+                                        attributeName="fill"
+                                        values="#FF4081;#FF80AB;#FF4081"
+                                        dur="1s"
+                                        repeatCount="indefinite"
+                                    />
+                                </circle>
+                                <animateTransform
+                                    attributeName="transform"
+                                    type="rotate"
+                                    values="0 0 0; 5 0 0; 0 0 0; -5 0 0; 0 0 0"
+                                    dur="5s"
+                                    repeatCount="indefinite"
+                                    keyTimes="0; 0.1; 0.2; 0.3; 1"
+                                />
+                            </g>
                         </g>
 
+                        {/* Eyes */}
                         <g filter="url(#glow)">
                             <circle cx="88" cy="10" r="6" fill="#00E5FF">
                                 <animate
@@ -365,6 +386,7 @@ export default function RoboHelper() {
                             </circle>
                         </g>
 
+                        {/* Mouth */}
                         <path
                             d="M88 24 q12 6 24 0"
                             fill="none"
