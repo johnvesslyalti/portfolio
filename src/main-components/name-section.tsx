@@ -22,12 +22,12 @@ export default function NameSection() {
     <CyberCodeWizard key="1" />,
     <CoolAstronaut key="2" />,
     <RoboHelper key="3" />,
-    //<CyberCat key="4" />,
-    //<CyberCat2 key="5" />,
-    //<CyberNinjaScene key="6" />,
-    //<CyberNinja2 key="7" />,
-    //<CyberPathfinder key="8" />,
-    //<CyberSonicArchitect key="9" />,
+    <CyberCat key="4" />,
+    <CyberCat2 key="5" />,
+    <CyberNinjaScene key="6" />,
+    <CyberNinja2 key="7" />,
+    <CyberPathfinder key="8" />,
+    <CyberSonicArchitect key="9" />,
     <SynthSquirrel key="10" />
   ];
 
@@ -62,7 +62,8 @@ export default function NameSection() {
         </div>
 
         <div className="flex items-center justify-center w-1/2 my-2">
-          {randomCharacter}
+          {/*randomCharacter*/}
+          <CyberSonicArchitect />
         </div>
       </div>
     </section>

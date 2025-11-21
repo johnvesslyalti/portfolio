@@ -12,17 +12,20 @@ export default function CyberNinja2() {
                 height: "auto",
                 margin: "0 auto",
                 display: "block",
+                // Ensure it looks good on a dark background, as requested by "remove background" implying transparency
+                background: 'transparent' 
             }}
         >
             <title id="roninTitle">The Neon Ronin</title>
             <desc id="roninDesc">
-                A stylized, high-tech ninja silhouette standing before a digital sun with a pulsing energy katana.
+                A stylized, high-tech ninja silhouette with intensified pulsing energy effects, standing alone.
             </desc>
 
             <defs>
                 {/* --- FILTERS --- */}
+                {/* Increased blur for a more intense, atmospheric glow */}
                 <filter id="intenseGlow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+                    <feGaussianBlur stdDeviation="3.5" result="coloredBlur" />
                     <feComponentTransfer in="coloredBlur" result="brightBlur">
                         <feFuncA type="linear" slope="3" />
                     </feComponentTransfer>
@@ -37,13 +40,6 @@ export default function CyberNinja2() {
                 </filter>
 
                 {/* --- GRADIENTS --- */}
-                {/* The Digital Sun */}
-                <linearGradient id="sunGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#ff0055" />
-                    <stop offset="50%" stopColor="#7000ff" />
-                    <stop offset="100%" stopColor="#000000" stopOpacity="0" />
-                </linearGradient>
-
                 {/* The Armor (Dark, sleek) */}
                 <linearGradient id="armorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#1e293b" />
@@ -59,37 +55,8 @@ export default function CyberNinja2() {
             </defs>
 
             {/* ========================================== */}
-            {/* LAYER 1: ATMOSPHERE (BACKGROUND) */}
+            {/* BACKGROUND REMOVED */}
             {/* ========================================== */}
-
-            {/* The Retro Sun */}
-            <circle cx="160" cy="140" r="90" fill="url(#sunGradient)" opacity="0.8" />
-
-            {/* Sun Grid Lines (Cutout effect) */}
-            <g stroke="#000000" strokeWidth="2" opacity="0.3">
-                <line x1="70" y1="100" x2="250" y2="100" />
-                <line x1="70" y1="120" x2="250" y2="120" />
-                <line x1="70" y1="145" x2="250" y2="145" />
-                <line x1="70" y1="175" x2="250" y2="175" />
-                <line x1="70" y1="210" x2="250" y2="210" />
-            </g>
-
-            {/* Floor Grid (Perspective) */}
-            <g transform="translate(0, 220)" opacity="0.5">
-                <path d="M0 0 L320 0" stroke="#7000ff" strokeWidth="2" />
-                <path d="M160 0 L0 100" stroke="#7000ff" strokeWidth="1" opacity="0.5" />
-                <path d="M160 0 L320 100" stroke="#7000ff" strokeWidth="1" opacity="0.5" />
-                <path d="M160 0 L160 100" stroke="#7000ff" strokeWidth="1" opacity="0.5" />
-                <path d="M160 0 L80 100" stroke="#7000ff" strokeWidth="1" opacity="0.3" />
-                <path d="M160 0 L240 100" stroke="#7000ff" strokeWidth="1" opacity="0.3" />
-
-                {/* Moving Horizon Lines */}
-                <line x1="0" y1="80" x2="320" y2="80" stroke="#7000ff" strokeWidth="1" opacity="0">
-                    <animate attributeName="y1" values="0;100" dur="2s" repeatCount="indefinite" />
-                    <animate attributeName="y2" values="0;100" dur="2s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
-                </line>
-            </g>
 
             {/* ========================================== */}
             {/* LAYER 2: THE RONIN (FOREGROUND) */}
@@ -107,6 +74,7 @@ export default function CyberNinja2() {
                 />
 
                 {/* --- SCARF (The "Motion" Element) --- */}
+                {/* Added a flicker animation for a more energetic, unstable look */}
                 <path
                     d="M90 75 Q60 75 40 60 T0 40"
                     fill="none"
@@ -121,6 +89,7 @@ export default function CyberNinja2() {
                         dur="3s"
                         repeatCount="indefinite"
                     />
+                    <animate attributeName="opacity" values="0.8;0.6;0.9;0.7;0.8" dur="0.5s" repeatCount="indefinite" />
                 </path>
 
                 {/* --- BODY SILHOUETTE --- */}
@@ -137,8 +106,10 @@ export default function CyberNinja2() {
                 {/* Armor Details (Glowing Lines) */}
                 <path d="M80 90 L85 140" stroke="#333" strokeWidth="2" />
                 <path d="M120 90 L115 140" stroke="#333" strokeWidth="2" />
-                <circle cx="100" cy="110" r="3" fill="#ff0055" filter="url(#intenseGlow)">
-                    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
+                
+                {/* Made the chest core bigger, changed color to match blade, and gave it a faster, more intense pulse */}
+                <circle cx="100" cy="110" r="5" fill="#00e5ff" filter="url(#intenseGlow)">
+                    <animate attributeName="opacity" values="0.4;1;0.2;1;0.5" dur="1s" repeatCount="indefinite" />
                 </circle>
 
                 {/* Shoulders */}
@@ -176,6 +147,7 @@ export default function CyberNinja2() {
                     <rect x="-12" y="-15" width="24" height="5" fill="#333" />
                     {/* Blade (Glowing Energy) */}
                     <path d="M-3 -15 L-3 -110 L0 -120 L3 -110 L3 -15 Z" fill="url(#bladeGradient)" filter="url(#intenseGlow)">
+                        {/* Kept the high-speed strobe effect for maximum coolness */}
                         <animate attributeName="opacity" values="0.8;1;0.8" dur="0.1s" repeatCount="indefinite" />
                     </path>
                     {/* Blade Core (Solid White for intensity) */}

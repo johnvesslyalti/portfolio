@@ -1,211 +1,271 @@
-export default function CyberPathfinder() {
+export default function PhantomRonin() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
+            viewBox="180 180 440 440"
             width="120"
             height="120"
-            viewBox="0 0 320 320"
+            preserveAspectRatio="xMidYMid meet"
             role="img"
-            aria-labelledby="scoutTitle scoutDesc"
-            style={{
-                maxWidth: "100%",
-                height: "auto",
-                margin: "0 auto",
-                display: "block",
-                // Removed background styles for transparency
-            }}
+            style={{ background: 'transparent', overflow: 'visible' }}
         >
-            <title id="scoutTitle">Cyber Pathfinder</title>
-            <desc id="scoutDesc">
-                A high-tech scout projecting a complex holographic map in a neon landscape with a transparent background.
-            </desc>
+            <title>Phantom Ronin</title>
 
             <defs>
-                {/* --- FILTERS --- */}
-                <filter id="neonBloom" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
-                    <feComponentTransfer in="coloredBlur" result="brightBlur">
-                        <feFuncA type="linear" slope="1.5" />
-                    </feComponentTransfer>
+                {/* FILTERS */}
+                <filter id="hyperGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feColorMatrix
+                        in="blur"
+                        type="matrix"
+                        values="0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7"
+                        result="goo"
+                    />
+                    <feComposite in="SourceGraphic" in2="goo" operator="over" />
+                    <feGaussianBlur stdDeviation="2" result="softGlow" />
                     <feMerge>
-                        <feMergeNode in="brightBlur" />
+                        <feMergeNode in="softGlow" />
                         <feMergeNode in="SourceGraphic" />
                     </feMerge>
                 </filter>
 
-                <filter id="glitchShake">
-                    <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="1" result="warp" />
-                    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="2" in="SourceGraphic" in2="warp" />
-                </filter>
-
-                {/* --- GRADIENTS --- */}
-                {/* Synthwave Sun */}
-                <linearGradient id="sunGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#ff00cc" />
-                    <stop offset="100%" stopColor="#330033" stopOpacity="0" />
+                {/* GRADIENTS */}
+                <linearGradient id="armorDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1e1b4b" />
+                    <stop offset="100%" stopColor="#020617" />
                 </linearGradient>
 
-                {/* Hologram Beam */}
-                <linearGradient id="holoBeam" x1="0%" y1="100%" x2="0%" y2="0%">
-                    <stop offset="0%" stopColor="#00e5ff" stopOpacity="0.6" />
-                    <stop offset="80%" stopColor="#00e5ff" stopOpacity="0" />
+                <linearGradient id="cloakGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#4c1d95" />
+                    <stop offset="100%" stopColor="#2e1065" />
                 </linearGradient>
 
-                {/* Armor */}
-                <linearGradient id="techArmor" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#2d2d44" />
-                    <stop offset="50%" stopColor="#1a1a2e" />
-                    <stop offset="100%" stopColor="#0f0f1a" />
+                <linearGradient id="energyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#d946ef" />
+                    <stop offset="100%" stopColor="#8b5cf6" />
                 </linearGradient>
 
-                {/* Visor Sweep */}
-                <linearGradient id="visorSweep" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#ff00cc" stopOpacity="0.5" />
-                    <stop offset="50%" stopColor="#00e5ff" stopOpacity="1" />
-                    <stop offset="100%" stopColor="#ff00cc" stopOpacity="0.5" />
+                <linearGradient id="swordPlasma" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stopColor="#e879f9" />
+                    <stop offset="40%" stopColor="#ffffff" />
+                    <stop offset="60%" stopColor="#ffffff" />
+                    <stop offset="100%" stopColor="#22d3ee" />
                 </linearGradient>
             </defs>
 
-            {/* ========================================== */}
-            {/* LAYER 1: SYNTHWAVE BACKGROUND */}
-            {/* ========================================== */}
+            {/* MAIN GROUP */}
+            <g transform="translate(400, 350)">
 
-            {/* Digital Sun */}
-            <circle cx="160" cy="100" r="60" fill="url(#sunGradient)" opacity="0.4">
-                <animate attributeName="opacity" values="0.4;0.6;0.4" dur="4s" repeatCount="indefinite" />
-            </circle>
-            {/* Sun Grid Lines */}
-            <path d="M100 70 H220 M100 80 H220 M100 95 H220 M100 115 H220" stroke="#1a1b2e" strokeWidth="2" opacity="0.3" />
-
-            {/* Moving Floor Grid */}
-            <g transform="translate(0, 220)" opacity="0.5">
-                {/* Perspective Lines */}
-                <path d="M0 100 L100 0 M320 100 L220 0 M160 100 L160 0 M60 100 L130 0 M260 100 L190 0" stroke="#ff00cc" strokeWidth="1" />
-                {/* Horizontal Lines (Moving forward effect) */}
-                <line x1="0" y1="20" x2="320" y2="20" stroke="#ff00cc" strokeWidth="1" opacity="0.5">
-                    <animate attributeName="y1" values="0;100" dur="2s" repeatCount="indefinite" />
-                    <animate attributeName="y2" values="0;100" dur="2s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.2;1;0" dur="2s" repeatCount="indefinite" />
-                </line>
-                <line x1="0" y1="50" x2="320" y2="50" stroke="#ff00cc" strokeWidth="1" opacity="0.5">
-                    <animate attributeName="y1" values="0;100" dur="2s" begin="1s" repeatCount="indefinite" />
-                    <animate attributeName="y2" values="0;100" dur="2s" begin="1s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.2;1;0" dur="2s" begin="1s" repeatCount="indefinite" />
-                </line>
-            </g>
-
-            {/* Floating Data Bits */}
-            <g fill="#00e5ff" opacity="0.4">
-                <text x="250" y="150" fontSize="8" fontFamily="monospace">0101</text>
-                <text x="280" y="180" fontSize="8" fontFamily="monospace">1010</text>
-                <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="5s" repeatCount="indefinite" />
-            </g>
-
-
-            {/* ========================================== */}
-            {/* LAYER 2: THE CYBER SCOUT */}
-            {/* ========================================== */}
-            <g transform="translate(60, 60)">
-                {/* Hover Animation */}
-                <animateTransform
-                    attributeName="transform"
-                    type="translate"
-                    values="60,60; 60,55; 60,60"
-                    dur="4s"
-                    repeatCount="indefinite"
-                    calcMode="spline"
-                    keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
-                />
-
-                {/* --- BACKPACK / RIG --- */}
-                <rect x="40" y="80" width="60" height="90" rx="8" fill="#1f2033" stroke="#4b5563" strokeWidth="1" />
-                <path d="M55 80 V50" stroke="#555" strokeWidth="3" />
-                <circle cx="55" cy="45" r="3" fill="#ff00cc" filter="url(#neonBloom)">
-                    <animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite" />
-                </circle>
-
-                {/* --- ARMOR --- */}
-                {/* Torso */}
-                <path d="M65 100 L175 100 L160 210 L80 210 Z" fill="url(#techArmor)" stroke="#00e5ff" strokeWidth="0.5" />
-
-                {/* Glowing Power Lines on Chest */}
-                <path d="M90 140 L150 140" stroke="#00e5ff" strokeWidth="2" filter="url(#neonBloom)" strokeDasharray="60">
-                    <animate attributeName="stroke-dashoffset" values="60;0;60" dur="3s" repeatCount="indefinite" />
-                </path>
-                <path d="M95 150 L145 150" stroke="#00e5ff" strokeWidth="1" opacity="0.5" />
-
-                {/* Legs */}
-                <path d="M90 210 L85 270 L110 270 L115 210 Z" fill="url(#techArmor)" />
-                <path d="M150 210 L155 270 L130 270 L125 210 Z" fill="url(#techArmor)" />
-                {/* Knee LEDs */}
-                <rect x="90" y="230" width="15" height="4" fill="#00e5ff" filter="url(#neonBloom)" />
-                <rect x="135" y="230" width="15" height="4" fill="#00e5ff" filter="url(#neonBloom)" />
-
-                {/* --- HEAD --- */}
-                <path d="M95 90 C95 60, 145 60, 145 90 L145 105 C145 120, 95 120, 95 105 Z" fill="#1f2033" stroke="#4b5563" strokeWidth="2" />
-                {/* Visor with Scanning Animation */}
-                <path d="M100 88 H140 V98 H100 Z" fill="#000" />
-                <rect x="102" y="90" width="10" height="6" fill="url(#visorSweep)" filter="url(#neonBloom)">
-                    <animate attributeName="x" values="100;128;100" dur="2s" repeatCount="indefinite" />
-                    <animate attributeName="width" values="10;5;10" dur="2s" repeatCount="indefinite" />
-                </rect>
-
-                {/* --- ARMS --- */}
-                {/* Right Arm (Resting) */}
-                <path d="M175 105 L195 150 L185 170" fill="none" stroke="#2d2d44" strokeWidth="14" strokeLinecap="round" />
-
-                {/* Left Arm (Active) */}
-                <g>
-                    <line x1="65" y1="105" x2="45" y2="145" stroke="#2d2d44" strokeWidth="14" strokeLinecap="round" />
-                    <line x1="45" y1="145" x2="90" y2="145" stroke="#2d2d44" strokeWidth="12" strokeLinecap="round" />
-                    {/* Gauntlet */}
-                    <rect x="82" y="136" width="18" height="18" rx="4" fill="#333" stroke="#00e5ff" strokeWidth="1" />
+                {/* BACKGROUND EFFECT */}
+                <g transform="scale(1, 0.4) translate(0, 300)">
+                    <ellipse cx="0" cy="0" rx="180" ry="180" fill="none" stroke="#8b5cf6" strokeWidth="2" opacity="0">
+                        <animate attributeName="rx" values="50; 250" dur="1.5s" repeatCount="indefinite" />
+                        <animate attributeName="ry" values="50; 250" dur="1.5s" repeatCount="indefinite" />
+                        <animate attributeName="opacity" values="0.8; 0" dur="1.5s" repeatCount="indefinite" />
+                        <animate attributeName="stroke-width" values="4; 0" dur="1.5s" repeatCount="indefinite" />
+                    </ellipse>
                 </g>
 
-                {/* ========================================== */}
-                {/* LAYER 3: THE HOLOGRAM (The Cool Part) */}
-                {/* ========================================== */}
-                <g transform="translate(100, 135)">
+                {/* CHARACTER */}
+                <g>
+                    <animateTransform
+                        attributeName="transform"
+                        type="translate"
+                        values="0,0; 0,-8; 0,0"
+                        dur="3s"
+                        repeatCount="indefinite"
+                    />
 
-                    {/* 1. The Light Projection Cone */}
-                    <path d="M0 10 L70 -50 L110 -50 L20 10 Z" fill="url(#holoBeam)" opacity="0.5" filter="url(#neonBloom)">
-                        <animate attributeName="opacity" values="0.3;0.6;0.3" dur="0.15s" repeatCount="indefinite" />
+                    {/* CLOAK — Refined */}
+                    <path
+                        d="M-40 -60 C -100 -40, -180 20, -200 100 
+                           L -160 90 C -150 120, -130 150, -170 190
+                           L -130 170 C -80 200, -20 180, 20 150 
+                           L -20 -40 Z"
+                        fill="url(#cloakGrad)"
+                        opacity="0.9"
+                    >
+                        <animate
+                            attributeName="d"
+                            dur="2.2s"
+                            repeatCount="indefinite"
+                            values="
+                                M-40 -60 C -100 -40, -180 20, -200 100 
+                                L -160 90 C -150 120, -130 150, -170 190
+                                L -130 170 C -80 200, -20 180, 20 150 
+                                L -20 -40 Z;
+
+                                M-40 -60 C -90 -50, -170 10, -210 90 
+                                L -170 80 C -150 110, -140 140, -190 170
+                                L -140 150 C -100 190, -40 170, 10 140 
+                                L -20 -40 Z;
+
+                                M-40 -60 C -100 -40, -180 20, -200 100 
+                                L -160 90 C -150 120, -130 150, -170 190
+                                L -130 170 C -80 200, -20 180, 20 150 
+                                L -20 -40 Z
+                            "
+                        />
                     </path>
 
-                    {/* 2. Floating Wireframe Globe/Map */}
-                    <g transform="translate(50, -40) scale(0.8)">
-
-                        {/* Outer Ring - Spinning Slow */}
-                        <ellipse cx="40" cy="20" rx="40" ry="15" fill="none" stroke="#00e5ff" strokeWidth="1" strokeDasharray="5 5" opacity="0.8">
-                            <animateTransform attributeName="transform" type="rotate" from="0 40 20" to="360 40 20" dur="10s" repeatCount="indefinite" />
-                        </ellipse>
-
-                        {/* Inner Ring - Spinning Fast Opposite */}
-                        <ellipse cx="40" cy="20" rx="25" ry="8" fill="none" stroke="#ff00cc" strokeWidth="1" strokeDasharray="2 2" opacity="0.9">
-                            <animateTransform attributeName="transform" type="rotate" from="360 40 20" to="0 40 20" dur="4s" repeatCount="indefinite" />
-                        </ellipse>
-
-                        {/* Central Core - Pulse */}
-                        <circle cx="40" cy="20" r="4" fill="#fff" filter="url(#neonBloom)">
-                            <animate attributeName="r" values="3;5;3" dur="1s" repeatCount="indefinite" />
-                        </circle>
-
-                        {/* Vertical Axis Line */}
-                        <line x1="40" y1="0" x2="40" y2="40" stroke="#00e5ff" strokeWidth="1" opacity="0.5" />
+                    {/* LEGS — Fully upgraded */}
+                    {/* Right Leg (Back) */}
+                    <g transform="translate(35, 75)">
+                        <path
+                            d="M0 -20 C 25 0, 40 35, 35 70 L 10 90 L -10 45 Z"
+                            fill="url(#armorDark)"
+                            stroke="#1e1b4b"
+                            strokeWidth="1.6"
+                        />
+                        <path
+                            d="M10 90 C 5 110, 0 140, 20 165 L 55 170 L 65 135 L 35 85 Z"
+                            fill="url(#armorDark)"
+                            stroke="#312e81"
+                            strokeWidth="1.6"
+                        />
+                        <path
+                            d="M15 165 L 65 165 L 80 180 L 20 180 Z"
+                            fill="#0f172a"
+                            stroke="#1e1b4b"
+                            strokeWidth="2"
+                        />
                     </g>
 
-                    {/* 3. Rising Hologram Particles */}
-                    <circle cx="80" cy="-20" r="1" fill="#00e5ff" opacity="0">
-                        <animate attributeName="cy" values="10;-50" dur="1.5s" repeatCount="indefinite" />
-                        <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
-                    </circle>
-                    <circle cx="100" cy="-30" r="1" fill="#ff00cc" opacity="0">
-                        <animate attributeName="cy" values="10;-50" dur="2s" begin="0.5s" repeatCount="indefinite" />
-                        <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.5s" repeatCount="indefinite" />
-                    </circle>
+                    {/* Left Leg (Front) */}
+                    <g transform="translate(-40, 75)">
+                        <path
+                            d="M-5 -20 C -30 0, -50 35, -40 70 L -10 95 L 25 55 Z"
+                            fill="url(#armorDark)"
+                            stroke="#312e81"
+                            strokeWidth="1.6"
+                        />
+                        <path
+                            d="M-40 70 C -55 95, -60 130, -35 160 L 15 170 L 40 125 L 10 75 Z"
+                            fill="url(#armorDark)"
+                            stroke="#312e81"
+                            strokeWidth="1.6"
+                        />
+                        <path
+                            d="M-20 160 L -70 170 L -40 185 L 25 180 L 40 160 L 0 150 Z"
+                            fill="#020617"
+                            stroke="#1e1b4b"
+                            strokeWidth="2"
+                        />
+                        <path
+                            d="M-25 60 L -35 120"
+                            stroke="#d946ef"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            opacity="0.7"
+                            filter="url(#hyperGlow)"
+                        />
+                    </g>
 
+                    {/* TORSO */}
+                    <path
+                        d="M-40 -20 L40 -20 L25 80 L-25 80 Z"
+                        fill="url(#armorDark)"
+                        stroke="#312e81"
+                        strokeWidth="1.4"
+                    />
+
+                    <path
+                        d="M-18 10 L18 10 M-12 28 L12 28 M-5 45 L5 45"
+                        stroke="#d946ef"
+                        strokeWidth="2"
+                        opacity="0.65"
+                        filter="url(#hyperGlow)"
+                    />
+
+                    {/* HEAD — Cleaner shape */}
+                    <g transform="translate(0, -50)">
+                        <path
+                            d="M-32 -28 C -32 -50, 32 -50, 32 -28 
+                               L 36 18 L 0 38 L -36 18 Z"
+                            fill="#172554"
+                        />
+                        <path d="M-20 -10 L20 -10 L15 28 L-15 28 Z" fill="#000" />
+                        <path d="M-12 4 L12 4 L10 12 L-10 12 Z" fill="#fff" filter="url(#hyperGlow)" />
+                        <path
+                            d="M15 4 L60 -20 L15 12"
+                            fill="url(#energyGrad)"
+                            opacity="0.6"
+                            filter="url(#hyperGlow)"
+                        >
+                            <animate
+                                attributeName="d"
+                                values="M15 4 L60 -20 L15 12; M15 4 L65 -25 L15 12; M15 4 L60 -20 L15 12"
+                                dur="0.25s"
+                                repeatCount="indefinite"
+                            />
+                        </path>
+                    </g>
+
+                    {/* ARMS */}
+                    <path
+                        d="M-40 -20 L-75 20 L-55 65"
+                        stroke="#1e1b4b"
+                        strokeWidth="18"
+                        strokeLinecap="round"
+                        fill="none"
+                    />
+
+                    <g transform="translate(40, -10)">
+                        <path
+                            d="M0 0 L32 32 L22 65"
+                            stroke="#1e1b4b"
+                            strokeWidth="16"
+                            strokeLinecap="round"
+                            fill="none"
+                        />
+                        <rect x="12" y="55" width="22" height="26" fill="#312e81" rx="4" />
+
+                        <g transform="translate(22, 75) rotate(-140)">
+                            <rect x="-5" y="-20" width="10" height="40" fill="#000" stroke="#4c1d95" />
+                            <rect x="-15" y="20" width="30" height="5" fill="#4c1d95" />
+
+                            {/* Sword Blade */}
+                            <path
+                                d="M-4 25 L-4 185 L0 200 L4 185 L4 25 Z"
+                                fill="url(#swordPlasma)"
+                                filter="url(#hyperGlow)"
+                            >
+                                <animate
+                                    attributeName="opacity"
+                                    values="0.8; 1; 0.8"
+                                    dur="0.5s"
+                                    repeatCount="indefinite"
+                                />
+                            </path>
+
+                            <rect x="-10" y="100" width="2" height="2" fill="#fff">
+                                <animate attributeName="y" values="100; 220" dur="1s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="1; 0" dur="1s" repeatCount="indefinite" />
+                            </rect>
+                        </g>
+                    </g>
+
+                    {/* SCARF */}
+                    <path
+                        d="M-20 -30 Q 20 -20, 60 -40 T 140 -50"
+                        fill="none"
+                        stroke="#d946ef"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        filter="url(#hyperGlow)"
+                    >
+                        <animate
+                            attributeName="d"
+                            dur="3s"
+                            repeatCount="indefinite"
+                            values="
+                                M-20 -30 Q 20 -20, 60 -40 T 140 -50;
+                                M-20 -30 Q 20 -10, 60 -60 T 140 -30;
+                                M-20 -30 Q 20 -20, 60 -40 T 140 -50
+                            "
+                        />
+                    </path>
                 </g>
-
             </g>
         </svg>
     );
