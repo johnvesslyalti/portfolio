@@ -62,8 +62,7 @@ export default function NameSection() {
         </div>
 
         <div className="flex items-center justify-center w-1/2 my-2">
-          {/*randomCharacter*/}
-          <CyberSonicArchitect />
+          {randomCharacter}
         </div>
       </div>
     </section>
