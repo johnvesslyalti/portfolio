@@ -11,7 +11,7 @@ export default function SynthSquirrel() {
         >
             <title id="squirrelTitle">SynthSquirrel</title>
             <desc id="squirrelDesc">
-                A futuristic orange squirrel wearing a blue digital visor and holding a floating holographic acorn.
+                A futuristic orange squirrel wearing a blue digital visor and holding a floating holographic acorn, featuring large, cute, whole rounded feet.
             </desc>
             <defs>
                 <linearGradient
@@ -80,6 +80,7 @@ export default function SynthSquirrel() {
                     calcMode="spline"
                     keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
                 />
+                {/* Tail */}
                 <path
                     d="M140 280 C 60 280, 40 160, 100 120 C 140 90, 220 60, 260 120 C 280 150, 260 190, 220 180"
                     stroke="url(#tailGradient)"
@@ -88,12 +89,27 @@ export default function SynthSquirrel() {
                     fill="none"
                     filter="url(#softShadow)"
                 />
+
+                {/* Whole Cute Left Foot */}
+                <g transform="translate(140, 335)">
+                    <ellipse cx={0} cy={0} rx={45} ry={25} fill="url(#furGradient)" filter="url(#softShadow)" />
+                </g>
+
+                {/* Whole Cute Right Foot */}
+                <g transform="translate(260, 335)">
+                    <ellipse cx={0} cy={0} rx={45} ry={25} fill="url(#furGradient)" filter="url(#softShadow)" />
+                </g>
+
+                {/* Body */}
                 <path
                     d="M140 320 L 260 320 C 280 320, 290 280, 280 240 L 120 240 C 110 280, 120 320, 140 320 Z"
                     fill="url(#furGradient)"
                     filter="url(#softShadow)"
                 />
+                {/* Belly */}
                 <ellipse cx={200} cy={280} rx={50} ry={35} fill="#FFF" opacity={0.8} />
+
+                {/* Head and Visor */}
                 <g transform="translate(200, 190)">
                     <path d="M-50 -40 L -70 -90 L -20 -60 Z" fill="url(#furGradient)" />
                     <path d="M50 -40 L 70 -90 L 20 -60 Z" fill="url(#furGradient)" />
@@ -133,6 +149,8 @@ export default function SynthSquirrel() {
                     </rect>
                     <path d="M-10 40 Q 0 50, 10 40 L 0 48 Z" fill="#442211" />
                 </g>
+
+                {/* Right Hand with Acorn (Unchanged) */}
                 <g transform="translate(260, 240)">
                     <circle cx={0} cy={20} r={15} fill="url(#furGradient)" />
                     <g>
@@ -172,7 +190,6 @@ export default function SynthSquirrel() {
                         </g>
                     </g>
                 </g>
-                <circle cx={140} cy={260} r={15} fill="url(#furGradient)" />
             </g>
         </svg>
     );
