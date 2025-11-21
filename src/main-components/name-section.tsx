@@ -29,6 +29,7 @@ export default function NameSection() {
     <CyberPathfinder key="8" />,
     <CyberSonicArchitect key="9" />,
     <SynthSquirrel key="10" />
+    <AbyssalVanguard key="11" />
   ];
 
   useEffect(() => {
