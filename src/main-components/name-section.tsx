@@ -28,7 +28,7 @@ export default function NameSection() {
     <CyberNinja2 key="7" />,
     <CyberPathfinder key="8" />,
     <CyberSonicArchitect key="9" />,
-    <SynthSquirrel key="10" />
+    <SynthSquirrel key="10" />,
     <AbyssalVanguard key="11" />
   ];
 
