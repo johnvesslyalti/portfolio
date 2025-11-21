@@ -1,10 +1,10 @@
 "use client";
 
+import AbyssalVanguard from "@/components/characters/abyssal-vanguard";
 import CyberCodeWizard from "@/components/characters/code-wizard";
 import CoolAstronaut from "@/components/characters/cool-astronaut";
 import CyberCat from "@/components/characters/cyber-cat";
 import CyberCat2 from "@/components/characters/cyber-cat-2";
-import CyberNinja from "@/components/characters/cyber-ninja";
 import CyberNinjaScene from "@/components/characters/cyber-ninja";
 import CyberNinja2 from "@/components/characters/cyber-ninja-2";
 import CyberPathfinder from "@/components/characters/cyber-pathfinder";
@@ -62,7 +62,8 @@ export default function NameSection() {
         </div>
 
         <div className="flex items-center justify-center w-1/2 my-2">
-          {randomCharacter}
+          {/*randomCharacter*/}
+          <AbyssalVanguard />
         </div>
       </div>
     </section>
