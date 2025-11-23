@@ -12,10 +12,10 @@ type Activity = {
 
 const schedule: Activity[] = [
   { start: "06:00", end: "07:00", desc: "Daily Routine" },
-  { start: "07:00", end: "10:00", desc: "Data Structures & Algorithms" },
+  { start: "07:00", end: "10:00", desc: "Problem Solving/DSA" },
   { start: "10:00", end: "13:00", desc: "Development" },
   { start: "13:00", end: "14:00", desc: "Daily Routine" },
-  { start: "14:00", end: "17:00", desc: "Interview Preparation" },
+  { start: "14:00", end: "17:00", desc: "Interview Prep" },
   { start: "17:00", end: "18:00", desc: "Workout" },
   { start: "18:00", end: "19:00", desc: "Daily Routine" },
   { start: "19:00", end: "22:00", desc: "Applications" },
