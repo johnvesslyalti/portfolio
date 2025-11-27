@@ -37,22 +37,12 @@ export default function Skills() {
     { name: "Tailwind CSS", icon: <SiTailwindcss /> },
     { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "Express.js", icon: <SiExpress /> },
-    { name: "Next.js API Routes", icon: <SiNextdotjs /> },
     { name: "PostgreSQL", icon: <SiPostgresql /> },
     { name: "MongoDB", icon: <SiMongodb /> },
     { name: "Prisma ORM", icon: <SiPrisma /> },
     { name: "Git", icon: <FaGitAlt /> },
-    { name: "GitHub", icon: <FaGithub /> },
-    { name: "linux", icon: <FaLinux /> },
-    { name: "Zustand", icon: <SiZulip /> },
-    { name: "Shadcn UI", icon: <SiShadcnui /> },
-    { name: "Better-auth", icon: <SiBetterstack /> },
-    { name: "JWT", icon: <LuFileJson /> },
-    { name: "bcrypt", icon: <MdNoEncryptionGmailerrorred /> },
+    { name: "Linux", icon: <FaLinux /> },
     { name: "Vercel", icon: <IoLogoVercel /> },
-    { name: "Recharts", icon: <LuSquareChartGantt /> },
-    { name: "Postman", icon: <SiPostman /> },
-    { name: "VS Code", icon: <VscVscode /> },
   ];
 
   return (
