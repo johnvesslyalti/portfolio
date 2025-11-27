@@ -1,4 +1,3 @@
-import { SpotifyWidget } from "@/components/spotify-widget";
 import { FaDiscord, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
@@ -32,6 +31,7 @@ export default function Contact() {
       icon: <FaDiscord />,
     },
   ];
+
   return (
     <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border p-5 rounded-lg">
       <div className="flex flex-wrap gap-3">
@@ -46,7 +46,11 @@ export default function Contact() {
           </a>
         ))}
       </div>
-      <SpotifyWidget />
+
+      <div className="text-center leading-tight opacity-80">
+        <p className="text-sm">“Talk is cheap. Show me the code.”</p>
+        <p className="text-xs mt-1">Linus Torvalds</p>
+      </div>
     </section>
   );
 }
