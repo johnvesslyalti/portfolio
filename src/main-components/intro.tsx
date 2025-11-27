@@ -9,7 +9,7 @@ export default function Intro() {
         passionate about building secure, scalable, and user-friendly web
         applications. I specialize in{" "}
         <span className="font-semibold">
-          React, Next.js, Node.js, and PostgreSQL
+          React, Next.js, Node.js, Express.js and PostgreSQL
         </span>
         , and I enjoy turning complex problems into intuitive digital
         experiences.
