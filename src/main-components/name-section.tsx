@@ -3,12 +3,10 @@
 import AbyssalVanguard from "@/components/characters/abyssal-vanguard";
 import CyberCodeWizard from "@/components/characters/code-wizard";
 import CoolAstronaut from "@/components/characters/cool-astronaut";
-import CyberCat from "@/components/characters/cyber-cat";
 import CyberCat2 from "@/components/characters/cyber-cat-2";
 import CyberNinjaScene from "@/components/characters/cyber-ninja";
 import CyberNinja2 from "@/components/characters/cyber-ninja-2";
 import CyberPathfinder from "@/components/characters/cyber-pathfinder";
-import CyberSonicArchitect from "@/components/characters/cyber-sonicarchitect";
 import RoboHelper from "@/components/characters/robo-helper";
 import SynthSquirrel from "@/components/characters/synth-squirrel";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
@@ -22,12 +20,10 @@ export default function NameSection() {
     <CyberCodeWizard key="1" />,
     <CoolAstronaut key="2" />,
     <RoboHelper key="3" />,
-    <CyberCat key="4" />,
     <CyberCat2 key="5" />,
     <CyberNinjaScene key="6" />,
     <CyberNinja2 key="7" />,
     <CyberPathfinder key="8" />,
-    <CyberSonicArchitect key="9" />,
     <SynthSquirrel key="10" />,
     <AbyssalVanguard key="11" />
   ];

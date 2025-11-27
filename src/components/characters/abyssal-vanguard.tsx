@@ -7,7 +7,7 @@ export default function AbyssalVanguardFullBody() {
             // Increased viewbox height to accommodate legs
             viewBox="100 50 600 800"
             width="120"
-            height="160" // Adjusted height for aspect ratio
+            height="120" // Adjusted height for aspect ratio
             preserveAspectRatio="xMidYMid meet"
             role="img"
             style={{
