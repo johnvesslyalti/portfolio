@@ -4,32 +4,12 @@ import { SiLeetcode } from "react-icons/si";
 
 export default function Contact() {
   const contact = [
-    { name: "x", link: "https://x.com/johnvesslyalti", icon: <FaXTwitter /> },
-    {
-      name: "linkedin",
-      link: "https://linkedin.com/in/johnvesslyalti",
-      icon: <FaLinkedin />,
-    },
-    {
-      name: "github",
-      link: "https://github.com/johnvesslyalti",
-      icon: <FaGithub />,
-    },
-    {
-      name: "leetcode",
-      link: "https://leetcode.com/johnvesslyalti",
-      icon: <SiLeetcode />,
-    },
-    {
-      name: "youtube",
-      link: "https://youtube.com/@johnvesslyalti",
-      icon: <FaYoutube />,
-    },
-    {
-      name: "discord",
-      link: "https://discord.com/users/johnvesslyalti",
-      icon: <FaDiscord />,
-    },
+    { name: "X", link: "https://x.com/johnvesslyalti", icon: <FaXTwitter /> },
+    { name: "LinkedIn", link: "https://linkedin.com/in/johnvesslyalti", icon: <FaLinkedin /> },
+    { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub /> },
+    { name: "LeetCode", link: "https://leetcode.com/johnvesslyalti", icon: <SiLeetcode /> },
+    { name: "YouTube", link: "https://youtube.com/@johnvesslyalti", icon: <FaYoutube /> },
+    { name: "Discord", link: "https://discord.com/users/johnvesslyalti", icon: <FaDiscord /> },
   ];
 
   return (
@@ -40,9 +20,21 @@ export default function Contact() {
             key={index}
             href={item.link}
             target="_blank"
-            className="text-xl underline hover:text-neutral-700 dark:hover:text-neutral-300"
+            className="relative group text-xl hover:text-neutral-700 dark:hover:text-neutral-300"
           >
             {item.icon}
+
+            {/* Tooltip */}
+            <span
+              className="absolute left-1/2 -translate-x-1/2 -top-9
+                         px-3 py-1 text-xs font-medium
+                         bg-white dark:bg-neutral-900
+                         text-black dark:text-white
+                         rounded-md shadow-lg border border-neutral-200 dark:border-neutral-700
+                         opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
+                         transition-all duration-150 whitespace-nowrap pointer-events-none">
+              {item.name}
+            </span>
           </a>
         ))}
       </div>
