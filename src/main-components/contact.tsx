@@ -12,6 +12,22 @@ export default function Contact() {
     { name: "Discord", link: "https://discord.com/users/johnvesslyalti", icon: <FaDiscord /> },
   ];
 
+  const quotes = [
+    { text: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
+    { text: "Innovation grows when curiosity leads.", author: "Steve Jobs" },
+    { text: "Good software is born from clear minds.", author: "Bill Gates" },
+    { text: "Focus on users, the rest follows soon.", author: "Larry Page" },
+    { text: "Move fast, learn fast, build even faster.", author: "Mark Zuckerberg" },
+    { text: "Stay simple; complexity kills progress.", author: "Dennis Ritchie" },
+    { text: "Great tools empower great developers.", author: "Anders Hejlsberg" },
+    { text: "Every idea scales when passion fuels it.", author: "Elon Musk" },
+    { text: "Precision matters; craft code with care.", author: "Ken Thompson" },
+    { text: "Create value first, optimize it later.", author: "Jeff Bezos" },
+    { text: "Small steps daily make giant tech leaps.", author: "Linus Torvalds" },
+  ];
+
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
   return (
     <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border p-5 rounded-lg">
       <div className="flex flex-wrap gap-3">
@@ -40,8 +56,8 @@ export default function Contact() {
       </div>
 
       <div className="text-center leading-tight opacity-80">
-        <p className="text-sm">“Talk is cheap. Show me the code.”</p>
-        <p className="text-xs mt-1">Linus Torvalds</p>
+        <p className="text-sm">“{randomQuote.text}”</p>
+        <p className="text-xs mt-1">{randomQuote.author}</p>
       </div>
     </section>
   );
