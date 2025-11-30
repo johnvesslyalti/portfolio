@@ -10,8 +10,8 @@ import {
 } from "@/components/ui/carousel";
 
 export function BadgeCarousel() {
-  const badgeCount = 3; // 👈 total badges
-  const badges = Array.from({ length: badgeCount }, (_, i) => i + 1); // [1, 2, 3]
+  const badgeCount = 4; // 👈 total badges
+  const badges = Array.from({ length: badgeCount }, (_, i) => i + 1).reverse(); // [1, 2, 3]
 
   return (
     <Carousel
