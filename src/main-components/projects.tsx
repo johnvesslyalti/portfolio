@@ -7,7 +7,7 @@ export default function Projects() {
   const projects = [
     {
       name: "Lift Log",
-      src: "/liftlog-1.png",
+      src: "/liftlog.png",
       github: "https://github.com/johnvesslyalti/lift-log",
       live: "https://johnvesslyalti-liftlog.vercel.app",
     },
