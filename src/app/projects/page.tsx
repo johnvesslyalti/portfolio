@@ -2,7 +2,6 @@
 "use client";
 
 import { projects } from "@/data/projects";
-import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import { useRouter } from "next/navigation";
@@ -12,26 +11,32 @@ export default function ProjectsPage() {
 
     return (
         <section className="py-6">
-            <div className="max-w-4xl mx-auto px-4">
-                {/* Back button */}
-                <Button
-                    onClick={() => router.push("/")}
-                    className="bg-transparent text-black dark:text-white border-2 dark:border-white hover:bg-white dark:hover:bg-black mb-4"
-                >
-                    ← Back to Home
-                </Button>
+            <div className="max-w-4xl mx-auto px-4 mb-10">
 
-                <h2 className="text-2xl font-semibold mb-8 text-center">
-                    All Projects
-                </h2>
+                {/* Header — Left Arrow + Centered Title */}
+                <div className="relative mb-8 flex items-center justify-center">
+                    {/* Arrow (left aligned) */}
+                    <button
+                        onClick={() => router.push("/")}
+                        className="absolute left-0 text-2xl hover:opacity-70 transition"
+                    >
+                        ←
+                    </button>
 
+                    {/* Center Title */}
+                    <h2 className="text-2xl font-bold text-center">
+                        Projects
+                    </h2>
+                </div>
+
+                {/* Project List */}
                 <div className="flex flex-col gap-10">
                     {projects.map((project, index) => (
                         <div
                             key={index}
                             className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start"
                         >
-                            {/* Left — Smaller Video */}
+                            {/* Left — Video */}
                             <div className="w-full flex justify-center">
                                 <video
                                     src={project.src}
@@ -43,29 +48,25 @@ export default function ProjectsPage() {
                                 />
                             </div>
 
-                            {/* Right — Compact Content */}
+                            {/* Right — Content */}
                             <div className="flex flex-col gap-2">
-                                {/* Name */}
                                 <h3 className="text-lg font-semibold">{project.name}</h3>
 
-                                {/* Description */}
                                 <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
                                     {project.description}
                                 </p>
 
-                                {/* Tech stack */}
                                 <div className="flex flex-wrap gap-2 mt-1">
                                     {project.tech.map((t, i) => (
                                         <span
                                             key={i}
-                                            className="px-2 py-1 text-[10px] rounded-md bg-neutral-100 dark:bg-neutral-900 dark:border-neutral-700 border"
+                                            className="px-2 py-1 text-[10px] rounded-md bg-neutral-100 dark:bg-neutral-900 border dark:border-neutral-700"
                                         >
                                             {t}
                                         </span>
                                     ))}
                                 </div>
 
-                                {/* Buttons */}
                                 <div className="flex gap-3 mt-3">
                                     <a
                                         href={project.github}
