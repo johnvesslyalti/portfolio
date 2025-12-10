@@ -1,48 +1,35 @@
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { projects } from "@/data/projects";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 
 export default function Projects() {
-  const projects = [
-    {
-      name: "Lift Log",
-      src: "/liftlog.png",
-      github: "https://github.com/johnvesslyalti/lift-log",
-      live: "https://johnvesslyalti-liftlog.vercel.app",
-    },
-    {
-      name: "Sub Trakr",
-      src: "/subtrackr.png",
-      github: "https://github.com/johnvesslyalti/sub-trackr",
-      live: "https://johnvesslyalti-subtrackr.vercel.app",
-    },
-    {
-      name: "Cine Scope",
-      src: "/cinescope.png",
-      github: "https://github.com/johnvesslyalti/cine-scope",
-      live: "https://johnvesslyalti-cinescope.vercel.app",
-    },
-  ];
+  const proj = projects.slice(0, 3)
 
   return (
     <section className="border p-5 rounded-lg">
       <h2 className="text-xl font-semibold border-b border-neutral-400 mb-3">
         Projects
       </h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-center gap-3">
         {projects.map((project, index) => (
           <div
             key={index}
             className="overflow-hidden transition-all duration-300 rounded-lg"
           >
-            <Image
+            {/* Video section */}
+            <video
               src={project.src}
-              alt={project.name}
-              width={500} // larger width for responsive scaling
-              height={300} // proportional height
               className="object-contain w-full h-48 sm:h-56 md:h-64"
+              autoPlay
+              loop
+              muted
+              playsInline
             />
+
+            {/* Badge section */}
             <Badge className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border-2 border-black dark:border-white/10 dark:shadow-2xl items-center">
               <div className="font-bold tracking-tight">{project.name}</div>
               <div className="flex items-center gap-1">
@@ -54,6 +41,7 @@ export default function Projects() {
                   <FaGithub className="inline mr-1" />
                   <span>GitHub</span>
                 </a>
+
                 <a
                   href={project.live}
                   target="_blank"
@@ -66,6 +54,11 @@ export default function Projects() {
             </Badge>
           </div>
         ))}
+      </div>
+      <div className="flex justify-center items-center mt-5">
+        <Button className="bg-transparent text-black hover:bg-white dark:text-white border-2 shadow:white/50 dark:border-white dark:hover:bg-black hover:cursor-pointer">
+          Show More
+        </Button>
       </div>
     </section>
   );
