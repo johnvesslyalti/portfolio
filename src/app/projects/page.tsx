@@ -2,7 +2,6 @@
 "use client";
 
 import { projects } from "@/data/projects";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
@@ -12,63 +11,83 @@ export default function ProjectsPage() {
     const router = useRouter();
 
     return (
-        <section className="border p-5 rounded-lg">
-            {/* Back button */}
-            <div className="mb-5">
+        <section className="py-6">
+            <div className="max-w-4xl mx-auto px-4">
+                {/* Back button */}
                 <Button
                     onClick={() => router.push("/")}
-                    className="bg-transparent text-black dark:text-white border-2 dark:border-white hover:bg-white dark:hover:bg-black"
+                    className="bg-transparent text-black dark:text-white border-2 dark:border-white hover:bg-white dark:hover:bg-black mb-4"
                 >
                     ← Back to Home
                 </Button>
-            </div>
 
-            <h2 className="text-2xl font-semibold border-b border-neutral-400 mb-5">
-                All Projects
-            </h2>
+                <h2 className="text-2xl font-semibold mb-8 text-center">
+                    All Projects
+                </h2>
 
-            <div className="flex flex-col gap-6">
-                {projects.map((project, index) => (
-                    <div
-                        key={index}
-                        className="overflow-hidden transition-all duration-300 rounded-lg border border-neutral-300 dark:border-neutral-800 p-3"
-                    >
-                        {/* Video */}
-                        <video
-                            src={project.src}
-                            className="object-contain w-full h-64 md:h-96 rounded-lg"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                        />
-
-                        {/* Badge / Info */}
-                        <Badge className="w-full mt-3 flex justify-between bg-white text-black dark:text-white dark:bg-transparent border-2 border-black dark:border-white/10">
-                            <div className="font-bold tracking-tight">{project.name}</div>
-
-                            <div className="flex items-center gap-3">
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
-                                >
-                                    <FaGithub className="mr-1" />
-                                    GitHub
-                                </a>
-
-                                <a
-                                    href={project.live}
-                                    target="_blank"
-                                    className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
-                                >
-                                    <LiaExternalLinkAltSolid className="mr-1" />
-                                    Live
-                                </a>
+                <div className="flex flex-col gap-10">
+                    {projects.map((project, index) => (
+                        <div
+                            key={index}
+                            className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start"
+                        >
+                            {/* Left — Smaller Video */}
+                            <div className="w-full flex justify-center">
+                                <video
+                                    src={project.src}
+                                    className="rounded-lg shadow-md w-full max-w-sm object-cover"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                />
                             </div>
-                        </Badge>
-                    </div>
-                ))}
+
+                            {/* Right — Compact Content */}
+                            <div className="flex flex-col gap-2">
+                                {/* Name */}
+                                <h3 className="text-lg font-semibold">{project.name}</h3>
+
+                                {/* Description */}
+                                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                                    {project.description}
+                                </p>
+
+                                {/* Tech stack */}
+                                <div className="flex flex-wrap gap-2 mt-1">
+                                    {project.tech.map((t, i) => (
+                                        <span
+                                            key={i}
+                                            className="px-2 py-1 text-[10px] rounded-md bg-neutral-100 dark:bg-neutral-900 dark:border-neutral-700 border"
+                                        >
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Buttons */}
+                                <div className="flex gap-3 mt-3">
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        className="flex items-center gap-1 px-3 py-1.5 border rounded-md text-xs hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
+                                    >
+                                        <FaGithub className="text-sm" /> GitHub
+                                    </a>
+
+                                    <a
+                                        href={project.live}
+                                        target="_blank"
+                                        className="flex items-center gap-1 px-3 py-1.5 border rounded-md text-xs hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
+                                    >
+                                        <LiaExternalLinkAltSolid className="text-sm" /> Live
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
             </div>
         </section>
     );
