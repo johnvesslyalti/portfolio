@@ -34,8 +34,11 @@ export default function ProjectsPage() {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start"
+                            className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center 
+             border border-neutral-300 dark:border-neutral-800 
+             p-10 rounded-lg shadow-sm hover:shadow-md transition"
                         >
+
                             {/* Left — Video */}
                             <div className="w-full flex justify-center">
                                 <video
