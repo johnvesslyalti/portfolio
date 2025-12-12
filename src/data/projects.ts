@@ -64,5 +64,30 @@ export const projects = [
             "Express.js",
             "Caching"
         ],
+    },
+    {
+        name: "DevNest",
+        src: "/devnest.mp4",
+        github: "https://github.com/johnvesslyalti/devnest",
+        live: "https://johnvesslyalti-devnest.vercel.app",
+
+        description: `DevNest is a developer platform to share projects, snippets, and memes, powered by a modular, API-driven backend.`,
+
+        tech: [
+            "Node.js",
+            "Express.js",
+            "PostgreSQL",
+            "Prisma ORM",
+            "RESTful API Architecture",
+            "Authentication & Authorization",
+            "Role-Based Access Control",
+            "Content Delivery APIs",
+            "Caching (Redis-style patterns)",
+            "Rate Limiting",
+            "Input Validation",
+            "Scalable Data Modeling",
+            "🚧 Work In Progress"
+        ],
     }
+
 ];
