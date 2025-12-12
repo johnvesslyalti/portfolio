@@ -1,6 +1,6 @@
-// src/app/projects/page.tsx
 "use client";
 
+import { useState } from "react";
 import { projects } from "@/data/projects";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
@@ -8,6 +8,12 @@ import { useRouter } from "next/navigation";
 
 export default function ProjectsPage() {
     const router = useRouter();
+    const [filter, setFilter] = useState("All");
+
+    const filteredProjects =
+        filter === "All"
+            ? projects
+            : projects.filter((p) => p.category === filter);
 
     return (
         <section className="py-6">
@@ -15,7 +21,6 @@ export default function ProjectsPage() {
 
                 {/* Header — Left Arrow + Centered Title */}
                 <div className="relative mb-8 flex items-center justify-center">
-                    {/* Arrow (left aligned) */}
                     <button
                         onClick={() => router.push("/")}
                         className="absolute left-0 text-2xl hover:opacity-70 transition"
@@ -23,22 +28,36 @@ export default function ProjectsPage() {
                         ←
                     </button>
 
-                    {/* Center Title */}
                     <h2 className="text-2xl font-bold text-center">
                         Projects
                     </h2>
                 </div>
 
+                {/* Filter Buttons */}
+                <div className="flex gap-3 mb-8">
+                    {["All", "Full Stack", "Backend"].map((cat) => (
+                        <button
+                            key={cat}
+                            onClick={() => setFilter(cat)}
+                            className={`px-4 py-1.5 rounded-md text-sm border transition ${filter === cat
+                                ? "bg-black text-white dark:bg-white dark:text-black"
+                                : "bg-neutral-200 dark:bg-neutral-800"
+                                }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
+
                 {/* Project List */}
                 <div className="flex flex-col gap-10">
-                    {projects.map((project, index) => (
+                    {filteredProjects.map((project, index) => (
                         <div
                             key={index}
                             className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center 
-             border border-neutral-300 dark:border-neutral-800 
-             p-10 rounded-lg shadow-sm hover:shadow-md transition"
+                        border border-neutral-300 dark:border-neutral-800 
+                        p-10 rounded-lg shadow-sm hover:shadow-md transition"
                         >
-
                             {/* Left — Video */}
                             <div className="w-full flex justify-center">
                                 <video

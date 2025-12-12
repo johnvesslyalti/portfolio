@@ -4,10 +4,8 @@ export const projects = [
         src: "/liftlog.mp4",
         github: "https://github.com/johnvesslyalti/lift-log",
         live: "https://johnvesslyalti-liftlog.vercel.app",
-
         description:
             "A weightlifting tracking platform that helps users log workouts, follow progress, and maintain consistency with an intuitive UI.",
-
         tech: [
             "Next.js",
             "Next.js Server Actions",
@@ -15,16 +13,15 @@ export const projects = [
             "Prisma",
             "PostgreSQL",
         ],
+        category: "Full Stack",
     },
     {
         name: "Sub Trackr",
         src: "/subtrackr.mp4",
         github: "https://github.com/johnvesslyalti/sub-trackr",
         live: "https://johnvesslyalti-subtrackr.vercel.app",
-
         description:
             "A subscription tracking app that allows users to manage recurring payments and avoid unexpected billing.",
-
         tech: [
             "Next.js",
             "Next.js Server Actions",
@@ -32,16 +29,15 @@ export const projects = [
             "Prisma",
             "PostgreSQL",
         ],
+        category: "Full Stack",
     },
     {
         name: "Cine Scope",
         src: "/cinescope.mp4",
         github: "https://github.com/johnvesslyalti/cine-scope",
         live: "https://johnvesslyalti-cinescope.vercel.app",
-
         description:
             "A movie exploration platform that lets users browse films, watch trailers, and discover trending content.",
-
         tech: [
             "Next.js",
             "Next.js Server Actions",
@@ -49,30 +45,25 @@ export const projects = [
             "Prisma",
             "PostgreSQL",
         ],
+        category: "Full Stack",
     },
     {
         name: "Store Inventory",
         src: "/storeinventory.mp4",
         github: "https://github.com/johnvesslyalti/store-inventory-service",
         live: "https://johnvesslyalti-store-inventory-service.vercel.app",
-
         description:
             "Implement a nearby store locator that caches results until the underlying data changes, and dynamically renders the list of available items for the selected store.",
-
-        tech: [
-            "Node.js",
-            "Express.js",
-            "Caching"
-        ],
+        tech: ["Node.js", "Express.js", "Caching"],
+        category: "Backend",
     },
     {
         name: "DevNest",
         src: "/devnest.mp4",
         github: "https://github.com/johnvesslyalti/devnest",
         live: "https://web.postman.co/workspace/My-Workspace~9eb63259-5a06-4ff5-8952-fb889e10caed/collection/39926112-1f9a5499-fa3f-4c50-8a15-99117d2626e5?action=share&source=copy-link&creator=39926112",
-
-        description: `DevNest is a developer platform to share projects, snippets, and memes, powered by a modular, API-driven backend.`,
-
+        description:
+            "DevNest is a developer platform to share projects, snippets, and memes, powered by a modular, API-driven backend.",
         tech: [
             "Node.js",
             "Express.js",
@@ -86,8 +77,8 @@ export const projects = [
             "Rate Limiting",
             "Input Validation",
             "Scalable Data Modeling",
-            "🚧 Work In Progress"
+            "🚧 Work In Progress",
         ],
-    }
-
+        category: "Backend",
+    },
 ];
