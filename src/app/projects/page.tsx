@@ -20,7 +20,7 @@ export default function ProjectsPage() {
             <div className="max-w-4xl mx-auto px-4 mb-10">
 
                 {/* Header — Left Arrow + Centered Title */}
-                <div className="relative mb-8 flex items-center justify-center">
+                <div className="relative mb-6 flex items-center justify-center">
                     <button
                         onClick={() => router.push("/")}
                         className="absolute left-0 text-2xl hover:opacity-70 transition cursor-pointer"
@@ -32,6 +32,9 @@ export default function ProjectsPage() {
                         Projects
                     </h2>
                 </div>
+
+                {/* Divider */}
+                <div className="border-t border-neutral-300 dark:border-neutral-800 mb-8" />
 
                 {/* Filter Buttons */}
                 <div className="flex gap-3 mb-8">
@@ -54,9 +57,11 @@ export default function ProjectsPage() {
                     {filteredProjects.map((project, index) => (
                         <div
                             key={index}
-                            className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center 
-                        border border-neutral-300 dark:border-neutral-800 
-                        p-10 rounded-lg shadow-sm hover:shadow-md transition"
+                            className="
+                grid grid-cols-1 md:grid-cols-2 gap-6 items-center
+                border border-neutral-300 dark:border-neutral-800
+                p-10 rounded-lg shadow-sm hover:shadow-md transition
+              "
                         >
                             {/* Left — Video */}
                             <div className="w-full flex justify-center">
@@ -72,7 +77,9 @@ export default function ProjectsPage() {
 
                             {/* Right — Content */}
                             <div className="flex flex-col gap-2">
-                                <h3 className="text-lg font-semibold">{project.name}</h3>
+                                <h3 className="text-lg font-semibold">
+                                    {project.name}
+                                </h3>
 
                                 <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
                                     {project.description}
