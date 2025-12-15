@@ -1,11 +1,11 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { projects } from "@/data/projects";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Projects() {
   const router = useRouter();
@@ -60,12 +60,12 @@ export default function Projects() {
       </div>
 
       <div className="flex justify-center items-center mt-5">
-        <Button
-          onClick={() => router.push("/projects")}
-          className="bg-transparent text-black hover:bg-white dark:text-white border-2 dark:border-white hover:cursor-pointer dark:hover:bg-black"
+        <Link
+          href="/projects"
+          className="px-6 py-2 border rounded-md text-sm font-medium hover:bg-neutral-50/5 transition"
         >
           Show More
-        </Button>
+        </Link>
       </div>
     </section>
   );

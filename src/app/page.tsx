@@ -7,6 +7,7 @@ import ProblemSolving from "@/main-components/problem-solving";
 import Intro from "@/main-components/intro";
 import CustomTweet from "@/main-components/custom-tweet";
 import Status from "@/main-components/status";
+import BlogSection from "@/main-components/blog-section";
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
       <Projects />
       <ProblemSolving />
       <GitHub />
+      <BlogSection />
       <CustomTweet />
       <Contact />
     </div>

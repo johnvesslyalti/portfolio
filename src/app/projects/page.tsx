@@ -23,7 +23,7 @@ export default function ProjectsPage() {
                 <div className="relative mb-8 flex items-center justify-center">
                     <button
                         onClick={() => router.push("/")}
-                        className="absolute left-0 text-2xl hover:opacity-70 transition"
+                        className="absolute left-0 text-2xl hover:opacity-70 transition cursor-pointer"
                     >
                         ←
                     </button>
