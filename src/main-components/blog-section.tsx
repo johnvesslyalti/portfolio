@@ -10,14 +10,14 @@ export default function BlogSection() {
                 Blogs
             </h2>
 
-            <div className="mt-6 flex gap-4">
+            {/* Cards */}
+            <div className="mt-6 flex flex-col gap-4 md:flex-row">
                 {recentBlogs.map((blog) => (
                     <Link
                         key={blog.slug}
                         href={`/blogs/${blog.slug}`}
-                        className="flex-1 border rounded-lg p-4 hover:bg-neutral-50/5 transition"
+                        className="border rounded-lg p-4 hover:bg-neutral-50/5 transition md:flex-1"
                     >
-                        {/* Date */}
                         <span className="text-xs text-neutral-500 block mb-1">
                             {blog.date}
                         </span>
