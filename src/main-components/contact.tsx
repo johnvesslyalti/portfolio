@@ -36,7 +36,7 @@ export default function Contact() {
             key={index}
             href={item.link}
             target="_blank"
-            className="relative group text-xl hover:text-neutral-700 dark:hover:text-neutral-300"
+            className="relative group text-2xl hover:text-neutral-700 dark:hover:text-neutral-300"
           >
             {item.icon}
 
