@@ -1,4 +1,4 @@
-export default function PhantomRonin() {
+export default function SystemTrailblazer() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +9,7 @@ export default function PhantomRonin() {
             role="img"
             style={{ background: 'transparent', overflow: 'visible' }}
         >
-            <title>Phantom Ronin</title>
+            <title>system-trailblazer</title>
 
             <defs>
                 {/* FILTERS */}

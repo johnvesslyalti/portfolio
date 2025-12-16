@@ -1,4 +1,4 @@
-export default function RoboHelper() {
+export default function AutoMech() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@ export default function RoboHelper() {
             role="img"
             aria-labelledby="roboTitle roboDesc"
         >
-            <title id="roboTitle">Tech-Bot</title>
+            <title id="roboTitle">auto-mech</title>
             <desc id="roboDesc">
                 A modern, glowing robot helper with a scanning display, floating gently,
                 surrounded by revolving tech elements.

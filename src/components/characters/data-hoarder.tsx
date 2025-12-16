@@ -1,4 +1,4 @@
-export default function SynthSquirrel() {
+export default function DataHoarder() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +9,7 @@ export default function SynthSquirrel() {
             role="img"
             aria-labelledby="squirrelTitle squirrelDesc"
         >
-            <title id="squirrelTitle">SynthSquirrel</title>
+            <title id="squirrelTitle">data-hoarder</title>
             <desc id="squirrelDesc">
                 A futuristic orange squirrel wearing a blue digital visor and holding a floating holographic acorn, featuring large, cute, whole rounded feet.
             </desc>

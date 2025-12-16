@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AbyssalVanguardFullBody() {
+export default function KernelLeviathan() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ export default function AbyssalVanguardFullBody() {
                 overflow: 'visible'
             }}
         >
-            <title>The Abyssal Vanguard - Full Body Hydro Spec</title>
+            <title>kernel-leviathan</title>
 
             <defs>
                 {/* --- WATER FX FILTERS --- */}

@@ -1,4 +1,4 @@
-export default function CyberCodeWizard() {
+export default function SyntaxSage() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@ export default function CyberCodeWizard() {
                 // Transparent background
             }}
         >
-            <title id="wizardTitle">Cyber Code Wizard v2.0 (Technomancer)</title>
+            <title id="wizardTitle">syntax-sage</title>
             <desc id="wizardDesc">
                 A mysterious technomancer in a void-cloak casting floating hexadecimal spells.
             </desc>

@@ -1,14 +1,14 @@
 "use client";
 
-import AbyssalVanguard from "@/components/characters/abyssal-vanguard";
-import CyberCodeWizard from "@/components/characters/code-wizard";
-import CoolAstronaut from "@/components/characters/cool-astronaut";
-import CyberCat2 from "@/components/characters/cyber-cat-2";
-import CyberNinjaScene from "@/components/characters/cyber-ninja";
-import CyberNinja2 from "@/components/characters/cyber-ninja-2";
-import CyberPathfinder from "@/components/characters/cyber-pathfinder";
-import RoboHelper from "@/components/characters/robo-helper";
-import SynthSquirrel from "@/components/characters/synth-squirrel";
+import AsyncPhantom from "@/components/characters/async-phantom";
+import AutoMech from "@/components/characters/auto-mech";
+import BytePanther from "@/components/characters/byte-panther";
+import CloudOrbiter from "@/components/characters/cloud-orbiter";
+import DataHoarder from "@/components/characters/data-hoarder";
+import KernelLeviathan from "@/components/characters/kernel-leviathan";
+import StackShadow from "@/components/characters/stack-shadow";
+import SyntaxSage from "@/components/characters/syntax-sage";
+import SystemTrailblazer from "@/components/characters/system-trailblazer";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Dot } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -17,15 +17,15 @@ export default function NameSection() {
   const [randomCharacter, setRandomCharacter] = useState<React.ReactElement | null>(null);
 
   const characters = [
-    <CyberCodeWizard key="1" />,
-    <CoolAstronaut key="2" />,
-    <RoboHelper key="3" />,
-    <CyberCat2 key="5" />,
-    <CyberNinjaScene key="6" />,
-    <CyberNinja2 key="7" />,
-    <CyberPathfinder key="8" />,
-    <SynthSquirrel key="10" />,
-    <AbyssalVanguard key="11" />
+    <AsyncPhantom />,
+    <AutoMech />,
+    <BytePanther />,
+    <CloudOrbiter />,
+    <DataHoarder />,
+    <KernelLeviathan />,
+    <StackShadow />,
+    <SyntaxSage />,
+    <SystemTrailblazer />
   ];
 
   useEffect(() => {

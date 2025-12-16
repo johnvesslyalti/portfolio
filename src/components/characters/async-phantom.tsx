@@ -1,4 +1,4 @@
-export default function CyberNinja2() {
+export default function AsyncPhantom() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@ export default function CyberNinja2() {
                 background: 'transparent' 
             }}
         >
-            <title id="roninTitle">The Neon Ronin</title>
+            <title id="roninTitle">async-phantom</title>
             <desc id="roninDesc">
                 A stylized, high-tech ninja silhouette with intensified pulsing energy effects, standing alone.
             </desc>

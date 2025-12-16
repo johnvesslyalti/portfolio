@@ -1,4 +1,4 @@
-export default function CoolAstronaut() {
+export default function CloudOrbiter() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ export default function CoolAstronaut() {
                 display: "block",
             }}
         >
-            <title id="astroTitle">Void Walker Astronaut</title>
+            <title id="astroTitle">cloud-orbiter</title>
             <desc id="astroDesc">
                 A cool, heavy-duty mech astronaut with neon accents floating in zero-g.
             </desc>

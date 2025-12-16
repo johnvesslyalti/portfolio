@@ -1,4 +1,4 @@
-export default function VectorCat() {
+export default function BytePanther() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,7 @@ export default function VectorCat() {
                 overflow: "visible" // Allows the glow to spill outside slightly
             }}
         >
-            <title>Vector - The Cyber Guardian</title>
+            <title>byte-panther</title>
             <defs>
                 {/* High-Contrast Metal Gradient */}
                 <linearGradient id="metalBody" x1="0%" y1="0%" x2="100%" y2="100%">

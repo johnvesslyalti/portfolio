@@ -1,4 +1,4 @@
-export default function CyberNinja() {
+export default function StackShadow() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ export default function CyberNinja() {
                 display: "block",
             }}
         >
-            <title id="ninjaTitle">Enhanced Human Cyber Ninja</title>
+            <title id="ninjaTitle">stack-shadow</title>
             <desc id="ninjaDesc">
                 A detailed, human-like cyber ninja with articulated hands gripping an energy katana, tactical armor, and a glowing visor.
             </desc>
