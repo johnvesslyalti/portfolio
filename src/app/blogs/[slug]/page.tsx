@@ -11,8 +11,6 @@ export default async function Page({
 
 export function generateStaticParams() {
     return [
-        { slug: 'welcome' }, 
-        { slug: 'about' },
         { slug: 'why-backend-engineering' },
         { slug: 'cursor-pagination' },
         { slug: 'designing-follow-systems' },
