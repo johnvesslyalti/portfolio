@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { blogs } from "@/lib/blogs";
+import { blogs } from "@/data/blogs";
 
 export default function BlogSection() {
     const recentBlogs = blogs.slice(0, 3);

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { blogs } from "@/lib/blogs";
+import { blogs } from "@/data/blogs";
 
 export default function BlogsPage() {
     const router = useRouter();
