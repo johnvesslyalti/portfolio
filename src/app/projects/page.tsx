@@ -5,6 +5,7 @@ import { projects } from "@/data/projects";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import { useRouter } from "next/navigation";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function ProjectsPage() {
     const router = useRouter();
@@ -25,7 +26,7 @@ export default function ProjectsPage() {
                         onClick={() => router.push("/")}
                         className="absolute left-0 text-2xl hover:opacity-70 transition cursor-pointer"
                     >
-                        ←
+                        <IoIosArrowBack />
                     </button>
 
                     <h2 className="text-2xl font-bold text-center">

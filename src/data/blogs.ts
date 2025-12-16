@@ -1,8 +1,8 @@
 // lib/blogs.ts
 export const blogs = [
     {
-        slug: "why-backend-engineering",
-        title: "Why I’m Drawn to Backend Engineering",
+        slug: "thinking-in-systems",
+        title: "Thinking in Systems",
         description:
             "How system thinking, failure handling, and deep learning shaped my interest in backend engineering.",
         date: "Dec 15, 2025"

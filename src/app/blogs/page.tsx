@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { blogs } from "@/data/blogs";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function BlogsPage() {
     const router = useRouter();
@@ -17,7 +18,7 @@ export default function BlogsPage() {
                         onClick={() => router.push("/")}
                         className="absolute left-0 top-0 text-2xl hover:opacity-70 transition cursor-pointer"
                     >
-                        ←
+                        <IoIosArrowBack />
                     </button>
 
                     <h2 className="text-2xl font-semibold text-center">
