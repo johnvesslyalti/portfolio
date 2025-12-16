@@ -9,7 +9,7 @@ export default function SystemTrailblazer() {
             role="img"
             style={{ background: 'transparent', overflow: 'visible' }}
         >
-            <title>system-trailblazer</title>
+            <title>System Trailblazer</title>
 
             <defs>
                 {/* FILTERS */}

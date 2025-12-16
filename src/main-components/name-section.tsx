@@ -17,15 +17,15 @@ export default function NameSection() {
   const [randomCharacter, setRandomCharacter] = useState<React.ReactElement | null>(null);
 
   const characters = [
-    <AsyncPhantom />,
-    <AutoMech />,
-    <BytePanther />,
-    <CloudOrbiter />,
-    <DataHoarder />,
-    <KernelLeviathan />,
-    <StackShadow />,
-    <SyntaxSage />,
-    <SystemTrailblazer />
+    <AsyncPhantom key={1} />,
+    <AutoMech key={2} />,
+    <BytePanther key={3} />,
+    <CloudOrbiter key={4} />,
+    <DataHoarder key={5} />,
+    <KernelLeviathan key={6} />,
+    <StackShadow key={7} />,
+    <SyntaxSage key={8} />,
+    <SystemTrailblazer key={9} />
   ];
 
   useEffect(() => {

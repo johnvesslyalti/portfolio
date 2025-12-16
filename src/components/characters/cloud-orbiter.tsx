@@ -14,7 +14,7 @@ export default function CloudOrbiter() {
                 display: "block",
             }}
         >
-            <title id="astroTitle">cloud-orbiter</title>
+            <title id="astroTitle">Cloud Orbiter</title>
             <desc id="astroDesc">
                 A cool, heavy-duty mech astronaut with neon accents floating in zero-g.
             </desc>

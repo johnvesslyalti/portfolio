@@ -16,7 +16,7 @@ export default function AsyncPhantom() {
                 background: 'transparent' 
             }}
         >
-            <title id="roninTitle">async-phantom</title>
+            <title id="roninTitle">Async Phantom</title>
             <desc id="roninDesc">
                 A stylized, high-tech ninja silhouette with intensified pulsing energy effects, standing alone.
             </desc>

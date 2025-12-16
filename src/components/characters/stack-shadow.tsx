@@ -14,7 +14,7 @@ export default function StackShadow() {
                 display: "block",
             }}
         >
-            <title id="ninjaTitle">stack-shadow</title>
+            <title id="ninjaTitle">Stack Shadow</title>
             <desc id="ninjaDesc">
                 A detailed, human-like cyber ninja with articulated hands gripping an energy katana, tactical armor, and a glowing visor.
             </desc>

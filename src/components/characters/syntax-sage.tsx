@@ -15,7 +15,7 @@ export default function SyntaxSage() {
                 // Transparent background
             }}
         >
-            <title id="wizardTitle">syntax-sage</title>
+            <title id="wizardTitle">Syntax Sage</title>
             <desc id="wizardDesc">
                 A mysterious technomancer in a void-cloak casting floating hexadecimal spells.
             </desc>

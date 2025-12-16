@@ -9,7 +9,7 @@ export default function DataHoarder() {
             role="img"
             aria-labelledby="squirrelTitle squirrelDesc"
         >
-            <title id="squirrelTitle">data-hoarder</title>
+            <title id="squirrelTitle">Data Hoarder</title>
             <desc id="squirrelDesc">
                 A futuristic orange squirrel wearing a blue digital visor and holding a floating holographic acorn, featuring large, cute, whole rounded feet.
             </desc>

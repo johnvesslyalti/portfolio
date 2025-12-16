@@ -12,7 +12,7 @@ export default function BytePanther() {
                 overflow: "visible" // Allows the glow to spill outside slightly
             }}
         >
-            <title>byte-panther</title>
+            <title>Byte Panther</title>
             <defs>
                 {/* High-Contrast Metal Gradient */}
                 <linearGradient id="metalBody" x1="0%" y1="0%" x2="100%" y2="100%">

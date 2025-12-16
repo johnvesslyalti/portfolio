@@ -8,7 +8,7 @@ export default function AutoMech() {
             role="img"
             aria-labelledby="roboTitle roboDesc"
         >
-            <title id="roboTitle">auto-mech</title>
+            <title id="roboTitle">Auto Mech</title>
             <desc id="roboDesc">
                 A modern, glowing robot helper with a scanning display, floating gently,
                 surrounded by revolving tech elements.

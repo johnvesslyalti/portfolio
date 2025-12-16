@@ -17,7 +17,7 @@ export default function KernelLeviathan() {
                 overflow: 'visible'
             }}
         >
-            <title>kernel-leviathan</title>
+            <title>Kernel Leviathan</title>
 
             <defs>
                 {/* --- WATER FX FILTERS --- */}
