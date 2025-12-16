@@ -14,7 +14,8 @@ import { Dot } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function NameSection() {
-  const [randomCharacter, setRandomCharacter] = useState<React.ReactElement | null>(null);
+  const [randomCharacter, setRandomCharacter] =
+    useState<React.ReactElement | null>(null);
 
   const characters = [
     <AsyncPhantom key={1} />,
@@ -29,12 +30,14 @@ export default function NameSection() {
   ];
 
   useEffect(() => {
-    const pick = characters[Math.floor(Math.random() * characters.length)];
+    const pick =
+      characters[Math.floor(Math.random() * characters.length)];
     setRandomCharacter(pick);
   }, []);
 
   return (
     <section className="border p-5 rounded-lg">
+      {/* Header */}
       <div className="flex items-center justify-between flex-wrap gap-2 mt-5">
         <div className="text-3xl sm:text-4xl font-bold tracking-tight">
           Johnvessly Alti
@@ -46,18 +49,36 @@ export default function NameSection() {
         <AnimatedThemeToggler />
       </div>
 
+      {/* Status + Character */}
       <div className="flex items-center my-5 md:my-0">
-        <div className="flex items-center gap-2 w-1/2">
+        {/* Open to work */}
+        <div
+          className="
+            flex items-center gap-2
+            w-auto md:w-1/2
+            px-3 py-1.5 md:px-0 md:py-0
+            rounded-full md:rounded-none
+            border border-neutral-200 dark:border-neutral-700 md:border-0
+            bg-neutral-50/70 dark:bg-neutral-900/50 md:bg-transparent
+            backdrop-blur-sm md:backdrop-blur-0
+            hover:border-green-500/40
+            transition-colors duration-200
+          "
+        >
           <div className="relative flex items-center justify-center w-3 h-3">
             <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
             <span className="absolute w-2.5 h-2.5 bg-green-500 rounded-full"></span>
           </div>
-          <span className="text-sm flex font-medium text-neutral-700 dark:text-neutral-300">
+
+          <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
             <span>Open to work</span>
-            <span className="hidden sm:block ml-1">on exciting projects!</span>
+            <span className="hidden sm:inline ml-1">
+              on exciting projects!
+            </span>
           </span>
         </div>
 
+        {/* Character */}
         <div className="flex items-center justify-center w-1/2 my-2">
           {randomCharacter}
         </div>
