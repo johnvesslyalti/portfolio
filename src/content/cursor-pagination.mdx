@@ -1,0 +1,143 @@
+## 📄 Page name blogs/understanding-cursor-pagination/page.mdx
+
+## title: "Understanding Cursor Pagination" date: "2025-12-10" description: "Why offset-based pagination breaks at scale and how cursor pagination actually works under the hood."
+
+## Understanding Cursor Pagination
+
+Pagination looks simple until your application starts to grow.
+
+***When*** I first built feeds and lists, I used offset-based pagination without much thought.
+It worked perfectly in development, felt intuitive, and was easy to implement.
+
+But once you start thinking in terms of **real users, real traffic, and constantly changing data**, offset pagination begins to show serious cracks.
+That’s where cursor pagination becomes not just an optimization—but a necessity.
+
+-----
+
+## The Problem With Offset Pagination
+
+Offset pagination usually looks like this:
+
+```sql
+SELECT * FROM posts
+ORDER BY created_at DESC
+LIMIT 10 OFFSET 20;
+```
+
+At first glance, it seems harmless.
+But offset-based pagination has three major problems at scale.
+
+1.  **Performance Degrades as Data Grows**
+    The database must scan and skip rows before returning results.
+    As the offset increases, queries become slower and more expensive.
+    Fetching page 50 is significantly more costly than page 1.
+
+2.  **Inconsistent Results on Dynamic Data**
+    In real applications, data changes constantly.
+    New records get inserted. Old ones get deleted.
+    With offset pagination:
+
+      * Items can appear twice
+      * Items can be skipped entirely
+
+    This breaks the user experience, especially in feeds and timelines.
+
+3.  **Pagination Becomes Unreliable**
+    Offset pagination assumes data is static between requests.
+    In reality, that assumption is almost never true.
+    This is why large-scale systems rarely rely on offset pagination for feeds.
+
+## What Is Cursor Pagination?
+
+Cursor pagination works by anchoring the next page to a specific record, not a number.
+Instead of saying:
+
+> “Give me page 3”
+
+You say:
+
+> “Give me the next 10 items after this record”
+
+That “record” is the cursor.
+A cursor is usually:
+
+  * a timestamp (`createdAt`)
+  * or a unique, ordered identifier (`id`)
+
+## How Cursor Pagination Works
+
+A typical cursor-based query looks like this:
+
+```sql
+SELECT *
+FROM posts
+WHERE created_at < :cursor
+ORDER BY created_at DESC
+LIMIT 10;
+```
+
+Here’s what’s happening:
+
+1.  You fetch the latest items first
+2.  You store the `createdAt` of the last item
+3.  That value becomes the cursor for the next request
+
+This guarantees:
+
+  * No duplicates
+  * No missing records
+  * Stable ordering
+
+## Why Timestamps Are Commonly Used as Cursors
+
+Timestamps work well as cursors because:
+
+  * They naturally represent ordering
+  * They reflect creation sequence
+  * They scale well for feeds
+
+However, timestamps alone can clash if two records share the same time.
+That’s why many systems use:
+
+  * (`createdAt`, `id`) together
+  * Or just a unique, sortable `id`
+
+The goal is deterministic ordering.
+
+## Cursor Pagination in Practice
+
+In an API, cursor pagination usually looks like this:
+
+`GET /feed?limit=10&cursor=2025-12-10T12:30:00Z`
+
+And the response includes:
+
+  * The data
+  * A `nextCursor` value
+
+The frontend doesn’t care how pagination works internally.
+It simply passes the cursor back to fetch the next page.
+
+## Why Cursor Pagination Scales Better
+
+Cursor pagination:
+
+  * Keeps query performance consistent
+  * Works reliably with live, changing data
+  * Prevents duplicates and missing items
+  * Aligns naturally with infinite scrolling
+
+This is why platforms like social feeds, timelines, and activity logs rely on it.
+
+## Final Thoughts
+
+Cursor pagination isn’t just a “better pagination technique.”
+It’s a shift in how you think about data access.
+Instead of slicing data by position, you move through it by state.
+Once I understood cursor pagination, it completely changed how I designed feeds and lists—and it’s now my default choice for any scalable backend system.
+If you’re building anything that resembles a feed, timeline, or infinite scroll, cursor pagination isn’t optional. It’s foundational.
+
+-----
+
+When you’re ready, say **“Blog 3”**
+That one’s about **designing follow systems beyond CRUD** — real system design territory 💥
