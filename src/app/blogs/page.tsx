@@ -9,7 +9,7 @@ export default function BlogsPage() {
 
     return (
         <section className="py-6">
-            <div className="max-w-5xl mx-auto px-4">
+            <div className="max-w-2xl mx-auto px-4">
 
                 {/* Header */}
                 <div className="relative mb-6">
