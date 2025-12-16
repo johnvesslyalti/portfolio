@@ -26,7 +26,7 @@ export default async function BlogPostLayout({
                 <div className="relative mb-6">
                     <Link
                         href="/blogs"
-                        className="absolute left-0 top-0 text-2xl hover:opacity-70 transition cursor-pointer"
+                        className="absolute hidden md:block left-0 top-0 text-2xl hover:opacity-70 transition cursor-pointer"
                     >
                         <IoIosArrowBack />
                     </Link>
