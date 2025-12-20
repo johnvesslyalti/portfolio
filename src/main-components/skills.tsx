@@ -11,20 +11,15 @@ import {
   SiPostgresql,
   SiMongodb,
 } from "react-icons/si";
-import { FaGitAlt, FaGithub, FaLinux } from "react-icons/fa";
+import { FaGitAlt, FaLinux } from "react-icons/fa";
 import { IoLogoVercel } from "react-icons/io5";
-import { LuFileJson, LuSquareChartGantt } from "react-icons/lu";
-import { MdNoEncryptionGmailerrorred } from "react-icons/md";
-import { VscVscode } from "react-icons/vsc";
 import {
-  SiBetterstack,
   SiExpress,
-  SiPostman,
   SiPrisma,
-  SiShadcnui,
-  SiZulip,
 } from "react-icons/si";
 import { Badge } from "@/components/ui/badge";
+import { SiRedis } from "react-icons/si";
+
 export default function Skills() {
   const skills = [
     { name: "HTML", icon: <SiHtml5 /> },
@@ -43,6 +38,7 @@ export default function Skills() {
     { name: "Git", icon: <FaGitAlt /> },
     { name: "Linux", icon: <FaLinux /> },
     { name: "Vercel", icon: <IoLogoVercel /> },
+    { name: "Redis", icon: <SiRedis /> },
   ];
 
   return (
