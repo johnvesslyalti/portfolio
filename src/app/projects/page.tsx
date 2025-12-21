@@ -20,22 +20,21 @@ export default function ProjectsPage() {
         <section className="py-6">
             <div className="max-w-4xl mx-auto px-4 mb-10">
 
-                {/* Header — Left Arrow + Centered Title */}
-                <div className="relative mb-6 flex items-center justify-center">
+                {/* Header — Back Arrow + Bordered Title */}
+                <div className="relative mb-8">
                     <button
                         onClick={() => router.push("/")}
-                        className="absolute left-0 text-2xl hover:opacity-70 transition cursor-pointer"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl hover:opacity-70 transition cursor-pointer"
                     >
                         <IoIosArrowBack />
                     </button>
 
-                    <h2 className="text-2xl font-bold text-center">
-                        Projects
-                    </h2>
+                    <div className="border border-neutral-300 dark:border-neutral-800 rounded-xl py-3">
+                        <h2 className="text-2xl font-bold text-center">
+                            Projects
+                        </h2>
+                    </div>
                 </div>
-
-                {/* Divider */}
-                <div className="border-t border-neutral-300 dark:border-neutral-800 mb-8" />
 
                 {/* Filter Buttons */}
                 <div className="flex gap-3 mb-8">
