@@ -3,25 +3,38 @@ import Image, { ImageProps } from "next/image";
 
 const components = {
   h1: ({ children }) => (
-    <h1 className="mt-10 mb-6 text-4xl md:text-5xl font-bold tracking-tight text-neutral-100">
+    <h1 className="mt-12 mb-8 text-4xl md:text-5xl font-bold tracking-tight text-neutral-100 text-center">
       {children}
     </h1>
   ),
 
   h2: ({ children }) => (
-    <h2 className="mt-10 mb-4 text-2xl md:text-3xl font-semibold tracking-tight text-neutral-200 border-b border-neutral-700 pb-2">
+    <h2 className="
+    mb-4 pb-2
+    text-2xl md:text-xl
+    font-semibold
+    text-neutral-200
+    border-b border-neutral-700
+  ">
       {children}
     </h2>
   ),
 
   h3: ({ children }) => (
-    <h3 className="mt-8 mb-3 text-xl font-semibold text-neutral-300">
+    <h3 className="mb-3 text-xl font-semibold text-neutral-300">
       {children}
     </h3>
   ),
 
+  Block: ({ children }) => (
+    <div className="mb-10 border border-neutral-700 rounded-xl px-5 py-4">
+      {children}
+    </div>
+  ),
+  /* ------------------------------ Text ------------------------------ */
+
   p: ({ children }) => (
-    <p className="my-5 text-lg leading-relaxed text-neutral-300">
+    <p className="my-4 text-lg leading-relaxed text-neutral-300">
       {children}
     </p>
   ),
@@ -37,14 +50,16 @@ const components = {
     </a>
   ),
 
+  /* ------------------------------ Lists ------------------------------ */
+
   ul: ({ children }) => (
-    <ul className="my-5 list-disc list-inside space-y-2 text-neutral-300">
+    <ul className="my-4 list-disc list-inside space-y-2 text-neutral-300">
       {children}
     </ul>
   ),
 
   ol: ({ children }) => (
-    <ol className="my-5 list-decimal list-inside space-y-2 text-neutral-300">
+    <ol className="my-4 list-decimal list-inside space-y-2 text-neutral-300">
       {children}
     </ol>
   ),
@@ -55,8 +70,10 @@ const components = {
     </li>
   ),
 
+  /* --------------------------- Block Content --------------------------- */
+
   blockquote: ({ children }) => (
-    <blockquote className="my-8 border-l-4 border-neutral-600 pl-6 italic text-neutral-400">
+    <blockquote className="my-6 border border-neutral-700 rounded-lg bg-neutral-900/40 px-5 py-4 italic text-neutral-400">
       {children}
     </blockquote>
   ),
@@ -68,15 +85,17 @@ const components = {
   ),
 
   pre: ({ children }) => (
-    <pre className="my-8 overflow-x-auto rounded-lg bg-neutral-900 p-5 text-sm">
+    <pre className="my-6 overflow-x-auto rounded-xl border border-neutral-700 bg-neutral-900 p-5 text-sm">
       {children}
     </pre>
   ),
 
+  /* ------------------------------ Media ------------------------------ */
+
   img: (props) => (
     <Image
       sizes="100vw"
-      className="my-8 rounded-lg border border-neutral-700"
+      className="my-8 rounded-xl border border-neutral-700"
       style={{ width: "100%", height: "auto" }}
       {...(props as ImageProps)}
     />
