@@ -1,4 +1,4 @@
-export default function Intro() {
+export default function About() {
   return (
     <section className="border p-5 rounded-lg">
       <h2 className="text-xl font-semibold mb-3 border-b border-neutral-400 pb-1">

@@ -4,17 +4,15 @@ import GitHub from "@/main-components/github";
 import Contact from "@/main-components/contact";
 import NameSection from "@/main-components/name-section";
 import ProblemSolving from "@/main-components/problem-solving";
-import Intro from "@/main-components/intro";
 import CustomTweet from "@/main-components/custom-tweet";
-import Status from "@/main-components/status";
 import BlogSection from "@/main-components/blog-section";
+import About from "@/main-components/about";
 
 export default function Page() {
   return (
     <div className="min-h-screen flex flex-col gap-10 max-w-2xl mx-auto p-6 text-neutral-900 dark:text-neutral-100 transition-colors">
       <NameSection />
-      <Status />
-      <Intro />
+      <About />
       <Skills />
       <Projects />
       <ProblemSolving />
