@@ -1,12 +1,10 @@
 "use client";
 
-import AsyncPhantom from "@/components/characters/async-phantom";
 import AutoMech from "@/components/characters/auto-mech";
 import BytePanther from "@/components/characters/byte-panther";
 import CloudOrbiter from "@/components/characters/cloud-orbiter";
 import DataHoarder from "@/components/characters/data-hoarder";
 import KernelLeviathan from "@/components/characters/kernel-leviathan";
-import StackShadow from "@/components/characters/stack-shadow";
 import SyntaxSage from "@/components/characters/syntax-sage";
 import SystemTrailblazer from "@/components/characters/system-trailblazer";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
@@ -18,13 +16,11 @@ export default function NameSection() {
     useState<React.ReactElement | null>(null);
 
   const characters = [
-    <AsyncPhantom key={1} />,
     <AutoMech key={2} />,
     <BytePanther key={3} />,
     <CloudOrbiter key={4} />,
     <DataHoarder key={5} />,
     <KernelLeviathan key={6} />,
-    <StackShadow key={7} />,
     <SyntaxSage key={8} />,
     <SystemTrailblazer key={9} />
   ];

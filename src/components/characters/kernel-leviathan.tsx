@@ -4,9 +4,9 @@ export default function KernelLeviathan() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="100 50 600 800"
-            width="150"
-            height="150"
+            viewBox="0 0 500 500" // Standardized viewBox
+            width="120"
+            height="120"
             preserveAspectRatio="xMidYMid meet"
             role="img"
             style={{
@@ -19,13 +19,11 @@ export default function KernelLeviathan() {
             <title>Kernel Leviathan</title>
 
             <defs>
-                {/* --- BLUR FOR NEON GLOWS --- */}
                 <filter id="waterBlur" x="-50%" y="-50%" width="200%" height="200%">
                     <feGaussianBlur stdDeviation="2" result="blur" />
                     <feComposite in="SourceGraphic" in2="blur" operator="over" />
                 </filter>
 
-                {/* --- GRADIENTS --- */}
                 <linearGradient id="abyssMetal" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#1e293b" />
                     <stop offset="50%" stopColor="#0f172a" />
@@ -50,11 +48,18 @@ export default function KernelLeviathan() {
                 </linearGradient>
             </defs>
 
-            <g transform="translate(400, 350)">
-                {/* --- CHARACTER GROUP --- */}
+            {/* Shifted group to center character within the 500x500 box */}
+            <g transform="translate(250, 180) scale(0.8)">
                 <g>
-                    {/* Subtle Floating Animation */}
-                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1; 0.45 0 0.55 1" />
+                    <animateTransform
+                        attributeName="transform"
+                        type="translate"
+                        values="0,0; 0,-10; 0,0"
+                        dur="6s"
+                        repeatCount="indefinite"
+                        calcMode="spline"
+                        keySplines="0.45 0 0.55 1; 0.45 0 0.55 1"
+                    />
 
                     {/* THRUSTER PLUMES */}
                     <g>
@@ -108,8 +113,6 @@ export default function KernelLeviathan() {
                     {/* LEGS & FINS */}
                     <g transform="translate(0, 140)">
                         <path d="M-60 0 L 60 0 L 40 40 L -40 40 Z" fill="url(#abyssMetal)" stroke="#334155" />
-                        
-                        {/* Left Leg */}
                         <g transform="translate(-50, 30) rotate(10)">
                             <path d="M-30 0 L 30 0 L 20 80 L -20 80 Z" fill="url(#abyssMetal)" stroke="#334155" />
                             <circle cx="0" cy="80" r="15" fill="#1e293b" stroke="#334155" />
@@ -117,8 +120,6 @@ export default function KernelLeviathan() {
                             <path d="M-30 180 L 30 180 L 40 220 L -40 220 Z" fill="url(#abyssMetal)" stroke="#334155" />
                             <path d="M-40 220 L -80 280 L 0 260 Z" fill="url(#abyssMetal)" stroke="#334155" />
                         </g>
-
-                        {/* Right Leg */}
                         <g transform="translate(50, 30) rotate(-5)">
                             <path d="M-30 0 L 30 0 L 20 80 L -20 80 Z" fill="url(#abyssMetal)" stroke="#334155" />
                             <circle cx="0" cy="80" r="15" fill="#1e293b" stroke="#334155" />
