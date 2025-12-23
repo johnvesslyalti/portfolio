@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { ReactNode, useEffect, useState } from "react";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -17,6 +19,11 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
+type Quote = {
+  text: string;
+  author: string;
+};
+
 export default function Contact() {
   const contact = [
     { name: "X", link: "https://x.com/johnvesslyalti", icon: <FaXTwitter /> },
@@ -27,7 +34,7 @@ export default function Contact() {
     { name: "Discord", link: "https://discord.com/users/johnvesslyalti", icon: <FaDiscord /> },
   ];
 
-  const quotes = [
+  const quotes: Quote[] = [
     { text: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
     { text: "Innovation grows when curiosity leads.", author: "Steve Jobs" },
     { text: "Good software is born from clear minds.", author: "Bill Gates" },
@@ -35,16 +42,11 @@ export default function Contact() {
     { text: "Move fast, learn fast, build even faster.", author: "Mark Zuckerberg" },
     { text: "Stay simple; complexity kills progress.", author: "Dennis Ritchie" },
     { text: "Great tools empower great developers.", author: "Anders Hejlsberg" },
-    { text: "Every idea scales when passion fuels it.", author: "Elon Musk" },
     { text: "Precision matters; craft code with care.", author: "Ken Thompson" },
     { text: "Create value first, optimize it later.", author: "Jeff Bezos" },
-    { text: "Small steps daily make giant tech leaps.", author: "Linus Torvalds" },
   ];
 
-  const authorIcons: Record<
-    string,
-    { left: ReactNode; right: ReactNode }
-  > = {
+  const authorIcons: Record<string, { left: ReactNode; right: ReactNode }> = {
     "Linus Torvalds": { left: <FaLinux />, right: <FaCode /> },
     "Steve Jobs": { left: <FaApple />, right: <FaLightbulb /> },
     "Bill Gates": { left: <FaMicrosoft />, right: <FaGlobe /> },
@@ -57,8 +59,19 @@ export default function Contact() {
     "Jeff Bezos": { left: <FaAmazon />, right: <FaGlobe /> },
   };
 
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  const icons = authorIcons[randomQuote.author];
+  const [quote, setQuote] = useState<Quote | null>(null);
+
+  // ✅ Runs ONLY on client after hydration
+  useEffect(() => {
+    setQuote(
+      quotes[Math.floor(Math.random() * quotes.length)]
+    );
+  }, []);
+
+  // ✅ Prevent hydration mismatch
+  if (!quote) return null;
+
+  const icons = authorIcons[quote.author];
 
   return (
     <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border border-neutral-700/60 p-5 rounded-xl backdrop-blur-sm">
@@ -75,7 +88,6 @@ export default function Contact() {
           >
             {item.icon}
 
-            {/* Tooltip */}
             <span
               className="absolute left-1/2 -translate-x-1/2 -top-9
                          px-3 py-1 text-xs font-medium
@@ -94,7 +106,7 @@ export default function Contact() {
       {/* Quote */}
       <div className="text-center max-w-xs leading-snug">
         <p className="text-sm italic text-neutral-700 dark:text-neutral-300">
-          “{randomQuote.text}”
+          “{quote.text}”
         </p>
 
         <div className="mt-2 flex items-center justify-center gap-2 text-xs text-neutral-600 dark:text-neutral-400">
@@ -103,7 +115,7 @@ export default function Contact() {
           </span>
 
           <span className="font-medium tracking-wide">
-            {randomQuote.author}
+            {quote.author}
           </span>
 
           <span className="text-sm opacity-80">
