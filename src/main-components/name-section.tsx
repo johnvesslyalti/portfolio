@@ -1,7 +1,6 @@
 "use client";
 
 import AutoMech from "@/components/characters/auto-mech";
-import BytePanther from "@/components/characters/byte-panther";
 import CloudOrbiter from "@/components/characters/cloud-orbiter";
 import DataHoarder from "@/components/characters/data-hoarder";
 import KernelLeviathan from "@/components/characters/kernel-leviathan";
@@ -16,13 +15,12 @@ export default function NameSection() {
     useState<React.ReactElement | null>(null);
 
   const characters = [
-    <AutoMech key={2} />,
-    <BytePanther key={3} />,
-    <CloudOrbiter key={4} />,
-    <DataHoarder key={5} />,
-    <KernelLeviathan key={6} />,
-    <SyntaxSage key={8} />,
-    <SystemTrailblazer key={9} />
+    <AutoMech key={1} />,
+    <CloudOrbiter key={2} />,
+    <DataHoarder key={3} />,
+    <KernelLeviathan key={4} />,
+    <SyntaxSage key={5} />,
+    <SystemTrailblazer key={6} />
   ];
 
   useEffect(() => {
