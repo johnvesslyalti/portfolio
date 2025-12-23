@@ -94,10 +94,12 @@ const components = {
 
   img: (props) => (
     <Image
-      sizes="100vw"
-      className="my-8 rounded-xl border border-neutral-700"
-      style={{ width: "100%", height: "auto" }}
       {...(props as ImageProps)}
+      width={250}
+      height={250}
+      sizes="(max-width: 768px) 100vw, 520px"
+      className="my-8 mx-auto rounded-xl border border-neutral-700"
+      style={{ height: "auto" }}
     />
   ),
 } satisfies MDXComponents;

@@ -1,6 +1,12 @@
 // lib/blogs.ts
 export const blogs = [
     {
+        slug: "chatgpt-developer-growth-2025",
+        title: "How I Used ChatGPT in 2025",
+        description: "How I Used ChatGPT in 2025 - And How It Genuinely Helped Me Grow as a Developer",
+        date: "Dec 23, 2025"
+    },
+    {
         slug: "thinking-in-systems",
         title: "Thinking in Systems",
         description:
