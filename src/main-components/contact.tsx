@@ -1,6 +1,21 @@
+import type { ReactNode } from "react";
+
 import { FaDiscord, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
+
+import {
+  FaApple,
+  FaLinux,
+  FaMicrosoft,
+  FaGoogle,
+  FaFacebook,
+  FaCode,
+  FaRocket,
+  FaAmazon,
+  FaLightbulb,
+  FaGlobe,
+} from "react-icons/fa";
 
 export default function Contact() {
   const contact = [
@@ -26,17 +41,37 @@ export default function Contact() {
     { text: "Small steps daily make giant tech leaps.", author: "Linus Torvalds" },
   ];
 
+  const authorIcons: Record<
+    string,
+    { left: ReactNode; right: ReactNode }
+  > = {
+    "Linus Torvalds": { left: <FaLinux />, right: <FaCode /> },
+    "Steve Jobs": { left: <FaApple />, right: <FaLightbulb /> },
+    "Bill Gates": { left: <FaMicrosoft />, right: <FaGlobe /> },
+    "Larry Page": { left: <FaGoogle />, right: <FaLightbulb /> },
+    "Mark Zuckerberg": { left: <FaFacebook />, right: <FaGlobe /> },
+    "Dennis Ritchie": { left: <FaCode />, right: <FaCode /> },
+    "Anders Hejlsberg": { left: <FaCode />, right: <FaLightbulb /> },
+    "Ken Thompson": { left: <FaCode />, right: <FaCode /> },
+    "Elon Musk": { left: <FaRocket />, right: <FaGlobe /> },
+    "Jeff Bezos": { left: <FaAmazon />, right: <FaGlobe /> },
+  };
+
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const icons = authorIcons[randomQuote.author];
 
   return (
-    <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border p-5 rounded-lg">
-      <div className="flex flex-wrap gap-3">
+    <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border border-neutral-700/60 p-5 rounded-xl backdrop-blur-sm">
+      
+      {/* Social Icons */}
+      <div className="flex flex-wrap gap-4">
         {contact.map((item, index) => (
           <a
             key={index}
             href={item.link}
             target="_blank"
-            className="relative group text-2xl hover:text-neutral-700 dark:hover:text-neutral-300"
+            rel="noopener noreferrer"
+            className="relative group text-2xl text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition"
           >
             {item.icon}
 
@@ -48,16 +83,33 @@ export default function Contact() {
                          text-black dark:text-white
                          rounded-md shadow-lg border border-neutral-200 dark:border-neutral-700
                          opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100
-                         transition-all duration-150 whitespace-nowrap pointer-events-none">
+                         transition-all duration-150 whitespace-nowrap pointer-events-none"
+            >
               {item.name}
             </span>
           </a>
         ))}
       </div>
 
-      <div className="text-center leading-tight opacity-80">
-        <p className="text-sm">“{randomQuote.text}”</p>
-        <p className="text-xs mt-1">{randomQuote.author}</p>
+      {/* Quote */}
+      <div className="text-center max-w-xs leading-snug">
+        <p className="text-sm italic text-neutral-700 dark:text-neutral-300">
+          “{randomQuote.text}”
+        </p>
+
+        <div className="mt-2 flex items-center justify-center gap-2 text-xs text-neutral-600 dark:text-neutral-400">
+          <span className="text-sm opacity-80">
+            {icons?.left ?? <FaCode />}
+          </span>
+
+          <span className="font-medium tracking-wide">
+            {randomQuote.author}
+          </span>
+
+          <span className="text-sm opacity-80">
+            {icons?.right ?? <FaLightbulb />}
+          </span>
+        </div>
       </div>
     </section>
   );
