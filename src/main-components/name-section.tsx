@@ -11,7 +11,7 @@ import SyntaxSage from "@/components/characters/syntax-sage";
 import SystemTrailblazer from "@/components/characters/system-trailblazer";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Dot } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function NameSection() {
   const [randomCharacter, setRandomCharacter] =
@@ -50,36 +50,37 @@ export default function NameSection() {
       </div>
 
       {/* Status + Character */}
-      <div className="flex items-center my-5 md:my-0">
+      <div className="flex items-center justify-between mt-6">
         {/* Open to work */}
-        <div
-          className="
-            flex items-center gap-2
-            w-auto md:w-1/2
-            px-3 py-1.5 md:px-0 md:py-0
-            rounded-full md:rounded-none
-            border border-neutral-200 dark:border-neutral-700 md:border-0
-            bg-neutral-50/70 dark:bg-neutral-900/50 md:bg-transparent
-            backdrop-blur-sm md:backdrop-blur-0
-            hover:border-green-500/40
-            transition-colors duration-200
-          "
-        >
-          <div className="relative flex items-center justify-center w-3 h-3">
-            <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
-            <span className="absolute w-2.5 h-2.5 bg-green-500 rounded-full"></span>
-          </div>
+        <div className="flex justify-center w-1/2">
+          <div
+            className="
+              flex items-center gap-2
+              px-4 py-1.5
+              rounded-full
+              border border-neutral-200 dark:border-neutral-700
+              bg-neutral-50/70 dark:bg-neutral-900/50
+              backdrop-blur-sm
+              hover:border-green-500/40
+              transition-colors duration-200
+            "
+          >
+            <div className="relative flex items-center justify-center w-3 h-3">
+              <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></span>
+              <span className="absolute w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+            </div>
 
-          <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
-            <span>Open to work</span>
-            <span className="hidden sm:inline ml-1">
-              on exciting projects!
+            <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300 whitespace-nowrap">
+              <span>Open to work</span>
+              <span className="hidden sm:inline ml-1">
+                on exciting projects!
+              </span>
             </span>
-          </span>
+          </div>
         </div>
 
         {/* Character */}
-        <div className="flex items-center justify-center w-1/2 my-2">
+        <div className="flex items-center justify-center w-1/2">
           {randomCharacter}
         </div>
       </div>
