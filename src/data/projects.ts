@@ -48,16 +48,6 @@ export const projects = [
         category: "Full Stack",
     },
     {
-        name: "Store Inventory",
-        src: "/storeinventory.mp4",
-        github: "https://github.com/johnvesslyalti/store-inventory-service",
-        live: "https://johnvesslyalti-store-inventory-service.vercel.app",
-        description:
-            "Implement a nearby store locator that caches results until the underlying data changes, and dynamically renders the list of available items for the selected store.",
-        tech: ["Node.js", "Express.js", "Caching"],
-        category: "Backend",
-    },
-    {
         name: "DevNest",
         src: "/devnest.mp4",
         github: "https://github.com/johnvesslyalti/devnest",

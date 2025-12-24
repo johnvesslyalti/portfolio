@@ -1,0 +1,58 @@
+import {
+  SiTypescript,
+  SiPython,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiRedis,
+  SiTailwindcss,
+} from "react-icons/si";
+import { FaLinux } from "react-icons/fa";
+import { Badge } from "@/components/ui/badge";
+
+export default function Technologies() {
+  const technologies = [
+    // --- Backend / Systems ---
+    { name: "Node.js", icon: <SiNodedotjs /> },
+    { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "Python", icon: <SiPython /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
+    { name: "Prisma ORM", icon: <SiPrisma /> },
+    { name: "Redis", icon: <SiRedis /> },
+    { name: "Linux", icon: <FaLinux /> },
+
+    // --- Frontend (Supporting) ---
+    { name: "React", icon: <SiReact /> },
+    { name: "Next.js (App Router + Server Actions)", icon: <SiNextdotjs /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+  ];
+
+  return (
+    <section className="border p-5 rounded-lg">
+      <h2 className="text-xl font-semibold mb-3 border-b border-neutral-400 pb-1">
+        Technologies
+      </h2>
+
+      <div className="flex flex-wrap gap-2">
+        {technologies.map((tech, index) => (
+          <Badge
+            key={index}
+            variant="outline"
+            className="
+              border-neutral-700
+              text-neutral-800 dark:text-neutral-100
+              hover:bg-neutral-200 dark:hover:bg-neutral-800
+              transition
+              flex items-center gap-2
+            "
+          >
+            <span className="text-lg">{tech.icon}</span>
+            <span>{tech.name}</span>
+          </Badge>
+        ))}
+      </div>
+    </section>
+  );
+}
