@@ -12,11 +12,16 @@ export default async function BlogPostLayout({
 }) {
   const { slug } = await params;
 
-  const blog = blogs.find((b) => b.slug === slug);
+  const blogIndex = blogs.findIndex((b) => b.slug === slug);
+  const blog = blogs[blogIndex];
 
   if (!blog) {
     notFound();
   }
+
+  const prevBlog = blogIndex > 0 ? blogs[blogIndex - 1] : null;
+  const nextBlog =
+    blogIndex < blogs.length - 1 ? blogs[blogIndex + 1] : null;
 
   return (
     <section className="py-6">
@@ -32,7 +37,7 @@ export default async function BlogPostLayout({
           </Link>
 
           <div className="border border-neutral-700 rounded-xl py-3 px-4">
-            <h1 className="text-2xl font-semibold text-center">
+            <h1 className="text-xl md:text-2xl font-semibold text-center">
               {blog.title}
             </h1>
           </div>
@@ -41,14 +46,35 @@ export default async function BlogPostLayout({
         {/* Blog Content */}
         {children}
 
-        {/* Footer */}
-        <div className="mt-12">
-          <div className="border border-neutral-700 rounded-xl px-4 py-3 flex items-center justify-between text-sm text-neutral-400">
-            <span>{blog.date}</span>
-            <span>
-              Author · <span className="text-neutral-200">Johnvessly Alti</span>
-            </span>
-          </div>
+        {/* Previous / Next */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {prevBlog ? (
+            <Link
+              href={`/blogs/${prevBlog.slug}`}
+              className="border border-neutral-700 rounded-xl p-4 hover:bg-neutral-900 transition"
+            >
+              <p className="text-xs text-neutral-400 mb-1">← Previous</p>
+              <p className="text-sm font-medium text-neutral-200">
+                {prevBlog.title}
+              </p>
+            </Link>
+          ) : (
+            <div />
+          )}
+
+          {nextBlog ? (
+            <Link
+              href={`/blogs/${nextBlog.slug}`}
+              className="border border-neutral-700 rounded-xl p-4 hover:bg-neutral-900 transition text-right"
+            >
+              <p className="text-xs text-neutral-400 mb-1">Next →</p>
+              <p className="text-sm font-medium text-neutral-200">
+                {nextBlog.title}
+              </p>
+            </Link>
+          ) : (
+            <div />
+          )}
         </div>
 
       </div>
