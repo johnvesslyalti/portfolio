@@ -4,14 +4,14 @@ export default function Concepts() {
   const concepts = [
     "Authentication & Authorization",
     "REST API Design",
-    "Database Modeling & Relations",
-    "Caching (Redis)",
+    "Database Modeling & Relationships",
+    "Caching Strategies (Redis)",
     "Pagination & Filtering",
-    "Background Jobs",
+    "Background Job Processing",
     "Rate Limiting",
-    "API Security",
-    "Error Handling & Validation",
-    "Environment Configuration",
+    "API Security Best Practices",
+    "Centralized Error Handling & Validation",
+    "Environment Configuration & Secrets Management",
   ];
 
   return (
