@@ -71,4 +71,27 @@ export const projects = [
         ],
         category: "Backend",
     },
+    {
+        name: "Collab Workspace",
+        src: "/collab-workspace.mp4",
+        github: "https://github.com/johnvesslyalti/collab-workspace-backend",
+        live: "https://www.postman.com/navigation-geologist-43788201/workspace/my-workspace/collection/39926112-de850bf1-9ae1-41f6-a39a-d6156044c226",
+        description:
+            "A scalable backend system for collaborative workspaces featuring JWT authentication, project-level RBAC, async job processing, and Redis-backed queues.",
+        tech: [
+            "Node.js",
+            "TypeScript",
+            "Express.js",
+            "PostgreSQL",
+            "Prisma ORM",
+            "JWT Authentication",
+            "Role-Based Access Control (RBAC)",
+            "Redis",
+            "BullMQ (Background Jobs)",
+            "Swagger / OpenAPI",
+            "Docker & Docker Compose",
+            "Database Indexing & Cascade Deletes",
+        ],
+        category: "Backend",
+    },
 ];
