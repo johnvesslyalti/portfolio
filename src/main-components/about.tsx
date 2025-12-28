@@ -7,21 +7,21 @@ export default function About() {
 
       <p className="text-lg leading-relaxed">
         Hi 👋 I’m a{" "}
-        <span className="font-semibold">Backend-focused Full Stack Developer</span>{" "}
-        who enjoys designing reliable, scalable, and secure server-side
-        systems. I primarily work with{" "}
+        <span className="font-semibold">Software Engineer</span>{" "}
+        who enjoys designing reliable, scalable, and secure systems. I work
+        across the stack using{" "}
         <span className="font-semibold">
           Node.js, Express.js, PostgreSQL
         </span>{" "}
-        and modern backend architectures, while using{" "}
-        <span className="font-semibold">React and Next.js</span> to deliver clean
-        and efficient user interfaces.
+        along with{" "}
+        <span className="font-semibold">React and Next.js</span> to build clean,
+        efficient, and user-focused applications.
       </p>
 
       <p className="text-lg leading-relaxed mt-4">
         I care deeply about system design, data flow, performance, and
-        maintainability. I enjoy breaking down complex backend problems and
-        building APIs and services that scale well in real-world applications.
+        maintainability. I enjoy breaking down complex problems and building
+        software that scales well in real-world applications.
       </p>
     </section>
   );
