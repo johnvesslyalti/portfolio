@@ -6,7 +6,7 @@ export default function About() {
       </h2>
 
       <p className="text-lg leading-relaxed">
-        Hi 👋 I’m a{" "}
+        I’m a{" "}
         <span className="font-semibold">Software Engineer</span>{" "}
         who enjoys designing reliable, scalable, and secure systems. I work
         across the stack using{" "}
