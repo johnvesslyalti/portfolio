@@ -15,7 +15,7 @@ export default function Concepts() {
   return (
     <section className="border p-5 rounded-lg">
       <h2 className="text-xl font-semibold mb-3 border-b border-neutral-400 pb-1">
-        Core Backend Concepts
+        Concepts
       </h2>
 
       <div className="flex flex-wrap gap-2">
