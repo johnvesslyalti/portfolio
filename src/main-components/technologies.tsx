@@ -16,8 +16,8 @@ import { HiOutlineQueueList } from "react-icons/hi2";
 export default function Technologies() {
   const technologies = [
     // --- Backend / Systems ---
-    { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "Python", icon: <SiPython /> },
     { name: "PostgreSQL", icon: <SiPostgresql /> },
     { name: "Prisma ORM", icon: <SiPrisma /> },
