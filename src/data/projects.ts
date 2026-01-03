@@ -31,22 +31,7 @@ export const projects = [
         ],
         category: "Full Stack",
     },
-    {
-        name: "Cine Scope",
-        src: "/cinescope.mp4",
-        github: "https://github.com/johnvesslyalti/cine-scope",
-        live: "https://johnvesslyalti-cinescope.vercel.app",
-        description:
-            "A movie exploration platform that lets users browse films, watch trailers, and discover trending content.",
-        tech: [
-            "Next.js",
-            "Next.js Server Actions",
-            "Next.js API Routes",
-            "Prisma",
-            "PostgreSQL",
-        ],
-        category: "Full Stack",
-    },
+
     {
         name: "DevNest",
         src: "/devnest.mp4",
