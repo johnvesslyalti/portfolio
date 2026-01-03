@@ -2,22 +2,20 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Concepts() {
   const concepts = [
-    "Authentication & Authorization",
-    "REST API Design",
-    "Database Modeling & Relationships",
-    "Caching Strategies (Redis)",
-    "Pagination & Filtering",
-    "Background Job Processing",
-    "Rate Limiting",
-    "API Security Best Practices",
-    "Centralized Error Handling & Validation",
+    "Authentication & Authorization (JWT, OAuth)",
+    "Scalable API Architecture",
+    "Database Modeling & Data Consistency",
+    "Caching Strategies & Cache Invalidation",
+    "Distributed Rate Limiting",
+    "Asynchronous & Background Job Processing",
+    "API Security & Threat Mitigation",
     "Environment Configuration & Secrets Management",
   ];
 
   return (
     <section className="border p-5 rounded-lg">
       <h2 className="text-xl font-semibold mb-3 border-b border-neutral-400 pb-1">
-        Concepts
+        Core Backend Concepts
       </h2>
 
       <div className="flex flex-wrap gap-2">
