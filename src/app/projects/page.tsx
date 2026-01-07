@@ -81,8 +81,8 @@ export default function ProjectsPage() {
                                     {project.name}
                                 </h3>
 
-                                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                                    {project.description}
+                                <p className="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed whitespace-pre-line">
+                                    {project.detailedDescription}
                                 </p>
 
                                 <div className="flex flex-wrap gap-2 mt-1">
