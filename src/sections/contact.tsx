@@ -74,8 +74,8 @@ export default function Contact() {
   const icons = authorIcons[quote.author];
 
   return (
-    <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border border-neutral-700/60 p-5 rounded-xl backdrop-blur-sm">
-      
+    <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border p-5 rounded-xl backdrop-blur-sm">
+
       {/* Social Icons */}
       <div className="flex flex-wrap gap-4">
         {contact.map((item, index) => (

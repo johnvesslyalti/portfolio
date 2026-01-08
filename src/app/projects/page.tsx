@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { projects } from "@/data/projects";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
@@ -9,12 +8,6 @@ import { IoIosArrowBack } from "react-icons/io";
 
 export default function ProjectsPage() {
     const router = useRouter();
-    const [filter, setFilter] = useState("All");
-
-    const filteredProjects =
-        filter === "All"
-            ? projects
-            : projects.filter((p) => p.category === filter);
 
     return (
         <section className="py-6">
@@ -36,25 +29,9 @@ export default function ProjectsPage() {
                     </div>
                 </div>
 
-                {/* Filter Buttons */}
-                <div className="flex gap-3 mb-8">
-                    {["All", "Full Stack", "Backend"].map((cat) => (
-                        <button
-                            key={cat}
-                            onClick={() => setFilter(cat)}
-                            className={`px-4 py-1.5 rounded-md text-sm border transition ${filter === cat
-                                ? "bg-black text-white dark:bg-white dark:text-black"
-                                : "bg-neutral-200 dark:bg-neutral-800"
-                                }`}
-                        >
-                            {cat}
-                        </button>
-                    ))}
-                </div>
-
                 {/* Project List */}
                 <div className="flex flex-col gap-10">
-                    {filteredProjects.map((project, index) => (
+                    {projects.map((project, index) => (
                         <div
                             key={index}
                             className="
