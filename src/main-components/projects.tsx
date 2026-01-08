@@ -35,9 +35,7 @@ export default function Projects() {
 
             <Badge className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border-2 border-black dark:border-white/10 dark:shadow-2xl items-center">
               <div className="font-bold tracking-tight">{project.name}</div>
-              <p className="text-xs text-neutral-500 dark:text-neutral-400 truncate max-w-[200px] hidden sm:block">
-                {project.shortDescription}
-              </p>
+
               <div className="flex items-center gap-1">
                 <a
                   href={project.github}
