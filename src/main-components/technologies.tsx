@@ -7,9 +7,7 @@ import {
   SiPostgresql,
   SiPrisma,
   SiRedis,
-  SiTailwindcss,
 } from "react-icons/si";
-import { FaLinux } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
 
@@ -23,12 +21,7 @@ export default function Technologies() {
     { name: "Prisma ORM", icon: <SiPrisma /> },
     { name: "Redis", icon: <SiRedis /> },
     { name: "BullMQ (Background Jobs)", icon: <HiOutlineQueueList /> },
-    { name: "Linux", icon: <FaLinux /> },
-
-    // --- Frontend (Supporting) ---
-    { name: "React", icon: <SiReact /> },
     { name: "Next.js (App Router + Server Actions)", icon: <SiNextdotjs /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
   ];
 
   return (
