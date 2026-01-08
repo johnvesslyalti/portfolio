@@ -1,6 +1,5 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/projects";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
@@ -33,14 +32,14 @@ export default function Projects() {
               playsInline
             />
 
-            <Badge className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border-2 border-black dark:border-white/10 dark:shadow-2xl items-center">
-              <div className="font-bold tracking-tight">{project.name}</div>
+            <div className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border border-neutral-200 dark:border-white/10 rounded-lg p-2 items-center mt-2 shadow-sm">
+              <div className="tracking-tight px-2 text-[10px]">{project.name}</div>
 
               <div className="flex items-center gap-1">
                 <a
                   href={project.github}
                   target="_blank"
-                  className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                  className="text-[10px] flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
                 >
                   <FaGithub className="inline mr-1" />
                   GitHub
@@ -49,13 +48,13 @@ export default function Projects() {
                 <a
                   href={project.live}
                   target="_blank"
-                  className="text-xs flex items-center hover:text-neutral-700 dark:hover:text-neutral-300"
+                  className="text-[10px] flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
                 >
                   <LiaExternalLinkAltSolid className="inline mr-1" />
                   Live
                 </a>
               </div>
-            </Badge>
+            </div>
           </div>
         ))}
       </div>

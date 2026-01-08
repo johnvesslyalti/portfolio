@@ -21,7 +21,7 @@ export const projects = [
         category: "Backend",
     },
     {
-        name: "Lift Log",
+        name: "LiftLog",
         src: "/liftlog.mp4",
         github: "https://github.com/johnvesslyalti/lift-log",
         live: "https://johnvesslyalti-liftlog.vercel.app",
@@ -39,7 +39,7 @@ export const projects = [
         category: "Full Stack",
     },
     {
-        name: "Sub Trackr",
+        name: "SubTrackr",
         src: "/subtrackr.mp4",
         github: "https://github.com/johnvesslyalti/sub-trackr",
         live: "https://johnvesslyalti-subtrackr.vercel.app",
