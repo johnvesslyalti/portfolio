@@ -1,7 +1,6 @@
 import {
   SiTypescript,
   SiPython,
-  SiReact,
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
@@ -15,8 +14,8 @@ export default function Technologies() {
   const technologies = [
     // --- Backend / Systems ---
     { name: "TypeScript", icon: <SiTypescript /> },
-    { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "Python", icon: <SiPython /> },
+    { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "PostgreSQL", icon: <SiPostgresql /> },
     { name: "Prisma ORM", icon: <SiPrisma /> },
     { name: "Redis", icon: <SiRedis /> },

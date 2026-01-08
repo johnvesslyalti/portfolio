@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { blogs } from "@/data/blogs";
 
-export default function BlogSection() {
+export default function Blogs() {
     const recentBlogs = blogs.slice(0, 3);
 
     return (

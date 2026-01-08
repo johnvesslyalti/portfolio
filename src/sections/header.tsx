@@ -2,7 +2,7 @@
 
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
-export default function NameSection() {
+export default function Header() {
   return (
     <section className="border p-5 rounded-lg">
       {/* Header */}

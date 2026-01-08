@@ -1,24 +1,20 @@
-import Projects from "@/main-components/projects";
-import GitHub from "@/main-components/github";
-import Contact from "@/main-components/contact";
-import NameSection from "@/main-components/name-section";
-import ProblemSolving from "@/main-components/problem-solving";
-import BlogSection from "@/main-components/blog-section";
-import About from "@/main-components/about";
-import Technologies from "@/main-components/technologies";
-import Concepts from "@/main-components/concepts";
+import Projects from "@/sections/projects";
+import GitHub from "@/sections/github";
+import Contact from "@/sections/contact";
+import Header from "@/sections/header";
+import Blogs from "@/sections/blogs";
+import About from "@/sections/about";
+import Technologies from "@/sections/technologies";
 
 export default function Page() {
   return (
     <div className="min-h-screen flex flex-col gap-10 max-w-2xl mx-auto p-6 text-neutral-900 dark:text-neutral-100 transition-colors">
-      <NameSection />
+      <Header />
       <About />
       <Technologies />
-      <Concepts />
       <Projects />
-      <ProblemSolving />
       <GitHub />
-      <BlogSection />
+      <Blogs />
       <Contact />
     </div>
   );
