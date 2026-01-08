@@ -17,7 +17,7 @@ export default function BlogsPage() {
         <div className="relative mb-8">
           <button
             onClick={() => router.push("/")}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl hover:opacity-70 transition cursor-pointer"
+            className="hidden sm:block absolute left-4 top-1/2 -translate-y-1/2 text-2xl hover:opacity-70 transition cursor-pointer"
           >
             <IoIosArrowBack />
           </button>
