@@ -39,7 +39,7 @@ export default function Projects() {
                 <a
                   href={project.github}
                   target="_blank"
-                  className="text-[10px] flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
+                  className="text-[10px] font-bold flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
                 >
                   <FaGithub className="inline mr-1" />
                   GitHub
@@ -48,7 +48,7 @@ export default function Projects() {
                 <a
                   href={project.live}
                   target="_blank"
-                  className="text-[10px] flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
+                  className="text-[10px] font-bold flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
                 >
                   <LiaExternalLinkAltSolid className="inline mr-1" />
                   Live
