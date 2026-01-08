@@ -33,9 +33,9 @@ export default function Projects() {
             />
 
             <div className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border border-neutral-200 dark:border-white/10 rounded-lg p-2 items-center mt-2 shadow-sm">
-              <div className="font-bold tracking-tight px-2 text-[10px]">{project.name}</div>
+              <div className="font-bold tracking-tight text-[12px]">{project.name}</div>
 
-              <div className="flex items-center gap-1">
+              <div className="flex items-center">
                 <a
                   href={project.github}
                   target="_blank"
