@@ -21,7 +21,7 @@ export default function BlogsPage() {
             <IoIosArrowBack />
           </button>
 
-          <div className="border border-neutral-700 rounded-xl py-3">
+          <div className="border border-neutral-200 dark:border-neutral-700 rounded-xl py-3">
             <h2 className="text-2xl font-semibold text-center">
               Blogs
             </h2>
@@ -35,12 +35,12 @@ export default function BlogsPage() {
               key={blog.slug}
               href={`/blogs/${blog.slug}`}
               className="
-                border border-neutral-700 rounded-xl
+                border border-neutral-200 dark:border-neutral-700 rounded-xl
                 p-5
-                hover:bg-neutral-900/40 transition
+                hover:bg-neutral-50 dark:hover:bg-neutral-900/40 transition
               "
             >
-              <span className="text-xs text-neutral-400 block mb-2">
+              <span className="text-xs text-neutral-500 dark:text-neutral-400 block mb-2">
                 {blog.date}
               </span>
 
@@ -48,7 +48,7 @@ export default function BlogsPage() {
                 {blog.title}
               </h3>
 
-              <p className="text-sm text-neutral-400 leading-relaxed">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 {blog.description}
               </p>
             </Link>

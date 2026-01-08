@@ -36,7 +36,7 @@ export default async function BlogPostLayout({
             <IoIosArrowBack />
           </Link>
 
-          <div className="border border-neutral-700 rounded-xl py-3 px-4">
+          <div className="border border-neutral-200 dark:border-neutral-700 rounded-xl py-3 px-4">
             <h1 className="text-xl md:text-2xl font-semibold text-center">
               {blog.title}
             </h1>
@@ -51,10 +51,10 @@ export default async function BlogPostLayout({
           {prevBlog ? (
             <Link
               href={`/blogs/${prevBlog.slug}`}
-              className="border border-neutral-700 rounded-xl p-4 hover:bg-neutral-900 transition"
+              className="border border-neutral-200 dark:border-neutral-700 rounded-xl p-4 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition"
             >
-              <p className="text-xs text-neutral-400 mb-1">← Previous</p>
-              <p className="text-sm font-medium text-neutral-200">
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-1">← Previous</p>
+              <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200">
                 {prevBlog.title}
               </p>
             </Link>
@@ -65,10 +65,10 @@ export default async function BlogPostLayout({
           {nextBlog ? (
             <Link
               href={`/blogs/${nextBlog.slug}`}
-              className="border border-neutral-700 rounded-xl p-4 hover:bg-neutral-900 transition text-right"
+              className="border border-neutral-200 dark:border-neutral-700 rounded-xl p-4 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition text-right"
             >
-              <p className="text-xs text-neutral-400 mb-1">Next →</p>
-              <p className="text-sm font-medium text-neutral-200">
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-1">Next →</p>
+              <p className="text-sm font-medium text-neutral-800 dark:text-neutral-200">
                 {nextBlog.title}
               </p>
             </Link>
