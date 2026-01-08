@@ -14,7 +14,8 @@ export function generateStaticParams() {
         { slug: 'thinking-in-systems' },
         { slug: 'cursor-pagination' },
         { slug: 'designing-follow-systems' },
-        { slug: "chatgpt-developer-growth-2025" }
+        { slug: "chatgpt-developer-growth-2025" },
+        { slug: "tools-vs-concepts" }
     ]
 }
 

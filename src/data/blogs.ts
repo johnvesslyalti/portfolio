@@ -1,5 +1,10 @@
-// lib/blogs.ts
 export const blogs = [
+    {
+        slug: "tools-vs-concepts",
+        title: "Tools vs Concepts",
+        description: "The real problem isn’t lack of effort. It’s learning tools instead of concepts.",
+        date: "Jan 03, 2026"
+    },
     {
         slug: "chatgpt-developer-growth-2025",
         title: "How I Used ChatGPT in 2025",
