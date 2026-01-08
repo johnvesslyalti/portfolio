@@ -19,9 +19,9 @@ export default function NameSection() {
       </div>
 
       {/* Status */}
-      <div className="flex items-center justify-center mt-6">
+      <div className="flex items-center justify-start mt-6">
         {/* Open to work */}
-        <div className="flex justify-center">
+        <div className="flex justify-start">
           <div
             className="
               flex items-center gap-2
