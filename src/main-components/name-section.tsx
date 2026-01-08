@@ -1,34 +1,9 @@
 "use client";
 
-import AutoMech from "@/components/characters/auto-mech";
-import CloudOrbiter from "@/components/characters/cloud-orbiter";
-import DataHoarder from "@/components/characters/data-hoarder";
-import KernelLeviathan from "@/components/characters/kernel-leviathan";
-import SyntaxSage from "@/components/characters/syntax-sage";
-import SystemTrailblazer from "@/components/characters/system-trailblazer";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Dot } from "lucide-react";
-import { useEffect, useState } from "react";
 
 export default function NameSection() {
-  const [randomCharacter, setRandomCharacter] =
-    useState<React.ReactElement | null>(null);
-
-  const characters = [
-    <AutoMech key={1} />,
-    <CloudOrbiter key={2} />,
-    <DataHoarder key={3} />,
-    <KernelLeviathan key={4} />,
-    <SyntaxSage key={5} />,
-    <SystemTrailblazer key={6} />
-  ];
-
-  useEffect(() => {
-    const pick =
-      characters[Math.floor(Math.random() * characters.length)];
-    setRandomCharacter(pick);
-  }, []);
-
   return (
     <section className="border p-5 rounded-lg">
       {/* Header */}
@@ -43,10 +18,10 @@ export default function NameSection() {
         <AnimatedThemeToggler />
       </div>
 
-      {/* Status + Character */}
-      <div className="flex items-center justify-between mt-6">
+      {/* Status */}
+      <div className="flex items-center justify-center mt-6">
         {/* Open to work */}
-        <div className="flex justify-center w-1/2">
+        <div className="flex justify-center">
           <div
             className="
               flex items-center gap-2
@@ -71,11 +46,6 @@ export default function NameSection() {
               </span>
             </span>
           </div>
-        </div>
-
-        {/* Character */}
-        <div className="flex items-center justify-center w-1/2">
-          {randomCharacter}
         </div>
       </div>
     </section>

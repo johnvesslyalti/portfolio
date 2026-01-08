@@ -3,7 +3,6 @@ import GitHub from "@/main-components/github";
 import Contact from "@/main-components/contact";
 import NameSection from "@/main-components/name-section";
 import ProblemSolving from "@/main-components/problem-solving";
-import CustomTweet from "@/main-components/custom-tweet";
 import BlogSection from "@/main-components/blog-section";
 import About from "@/main-components/about";
 import Technologies from "@/main-components/technologies";
@@ -20,7 +19,6 @@ export default function Page() {
       <ProblemSolving />
       <GitHub />
       <BlogSection />
-      <CustomTweet />
       <Contact />
     </div>
   );
