@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <section className="border p-5 rounded-lg">
       {/* Header */}
-      <div className="flex items-center justify-between flex-wrap gap-2">
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
         <div className="text-3xl sm:text-4xl font-bold tracking-tight">
           Johnvessly Alti
         </div>
