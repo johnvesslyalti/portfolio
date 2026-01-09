@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { blogs } from "@/data/blogs";
 import { IoIosArrowBack } from "react-icons/io";
 import { LuCalendar } from "react-icons/lu";
+import { Badge } from "@/components/ui/badge";
 
 export default function BlogsPage() {
   const router = useRouter();
@@ -34,7 +35,7 @@ export default function BlogsPage() {
 
         {/* Blog Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog) => (
+          {blogs.map((blog, index) => (
             <Link
               key={blog.slug}
               href={`/blogs/${blog.slug}`}
@@ -44,9 +45,21 @@ export default function BlogsPage() {
                 hover:bg-neutral-50 dark:hover:bg-neutral-900/40 transition
               "
             >
-              <span className="text-xs text-neutral-500 dark:text-neutral-400 block mb-2">
-                {blog.date}
-              </span>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs text-neutral-500 dark:text-neutral-400">
+                  {blog.date}
+                </span>
+                {index === 0 && (
+                  <Badge variant="secondary" className="h-5 px-1.5 text-[10px]">
+                    New
+                  </Badge>
+                )}
+                {blog.slug === "thinking-in-systems" && (
+                  <Badge className="h-5 px-1.5 text-[10px]">
+                    Featured
+                  </Badge>
+                )}
+              </div>
 
               <h3 className="text-lg font-semibold mb-3 leading-snug">
                 {blog.title}
