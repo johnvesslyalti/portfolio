@@ -1,5 +1,12 @@
 export const blogs = [
     {
+        slug: "offline-pos-system",
+        title: "Designing an Offline-First Retail POS System (DMart-style)",
+        description:
+            "How to design a real-world, offline-first retail POS system that handles money, hardware, and downtime.",
+        date: "Jan 11, 2026"
+    },
+    {
         slug: "tools-vs-concepts",
         title: "Tools vs Concepts",
         description: "The real problem isn’t lack of effort. It’s learning tools instead of concepts.",

@@ -9,14 +9,12 @@ export default async function Page({
     return <Post />
 }
 
+import { blogs } from "@/data/blogs";
+
 export function generateStaticParams() {
-    return [
-        { slug: 'thinking-in-systems' },
-        { slug: 'cursor-pagination' },
-        { slug: 'designing-follow-systems' },
-        { slug: "chatgpt-developer-growth-2025" },
-        { slug: "tools-vs-concepts" }
-    ]
+    return blogs.map((blog) => ({
+        slug: blog.slug,
+    }));
 }
 
 export const dynamicParams = false

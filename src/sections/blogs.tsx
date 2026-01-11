@@ -28,7 +28,7 @@ export default function Blogs() {
                                     New
                                 </Badge>
                             )}
-                            {blog.slug === "thinking-in-systems" && (
+                            {blog.slug === "offline-pos-system" && (
                                 <Badge className="h-5 px-1.5 text-[10px]">
                                     Featured
                                 </Badge>
