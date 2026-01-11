@@ -49,12 +49,7 @@ export default function BlogsPage() {
                 <span className="text-xs text-neutral-500 dark:text-neutral-400">
                   {blog.date}
                 </span>
-                {index === 0 && (
-                  <Badge variant="secondary" className="h-5 px-1.5 text-[10px]">
-                    New
-                  </Badge>
-                )}
-                {blog.slug === "thinking-in-systems" && (
+                {blog.slug === "offline-pos-system" && (
                   <Badge className="h-5 px-1.5 text-[10px]">
                     Featured
                   </Badge>

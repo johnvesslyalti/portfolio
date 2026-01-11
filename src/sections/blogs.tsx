@@ -23,11 +23,7 @@ export default function Blogs() {
                             <span className="text-xs text-neutral-500">
                                 {blog.date}
                             </span>
-                            {index === 0 && (
-                                <Badge variant="secondary" className="h-5 px-1.5 text-[10px]">
-                                    New
-                                </Badge>
-                            )}
+
                             {blog.slug === "offline-pos-system" && (
                                 <Badge className="h-5 px-1.5 text-[10px]">
                                     Featured
