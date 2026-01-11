@@ -1,7 +1,7 @@
 export const blogs = [
     {
         slug: "offline-pos-system",
-        title: "Designing an Offline-First Retail POS System (DMart-style)",
+        title: "Designing an Offline-First Retail POS System",
         description:
             "How to design a real-world, offline-first retail POS system that handles money, hardware, and downtime.",
         date: "Jan 11, 2026"
