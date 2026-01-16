@@ -1,14 +1,26 @@
 "use client";
 
+import { Suspense } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { blogs } from "@/data/blogs";
 import { IoIosArrowBack } from "react-icons/io";
 import { LuCalendar } from "react-icons/lu";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
-export default function BlogsPage() {
+function BlogsContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const page = Number(searchParams.get("page")) || 1;
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(blogs.length / itemsPerPage);
+
+  const paginatedBlogs = blogs.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+
+  const handlePageChange = (newPage: number) => {
+    router.push(`/blogs?page=${newPage}`);
+  };
 
   return (
     <section className="py-6">
@@ -35,7 +47,7 @@ export default function BlogsPage() {
 
         {/* Blog Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog, index) => (
+          {paginatedBlogs.map((blog) => (
             <Link
               key={blog.slug}
               href={`/blogs/${blog.slug}`}
@@ -49,8 +61,13 @@ export default function BlogsPage() {
                 <span className="text-xs text-neutral-500 dark:text-neutral-400">
                   {blog.date}
                 </span>
-                {blog.slug === "offline-pos-system" && (
+                {blog.slug === "why-i-chose-javascript" && (
                   <Badge className="h-5 px-1.5 text-[10px]">
+                    New
+                  </Badge>
+                )}
+                {blog.slug === "offline-pos-system" && (
+                  <Badge className="h-5 px-1.5 text-[10px]" variant="secondary">
                     Featured
                   </Badge>
                 )}
@@ -60,14 +77,47 @@ export default function BlogsPage() {
                 {blog.title}
               </h3>
 
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed line-clamp-3">
                 {blog.description}
               </p>
             </Link>
           ))}
         </div>
 
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-4 mt-10">
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={page <= 1}
+              onClick={() => handlePageChange(page - 1)}
+            >
+              Previous
+            </Button>
+            <span className="text-sm text-neutral-600 dark:text-neutral-400">
+              Page {page} of {totalPages}
+            </span>
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={page >= totalPages}
+              onClick={() => handlePageChange(page + 1)}
+            >
+              Next
+            </Button>
+          </div>
+        )}
+
       </div>
     </section>
+  );
+}
+
+export default function BlogsPage() {
+  return (
+    <Suspense>
+      <BlogsContent />
+    </Suspense>
   );
 }

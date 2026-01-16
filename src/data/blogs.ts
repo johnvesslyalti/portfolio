@@ -1,5 +1,11 @@
 export const blogs = [
     {
+        slug: "why-i-chose-javascript",
+        title: "Why I Chose JavaScript",
+        description: "From many languages to one: why JavaScript became my primary language and how it shaped my career.",
+        date: "Jan 18, 2026"
+    },
+    {
         slug: "offline-pos-system",
         title: "Designing an Offline-First Retail POS System",
         description:
