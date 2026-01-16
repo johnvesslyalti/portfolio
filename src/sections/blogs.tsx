@@ -24,8 +24,13 @@ export default function Blogs() {
                                 {blog.date}
                             </span>
 
-                            {blog.slug === "offline-pos-system" && (
+                            {blog.slug === "why-i-chose-javascript" && (
                                 <Badge className="h-5 px-1.5 text-[10px]">
+                                    New
+                                </Badge>
+                            )}
+                            {blog.slug === "offline-pos-system" && (
+                                <Badge className="h-5 px-1.5 text-[10px]" variant="secondary">
                                     Featured
                                 </Badge>
                             )}
