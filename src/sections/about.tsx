@@ -8,14 +8,7 @@ export default function About() {
       <p className="text-lg leading-relaxed">
         I’m a{" "}
         <span className="font-semibold">Software Engineer</span>{" "}
-        who enjoys designing reliable, scalable, and secure systems. I work
-        across the stack using{" "}
-        <span className="font-semibold">
-          Node.js, Express.js, PostgreSQL
-        </span>{" "}
-        along with{" "}
-        <span className="font-semibold">React and Next.js</span> to build clean,
-        efficient, and user-focused applications.
+        who enjoys designing reliable, scalable, and secure systems.
       </p>
 
       <p className="text-lg leading-relaxed mt-4">

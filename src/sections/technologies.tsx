@@ -2,6 +2,7 @@ import {
   SiTypescript,
   SiExpress,
   SiNextdotjs,
+  SiNestjs,
   SiNodedotjs,
   SiPostgresql,
   SiPrisma,
@@ -15,6 +16,7 @@ export default function Technologies() {
     // --- Backend / Systems ---
     { name: "TypeScript", icon: <SiTypescript /> },
     { name: "Node.js", icon: <SiNodedotjs /> },
+    { name: "Nest.js", icon: <SiNestjs /> },
     { name: "Express.js", icon: <SiExpress /> },
     { name: "PostgreSQL", icon: <SiPostgresql /> },
     { name: "Prisma ORM", icon: <SiPrisma /> },
