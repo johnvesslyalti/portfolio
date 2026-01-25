@@ -83,6 +83,69 @@ And that separation -
 **clarity outside, structure inside** - is what makes systems scale.
 </Block>
 
+
+---
+
+<Block>
+## 4️⃣ What Happens When a Third-Party System Is Involved?
+
+![Third Party System Integration](/blogs/support-requests-work/third_party_sync.webp)
+
+In many teams, support doesn’t live alone.
+
+Engineering already works inside an external issue tracker.
+Product teams already plan work there.
+So the question becomes:
+
+**What happens to a ticket when it needs to leave Slack?**
+
+Here’s the interesting part.
+
+When a ticket is created, a copy of it can be **synced** to a third-party system (like an issue tracker).
+That external system becomes the **system of record** for execution.
+
+But Slack doesn’t lose relevance.
+
+Even if the two companies are completely independent:
+
+* The external system stores the ticket
+* Engineers work there as usual
+* Status updates flow back automatically
+
+From the customer’s perspective, nothing changes.
+They still see progress inside Slack.
+
+From the team’s perspective:
+
+* No duplicate work
+* No manual updates
+* No “Did you update the ticket?” messages
+
+This is **decoupling done right**.
+
+One system handles conversation and visibility.
+Another handles execution and long-term tracking.
+
+They don’t need to belong to the same company.
+They just need to **agree on events and updates**.
+</Block>
+
+---
+
+<Block>
+## The Real Insight Most People Miss
+
+Modern support systems don’t replace tools.
+They **orchestrate** them.
+
+They act like a bridge:
+
+* Frontside: human conversation
+* Backside: structured work systems
+
+When that bridge is solid, teams scale without friction - even across tools, teams, and companies.
+</Block>
+
 ---
 
 <Block>
@@ -102,5 +165,15 @@ Support works when:
 
 The best systems don’t add complexity.
 They **remove ambiguity**.
+</Block>
+
+---
+
+<Block>
+## See It in Action
+
+I built a **Nest.js** project that puts these concepts into code. If you want to see how to build this Slack integration:
+
+👉 [Check out slackflow-mini on GitHub](https://github.com/johnvesslyalti/slackflow-mini)
 </Block>
 

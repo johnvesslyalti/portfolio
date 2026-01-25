@@ -24,7 +24,7 @@ export default function Blogs() {
                                 {blog.date}
                             </span>
 
-                            {blog.slug === "why-i-chose-javascript" && (
+                            {blog.slug === "support-requests-work" && (
                                 <Badge className="h-5 px-1.5 text-[10px]">
                                     New
                                 </Badge>
