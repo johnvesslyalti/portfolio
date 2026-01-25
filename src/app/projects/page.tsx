@@ -13,7 +13,7 @@ export default function ProjectsPage() {
         <section className="py-6">
             <div className="max-w-4xl mx-auto px-4 mb-10">
 
-                {/* Header — Back Arrow + Bordered Title */}
+                {/* Header - Back Arrow + Bordered Title */}
                 <div className="relative mb-8">
                     <button
                         onClick={() => router.push("/")}
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
                 p-10 rounded-lg shadow-sm hover:shadow-md transition
               "
                         >
-                            {/* Left — Video */}
+                            {/* Left - Video */}
                             <div className="w-full flex justify-center">
                                 <video
                                     src={project.src}
@@ -52,7 +52,7 @@ export default function ProjectsPage() {
                                 />
                             </div>
 
-                            {/* Right — Content */}
+                            {/* Right - Content */}
                             <div className="flex flex-col gap-2">
                                 <h3 className="text-lg font-semibold">
                                     {project.name}

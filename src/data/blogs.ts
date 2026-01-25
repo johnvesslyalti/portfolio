@@ -1,5 +1,11 @@
 export const blogs = [
     {
+        slug: "support-requests-work",
+        title: "From Chaos to Clarity: How Support Requests Actually Become Work",
+        description: "How to transform support requests from noise into structured, actionable work.",
+        date: "Jan 25, 2026"
+    },
+    {
         slug: "why-i-chose-javascript",
         title: "Why I Chose JavaScript",
         description: "From many languages to one: why JavaScript became my primary language and how it shaped my career.",
