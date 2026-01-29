@@ -39,9 +39,7 @@ function BlogsContent() {
             <h2 className="text-2xl font-semibold">
               Blogs
             </h2>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex items-center justify-center gap-1.5">
-              <LuCalendar className="w-3 h-3" /> Every Sunday, One New Blog
-            </p>
+
           </div>
         </div>
 
