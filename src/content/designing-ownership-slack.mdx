@@ -1,0 +1,261 @@
+<Block>
+Slack has quietly become the place where real work happens.
+Customer questions, internal requests, on-call incidents, partner discussions — all of it lives inside chat threads.
+
+But there’s a problem that only becomes obvious at scale:
+
+**Conversation is not the same thing as ownership.**
+
+This blog is about why Slack-first support systems are deceptively hard to build, what breaks in real teams, and the kind of backend thinking required to make them reliable.
+</Block>
+
+---
+
+<Block>
+## Slack Is Great at Conversation — Not at Responsibility
+
+Slack excels at:
+
+* Fast communication
+* Rich context
+* Low friction collaboration
+
+What Slack intentionally avoids is opinionated workflow.
+
+Slack does **not** answer:
+
+* Who owns this request?
+* Has someone accepted responsibility?
+* Are we late responding?
+* Did we silently drop the ball?
+
+This isn’t a flaw — it’s a design choice.
+Slack optimizes for conversation, not accountability.
+
+But as teams scale, this gap becomes painful.
+
+Important requests don’t fail loudly.
+They fail quietly — buried in threads, waiting for “someone” to respond.
+</Block>
+
+---
+
+<Block>
+## Why Slack Alone Can’t Solve This
+
+It’s tempting to think:
+
+> “Why can’t Slack just add better tracking?”
+
+Because the moment Slack enforces ownership and time-bound commitments, it stops being Slack.
+
+Slack avoids:
+
+* Strong state
+* Mandatory ownership
+* Enforced deadlines
+
+And that’s exactly why systems built *on top of Slack* must compensate for these missing guarantees.
+
+Slack should remain the surface.
+The backend must become the source of truth.
+</Block>
+
+---
+
+<Block>
+## Intent vs Commitment: Requests and Tickets
+
+One of the most important distinctions in support systems is the difference between **asking** and **owning**.
+
+* A **request** represents intent: *someone is asking for help*
+* A **ticket** represents commitment: *someone has accepted responsibility*
+
+These are not the same thing.
+
+Treating every message as “work” leads to confusion.
+Treating acceptance as a first-class transition creates clarity.
+
+The moment an agent accepts a request:
+
+* Ownership becomes explicit
+* Responsibility is assigned
+* The system can make guarantees
+
+This transition matters more than the message itself.
+</Block>
+
+---
+
+<Block>
+## Ownership Must Be Explicit
+
+In many teams, ownership is implicit:
+
+* “I think you’re handling it”
+* “I replied, so it’s covered”
+* “Someone will follow up”
+
+These assumptions break under pressure.
+
+Explicit ownership changes behavior:
+
+* Someone is accountable
+* Work doesn’t float indefinitely
+* Escalations become possible
+
+Slack conversations alone can’t enforce this.
+Backend systems must.
+</Block>
+
+---
+
+<Block>
+## SLA Is About Responsibility, Not Time
+
+A common mistake in chat-based systems is treating SLA as:
+
+> “Time since the message arrived”
+
+In reality, SLA is closer to:
+
+> **“Time during which the team owed a response or action.”**
+
+That distinction matters.
+
+Consider:
+
+* Waiting on the customer
+* Blocked by another team
+* Actively being worked on
+
+In these states, time should not count the same way.
+
+This is why robust SLA systems:
+
+* Pause when responsibility shifts away
+* Resume when action is expected
+* Are derived from timestamps, not timers
+
+Timers drift.
+Processes restart.
+Cron jobs run late.
+
+Timestamp-based derivation survives all of that.
+</Block>
+
+---
+
+<Block>
+## Time, Silence, and Backend Truth
+
+One of the hardest things to model in chat systems is **silence**.
+
+Silence often means:
+
+* A request was forgotten
+* Ownership was unclear
+* Work stalled without visibility
+
+Humans are bad at noticing silence.
+Backend systems are not.
+
+By treating time and inactivity as signals, systems can:
+
+* Detect neglected requests
+* Surface risk early
+* Restore trust with customers
+
+This requires backend logic that continuously evaluates state — not just reacts to events.
+</Block>
+
+---
+
+<Block>
+## Concurrency and Failure Are Not Edge Cases
+
+In real systems:
+
+* Two agents can accept at the same time
+* External systems retry events
+* Partial failures are normal
+
+Correctness cannot depend on timing or UI assumptions.
+
+It must come from:
+
+* Database constraints
+* Transactions
+* Idempotent operations
+
+Letting the database enforce reality is not an implementation detail — it’s a design principle.
+</Block>
+
+---
+
+<Block>
+## Slack as an Adapter, Not the Brain
+
+Slack should be treated as:
+
+* An entry point
+* A notification surface
+* A collaboration layer
+
+It should **not** own business logic.
+
+By keeping Slack as an adapter:
+
+* Core logic stays reusable
+* Integrations remain replaceable
+* The system survives API quirks and retries
+
+This separation keeps systems flexible and testable over time.
+</Block>
+
+---
+
+<Block>
+## What I Intentionally Didn’t Build
+
+In exploring these ideas, I intentionally avoided:
+
+* Full Slack API integration
+* Dashboards and reporting UIs
+* Escalation workflows
+* Automation beyond core flows
+
+Not because they aren’t important — but because correctness comes first.
+
+Without clear ownership, reliable state transitions, and trustworthy SLA semantics, these features only add surface complexity.
+</Block>
+
+---
+
+<Block>
+## What This Taught Me
+
+Slack-first support systems look simple from the outside.
+They are not.
+
+They demand:
+
+* Strong backend discipline
+* Careful modeling of responsibility
+* Comfort with ambiguity and failure
+* Respect for time as a first-class concept
+
+The most valuable work often happens invisibly — in the backend — ensuring that conversations turn into commitments, and commitments are honored.
+</Block>
+
+---
+
+<Block>
+## Closing Thought
+
+Slack makes communication easy.
+Systems like ClearFeed make responsibility visible.
+
+The difference is not in messages —
+it’s in ownership, time, and trust.
+</Block>

@@ -1,5 +1,12 @@
 export const blogs = [
     {
+        slug: "designing-ownership-slack",
+        title: "Designing Ownership and Accountability in Slack-First Support Systems",
+        description: "Why Slack-first support systems are deceptively hard to build and the backend thinking required to make them reliable.",
+        date: "Jan 29, 2026",
+        readingTime: "5 mins read"
+    },
+    {
         slug: "support-requests-work",
         title: "From Chaos to Clarity: How Support Requests Actually Become Work",
         description: "How to transform support requests from noise into structured, actionable work.",
