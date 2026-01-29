@@ -40,6 +40,9 @@ export default async function BlogPostLayout({
             <h1 className="text-xl md:text-2xl font-semibold text-center">
               {blog.title}
             </h1>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-2 text-center">
+              {blog.date} • {blog.readingTime}
+            </p>
           </div>
         </div>
 

@@ -46,7 +46,7 @@ function BlogsContent() {
         </div>
 
         {/* Blog Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {paginatedBlogs.map((blog) => (
             <Link
               key={blog.slug}
@@ -55,22 +55,14 @@ function BlogsContent() {
                 border border-neutral-200 dark:border-neutral-700 rounded-xl
                 p-5
                 hover:bg-neutral-50 dark:hover:bg-neutral-900/40 transition
+                flex flex-col
               "
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs text-neutral-500 dark:text-neutral-400">
-                  {blog.date}
+                  {blog.date} • {blog.readingTime}
                 </span>
-                {blog.slug === "why-i-chose-javascript" && (
-                  <Badge className="h-5 px-1.5 text-[10px]">
-                    New
-                  </Badge>
-                )}
-                {blog.slug === "offline-pos-system" && (
-                  <Badge className="h-5 px-1.5 text-[10px]" variant="secondary">
-                    Featured
-                  </Badge>
-                )}
+
               </div>
 
               <h3 className="text-lg font-semibold mb-3 leading-snug">

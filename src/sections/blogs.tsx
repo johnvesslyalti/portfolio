@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { blogs } from "@/data/blogs";
-import { Badge } from "@/components/ui/badge";
+
 
 export default function Blogs() {
     const recentBlogs = blogs.slice(0, 3);
@@ -17,23 +17,12 @@ export default function Blogs() {
                     <Link
                         key={blog.slug}
                         href={`/blogs/${blog.slug}`}
-                        className="border rounded-lg p-4 hover:bg-neutral-50/5 transition md:flex-1"
+                        className="border rounded-lg p-4 hover:bg-neutral-50/5 transition md:flex-1 flex flex-col"
                     >
                         <div className="flex items-center justify-between mb-2">
                             <span className="text-xs text-neutral-500">
                                 {blog.date}
                             </span>
-
-                            {blog.slug === "support-requests-work" && (
-                                <Badge className="h-5 px-1.5 text-[10px]">
-                                    New
-                                </Badge>
-                            )}
-                            {blog.slug === "offline-pos-system" && (
-                                <Badge className="h-5 px-1.5 text-[10px]" variant="secondary">
-                                    Featured
-                                </Badge>
-                            )}
                         </div>
 
                         <h3 className="text-lg font-semibold mb-2 leading-snug">
