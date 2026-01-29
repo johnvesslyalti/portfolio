@@ -1,6 +1,6 @@
 <Block>
 Slack has quietly become the place where real work happens.
-Customer questions, internal requests, on-call incidents, partner discussions — all of it lives inside chat threads.
+Customer questions, internal requests, on-call incidents, partner discussions - all of it lives inside chat threads.
 
 But there’s a problem that only becomes obvious at scale:
 
@@ -12,7 +12,9 @@ This blog is about why Slack-first support systems are deceptively hard to build
 ---
 
 <Block>
-## Slack Is Great at Conversation — Not at Responsibility
+## Slack Is Great at Conversation - Not at Responsibility
+
+![Slack Conversation vs Ownership](/blogs/designing-ownership-slack/slack_vs_ownership.png)
 
 Slack excels at:
 
@@ -29,13 +31,13 @@ Slack does **not** answer:
 * Are we late responding?
 * Did we silently drop the ball?
 
-This isn’t a flaw — it’s a design choice.
+This isn’t a flaw - it’s a design choice.
 Slack optimizes for conversation, not accountability.
 
 But as teams scale, this gap becomes painful.
 
 Important requests don’t fail loudly.
-They fail quietly — buried in threads, waiting for “someone” to respond.
+They fail quietly - buried in threads, waiting for “someone” to respond.
 </Block>
 
 ---
@@ -65,6 +67,8 @@ The backend must become the source of truth.
 
 <Block>
 ## Intent vs Commitment: Requests and Tickets
+
+![Intent vs Commitment](/blogs/designing-ownership-slack/intent_vs_commitment.png)
 
 One of the most important distinctions in support systems is the difference between **asking** and **owning**.
 
@@ -166,7 +170,7 @@ By treating time and inactivity as signals, systems can:
 * Surface risk early
 * Restore trust with customers
 
-This requires backend logic that continuously evaluates state — not just reacts to events.
+This requires backend logic that continuously evaluates state - not just reacts to events.
 </Block>
 
 ---
@@ -188,13 +192,15 @@ It must come from:
 * Transactions
 * Idempotent operations
 
-Letting the database enforce reality is not an implementation detail — it’s a design principle.
+Letting the database enforce reality is not an implementation detail - it’s a design principle.
 </Block>
 
 ---
 
 <Block>
 ## Slack as an Adapter, Not the Brain
+
+![Slack Adapter Architecture](/blogs/designing-ownership-slack/slack_adapter_architecture.png)
 
 Slack should be treated as:
 
@@ -225,7 +231,7 @@ In exploring these ideas, I intentionally avoided:
 * Escalation workflows
 * Automation beyond core flows
 
-Not because they aren’t important — but because correctness comes first.
+Not because they aren’t important - but because correctness comes first.
 
 Without clear ownership, reliable state transitions, and trustworthy SLA semantics, these features only add surface complexity.
 </Block>
@@ -245,7 +251,7 @@ They demand:
 * Comfort with ambiguity and failure
 * Respect for time as a first-class concept
 
-The most valuable work often happens invisibly — in the backend — ensuring that conversations turn into commitments, and commitments are honored.
+The most valuable work often happens invisibly - in the backend - ensuring that conversations turn into commitments, and commitments are honored.
 </Block>
 
 ---
@@ -256,6 +262,6 @@ The most valuable work often happens invisibly — in the backend — ensuring t
 Slack makes communication easy.
 Systems like ClearFeed make responsibility visible.
 
-The difference is not in messages —
+The difference is not in messages -
 it’s in ownership, time, and trust.
 </Block>
