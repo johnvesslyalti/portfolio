@@ -1,29 +1,32 @@
 import {
   SiTypescript,
-  SiExpress,
   SiNextdotjs,
   SiNestjs,
   SiNodedotjs,
   SiPostgresql,
   SiPrisma,
   SiRedis,
+  SiLinux,
 } from "react-icons/si";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
 
 export default function Technologies() {
-  const technologies = [
-    // --- Backend / Systems ---
-    { name: "TypeScript", icon: <SiTypescript /> },
-    { name: "Node.js", icon: <SiNodedotjs /> },
-    { name: "Nest.js", icon: <SiNestjs /> },
-    { name: "Express.js", icon: <SiExpress /> },
-    { name: "PostgreSQL", icon: <SiPostgresql /> },
-    { name: "Prisma ORM", icon: <SiPrisma /> },
-    { name: "Redis", icon: <SiRedis /> },
-    { name: "BullMQ (Background Jobs)", icon: <HiOutlineQueueList /> },
-    { name: "Next.js (App Router + Server Actions)", icon: <SiNextdotjs /> },
-  ];
+  const technologies = {
+    LANGUAGE: [{ name: "TypeScript", icon: <SiTypescript /> }],
+    BACKEND: [
+      { name: "Node.js", icon: <SiNodedotjs /> },
+      { name: "NestJS", icon: <SiNestjs /> },
+      { name: "BullMQ", icon: <HiOutlineQueueList /> },
+    ],
+    DATABASE: [
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "Redis", icon: <SiRedis /> },
+    ],
+    ORM: [{ name: "Prisma", icon: <SiPrisma /> }],
+    FRONTEND: [{ name: "Next.js", icon: <SiNextdotjs /> }],
+    "OPERATING SYSTEM": [{ name: "Linux", icon: <SiLinux /> }],
+  };
 
   return (
     <section className="border p-5 rounded-lg">
@@ -31,22 +34,31 @@ export default function Technologies() {
         Technologies
       </h2>
 
-      <div className="flex flex-wrap gap-2">
-        {technologies.map((tech, index) => (
-          <Badge
-            key={index}
-            variant="outline"
-            className="
-              border-neutral-700
-              text-neutral-800 dark:text-neutral-100
-              hover:bg-neutral-200 dark:hover:bg-neutral-800
-              transition
-              flex items-center gap-2
-            "
-          >
-            <span className="text-lg">{tech.icon}</span>
-            <span>{tech.name}</span>
-          </Badge>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {Object.entries(technologies).map(([category, items]) => (
+          <div key={category} className="flex flex-col gap-3">
+            <h3 className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
+              {category}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {items.map((tech, index) => (
+                <Badge
+                  key={index}
+                  variant="outline"
+                  className="
+                    border-neutral-700 bg-neutral-800
+                    text-neutral-300
+                    hover:bg-neutral-700
+                    transition-colors duration-200
+                    flex items-center gap-2 px-3 py-1.5
+                  "
+                >
+                  <span className="text-lg">{tech.icon}</span>
+                  <span className="font-medium">{tech.name}</span>
+                </Badge>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>
