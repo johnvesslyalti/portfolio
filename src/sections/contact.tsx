@@ -2,7 +2,7 @@
 
 import { ReactNode, useEffect, useState } from "react";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 
@@ -30,8 +30,7 @@ export default function Contact() {
     { name: "LinkedIn", link: "https://linkedin.com/in/johnvesslyalti", icon: <FaLinkedin /> },
     { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub /> },
     { name: "LeetCode", link: "https://leetcode.com/johnvesslyalti", icon: <SiLeetcode /> },
-    { name: "YouTube", link: "https://youtube.com/@johnvesslyalti", icon: <FaYoutube /> },
-    { name: "Discord", link: "https://discord.com/users/johnvesslyalti", icon: <FaDiscord /> },
+
   ];
 
   const quotes: Quote[] = [
@@ -74,7 +73,7 @@ export default function Contact() {
   const icons = authorIcons[quote.author];
 
   return (
-    <section className="flex flex-col gap-5 sm:flex-row sm:justify-between items-center border p-5 rounded-xl backdrop-blur-sm">
+    <section className="flex flex-col gap-10 sm:flex-row sm:justify-center items-center border p-5 rounded-xl backdrop-blur-sm">
 
       {/* Social Icons */}
       <div className="flex flex-wrap gap-4">
