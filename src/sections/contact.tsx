@@ -1,28 +1,10 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
-
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+
 import { FaXTwitter } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
-
-import {
-  FaApple,
-  FaLinux,
-  FaMicrosoft,
-  FaGoogle,
-  FaFacebook,
-  FaCode,
-  FaRocket,
-  FaAmazon,
-  FaLightbulb,
-  FaGlobe,
-} from "react-icons/fa";
-
-type Quote = {
-  text: string;
-  author: string;
-};
 
 export default function Contact() {
   const contact = [
@@ -33,44 +15,6 @@ export default function Contact() {
 
   ];
 
-  const quotes: Quote[] = [
-    { text: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
-    { text: "Innovation grows when curiosity leads.", author: "Steve Jobs" },
-    { text: "Good software is born from clear minds.", author: "Bill Gates" },
-    { text: "Focus on users, the rest follows soon.", author: "Larry Page" },
-    { text: "Move fast, learn fast, build even faster.", author: "Mark Zuckerberg" },
-    { text: "Stay simple; complexity kills progress.", author: "Dennis Ritchie" },
-    { text: "Great tools empower great developers.", author: "Anders Hejlsberg" },
-    { text: "Precision matters; craft code with care.", author: "Ken Thompson" },
-    { text: "Create value first, optimize it later.", author: "Jeff Bezos" },
-  ];
-
-  const authorIcons: Record<string, { left: ReactNode; right: ReactNode }> = {
-    "Linus Torvalds": { left: <FaLinux />, right: <FaCode /> },
-    "Steve Jobs": { left: <FaApple />, right: <FaLightbulb /> },
-    "Bill Gates": { left: <FaMicrosoft />, right: <FaGlobe /> },
-    "Larry Page": { left: <FaGoogle />, right: <FaLightbulb /> },
-    "Mark Zuckerberg": { left: <FaFacebook />, right: <FaGlobe /> },
-    "Dennis Ritchie": { left: <FaCode />, right: <FaCode /> },
-    "Anders Hejlsberg": { left: <FaCode />, right: <FaLightbulb /> },
-    "Ken Thompson": { left: <FaCode />, right: <FaCode /> },
-    "Elon Musk": { left: <FaRocket />, right: <FaGlobe /> },
-    "Jeff Bezos": { left: <FaAmazon />, right: <FaGlobe /> },
-  };
-
-  const [quote, setQuote] = useState<Quote | null>(null);
-
-  // ✅ Runs ONLY on client after hydration
-  useEffect(() => {
-    setQuote(
-      quotes[Math.floor(Math.random() * quotes.length)]
-    );
-  }, []);
-
-  // ✅ Prevent hydration mismatch
-  if (!quote) return null;
-
-  const icons = authorIcons[quote.author];
 
   return (
     <section className="flex flex-col gap-10 sm:flex-row sm:justify-center items-center border p-5 rounded-xl backdrop-blur-sm">
@@ -100,27 +44,6 @@ export default function Contact() {
             </span>
           </a>
         ))}
-      </div>
-
-      {/* Quote */}
-      <div className="text-center max-w-xs leading-snug">
-        <p className="text-sm italic text-neutral-700 dark:text-neutral-300">
-          “{quote.text}”
-        </p>
-
-        <div className="mt-2 flex items-center justify-center gap-2 text-xs text-neutral-600 dark:text-neutral-400">
-          <span className="text-sm opacity-80">
-            {icons?.left ?? <FaCode />}
-          </span>
-
-          <span className="font-medium tracking-wide">
-            {quote.author}
-          </span>
-
-          <span className="text-sm opacity-80">
-            {icons?.right ?? <FaLightbulb />}
-          </span>
-        </div>
       </div>
     </section>
   );
