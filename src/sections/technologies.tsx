@@ -7,6 +7,7 @@ import {
   SiPrisma,
   SiRedis,
   SiLinux,
+  SiMongodb,
 } from "react-icons/si";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
@@ -22,6 +23,7 @@ export default function Technologies() {
     DATABASE: [
       { name: "PostgreSQL", icon: <SiPostgresql /> },
       { name: "Redis", icon: <SiRedis /> },
+      { name: "MongoDB", icon: <SiMongodb /> },
     ],
     ORM: [{ name: "Prisma", icon: <SiPrisma /> }],
     FRONTEND: [{ name: "Next.js", icon: <SiNextdotjs /> }],
