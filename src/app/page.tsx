@@ -8,14 +8,17 @@ import Technologies from "@/sections/technologies";
 
 export default function Page() {
   return (
-    <div className="min-h-screen flex flex-col gap-10 max-w-2xl mx-auto p-6 text-neutral-900 dark:text-neutral-100 transition-colors">
-      <Header />
-      <About />
-      <Technologies />
-      <Projects />
-      <GitHub />
-      <Blogs />
-      <Contact />
+    <div className="relative min-h-screen overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),_transparent_55%),radial-gradient(circle_at_20%_20%,_rgba(16,185,129,0.18),_transparent_45%),radial-gradient(circle_at_80%_40%,_rgba(236,72,153,0.12),_transparent_40%)]" />
+      <div className="relative mx-auto flex min-h-screen max-w-5xl flex-col gap-12 px-6 pb-16 pt-10 text-neutral-900 transition-colors dark:text-neutral-100">
+        <Header />
+        <About />
+        <Technologies />
+        <Projects />
+        <GitHub />
+        <Blogs />
+        <Contact />
+      </div>
     </div>
   );
 }
