@@ -45,14 +45,16 @@ export default function Projects() {
                   GitHub
                 </a>
 
-                <a
-                  href={project.live}
-                  target="_blank"
-                  className="text-[10px] font-bold flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
-                >
-                  <LiaExternalLinkAltSolid className="inline mr-1" />
-                  Live
-                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    className="text-[10px] font-bold flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
+                  >
+                    <LiaExternalLinkAltSolid className="inline mr-1" />
+                    Live
+                  </a>
+                )}
               </div>
             </div>
           </div>

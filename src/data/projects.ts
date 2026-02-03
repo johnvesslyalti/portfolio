@@ -3,7 +3,7 @@ export const projects = [
         name: "DevNest",
         src: "/devnest.mp4",
         github: "https://github.com/johnvesslyalti/devnest",
-        live: "https://web.postman.co/workspace/My-Workspace~9eb63259-5a06-4ff5-8952-fb889e10caed/collection/39926112-1f9a5499-fa3f-4c50-8a15-99117d2626e5?action=share&source=copy-link&creator=39926112",
+
         shortDescription:
             "A scalable backend platform focused on authentication, caching, and API performance, built to simulate real-world production systems.",
         detailedDescription:
