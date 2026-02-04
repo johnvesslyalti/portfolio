@@ -1,6 +1,4 @@
-"use client";
-
-import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Header() {
   return (
@@ -11,11 +9,19 @@ export default function Header() {
           Johnvessly Alti
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-row items-center gap-4 sm:contents">
           <div className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
             altijohnvessly@gmail.com
           </div>
-          <AnimatedThemeToggler />
+
+          <a
+            href="https://x.com/nodvex"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-2xl text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition"
+          >
+            <FaXTwitter />
+          </a>
         </div>
       </div>
 
