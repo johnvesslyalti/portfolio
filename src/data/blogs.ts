@@ -1,5 +1,12 @@
 export const blogs = [
     {
+        slug: "ai-will-not-replace-software-engineers",
+        title: "AI Will Not Replace Software Engineers — But It Will Replace Many of Them",
+        description: "Why typing code is becoming cheaper, and why system-level reasoning is the only software engineering skill that matters in the age of AI.",
+        date: "Feb 21, 2026",
+        readingTime: "5 mins read"
+    },
+    {
         slug: "designing-ownership-slack",
         title: "Designing Ownership and Accountability in Slack-First Support Systems",
         description: "Why Slack-first support systems are deceptively hard to build and the backend thinking required to make them reliable.",
