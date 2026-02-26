@@ -13,19 +13,21 @@ export default function ProjectsPage() {
     return (
         <section className="py-6">
             <div className="mx-auto mb-10 max-w-2xl px-6">
-                <div className="mb-10 rounded-2xl border border-neutral-200/80 bg-gradient-to-b from-white to-neutral-50 p-5 shadow-sm dark:border-white/10 dark:from-neutral-950 dark:to-neutral-900/40">
-                    <div className="relative mb-4 flex items-center">
+                <div className="mb-10 rounded-lg border p-5">
+                    <div className="grid items-center sm:grid-cols-[auto_1fr_auto]">
                         <button
                             onClick={() => router.push("/")}
-                            className="inline-flex items-center gap-1 rounded-md px-2.5 py-1 text-xs text-neutral-700 transition hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-white/10"
+                            className="hidden cursor-pointer items-center gap-1 rounded-md px-2.5 py-1 text-xs text-neutral-700 transition hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-white/10 sm:inline-flex"
                         >
                             <IoIosArrowBack className="text-sm" />
                             Back
                         </button>
 
-                        <h1 className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl font-semibold tracking-tight">
+                        <h1 className="text-center text-3xl font-bold tracking-tight sm:text-4xl">
                             Projects
                         </h1>
+
+                        <span aria-hidden className="hidden sm:block sm:w-[64px]" />
                     </div>
                 </div>
 
