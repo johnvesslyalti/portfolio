@@ -38,7 +38,7 @@ export default function ProjectsPage() {
                             <div className="flex flex-col gap-6">
                                 <video
                                     src={project.src}
-                                    className="min-h-52 w-full rounded-xl border border-neutral-200 object-cover transition duration-500 group-hover:scale-[1.01] dark:border-white/10"
+                                    className="aspect-video h-auto w-full rounded-xl border border-neutral-200 bg-neutral-950/5 object-contain transition duration-500 group-hover:scale-[1.01] dark:border-white/10 dark:bg-white/5"
                                     autoPlay
                                     loop
                                     muted

@@ -25,7 +25,7 @@ export default function Projects() {
           >
             <video
               src={project.src}
-              className="object-contain w-full h-48 sm:h-56 md:h-64"
+              className="aspect-video h-auto w-full rounded-lg bg-neutral-950/5 object-contain dark:bg-white/5"
               autoPlay
               loop
               muted
