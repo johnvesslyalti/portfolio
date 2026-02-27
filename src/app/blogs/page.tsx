@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { blogs } from "@/data/blogs";
+import { blogs } from "@/features/blogs/data/blogs";
 import { IoIosArrowBack } from "react-icons/io";
 import { LuCalendar } from "react-icons/lu";
 import { Badge } from "@/components/ui/badge";

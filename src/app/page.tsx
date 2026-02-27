@@ -1,10 +1,10 @@
-import Projects from "@/sections/projects";
-import GitHub from "@/sections/github";
-import Contact from "@/sections/contact";
-import Header from "@/sections/header";
-import Blogs from "@/sections/blogs";
-import About from "@/sections/about";
-import Technologies from "@/sections/technologies";
+import Projects from "@/features/home/sections/projects";
+import GitHub from "@/features/home/sections/github";
+import Contact from "@/features/home/sections/contact";
+import Header from "@/features/home/sections/header";
+import Blogs from "@/features/home/sections/blogs";
+import About from "@/features/home/sections/about";
+import Technologies from "@/features/home/sections/technologies";
 
 export default function Page() {
   return (

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
 import { notFound } from "next/navigation";
-import { blogs } from "@/data/blogs";
+import { blogs } from "@/features/blogs/data/blogs";
 
 export default async function BlogPostLayout({
   children,

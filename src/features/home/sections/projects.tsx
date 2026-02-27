@@ -1,6 +1,6 @@
 "use client";
 
-import { projects } from "@/data/projects";
+import { projects } from "@/features/projects/data/projects";
 import { FaGithub } from "react-icons/fa";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
 import { useRouter } from "next/navigation";

@@ -30,7 +30,7 @@ export function BadgeCarousel() {
             <div className="p-2">
               <Image
                 alt={`Badge ${num}`}
-                src={`/leetcode-badges/${num}.png`}
+                src={`/leetcode/badges/${num}.png`}
                 width={100}
                 height={100}
                 className="rounded-lg shadow-md"

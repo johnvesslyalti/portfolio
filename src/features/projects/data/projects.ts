@@ -1,7 +1,7 @@
 export const projects = [
     {
         name: "DevNest",
-        src: "/devnest.mp4",
+        src: "/projects/devnest.mp4",
         github: "https://github.com/johnvesslyalti/devnest",
 
         shortDescription:
@@ -24,7 +24,7 @@ export const projects = [
     },
     {
         name: "LiftLog",
-        src: "/liftlog.mp4",
+        src: "/projects/liftlog.mp4",
         github: "https://github.com/johnvesslyalti/lift-log",
         live: "https://johnvesslyalti-liftlog.vercel.app",
         shortDescription:
@@ -42,7 +42,7 @@ export const projects = [
     },
     {
         name: "SubTrackr",
-        src: "/subtrackr.mp4",
+        src: "/projects/subtrackr.mp4",
         github: "https://github.com/johnvesslyalti/sub-trackr",
         live: "https://johnvesslyalti-subtrackr.vercel.app",
         shortDescription:
