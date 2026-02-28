@@ -1,5 +1,12 @@
 export const blogs = [
     {
+        slug: "how-tech-roles-evolved",
+        title: "How Tech Roles Evolved: From Hardware Engineers to AI Systems Architects",
+        description: "Technology doesn't just evolve. Roles evolve with it. A look at the last 50 years of tech and what pattern it reveals.",
+        date: "Feb 28, 2026",
+        readingTime: "5 mins read"
+    },
+    {
         slug: "ai-will-not-replace-software-engineers",
         title: "AI Will Not Replace Software Engineers — But It Will Replace Many of Them",
         description: "Why typing code is becoming cheaper, and why system-level reasoning is the only software engineering skill that matters in the age of AI.",
