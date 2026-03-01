@@ -32,30 +32,38 @@ export default function Projects() {
               playsInline
             />
 
-            <div className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border border-neutral-200 dark:border-white/10 rounded-lg p-2 items-center mt-2 shadow-sm">
-              <div className="font-bold tracking-tight text-[12px]">{project.name}</div>
+            <div className="w-full flex flex-col bg-white text-black dark:text-white dark:bg-transparent border border-neutral-200 dark:border-white/10 rounded-lg p-3 mt-2 shadow-sm gap-2">
+              <div className="flex justify-between items-center w-full">
+                <div className="font-bold tracking-tight text-[14px]">{project.name}</div>
 
-              <div className="flex items-center">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  className="text-[10px] font-bold flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
-                >
-                  <FaGithub className="inline mr-1" />
-                  GitHub
-                </a>
-
-                {project.live && (
+                <div className="flex items-center gap-1">
                   <a
-                    href={project.live}
+                    href={project.github}
                     target="_blank"
                     className="text-[10px] font-bold flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
                   >
-                    <LiaExternalLinkAltSolid className="inline mr-1" />
-                    Live
+                    <FaGithub className="inline mr-1" />
+                    GitHub
                   </a>
-                )}
+
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      className="text-[10px] font-bold flex items-center hover:text-neutral-700 dark:hover:text-neutral-300 px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md transition whitespace-nowrap"
+                    >
+                      <LiaExternalLinkAltSolid className="inline mr-1" />
+                      Live
+                    </a>
+                  )}
+                </div>
               </div>
+              
+              {project.shortDescription && (
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  {project.shortDescription}
+                </p>
+              )}
             </div>
           </div>
         ))}

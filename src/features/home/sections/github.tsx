@@ -1,5 +1,3 @@
-import GitHubCalendar from "react-github-calendar";
-
 export default function GitHub() {
   return (
     <section className="border p-5 rounded-lg">
@@ -7,17 +5,11 @@ export default function GitHub() {
         GitHub Contributions
       </h2>
 
-      <p className="text-sm text-neutral-700 dark:text-neutral-300 mt-2">
-        Tracking my GitHub contributions and open-source activity over the past year.
-      </p>
-
-      {/* 1. The Calendar */}
-      <div className="github-calendar-wrapper w-full flex justify-center">
-        <GitHubCalendar
-          username="johnvesslyalti"
-          blockSize={12}
-          blockMargin={4}
-          fontSize={14}
+      <div className="w-full flex justify-center mt-4">
+        <img
+          src="https://ghchart.rshah.org/johnvesslyalti"
+          alt="Johnvessly's GitHub Contribution Chart"
+          width="100%"
         />
       </div>
     </section>

@@ -6,15 +6,17 @@ export default function About() {
       </h2>
 
       <p className="text-lg leading-relaxed">
-        I’m a{" "}
-        <span className="font-semibold">Software Engineer</span>{" "}
-        who enjoys designing reliable, scalable, and secure systems.
+        Backend engineer based in Bengaluru.
       </p>
 
       <p className="text-lg leading-relaxed mt-4">
-        I care deeply about system design, data flow, performance, and
-        maintainability. I enjoy breaking down complex problems and building
-        software that scales well in real-world applications.
+        I build production-grade systems — auth infrastructure, async
+        pipelines, multi-tenant SaaS, and analytics APIs. Every system
+        I design is built for correctness first, then performance.
+      </p>
+
+      <p className="text-lg leading-relaxed mt-4">
+        Three projects shipped. All public. All live.
       </p>
     </section>
   );

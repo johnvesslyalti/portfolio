@@ -6,8 +6,8 @@ import { SiLeetcode } from "react-icons/si";
 export default function Contact() {
   const contact = [
     { name: "Email", link: "mailto:altijohnvessly@gmail.com", icon: <FaEnvelope /> },
-    { name: "LinkedIn", link: "https://linkedin.com/in/johnvesslyalti", icon: <FaLinkedin /> },
     { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub /> },
+    { name: "LinkedIn", link: "https://linkedin.com/in/johnvesslyalti", icon: <FaLinkedin /> },
     { name: "LeetCode", link: "https://leetcode.com/johnvesslyalti", icon: <SiLeetcode /> },
   ];
 

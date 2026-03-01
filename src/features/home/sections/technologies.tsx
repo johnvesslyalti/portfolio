@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import {
   SiTypescript,
-  SiNextdotjs,
+  SiJavascript,    
   SiNestjs,
   SiNodedotjs,
   SiPostgresql,
@@ -9,7 +9,11 @@ import {
   SiRedis,
   SiLinux,
   SiMongodb,
+  SiDocker,
+  SiGithubactions,
 } from "react-icons/si";
+import { DiSqllite } from "react-icons/di";
+import { BsDatabase } from "react-icons/bs";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
 
@@ -21,13 +25,6 @@ interface Technology {
 
 export default function Technologies() {
   const technologies: Record<string, Technology[]> = {
-    LANGUAGE: [
-      {
-        name: "TypeScript",
-        icon: <SiTypescript />,
-        link: "https://www.typescriptlang.org/",
-      },
-    ],
     BACKEND: [
       {
         name: "Node.js",
@@ -44,8 +41,17 @@ export default function Technologies() {
         icon: <HiOutlineQueueList />,
         link: "https://bullmq.io/",
       },
+      {
+        name: "Prisma ORM",
+        icon: <SiPrisma />,
+        link: "https://www.prisma.io/",
+      },
+      {
+        name: "REST API Design",
+        icon: <BsDatabase />,
+      },
     ],
-    DATABASE: [
+    DATABASES: [
       {
         name: "PostgreSQL",
         icon: <SiPostgresql />,
@@ -62,25 +68,37 @@ export default function Technologies() {
         link: "https://www.mongodb.com/",
       },
     ],
-    ORM: [
+    INFRASTRUCTURE: [
       {
-        name: "Prisma",
-        icon: <SiPrisma />,
-        link: "https://www.prisma.io/",
+        name: "Docker",
+        icon: <SiDocker />,
+        link: "https://www.docker.com/",
       },
-    ],
-    FRONTEND: [
       {
-        name: "Next.js",
-        icon: <SiNextdotjs />,
-        link: "https://nextjs.org/",
+        name: "GitHub Actions",
+        icon: <SiGithubactions />,
+        link: "https://github.com/features/actions",
       },
-    ],
-    "OPERATING SYSTEM": [
       {
         name: "Linux",
         icon: <SiLinux />,
         link: "https://www.linux.org/",
+      },
+    ],
+    LANGUAGE: [
+      {
+        name: "TypeScript",
+        icon: <SiTypescript />,
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "JavaScript (ES6+)",
+        icon: <SiJavascript />,
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      },
+      {
+        name: "SQL",
+        icon: <DiSqllite />,
       },
     ],
   };

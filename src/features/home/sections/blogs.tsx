@@ -8,8 +8,12 @@ export default function Blogs() {
     return (
         <section className="border p-5 rounded-lg">
             <h2 className="text-xl font-semibold mb-3 border-b border-neutral-400 pb-1">
-                Blogs
+                Writing
             </h2>
+
+            <p className="text-sm text-neutral-700 dark:text-neutral-300 mt-2">
+                I write about backend architecture, system design, and the future of software engineering.
+            </p>
 
             {/* Cards */}
             <div className="mt-6 flex flex-col gap-4 md:flex-row">
