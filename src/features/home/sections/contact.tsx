@@ -1,10 +1,11 @@
 "use client";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 
 export default function Contact() {
   const contact = [
+    { name: "Email", link: "mailto:altijohnvessly@gmail.com", icon: <FaEnvelope /> },
     { name: "LinkedIn", link: "https://linkedin.com/in/johnvesslyalti", icon: <FaLinkedin /> },
     { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub /> },
     { name: "LeetCode", link: "https://leetcode.com/johnvesslyalti", icon: <SiLeetcode /> },
