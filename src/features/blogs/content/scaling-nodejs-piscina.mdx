@@ -1,0 +1,88 @@
+<Block>
+When building the backend for DevNest, I quickly ran into a classic Node.js architectural bottleneck: handling heavy CPU-bound tasks under concurrent load. Node.js is famous for its asynchronous, non-blocking I/O model, but it is fundamentally single-threaded. When a user logs in or registers, their password needs to be hashed or verified—typically using `bcrypt`.
+
+If you aren't careful, `bcrypt` can completely block the Node.js event loop. In this post, I'll walk you through how I identified this bottleneck, the metrics I observed, and how I utilized **Piscina** (a worker thread pool) to dramatically scale our API's throughput.
+</Block>
+
+---
+
+<Block>
+## The Problem: Blocking the Event Loop
+
+![Node.js Event Loop Blocked Diagram](/blogs/scaling-nodejs-piscina/event_loop_blocked.png)
+
+To understand my baseline capacity, I wrote a comprehensive k6 load test simulating complex user behaviors. The test ramped up to 100 concurrent Virtual Users (VUs) constantly bombarding the API with three actions:
+
+1. `POST /api/v1/auth/register` (Heavy Write & CPU)
+2. `POST /api/v1/auth/login` (Heavy CPU)
+3. `POST /api/v1/posts` (Write)
+
+### The Baseline Metrics (Before Optimization)
+
+Running this write-heavy flow yielded these results:
+
+- **Total Requests Handled**: 2,592
+- **Throughput / Request Rate**: ~62 requests per second (req/s)
+- **Average Latency**: 263.27 ms
+- **Median Latency**: 69.51 ms
+- **P(95) Latency**: 1.52 seconds!
+
+While no database transactions were dropped and the application technically "survived", a P(95) latency of **1.52 seconds** is a terrible user experience. The culprit was immediately obvious: concurrent synchronous `bcrypt` operations were freezing the event loop, forcing thousands of other lightweight requests to sit in the queue waiting for CPU cycles.
+</Block>
+
+---
+
+<Block>
+## The Solution: Offloading with Piscina & Clustering
+
+![Worker Threads Pool Architecture](/blogs/scaling-nodejs-piscina/worker_threads_pool.png)
+
+To fix this, I needed to get the password hashing out of the main thread. I implemented two major scaling architectures:
+
+1. **Worker Threads Pool (`Piscina`)**: Piscina is a fast, efficient Node.js worker thread pool implementation. Instead of hashing passwords on the main thread, I completely offloaded the `bcrypt` operations to background worker threads. The main thread simply dispatches the task to the Piscina pool and immediately goes back to serving incoming HTTP requests, awaiting the background thread's promised result.
+2. **Node.js Clustering**: To take full advantage of the underlying hardware, I bootstrapped the API to fork instances equal to the number of mathematical CPU cores available, effectively enabling horizontal scaling on a single machine.
+</Block>
+
+---
+
+<Block>
+## The Results: A Night and Day Difference
+
+![Performance Stress Test Dashboard](/blogs/scaling-nodejs-piscina/performance_metrics_dashboard.png)
+
+After deploying Piscina and the cluster, I ran the **exact same 100 VU load test**. The performance improvements were staggering:
+
+### Optimized Metrics (After Optimization)
+
+- **Total Requests Handled**: 4,702 (nearly double the amount processed in the same timeframe!)
+- **Throughput / Request Rate**: ~114 requests per second (**An 83% increase in sheer throughput**)
+- **Average Latency**: 51.3 ms (Down from 263 ms — **~5x faster**)
+- **P(95) Latency**: 96.15 ms (Down from 1.52 s — **A 93% drop in maximum latency!**)
+
+By simply keeping the main thread clear of CPU-intensive blocks, the API could now efficiently utilize all available CPU resources to process hashes in parallel.
+</Block>
+
+---
+
+<Block>
+## Pushing to the Limit: The 5,000 User Stress Test
+
+With the bottleneck resolved, I wanted to see exactly how much the server could take. I ran a maximum capacity stress test peaking at **5,000 concurrent Virtual Users** hitting the API.
+
+The server didn't even sweat:
+
+- **Total Requests Handled**: 157,528
+- **Success Rate**: 100% (0 Failed Requests)
+- **Peak Throughput**: ~1,945 requests per second
+- **P(95) Latency**: 66.04 ms
+</Block>
+
+---
+
+<Block>
+## Conclusion
+
+Scaling a Node.js backend requires understanding the difference between I/O-bound operations (like database calls) and CPU-bound operations (like cryptography files or image processing).
+
+If you are building an authentication-heavy application in Node.js, don't let `bcrypt` ruin your latency. Offload it. Using **Piscina** to create a dedicated worker pool for hashing operations is an incredibly effective, relatively low-effort way to boost your API's throughput by 80%+ and drastically reduce P(95) response times.
+</Block>

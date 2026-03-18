@@ -1,5 +1,12 @@
 export const blogs = [
     {
+        slug: "scaling-nodejs-piscina",
+        title: "How I Scaled My Node.js API to Handle 5,000 Concurrent Users Using Piscina",
+        description: "A deep dive into offloading heavy CPU-bound bcrypt operations from the Node.js event loop using worker threads (Piscina) and clustering.",
+        date: "Mar 18, 2026",
+        readingTime: "6 mins read"
+    },
+    {
         slug: "how-tech-roles-evolved",
         title: "How Tech Roles Evolved: From Hardware Engineers to AI Systems Architects",
         description: "Technology doesn't just evolve. Roles evolve with it. A look at the last 50 years of tech and what pattern it reveals.",
