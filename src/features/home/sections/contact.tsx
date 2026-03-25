@@ -1,6 +1,6 @@
 "use client";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter, FaDownload } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 
 export default function Contact() {
@@ -8,11 +8,12 @@ export default function Contact() {
     { name: "LinkedIn", link: "https://linkedin.com/in/johnvesslyalti", icon: <FaLinkedin /> },
     { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub /> },
     { name: "LeetCode", link: "https://leetcode.com/johnvesslyalti", icon: <SiLeetcode /> },
+    { name: "X (Twitter)", link: "https://x.com/zavxai", icon: <FaXTwitter /> },
   ];
 
 
   return (
-    <section className="flex flex-col gap-10 sm:flex-row sm:justify-center items-center border p-5 rounded-xl backdrop-blur-sm">
+    <section className="flex flex-col gap-6 sm:flex-row sm:justify-between items-center border p-5 rounded-xl backdrop-blur-sm w-full">
 
       {/* Social Icons */}
       <div className="flex flex-wrap gap-4">
@@ -40,6 +41,16 @@ export default function Contact() {
           </a>
         ))}
       </div>
+
+      {/* Download Resume Button */}
+      <a
+        href="/Johnvessly_Alti_Resume.pdf"
+        download="Johnvessly_Alti_Resume.pdf"
+        className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-lg font-medium hover:opacity-90 transition shadow-sm"
+      >
+        <FaDownload />
+        <span className="text-sm">Download Resume</span>
+      </a>
     </section>
   );
 }

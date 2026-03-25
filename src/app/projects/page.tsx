@@ -45,6 +45,7 @@ export default function ProjectsPage() {
                                     loop
                                     muted
                                     playsInline
+                                    suppressHydrationWarning
                                 />
 
                                 <div className="flex gap-2 pt-1">

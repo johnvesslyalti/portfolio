@@ -30,6 +30,7 @@ export default function Projects() {
               loop
               muted
               playsInline
+              suppressHydrationWarning
             />
 
             <div className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border border-neutral-200 dark:border-white/10 rounded-lg p-2 items-center mt-2 shadow-sm">
