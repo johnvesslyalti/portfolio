@@ -46,10 +46,10 @@ export default function Contact() {
       <a
         href="/Johnvessly_Alti_Resume.pdf"
         download="Johnvessly_Alti_Resume.pdf"
-        className="flex items-center gap-2 px-5 py-2.5 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-lg font-medium hover:opacity-90 transition shadow-sm"
+        className="flex items-center gap-2 px-6 py-2 border rounded-md text-sm font-medium hover:bg-neutral-50/5 transition"
       >
         <FaDownload />
-        <span className="text-sm">Download Resume</span>
+        <span>Download Resume</span>
       </a>
     </section>
   );
