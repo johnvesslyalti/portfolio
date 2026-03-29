@@ -1,5 +1,5 @@
 <Block>
-When building the backend for DevNest, I quickly ran into a classic Node.js architectural bottleneck: handling heavy CPU-bound tasks under concurrent load. Node.js is famous for its asynchronous, non-blocking I/O model, but it is fundamentally single-threaded. When a user logs in or registers, their password needs to be hashed or verified—typically using `bcrypt`.
+When building the backend for DevNest, I quickly ran into a classic Node.js architectural bottleneck: handling heavy CPU-bound tasks under concurrent load. Node.js is famous for its asynchronous, non-blocking I/O model, but it is fundamentally single-threaded. When a user logs in or registers, their password needs to be hashed or verified - typically using `bcrypt`.
 
 If you aren't careful, `bcrypt` can completely block the Node.js event loop. In this post, I'll walk you through how I identified this bottleneck, the metrics I observed, and how I utilized **Piscina** (a worker thread pool) to dramatically scale our API's throughput.
 </Block>
@@ -56,8 +56,8 @@ After deploying Piscina and the cluster, I ran the **exact same 100 VU load test
 
 - **Total Requests Handled**: 4,702 (nearly double the amount processed in the same timeframe!)
 - **Throughput / Request Rate**: ~114 requests per second (**An 83% increase in sheer throughput**)
-- **Average Latency**: 51.3 ms (Down from 263 ms — **~5x faster**)
-- **P(95) Latency**: 96.15 ms (Down from 1.52 s — **A 93% drop in maximum latency!**)
+- **Average Latency**: 51.3 ms (Down from 263 ms - **~5x faster**)
+- **P(95) Latency**: 96.15 ms (Down from 1.52 s - **A 93% drop in maximum latency!**)
 
 By simply keeping the main thread clear of CPU-intensive blocks, the API could now efficiently utilize all available CPU resources to process hashes in parallel.
 </Block>
