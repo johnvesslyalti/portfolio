@@ -2,22 +2,22 @@ export const projects = [
   {
     name: "DevNest",
     src: "/projects/devnest.mp4",
-    github: "https://github.com/johnvesslyalti/devnest",
+    github: "https://github.com/johnvesslyalti/dev-nest",
+    live: "https://dev-nest-4hxb.onrender.com/api/docs",
 
     shortDescription:
-      "Built a highly-concurrent full-stack social platform using NestJS, scaling with Piscina worker threads, Prisma (PostgreSQL/MongoDB), Redis/BullMQ, and robust JWT auth.",
+      "Modular NestJS backend for a social platform with dedicated auth, posts, comments, likes, feed, profile, email, and shared infrastructure layers backed by PostgreSQL as the system of record.",
     detailedDescription:
-      "- Scaled API to handle 5,000+ concurrent users by offloading CPU-bound cryptography (bcrypt) to a Piscina-managed worker thread pool and implementing clustering, completely eliminating event loop blocking.\n- Engineered a security-critical authentication system using JWTs, stateful UUID-tracked refresh token rotation to prevent concurrent login collisions, cascade session revocation, and SHA-256 IP hashing.\n- Migrated the home feed from a legacy MongoDB push model to a pull-based PostgreSQL architecture, utilizing connection pooling to aggregate social graphs on demand and eliminate synchronization drift.\n- Deployed Redis-backed BullMQ worker processes for scalable asynchronous execution and distributed rate limiting, isolating background workloads from request-response latency.\n- Implemented CI/CD pipelines with GitHub Actions, enforcing build validation and deterministic E2E test suites that validate core APIs, security invariants, and multi-threaded worker stability.",
+      "- Built a modular NestJS backend for a social platform with dedicated auth, posts, comments, likes, feed, profile, email, and shared infrastructure layers backed by PostgreSQL as the system of record.\n- Implemented secure authentication with JWT access tokens, HTTP-only refresh token rotation, session caps, token reuse detection, soft-delete account revocation, Google OAuth 2.0 sign-in, and SHA-256 hashing of stored login IP metadata.\n- Designed pull-based public and follower feed APIs with cursor pagination, Redis-backed caching, and Prisma query patterns that return author metadata and interaction counts without feed fan-out duplication.\n- Engineered Redis-backed platform infrastructure for distributed rate limiting, cacheable profile and content reads, and BullMQ worker processing for asynchronous welcome email jobs.\n- Offloaded CPU-heavy bcrypt hashing and password verification to a piscina worker-thread pool to keep request handling responsive under concurrent authentication load.\n- Validated production-critical behavior through Jest E2E coverage for auth, posts, comments, likes, feeds, rate limiting, cursor pagination, soft-delete flows, and worker-pool concurrency.",
     tech: [
       "TypeScript",
       "NestJS",
-      "Piscina (Workers)",
       "PostgreSQL",
-      "MongoDB",
+      "Redis",
       "Prisma",
-      "Redis + BullMQ",
-      "JWT Security",
-      "GitHub Actions CI",
+      "BullMQ",
+      "Piscina (Workers)",
+      "Jest E2E",
     ],
     category: "Backend",
   },
