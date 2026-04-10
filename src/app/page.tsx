@@ -5,6 +5,7 @@ import Header from "@/features/home/sections/header";
 import Blogs from "@/features/home/sections/blogs";
 import About from "@/features/home/sections/about";
 import Technologies from "@/features/home/sections/technologies";
+import OpenSource from "@/features/home/sections/open-source";
 
 export default function Page() {
   return (
@@ -13,6 +14,7 @@ export default function Page() {
       <About />
       <Technologies />
       <Projects />
+      <OpenSource />
       <GitHub />
       <Blogs />
       <Contact />
