@@ -48,7 +48,7 @@ export default function About() {
         )}>
           <button
             onClick={() => setIsExpanded(true)}
-            className="pointer-events-auto flex items-center gap-1 text-sm font-semibold text-neutral-900 dark:text-neutral-100 bg-neutral-100 dark:bg-neutral-800 px-4 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-700 shadow-sm hover:scale-105 transition active:scale-95"
+            className="pointer-events-auto cursor-pointer flex items-center gap-1 text-sm font-semibold text-neutral-900 dark:text-neutral-100 bg-neutral-100 dark:bg-neutral-800 px-4 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-700 shadow-sm hover:scale-105 transition active:scale-95"
           >
             Show more <ChevronDown className="w-4 h-4" />
           </button>
@@ -59,7 +59,7 @@ export default function About() {
           <div className="flex justify-center mt-4">
             <button
               onClick={() => setIsExpanded(false)}
-              className="flex items-center gap-1 text-sm font-semibold text-neutral-900 dark:text-neutral-100 bg-neutral-100 dark:bg-neutral-800 px-4 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-700 shadow-sm hover:scale-105 transition active:scale-95"
+              className="cursor-pointer flex items-center gap-1 text-sm font-semibold text-neutral-900 dark:text-neutral-100 bg-neutral-100 dark:bg-neutral-800 px-4 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-700 shadow-sm hover:scale-105 transition active:scale-95"
             >
               Show less <ChevronUp className="w-4 h-4" />
             </button>

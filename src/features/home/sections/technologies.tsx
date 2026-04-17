@@ -9,6 +9,9 @@ import {
   SiRedis,
   SiLinux,
   SiMongodb,
+  SiDocker,
+  SiCaddy,
+  SiAmazonwebservices,
 } from "react-icons/si";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
@@ -74,6 +77,25 @@ export default function Technologies() {
         name: "Next.js",
         icon: <SiNextdotjs />,
         link: "https://nextjs.org/",
+      },
+    ],
+    DEVOPS: [
+      {
+        name: "Docker",
+        icon: <SiDocker />,
+        link: "https://www.docker.com/",
+      },
+      {
+        name: "Caddy",
+        icon: <SiCaddy />,
+        link: "https://caddyserver.com/",
+      },
+    ],
+    CLOUD: [
+      {
+        name: "AWS",
+        icon: <SiAmazonwebservices />,
+        link: "https://aws.amazon.com/",
       },
     ],
     "OPERATING SYSTEM": [
