@@ -17,7 +17,7 @@ export default function About() {
         <div 
           className={cn(
             "flex flex-col gap-4 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400 transition-all duration-500 overflow-hidden",
-            !isExpanded ? "max-h-32" : "max-h-[1000px]"
+            !isExpanded ? "max-h-none sm:max-h-32" : "max-h-none sm:max-h-[1000px]"
           )}
         >
           <p>
@@ -41,9 +41,9 @@ export default function About() {
           </p>
         </div>
 
-        {/* Blur Overlay & Button */}
+        {/* Blur Overlay & Button - Desktop Only */}
         <div className={cn(
-          "absolute bottom-0 left-0 right-0 flex justify-center items-end pb-2 h-24 bg-gradient-to-t from-white/90 via-white/50 to-transparent dark:from-neutral-950/90 dark:via-neutral-950/50 dark:to-transparent pointer-events-none transition-opacity duration-300",
+          "absolute bottom-0 left-0 right-0 hidden sm:flex justify-center items-end pb-2 h-24 bg-gradient-to-t from-white/90 via-white/50 to-transparent dark:from-neutral-950/90 dark:via-neutral-950/50 dark:to-transparent pointer-events-none transition-opacity duration-300",
           isExpanded ? "opacity-0 invisible" : "opacity-100 visible"
         )}>
           <button
@@ -54,9 +54,9 @@ export default function About() {
           </button>
         </div>
 
-        {/* Show Less Button (only when expanded) */}
+        {/* Show Less Button - Desktop Only */}
         {isExpanded && (
-          <div className="flex justify-center mt-4">
+          <div className="hidden sm:flex justify-center mt-4">
             <button
               onClick={() => setIsExpanded(false)}
               className="cursor-pointer flex items-center gap-1 text-sm font-semibold text-neutral-900 dark:text-neutral-100 bg-neutral-100 dark:bg-neutral-800 px-4 py-1.5 rounded-full border border-neutral-200 dark:border-neutral-700 shadow-sm hover:scale-105 transition active:scale-95"
