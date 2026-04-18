@@ -38,15 +38,23 @@ export default function ProjectsPage() {
                             className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white/80 p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 md:p-6"
                         >
                             <div className="flex flex-col gap-6">
-                                <video
-                                    src={project.src}
-                                    className="aspect-video h-auto w-full rounded-xl border border-neutral-200 bg-neutral-950/5 object-contain transition duration-500 group-hover:scale-[1.01] dark:border-white/10 dark:bg-white/5"
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    suppressHydrationWarning
-                                />
+                                {project.src.endsWith(".png") ? (
+                                    <img
+                                        src={project.src}
+                                        alt={project.name}
+                                        className="aspect-video h-auto w-full rounded-xl border border-neutral-200 bg-neutral-950/5 object-cover transition duration-500 group-hover:scale-[1.01] dark:border-white/10 dark:bg-white/5"
+                                    />
+                                ) : (
+                                    <video
+                                        src={project.src}
+                                        className="aspect-video h-auto w-full rounded-xl border border-neutral-200 bg-neutral-950/5 object-contain transition duration-500 group-hover:scale-[1.01] dark:border-white/10 dark:bg-white/5"
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        suppressHydrationWarning
+                                    />
+                                )}
 
                                 <div className="flex gap-2 pt-1">
                                     <Link

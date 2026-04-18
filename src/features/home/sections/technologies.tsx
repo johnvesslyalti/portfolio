@@ -13,6 +13,7 @@ import {
   SiCaddy,
   SiAmazonwebservices,
 } from "react-icons/si";
+import { GiGamepad } from "react-icons/gi";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
 
@@ -41,6 +42,11 @@ export default function Technologies() {
         name: "NestJS",
         icon: <SiNestjs />,
         link: "https://nestjs.com/",
+      },
+      {
+        name: "Nakama",
+        icon: <GiGamepad />,
+        link: "https://heroiclabs.com/",
       },
       {
         name: "BullMQ",

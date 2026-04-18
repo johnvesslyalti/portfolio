@@ -23,15 +23,23 @@ export default function Projects() {
             key={index}
             className="overflow-hidden transition-all duration-300 rounded-lg"
           >
-            <video
-              src={project.src}
-              className="aspect-video h-auto w-full rounded-lg bg-neutral-950/5 object-contain dark:bg-white/5"
-              autoPlay
-              loop
-              muted
-              playsInline
-              suppressHydrationWarning
-            />
+            {project.src.endsWith(".png") ? (
+              <img
+                src={project.src}
+                alt={project.name}
+                className="aspect-video h-auto w-full rounded-lg bg-neutral-950/5 object-cover dark:bg-white/5"
+              />
+            ) : (
+              <video
+                src={project.src}
+                className="aspect-video h-auto w-full rounded-lg bg-neutral-950/5 object-contain dark:bg-white/5"
+                autoPlay
+                loop
+                muted
+                playsInline
+                suppressHydrationWarning
+              />
+            )}
 
             <div className="w-full flex justify-between bg-white text-black dark:text-white dark:bg-transparent border border-neutral-200 dark:border-white/10 rounded-lg p-2 items-center mt-2 shadow-sm">
               <div className="font-bold tracking-tight text-[12px]">{project.name}</div>
