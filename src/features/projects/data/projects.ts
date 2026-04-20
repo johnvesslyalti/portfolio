@@ -24,7 +24,7 @@ export const projects = [
   {
     name: "XOXO",
     src: "/projects/tic-tac-toe.mp4",
-    github: "https://github.com/johnvesslyalti/tic-tac-toe",
+    github: "https://github.com/johnvesslyalti/tic-tac-toe-api",
     live: "https://tic-tac-toe.johnvesslyalti.xyz",
     shortDescription:
       "Modern, high-performance multiplayer Tic-Tac-Toe featuring an authoritative backend, real-time matchmaking, and a sleek glassmorphic UI.",
