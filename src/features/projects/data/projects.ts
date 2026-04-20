@@ -1,25 +1,5 @@
 export const projects = [
   {
-    name: "XOXO",
-    src: "/projects/tictactoe.png",
-    github: "https://github.com/johnvesslyalti/tic-tac-toe",
-    live: "https://tic-tac-toe.johnvesslyalti.xyz",
-    shortDescription:
-      "Modern, high-performance multiplayer Tic-Tac-Toe featuring an authoritative backend, real-time matchmaking, and a sleek glassmorphic UI.",
-    detailedDescription:
-      "- Built a real-time multiplayer Tic-Tac-Toe game using Nakama as the authoritative game server to ensure game state integrity and prevent client-side cheating.\n- Implemented a secure Node.js proxy layer to handle authentication and protect sensitive server keys, acting as a gateway between the Next.js client and the Nakama backend.\n- Engineered real-time communication using WebSockets for sub-100ms latency, enabling seamless move synchronization and instant match state updates.\n- Designed a sleek, responsive glassmorphic UI using Tailwind CSS 4, providing a premium and modern user experience across different devices.\n- Integrated Nakama's matchmaking system to allow users to find opponents instantly or join specific matches via unique room IDs.\n- Orchestrated the entire development and production environment using Docker and Docker Compose, ensuring consistent behavior across different deployment targets.",
-    tech: [
-      "TypeScript",
-      "Next.js",
-      "Nakama",
-      "Node.js",
-      "Docker",
-      "PostgreSQL",
-      "Tailwind CSS",
-    ],
-    category: "Full Stack",
-  },
-  {
     name: "DevNest",
     src: "/projects/devnest.mp4",
     github: "https://github.com/johnvesslyalti/dev-nest",
@@ -40,6 +20,26 @@ export const projects = [
       "Jest E2E",
     ],
     category: "Backend",
+  },
+  {
+    name: "XOXO",
+    src: "/projects/tic-tac-toe.mp4",
+    github: "https://github.com/johnvesslyalti/tic-tac-toe",
+    live: "https://tic-tac-toe.johnvesslyalti.xyz",
+    shortDescription:
+      "Modern, high-performance multiplayer Tic-Tac-Toe featuring an authoritative backend, real-time matchmaking, and a sleek glassmorphic UI.",
+    detailedDescription:
+      "- Built a real-time multiplayer Tic-Tac-Toe game using Nakama as the authoritative game server to ensure game state integrity and prevent client-side cheating.\n- Implemented a secure Node.js proxy layer to handle authentication and protect sensitive server keys, acting as a gateway between the Next.js client and the Nakama backend.\n- Engineered real-time communication using WebSockets for sub-100ms latency, enabling seamless move synchronization and instant match state updates.\n- Designed a sleek, responsive glassmorphic UI using Tailwind CSS 4, providing a premium and modern user experience across different devices.\n- Integrated Nakama's matchmaking system to allow users to find opponents instantly or join specific matches via unique room IDs.\n- Orchestrated the entire development and production environment using Docker and Docker Compose, ensuring consistent behavior across different deployment targets.",
+    tech: [
+      "TypeScript",
+      "Next.js",
+      "Nakama",
+      "Node.js",
+      "Docker",
+      "PostgreSQL",
+      "Tailwind CSS",
+    ],
+    category: "Full Stack",
   },
   {
     name: "LiftLog",
