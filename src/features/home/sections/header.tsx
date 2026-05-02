@@ -9,7 +9,7 @@ export default function Header() {
 
         <div className="flex flex-col items-center sm:items-end text-center sm:text-right gap-1">
           <p className="text-[9px] font-black text-neutral-400 dark:text-neutral-500 uppercase tracking-[0.2em]">
-            SYSTEM THINKING • SCALABILITY • PERFORMANCE
+            AI ARCHITECTURE • SCALABILITY • PERFORMANCE
           </p>
         </div>
       </div>

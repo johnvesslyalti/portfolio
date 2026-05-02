@@ -1,5 +1,25 @@
 export const projects = [
   {
+    name: "PG RAG",
+    src: "/projects/pg-rag.mp4",
+    github: "https://github.com/johnvesslyalti/rag-paulgraham",
+    live: "#",
+    shortDescription:
+      "Bleeding-edge RAG system featuring an intelligent query rewriter, semantic search via FAISS, and real-time streaming responses.",
+    detailedDescription:
+      "- Architected a complete RAG (Retrieval-Augmented Generation) pipeline using LlamaIndex to orchestrate document ingestion, vector indexing, and LLM generation.\n- Implemented an Intelligence Layer for query rewriting and intent detection, allowing the system to handle complex multi-turn conversations and clarify user intent.\n- Engineered a high-performance vector retrieval system using FAISS and HuggingFace embeddings for sub-50ms semantic search across thousands of text chunks.\n- Developed a responsive Next.js 16 frontend with real-time streaming (NDJSON) and a minimalist, glassmorphic UI providing a premium ChatGPT-like experience.\n- Orchestrated local and cloud LLMs (Ollama, OpenAI) via a FastAPI backend, handling asynchronous event streams for low-latency interactions.",
+    tech: [
+      "LlamaIndex",
+      "FastAPI",
+      "FAISS",
+      "Python",
+      "Ollama",
+      "Next.js 16",
+      "Tailwind CSS 4",
+    ],
+    category: "AI / RAG",
+  },
+  {
     name: "DevNest",
     src: "/projects/devnest.mp4",
     github: "https://github.com/johnvesslyalti/dev-nest",

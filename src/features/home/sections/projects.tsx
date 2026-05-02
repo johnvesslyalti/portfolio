@@ -23,7 +23,7 @@ export default function Projects() {
             key={index}
             className="overflow-hidden transition-all duration-300 rounded-lg"
           >
-            {project.src.endsWith(".png") ? (
+            {project.src.endsWith(".png") || project.src.endsWith(".webp") ? (
               <img
                 src={project.src}
                 alt={project.name}

@@ -5,15 +5,14 @@ import {
   SiNestjs,
   SiNodedotjs,
   SiPostgresql,
-  SiPrisma,
   SiRedis,
-  SiLinux,
-  SiMongodb,
   SiDocker,
-  SiCaddy,
   SiAmazonwebservices,
+  SiPython,
+  SiFastapi,
+  SiOpenai,
 } from "react-icons/si";
-import { GiGamepad } from "react-icons/gi";
+import { Bot, Database } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
 
@@ -25,11 +24,38 @@ interface Technology {
 
 export default function Technologies() {
   const technologies: Record<string, Technology[]> = {
+    "AI & RAG": [
+      {
+        name: "LlamaIndex",
+        icon: <Bot className="w-4 h-4" />,
+        link: "https://www.llamaindex.ai/",
+      },
+      {
+        name: "FAISS",
+        icon: <Database className="w-4 h-4" />,
+        link: "https://github.com/facebookresearch/faiss",
+      },
+      {
+        name: "OpenAI",
+        icon: <SiOpenai />,
+        link: "https://openai.com/",
+      },
+      {
+        name: "Ollama",
+        icon: <Bot className="w-4 h-4" />,
+        link: "https://ollama.ai/",
+      },
+    ],
     LANGUAGE: [
       {
         name: "TypeScript",
         icon: <SiTypescript />,
         link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Python",
+        icon: <SiPython />,
+        link: "https://www.python.org/",
       },
     ],
     BACKEND: [
@@ -44,14 +70,14 @@ export default function Technologies() {
         link: "https://nestjs.com/",
       },
       {
-        name: "Nakama",
-        icon: <GiGamepad />,
-        link: "https://heroiclabs.com/",
-      },
-      {
         name: "BullMQ",
         icon: <HiOutlineQueueList />,
         link: "https://bullmq.io/",
+      },
+      {
+        name: "FastAPI",
+        icon: <SiFastapi />,
+        link: "https://fastapi.tiangolo.com/",
       },
     ],
     DATABASE: [
@@ -64,18 +90,6 @@ export default function Technologies() {
         name: "Redis",
         icon: <SiRedis />,
         link: "https://redis.io/",
-      },
-      {
-        name: "MongoDB",
-        icon: <SiMongodb />,
-        link: "https://www.mongodb.com/",
-      },
-    ],
-    ORM: [
-      {
-        name: "Prisma",
-        icon: <SiPrisma />,
-        link: "https://www.prisma.io/",
       },
     ],
     FRONTEND: [
@@ -92,23 +106,9 @@ export default function Technologies() {
         link: "https://www.docker.com/",
       },
       {
-        name: "Caddy",
-        icon: <SiCaddy />,
-        link: "https://caddyserver.com/",
-      },
-    ],
-    CLOUD: [
-      {
         name: "AWS",
         icon: <SiAmazonwebservices />,
         link: "https://aws.amazon.com/",
-      },
-    ],
-    "OPERATING SYSTEM": [
-      {
-        name: "Linux",
-        icon: <SiLinux />,
-        link: "https://www.linux.org/",
       },
     ],
   };

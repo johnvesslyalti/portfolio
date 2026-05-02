@@ -38,7 +38,7 @@ export default function ProjectsPage() {
                             className="group overflow-hidden rounded-2xl border border-neutral-200 bg-white/80 p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-neutral-900/60 md:p-6"
                         >
                             <div className="flex flex-col gap-6">
-                                {project.src.endsWith(".png") ? (
+                                {project.src.endsWith(".png") || project.src.endsWith(".webp") ? (
                                     <img
                                         src={project.src}
                                         alt={project.name}
