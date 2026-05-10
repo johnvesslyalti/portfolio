@@ -9,15 +9,11 @@ export default function About() {
       <div className="relative">
         <div className="flex flex-col gap-6 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
           <p>
-            I am an <span className="text-neutral-900 dark:text-neutral-100 font-medium italic">AI Systems Engineer</span> obsessed with the intersection of <span className="text-neutral-900 dark:text-neutral-100 font-medium">Large Language Models</span>, <span className="text-neutral-900 dark:text-neutral-100 font-medium">Vector Search</span>, and <span className="text-neutral-900 dark:text-neutral-100 font-medium">High-Performance Backends</span>.
+            I'm a <span className="text-neutral-900 dark:text-neutral-100 font-medium">full stack developer</span> with a deep obsession for <span className="text-neutral-900 dark:text-neutral-100 font-medium">system design</span> and <span className="text-neutral-900 dark:text-neutral-100 font-medium">systems thinking architecture</span>. I believe great software emerges from understanding how every component interconnects and scales. Currently, I'm exploring <span className="text-neutral-900 dark:text-neutral-100 font-medium">AI & RAG systems</span> — building intelligent retrieval pipelines that bridge language models and real-world data.
           </p>
 
           <p>
-            I specialize in architecting <span className="text-neutral-900 dark:text-neutral-100 font-medium">RAG Pipelines</span> that scale. My focus is on the deep engineering challenges of the modern stack: optimizing retrieval latency, designing intelligent query processing layers, and building distributed systems that handle complexity with deterministic precision.
-          </p>
-
-          <p>
-            Driven by <span className="text-neutral-900 dark:text-neutral-100 font-medium underline decoration-neutral-400 underline-offset-4">System Thinking</span>, I spend my time at the bleeding edge, turning raw compute into intelligent, production-ready infrastructure that defines the next era of software.
+            From backend orchestration with Node.js and Python, to database optimization with PostgreSQL and Redis, to modern frontend experiences with Next.js, I think across the entire stack. My approach is grounded in <span className="text-neutral-900 dark:text-neutral-100 font-medium underline decoration-neutral-400 underline-offset-4">system thinking</span> — designing resilient, scalable architectures where every decision reflects a deeper understanding of trade-offs, constraints, and long-term consequences.
           </p>
         </div>
       </div>
