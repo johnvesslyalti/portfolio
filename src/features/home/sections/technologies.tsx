@@ -11,8 +11,11 @@ import {
   SiPython,
   SiFastapi,
   SiOpenai,
+  SiPrisma,
+  SiGithubactions,
+  SiVercel,
 } from "react-icons/si";
-import { Bot, Database } from "lucide-react";
+import { Bot, Database, Train } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
 
@@ -41,9 +44,34 @@ export default function Technologies() {
         link: "https://openai.com/",
       },
       {
-        name: "Ollama",
+        name: "LangChain",
         icon: <Bot className="w-4 h-4" />,
-        link: "https://ollama.ai/",
+        link: "https://www.langchain.com/",
+      },
+      {
+        name: "LangGraph",
+        icon: <Bot className="w-4 h-4" />,
+        link: "https://langchain-ai.github.io/langgraph/",
+      },
+      {
+        name: "CrewAI",
+        icon: <Bot className="w-4 h-4" />,
+        link: "https://www.crewai.com/",
+      },
+      {
+        name: "Pinecone",
+        icon: <Database className="w-4 h-4" />,
+        link: "https://www.pinecone.io/",
+      },
+      {
+        name: "Qdrant",
+        icon: <Database className="w-4 h-4" />,
+        link: "https://qdrant.tech/",
+      },
+      {
+        name: "ChromaDB",
+        icon: <Database className="w-4 h-4" />,
+        link: "https://www.trychroma.com/",
       },
     ],
     LANGUAGE: [
@@ -91,6 +119,11 @@ export default function Technologies() {
         icon: <SiRedis />,
         link: "https://redis.io/",
       },
+      {
+        name: "Prisma ORM",
+        icon: <SiPrisma />,
+        link: "https://www.prisma.io/",
+      },
     ],
     FRONTEND: [
       {
@@ -109,6 +142,21 @@ export default function Technologies() {
         name: "AWS",
         icon: <SiAmazonwebservices />,
         link: "https://aws.amazon.com/",
+      },
+      {
+        name: "GitHub Actions",
+        icon: <SiGithubactions />,
+        link: "https://github.com/features/actions",
+      },
+      {
+        name: "Vercel",
+        icon: <SiVercel />,
+        link: "https://vercel.com/",
+      },
+      {
+        name: "Railway",
+        icon: <Train className="w-4 h-4" />,
+        link: "https://railway.app/",
       },
     ],
   };

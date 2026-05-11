@@ -7,13 +7,13 @@ export const projects = [
     shortDescription:
       "Bleeding-edge RAG system featuring an intelligent query rewriter, semantic search via FAISS, and real-time streaming responses.",
     detailedDescription:
-      "- Architected a complete RAG (Retrieval-Augmented Generation) pipeline using LlamaIndex to orchestrate document ingestion, vector indexing, and LLM generation.\n- Implemented an Intelligence Layer for query rewriting and intent detection, allowing the system to handle complex multi-turn conversations and clarify user intent.\n- Engineered a high-performance vector retrieval system using FAISS and HuggingFace embeddings for sub-50ms semantic search across thousands of text chunks.\n- Developed a responsive Next.js 16 frontend with real-time streaming (NDJSON) and a minimalist, glassmorphic UI providing a premium ChatGPT-like experience.\n- Orchestrated local and cloud LLMs (Ollama, OpenAI) via a FastAPI backend, handling asynchronous event streams for low-latency interactions.",
+      "- Architected a complete RAG (Retrieval-Augmented Generation) pipeline using LlamaIndex to orchestrate document ingestion, vector indexing, and LLM generation.\n- Implemented an Intelligence Layer for query rewriting and intent detection, allowing the system to handle complex multi-turn conversations and clarify user intent.\n- Engineered a high-performance vector retrieval system using FAISS with OpenAI text-embedding-3-small for sub-50ms semantic search across thousands of text chunks.\n- Developed a responsive Next.js 16 frontend with real-time streaming (NDJSON) and a minimalist, glassmorphic UI providing a premium ChatGPT-like experience.\n- Orchestrated cloud LLM inference via a FastAPI backend using gpt-4.1-nano, handling asynchronous NDJSON event streams for low-latency token-by-token delivery.",
     tech: [
       "LlamaIndex",
       "FastAPI",
       "FAISS",
       "Python",
-      "Ollama",
+      "OpenAI",
       "Next.js 16",
       "Tailwind CSS 4",
     ],
@@ -42,6 +42,30 @@ export const projects = [
     category: "Backend",
   },
   {
+    name: "SubTrackr",
+    src: "/projects/subtrackr.mp4",
+    github: "https://github.com/johnvesslyalti/sub-trackr",
+    live: "https://johnvesslyalti-subtrackr.vercel.app",
+    shortDescription:
+      "Full-stack subscription management platform for tracking recurring payments, upcoming renewals, and monthly spending — deployed end-to-end on Vercel with PostgreSQL on Railway.",
+    detailedDescription:
+      "- Built a full-stack subscription management platform for tracking recurring payments, upcoming renewals, and monthly spending — deployed end-to-end on Vercel with PostgreSQL hosted on Railway.\n- Implemented server-side data fetching with Next.js Server Actions, eliminating unnecessary client-server round trips and improving initial load performance.\n- Used Prisma ORM with Zod schema validation to enforce type-safe data flow from API boundary to database, preventing runtime type mismatches in production.\n- Configured CI/CD via GitHub Actions for automated preview deployments and secrets management across staging and production environments.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma ORM", "Zod", "GitHub Actions", "Vercel", "Railway"],
+    category: "Full Stack",
+  },
+  {
+    name: "LiftLog",
+    src: "/projects/liftlog.mp4",
+    github: "https://github.com/johnvesslyalti/lift-log",
+    live: "https://johnvesslyalti-liftlog.vercel.app",
+    shortDescription:
+      "Fitness analytics platform built on relationally sound data modeling and query-efficient training insights.",
+    detailedDescription:
+      "- Architected a normalized PostgreSQL schema prioritizing relational integrity and long-term analytical correctness.\n- Designed and optimized aggregation-heavy SQL queries computing training volume and progression metrics with sub-120 ms response latency.\n- Focused on indexing strategy, query planning, and efficient data access patterns for responsive analytics workloads.",
+    tech: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Better-Auth", "Zustand"],
+    category: "Full Stack",
+  },
+  {
     name: "XOXO",
     src: "/projects/tic-tac-toe.mp4",
     github: "https://github.com/johnvesslyalti/tic-tac-toe-api",
@@ -59,30 +83,6 @@ export const projects = [
       "PostgreSQL",
       "Tailwind CSS",
     ],
-    category: "Full Stack",
-  },
-  {
-    name: "LiftLog",
-    src: "/projects/liftlog.mp4",
-    github: "https://github.com/johnvesslyalti/lift-log",
-    live: "https://johnvesslyalti-liftlog.vercel.app",
-    shortDescription:
-      "Fitness analytics platform built on relationally sound data modeling and query-efficient training insights.",
-    detailedDescription:
-      "- Architected a normalized PostgreSQL schema prioritizing relational integrity and long-term analytical correctness.\n- Designed and optimized aggregation-heavy SQL queries computing training volume and progression metrics with sub-120 ms response latency.\n- Focused on indexing strategy, query planning, and efficient data access patterns for responsive analytics workloads.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Auth.js / JWT"],
-    category: "Full Stack",
-  },
-  {
-    name: "SubTrackr",
-    src: "/projects/subtrackr.mp4",
-    github: "https://github.com/johnvesslyalti/sub-trackr",
-    live: "https://johnvesslyalti-subtrackr.vercel.app",
-    shortDescription:
-      "Multi-tenant subscription management SaaS emphasizing secure tenant isolation and deterministic behavior under shared infrastructure.",
-    detailedDescription:
-      "- Developed a multi-tenant backend enforcing strict tenant-aware data isolation and predictable CRUD semantics.\n- Implemented OAuth-based authentication with hardened session handling and explicit security boundaries.\n- Designed application logic emphasizing correctness, concurrency safety, and deterministic behavior under shared infrastructure.",
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Prisma", "Auth.js / JWT"],
     category: "Full Stack",
   },
 ];

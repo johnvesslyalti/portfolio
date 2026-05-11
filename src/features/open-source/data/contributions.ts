@@ -12,6 +12,6 @@ export const openSourceContributions = [
       "Implemented OAuth 2.0 and Redis-backed OTP/session management",
       "Created EJS-based email templates and Swagger documentation",
     ],
-    tech: ["PostgreSQL", "Drizzle ORM", "Express", "Redis", "OAuth 2.0", "EJS"],
+    tech: ["TypeScript", "PostgreSQL", "Drizzle ORM"],
   },
 ];
