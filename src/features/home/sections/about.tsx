@@ -7,13 +7,9 @@ export default function About() {
       </h2>
 
       <div className="relative">
-        <div className="flex flex-col gap-6 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
+        <div className="text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
           <p>
-            I'm a <span className="text-neutral-900 dark:text-neutral-100 font-medium">full stack developer</span> with a deep obsession for <span className="text-neutral-900 dark:text-neutral-100 font-medium">system design</span> and <span className="text-neutral-900 dark:text-neutral-100 font-medium">systems thinking architecture</span>. I believe great software emerges from understanding how every component interconnects and scales. Currently, I'm exploring <span className="text-neutral-900 dark:text-neutral-100 font-medium">AI & RAG systems</span> — building intelligent retrieval pipelines that bridge language models and real-world data.
-          </p>
-
-          <p>
-            From backend orchestration with Node.js and Python, to database optimization with PostgreSQL and Redis, to modern frontend experiences with Next.js, I think across the entire stack. My approach is grounded in <span className="text-neutral-900 dark:text-neutral-100 font-medium underline decoration-neutral-400 underline-offset-4">system thinking</span> — designing resilient, scalable architectures where every decision reflects a deeper understanding of trade-offs, constraints, and long-term consequences.
+            I'm an <span className="text-neutral-900 dark:text-neutral-100 font-medium">AI Engineer</span> who builds at the intersection of <span className="text-neutral-900 dark:text-neutral-100 font-medium">large language models</span>, <span className="text-neutral-900 dark:text-neutral-100 font-medium">agentic systems</span>, and production infrastructure, designing <span className="text-neutral-900 dark:text-neutral-100 font-medium">RAG pipelines</span>, orchestrating multi-step AI workflows, and shipping intelligent features that go beyond demos into reliable, scalable products. I think in systems: how context flows, where models fail, and how to engineer around their limits with the right retrieval, memory, and tooling strategies.
           </p>
         </div>
       </div>
