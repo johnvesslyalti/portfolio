@@ -219,12 +219,12 @@
 /* Dog animations */
 @keyframes dog-scratch {
   0%, 15%  { transform: translate(0px, 0px); }
-  22%      { transform: translate(4px, -50px); }
-  30%      { transform: translate(6px, -48px); }
-  38%      { transform: translate(4px, -50px); }
-  46%      { transform: translate(6px, -48px); }
-  54%      { transform: translate(4px, -50px); }
-  62%      { transform: translate(6px, -48px); }
+  22%      { transform: translate(2px, -58px); }
+  30%      { transform: translate(4px, -56px); }
+  38%      { transform: translate(2px, -58px); }
+  46%      { transform: translate(4px, -56px); }
+  54%      { transform: translate(2px, -58px); }
+  62%      { transform: translate(4px, -56px); }
   74%, 100%{ transform: translate(0px, 0px); }
 }
 .dog-scratch-paw { animation: dog-scratch 3s ease-in-out infinite; }

@@ -1,8 +1,3 @@
-const pills = [
-  "LLMs", "RAG Pipelines", "Agentic Systems",
-  "Production Infra", "Retrieval & Memory", "Tooling Strategy",
-];
-
 export default function About() {
   return (
     <section className="rounded-2xl p-5
@@ -15,7 +10,7 @@ export default function About() {
         About
       </h2>
 
-      <p className="text-base leading-relaxed text-neutral-600 dark:text-neutral-400 mb-5">
+      <p className="text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
         I'm an{" "}
         <span className="text-neutral-900 dark:text-neutral-100 font-medium">AI Engineer</span>{" "}
         who builds at the intersection of{" "}
@@ -28,21 +23,6 @@ export default function About() {
         models fail, and how to engineer around their limits with the right retrieval, memory,
         and tooling strategies.
       </p>
-
-      <div className="flex flex-wrap gap-2">
-        {pills.map((pill) => (
-          <span
-            key={pill}
-            className="px-3 py-1 text-xs font-medium rounded-full
-                       bg-white/20 dark:bg-white/8
-                       border border-white/30 dark:border-white/10
-                       text-neutral-700 dark:text-neutral-300
-                       backdrop-blur-sm"
-          >
-            {pill}
-          </span>
-        ))}
-      </div>
     </section>
   );
 }
