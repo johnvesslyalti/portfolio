@@ -1,8 +1,11 @@
 export default function Header() {
   return (
-    <section className="border p-5 rounded-lg">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-6">
+    <section className="rounded-2xl p-5
+                        bg-white/10 dark:bg-white/5
+                        backdrop-blur-2xl
+                        border border-white/30 dark:border-white/10
+                        shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
         <div className="text-2xl sm:text-3xl font-bold tracking-tight">
           Johnvessly Alti
         </div>

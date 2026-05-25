@@ -114,43 +114,39 @@ export default function Technologies() {
   };
 
   return (
-    <section className="border p-5 rounded-lg">
-      <h2 className="text-xl font-semibold mb-3 border-b border-neutral-400 pb-1">
+    <section className="rounded-2xl p-5
+                        bg-white/10 dark:bg-white/5
+                        backdrop-blur-2xl
+                        border border-white/30 dark:border-white/10
+                        shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
+      <h2 className="text-xl font-semibold mb-3 border-b border-neutral-200 dark:border-neutral-800 pb-3">
         Technologies
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {Object.entries(technologies).map(([category, items]) => (
-          <div key={category} className="flex flex-col gap-3">
-            <h3 className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
+          <div key={category} className="flex flex-col gap-2.5">
+            <h3 className="text-[10px] font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">
               {category}
             </h3>
             <div className="flex flex-wrap gap-2">
               {items.map((tech, index) => {
                 const badge = (
-                  <Badge
-                    variant="outline"
-                    className="
-                    border-neutral-700 bg-neutral-800
-                    text-neutral-300
-                    hover:bg-neutral-700
-                    transition-colors duration-200
-                    flex items-center gap-2 px-3 py-1.5
-                  "
-                  >
-                    <span className="text-lg">{tech.icon}</span>
-                    <span className="font-medium">{tech.name}</span>
-                  </Badge>
+                  <span className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium rounded-xl
+                                   bg-white/20 dark:bg-white/8
+                                   border border-white/30 dark:border-white/10
+                                   text-neutral-700 dark:text-neutral-300
+                                   hover:bg-white/30 dark:hover:bg-white/15
+                                   hover:scale-105
+                                   transition-all duration-200 backdrop-blur-sm cursor-pointer">
+                    <span className="text-base">{tech.icon}</span>
+                    <span>{tech.name}</span>
+                  </span>
                 );
 
                 if (tech.link) {
                   return (
-                    <a
-                      key={index}
-                      href={tech.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a key={index} href={tech.link} target="_blank" rel="noopener noreferrer">
                       {badge}
                     </a>
                   );
