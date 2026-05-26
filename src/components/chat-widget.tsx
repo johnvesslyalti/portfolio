@@ -292,7 +292,7 @@ export default function ChatWidget() {
                    border border-white/20 dark:border-white/10
                    shadow-[0_8px_32px_rgba(0,0,0,0.12)]
                    hover:bg-white/20 dark:hover:bg-white/10
-                   hover:scale-110 transition-all duration-200"
+                   hover:scale-110 transition-all duration-200 cursor-pointer"
         aria-label="Chat with AI"
       >
         <DogScratch />
