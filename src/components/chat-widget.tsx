@@ -7,16 +7,30 @@ import DogScratch from "./dog-scratch";
 type Message = { id: string; role: "user" | "assistant"; content: string };
 
 const SUGGESTIONS = [
-  "What projects have you built?",
-  "What's your tech stack?",
-  "How can I contact you?",
-  "What do you specialize in?",
+  "What has John built?",
+  "What tech does he work with?",
+  "How do I get in touch with him?",
+  "What's he good at?",
 ];
+
+const CANNED: Record<string, string> = {
+  "What has John built?":
+    "John has built 5 projects: PG RAG (a full RAG pipeline with FAISS semantic search and real-time streaming), DevNest (a modular NestJS social platform with JWT auth, Redis caching, and BullMQ workers), XOXO (real-time multiplayer Tic-Tac-Toe using Nakama game server), LiftLog (a fitness analytics platform with optimized PostgreSQL queries), and SubTrackr (a multi-tenant subscription SaaS). You can find them all on his GitHub: github.com/johnvesslyalti.",
+
+  "What tech does he work with?":
+    "John works across the AI and backend stack — LlamaIndex, FAISS, OpenAI, and Ollama on the AI/RAG side; TypeScript, Python, Node.js, NestJS, and FastAPI for backend; PostgreSQL, Redis, and Prisma for data; Next.js and Tailwind CSS on the frontend; and Docker and AWS for DevOps.",
+
+  "How do I get in touch with him?":
+    "You can reach John at altijohnvessly@gmail.com, connect on LinkedIn (linkedin.com/in/johnvesslyalti-ai-engineer), follow him on GitHub (github.com/johnvesslyalti) or X (@zavxai), and watch his content on YouTube (@zavxai).",
+
+  "What's he good at?":
+    "John specializes in AI architecture, scalability, and performance — specifically building production-grade RAG pipelines, agentic systems, and LLM-powered features that go beyond demos. He thinks in systems: how context flows, where models fail, and how to engineer around those limits with the right retrieval, memory, and tooling strategies.",
+};
 
 const WELCOME: Message = {
   id: "welcome",
   role: "assistant",
-  content: "Hey! I'm Johnvessly's AI. Ask me anything — projects, skills, how to reach him.",
+  content: "Hey! Ask me anything about John — his work, tech, or how to reach him.",
 };
 
 export default function ChatWidget() {
@@ -41,6 +55,16 @@ export default function ChatWidget() {
   async function quickSend(content: string) {
     if (loading) return;
     const userMsg: Message = { id: Date.now().toString(), role: "user", content };
+
+    if (CANNED[content]) {
+      setMessages((prev) => [
+        ...prev,
+        userMsg,
+        { id: (Date.now() + 1).toString(), role: "assistant", content: CANNED[content] },
+      ]);
+      return;
+    }
+
     const assistantId = (Date.now() + 1).toString();
     setMessages((prev) => [...prev, userMsg, { id: assistantId, role: "assistant", content: "" }]);
     setLoading(true);
@@ -89,6 +113,15 @@ export default function ChatWidget() {
         }),
       });
 
+      if (res.status === 503) {
+        const { error } = await res.json();
+        const msg = error === "missing_key"
+          ? "There's a technical issue on our end right now. In the meantime, reach John directly at altijohnvessly@gmail.com."
+          : "There's a technical issue on our end. Please try again shortly.";
+        setMessages((prev) => prev.map((m) => (m.id === assistantId ? { ...m, content: msg } : m)));
+        setLoading(false);
+        return;
+      }
       if (!res.ok || !res.body) throw new Error("Request failed");
 
       const reader = res.body.getReader();

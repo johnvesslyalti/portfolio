@@ -41,14 +41,22 @@ Johnvessly writes about: AI not replacing engineers, cursor pagination, designin
 Be warm, direct, and confident. If asked something not covered above, say you don't have that info but suggest reaching out via email or LinkedIn.`;
 
 export async function POST(req: Request) {
+  if (!process.env.OPENAI_API_KEY) {
+    return Response.json({ error: "missing_key" }, { status: 503 });
+  }
+
   const { messages } = await req.json();
 
-  const result = streamText({
-    model: openai("gpt-4o-mini"),
-    system: SYSTEM,
-    messages,
-    maxTokens: 400,
-  });
+  try {
+    const result = streamText({
+      model: openai("gpt-4o-mini"),
+      system: SYSTEM,
+      messages,
+      maxTokens: 400,
+    });
 
-  return result.toTextStreamResponse();
+    return result.toTextStreamResponse();
+  } catch {
+    return Response.json({ error: "api_error" }, { status: 503 });
+  }
 }
