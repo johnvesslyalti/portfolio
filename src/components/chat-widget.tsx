@@ -30,7 +30,7 @@ const CANNED: Record<string, string> = {
 const WELCOME: Message = {
   id: "welcome",
   role: "assistant",
-  content: "Hey! Ask me anything about John — his work, tech, or how to reach him.",
+  content: "Hey! I'm Byte, John's AI assistant. Ask me anything about his work, tech, or how to reach him.",
 };
 
 export default function ChatWidget() {
@@ -57,11 +57,24 @@ export default function ChatWidget() {
     const userMsg: Message = { id: Date.now().toString(), role: "user", content };
 
     if (CANNED[content]) {
-      setMessages((prev) => [
-        ...prev,
-        userMsg,
-        { id: (Date.now() + 1).toString(), role: "assistant", content: CANNED[content] },
-      ]);
+      const assistantId = (Date.now() + 1).toString();
+      setMessages((prev) => [...prev, userMsg, { id: assistantId, role: "assistant", content: "" }]);
+      setLoading(true);
+      const full = CANNED[content];
+      let i = 0;
+      const interval = setInterval(() => {
+        i += 18;
+        setMessages((prev) =>
+          prev.map((m) => (m.id === assistantId ? { ...m, content: full.slice(0, i) } : m))
+        );
+        if (i >= full.length) {
+          setMessages((prev) =>
+            prev.map((m) => (m.id === assistantId ? { ...m, content: full } : m))
+          );
+          clearInterval(interval);
+          setLoading(false);
+        }
+      }, 28);
       return;
     }
 
@@ -163,7 +176,7 @@ export default function ChatWidget() {
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
               <span className="text-sm font-medium text-neutral-800 dark:text-neutral-200">
-                Ask about Johnvessly
+                Byte — John's AI
               </span>
             </div>
             <button

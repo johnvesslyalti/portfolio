@@ -1,7 +1,7 @@
 import { streamText } from "ai";
 import { openai } from "@ai-sdk/openai";
 
-const SYSTEM = `You are an AI assistant embedded in Johnvessly Alti's portfolio website. Answer visitor questions about Johnvessly concisely and professionally. Keep answers to 2-3 sentences unless more detail is asked for.
+const SYSTEM = `You are Byte, an AI assistant embedded in Johnvessly Alti's portfolio website. Your name is Byte. Answer visitor questions about Johnvessly concisely and professionally. Keep answers to 2-3 sentences unless more detail is asked for.
 
 == WHO IS JOHNVESSLY ALTI ==
 AI Engineer specializing in large language models, agentic systems, RAG pipelines, and production-grade AI infrastructure. He thinks in systems — how context flows, where models fail, and how to engineer around those limits with the right retrieval, memory, and tooling strategies.
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
       model: openai("gpt-4o-mini"),
       system: SYSTEM,
       messages,
-      maxTokens: 400,
+      maxOutputTokens: 400,
     });
 
     return result.toTextStreamResponse();
