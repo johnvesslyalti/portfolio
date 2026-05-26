@@ -167,8 +167,7 @@ export default function ChatWidget() {
           className="fixed bottom-[72px] left-4 z-50 w-80 flex flex-col rounded-2xl overflow-hidden
                      bg-white/10 dark:bg-black/50
                      backdrop-blur-2xl
-                     border border-white/30 dark:border-white/10
-                     shadow-[0_8px_40px_rgba(0,0,0,0.35)]"
+                     border border-white/30 dark:border-white/10"
           style={{ maxHeight: 420 }}
         >
           {/* Header */}
@@ -221,7 +220,7 @@ export default function ChatWidget() {
                     onClick={() => quickSend(q)}
                     className="px-2.5 py-1 rounded-lg text-xs
                                bg-white/10 border border-white/15 text-neutral-400
-                               hover:bg-cyan-500/15 hover:border-cyan-500/30 hover:text-cyan-300
+                               hover:bg-white/15 hover:border-white/30 hover:text-white
                                transition-all duration-150"
                   >
                     {q}

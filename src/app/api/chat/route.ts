@@ -1,44 +1,100 @@
 import { streamText } from "ai";
 import { openai } from "@ai-sdk/openai";
 
-const SYSTEM = `You are Byte, an AI assistant embedded in Johnvessly Alti's portfolio website. Your name is Byte. Answer visitor questions about Johnvessly concisely and professionally. Keep answers to 2-3 sentences unless more detail is asked for.
+// ─── Types ────────────────────────────────────────────────────────────────────
 
-== WHO IS JOHNVESSLY ALTI ==
-AI Engineer specializing in large language models, agentic systems, RAG pipelines, and production-grade AI infrastructure. He thinks in systems — how context flows, where models fail, and how to engineer around those limits with the right retrieval, memory, and tooling strategies.
+type Section = {
+  name: string;
+  keywords: string[];
+  content: string;
+};
 
-Focus areas: AI Architecture · Scalability · Performance
+// ─── Always-injected fragments ────────────────────────────────────────────────
 
-== TECHNOLOGIES ==
-AI & RAG: LlamaIndex, FAISS, OpenAI, Ollama
-Languages: TypeScript, Python
-Backend: Node.js, NestJS, FastAPI, BullMQ
-Database: PostgreSQL, Redis
-Frontend: Next.js, Tailwind CSS
-DevOps: Docker, AWS
+const IDENTITY =
+  "You are Byte, AI assistant on Johnvessly Alti's portfolio. Answer concisely and professionally.";
 
-== PROJECTS ==
-1. PG RAG — Bleeding-edge RAG system with intelligent query rewriting, FAISS semantic search, real-time NDJSON streaming, and a glassmorphic Next.js frontend. Stack: LlamaIndex, FastAPI, FAISS, Python, Ollama, Next.js 16. GitHub: github.com/johnvesslyalti/rag-paulgraham
+const TONE_SECTION = `== TONE ==
+Be warm, direct, confident. Keep answers 2-3 sentences unless more detail requested. If info not available, say so and suggest email or LinkedIn.`;
 
-2. DevNest — Modular NestJS social platform backend with JWT auth, refresh token rotation, Google OAuth, cursor-paginated feeds, Redis caching, BullMQ async email workers, and piscina worker-thread pool for bcrypt. Stack: TypeScript, NestJS, PostgreSQL, Redis, Prisma, BullMQ, Jest E2E. Live: dev-nest-4hxb.onrender.com/api/docs
+// ─── Keyword-matched sections ─────────────────────────────────────────────────
 
-3. XOXO — Real-time multiplayer Tic-Tac-Toe with Nakama authoritative game server, WebSocket sub-100ms latency, glassmorphic UI, and Docker orchestration. Stack: TypeScript, Next.js, Nakama, Node.js, Docker, PostgreSQL. Live: tic-tac-toe.johnvesslyalti.xyz
+const SECTIONS: readonly Section[] = [
+  {
+    name: "WHO",
+    keywords: [
+      "who", "about", "background", "bio", "what does he do",
+      "what do you do", "specializ", "focus", "ai engineer",
+      "johnvessly", "john", "yourself", "him",
+    ],
+    content: `== WHO ==
+AI Engineer specializing in LLMs, agentic systems, RAG pipelines, and production AI infrastructure. Focuses on AI architecture, scalability, and performance. Thinks in systems: context flow, model failure modes, and engineering around limits.`,
+  },
+  {
+    name: "TECHNOLOGIES",
+    keywords: [
+      "tech", "stack", "language", "tools", "framework", "work with",
+      "python", "typescript", "nestjs", "node", "fastapi", "faiss",
+      "llamaindex", "openai", "ollama", "docker", "aws", "redis",
+      "postgres", "next.js", "nextjs", "tailwind", "bullmq", "prisma",
+    ],
+    content: `== TECHNOLOGIES ==
+AI/RAG: LlamaIndex, FAISS, OpenAI, Ollama. Languages: TypeScript, Python. Backend: Node.js, NestJS, FastAPI, BullMQ. Database: PostgreSQL, Redis. Frontend: Next.js, Tailwind CSS. DevOps: Docker, AWS.`,
+  },
+  {
+    name: "PROJECTS",
+    keywords: [
+      "project", "built", "build", "portfolio",
+      "application", "pg rag", "rag", "devnest", "xoxo", "liftlog",
+      "subtrackr", "github", "demo", "live",
+    ],
+    content: `== PROJECTS ==
+1. PG RAG — RAG pipeline with query rewriting, FAISS semantic search, NDJSON streaming. Stack: LlamaIndex, FastAPI, FAISS, Ollama. github.com/johnvesslyalti/rag-paulgraham
+2. DevNest — NestJS social backend: JWT auth, token rotation, Google OAuth, cursor-paginated feeds, Redis cache, BullMQ email workers, Piscina bcrypt, Jest E2E. Live: dev-nest-4hxb.onrender.com/api/docs
+3. XOXO — Multiplayer Tic-Tac-Toe: Nakama authoritative server, WebSocket <100ms latency, Docker. Live: tic-tac-toe.johnvesslyalti.xyz
+4. LiftLog — Fitness analytics: normalized PostgreSQL schema, aggregation SQL, <120ms latency. Live: johnvesslyalti-liftlog.vercel.app
+5. SubTrackr — Multi-tenant subscription SaaS: tenant isolation, OAuth, concurrency-safe CRUD. Live: johnvesslyalti-subtrackr.vercel.app`,
+  },
+  {
+    name: "CONTACT",
+    keywords: [
+      "contact", "reach", "email", "linkedin", "twitter", "x ",
+      "youtube", "social", "hire", "connect", "get in touch", "dm", "message",
+    ],
+    content: `== CONTACT ==
+Email: altijohnvessly@gmail.com | LinkedIn: linkedin.com/in/johnvesslyalti-ai-engineer | GitHub: github.com/johnvesslyalti | Twitter/YouTube: @zavxai`,
+  },
+  {
+    name: "BLOGS",
+    keywords: [
+      "blog", "article", "topic", "cursor pagination", "piscina",
+      "systems thinking", "javascript", "leetcode", "pos system",
+      "support request", "slack",
+    ],
+    content: `== BLOGS ==
+Topics: AI vs engineers, cursor pagination, follow system design, Slack ownership, scaling Node.js with Piscina, offline POS, systems thinking, tools vs concepts, JavaScript choice, ChatGPT for devs, tech roles evolution, LeetCode vs systems thinking, support request workflows.`,
+  },
+];
 
-4. LiftLog — Fitness analytics platform with normalized PostgreSQL schema and aggregation-heavy SQL for training volume and progression metrics at sub-120ms latency. Stack: Next.js, Node.js, PostgreSQL, Prisma, Auth.js. Live: johnvesslyalti-liftlog.vercel.app
+// ─── Off-topic canned response ────────────────────────────────────────────────
 
-5. SubTrackr — Multi-tenant subscription management SaaS with strict tenant isolation, OAuth auth, and concurrency-safe CRUD. Stack: Next.js, Node.js, PostgreSQL, Prisma, Auth.js. Live: johnvesslyalti-subtrackr.vercel.app
+const OFF_TOPIC_RESPONSE =
+  "I can only answer questions about Johnvessly's work, skills, projects, and how to reach him. Try asking something like \"What has he built?\" or \"How do I contact him?\"";
 
-== CONTACT ==
-Email: altijohnvessly@gmail.com
-LinkedIn: linkedin.com/in/johnvesslyalti-ai-engineer
-GitHub: github.com/johnvesslyalti
-Twitter/X: @zavxai
-YouTube: @zavxai
+// ─── Intent detection ─────────────────────────────────────────────────────────
 
-== BLOGS ==
-Johnvessly writes about: AI not replacing engineers, cursor pagination, designing follow systems, Slack ownership design, scaling Node.js with Piscina, offline POS systems, thinking in systems, tools vs concepts, why JavaScript.
+function isOffTopic(lowerMsg: string): boolean {
+  return !SECTIONS.some((s) => s.keywords.some((kw) => lowerMsg.includes(kw)));
+}
 
-== TONE ==
-Be warm, direct, and confident. If asked something not covered above, say you don't have that info but suggest reaching out via email or LinkedIn.`;
+function buildSystemPrompt(lowerMsg: string): string {
+  const matched = SECTIONS.filter((s) =>
+    s.keywords.some((kw) => lowerMsg.includes(kw))
+  );
+  return [IDENTITY, ...matched.map((s) => s.content), TONE_SECTION].join("\n\n");
+}
+
+// ─── Route handler ────────────────────────────────────────────────────────────
 
 export async function POST(req: Request) {
   if (!process.env.OPENAI_API_KEY) {
@@ -47,12 +103,28 @@ export async function POST(req: Request) {
 
   const { messages } = await req.json();
 
+  const trimmedMessages = messages.slice(-6);
+
+  const lastUserMessage: string =
+    [...trimmedMessages].reverse().find((m: { role: string }) => m.role === "user")
+      ?.content ?? "";
+
+  const lowerMsg = lastUserMessage.toLowerCase();
+
+  if (isOffTopic(lowerMsg)) {
+    return new Response(OFF_TOPIC_RESPONSE, {
+      headers: { "Content-Type": "text/plain" },
+    });
+  }
+
+  const system = buildSystemPrompt(lowerMsg);
+
   try {
     const result = streamText({
       model: openai("gpt-4o-mini"),
-      system: SYSTEM,
-      messages,
-      maxOutputTokens: 400,
+      system,
+      messages: trimmedMessages,
+      maxOutputTokens: 200,
     });
 
     return result.toTextStreamResponse();
