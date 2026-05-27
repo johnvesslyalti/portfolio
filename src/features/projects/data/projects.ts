@@ -1,5 +1,28 @@
 export const projects = [
   {
+    name: "Inferr",
+    src: "/projects/inferr.mp4",
+    github: "https://github.com/johnvesslyalti/ai-developer-feed",
+    live: "https://inferr.xyz",
+    shortDescription:
+      "Personalized AI developer feed that ranks Hacker News and Dev.to articles with pgvector embeddings and answers questions through RAG chat.",
+    detailedDescription:
+      "- Built a full-stack AI developer feed with a Next.js 16 frontend and NestJS 11 API in a pnpm/Turborepo monorepo.\n- Implemented Google OAuth 2.0 authentication with HTTP-only refresh cookies, short-lived JWT access tokens, and protected user feed, profile, and chat routes.\n- Designed a PostgreSQL 16 + pgvector data model for articles, embeddings, refresh tokens, and user interests using Drizzle ORM migrations.\n- Engineered semantic feed ranking by embedding each user's interest tags and ordering articles by vector similarity against summarized Hacker News and Dev.to content.\n- Built a Redis/Bull scrape pipeline that runs daily, retries failures with exponential backoff, and processes unsummarized articles through OpenAI embeddings and summaries.\n- Added a RAG chat endpoint that retrieves the most relevant article summaries and answers developer questions with cited feed sources.",
+    tech: [
+      "Next.js 16",
+      "NestJS 11",
+      "TypeScript",
+      "PostgreSQL",
+      "pgvector",
+      "Drizzle ORM",
+      "Redis",
+      "Bull",
+      "OpenAI",
+      "Google OAuth",
+    ],
+    category: "AI / Full Stack",
+  },
+  {
     name: "PG RAG",
     src: "/projects/pg-rag.mp4",
     github: "https://github.com/johnvesslyalti/rag-paulgraham",
