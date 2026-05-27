@@ -19,7 +19,7 @@ export default function GitHub() {
           href="https://github.com/johnvesslyalti"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+          className="hidden sm:block text-xs text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
         >
           @johnvesslyalti ↗
         </a>
