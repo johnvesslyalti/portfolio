@@ -164,7 +164,7 @@ export default function ChatWidget() {
     <>
       {open && (
         <div
-          className="fixed bottom-[72px] left-4 z-50 w-80 flex flex-col rounded-2xl overflow-hidden
+          className="fixed bottom-[72px] right-4 sm:right-auto sm:left-4 z-50 w-80 flex flex-col rounded-2xl overflow-hidden
                      bg-white/10 dark:bg-black/50
                      backdrop-blur-2xl
                      border border-white/30 dark:border-white/10"
@@ -261,7 +261,7 @@ export default function ChatWidget() {
       {/* Speech bubble */}
       {bubble && !open && (
         <div
-          className="hidden sm:block fixed bottom-[68px] left-3 z-50
+          className="block fixed bottom-[68px] right-3 sm:right-auto sm:left-3 z-50
                      px-3 py-2 rounded-xl text-xs font-medium
                      bg-white/15 dark:bg-black/60
                      backdrop-blur-xl
@@ -274,7 +274,7 @@ export default function ChatWidget() {
           Hey! Click me to know more about John&nbsp;👋
           {/* tail */}
           <span
-            className="absolute -bottom-[6px] left-4
+            className="absolute -bottom-[6px] right-4 sm:right-auto sm:left-4
                        w-3 h-3 rotate-45
                        bg-white/15 dark:bg-black/60
                        border-r border-b border-white/25 dark:border-white/10"
@@ -285,7 +285,7 @@ export default function ChatWidget() {
       {/* Dog button */}
       <button
         onClick={() => { setBubble(false); setOpen((v) => !v); }}
-        className="hidden sm:flex fixed bottom-4 left-4 z-50 w-11 h-11
+        className="flex fixed bottom-4 right-4 sm:right-auto sm:left-4 z-50 w-11 h-11
                    items-center justify-center rounded-full
                    bg-white/10 dark:bg-white/5
                    backdrop-blur-xl
