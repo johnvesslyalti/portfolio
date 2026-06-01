@@ -1,12 +1,5 @@
 export const blogs = [
     {
-        slug: "leetcode-vs-systems-thinking",
-        title: "Why I'm Focusing Less on LeetCode and More on Systems Thinking",
-        description: "Something shifted in how I think about preparing for the future of software engineering. LeetCode isn't the problem — the obsession with it might be.",
-        date: "May 26, 2026",
-        readingTime: "6 mins read"
-    },
-    {
         slug: "scaling-nodejs-piscina",
         title: "How I Scaled My Node.js API to Handle 5,000 Concurrent Users Using Piscina",
         description: "A deep dive into offloading heavy CPU-bound bcrypt operations from the Node.js event loop using worker threads (Piscina) and clustering.",
