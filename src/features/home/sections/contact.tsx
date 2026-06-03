@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 export default function Contact() {
   const contact = [
-    { name: "Email", link: "mailto:altijohnvessly@gmail.com", icon: <Mail className="w-6 h-6" /> },
+    { name: "Email", link: "mailto:altijohnvessly@gmail.com", icon: <Mail className="w-4 h-4 sm:w-6 sm:h-6" /> },
     { name: "LinkedIn", link: "https://www.linkedin.com/in/johnvesslyalti-ai-engineer", icon: <FaLinkedin /> },
     { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub /> },
     { name: "X (Twitter)", link: "https://x.com/zavxai", icon: <FaXTwitter /> },
@@ -13,7 +13,7 @@ export default function Contact() {
 
   return (
     <section className="flex justify-center items-center w-full py-2">
-      <div className="flex flex-wrap justify-center gap-3 px-6 py-4 rounded-2xl
+      <div className="flex flex-nowrap justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl
                       bg-white/10 dark:bg-white/5
                       backdrop-blur-2xl
                       border border-white/30 dark:border-white/10
@@ -24,11 +24,11 @@ export default function Contact() {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group flex items-center justify-center w-11 h-11 rounded-xl
+            className="relative group flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-xl
                        bg-white/20 dark:bg-white/8
                        border border-white/30 dark:border-white/10
                        shadow-[0_2px_8px_rgba(0,0,0,0.08)]
-                       text-xl text-neutral-600 dark:text-neutral-400
+                       text-base sm:text-xl text-neutral-600 dark:text-neutral-400
                        hover:bg-white/40 dark:hover:bg-white/15
                        hover:text-neutral-900 dark:hover:text-neutral-100
                        hover:scale-110 hover:shadow-[0_4px_16px_rgba(0,0,0,0.15)]
