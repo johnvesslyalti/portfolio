@@ -16,12 +16,21 @@ export default function About() {
         who builds at the intersection of{" "}
         <span className="text-neutral-900 dark:text-neutral-100 font-medium">large language models</span>,{" "}
         <span className="text-neutral-900 dark:text-neutral-100 font-medium">agentic systems</span>,
-        and production infrastructure, designing{" "}
-        <span className="text-neutral-900 dark:text-neutral-100 font-medium">RAG pipelines</span>,
-        orchestrating multi-step AI workflows, and shipping intelligent features that go beyond
-        demos into reliable, scalable products. I think in systems: how context flows, where
-        models fail, and how to engineer around their limits with the right retrieval, memory,
-        and tooling strategies.
+        and production infrastructure. I design{" "}
+        <span className="text-neutral-900 dark:text-neutral-100 font-medium">RAG pipelines</span>{" "}
+        and{" "}
+        <span className="text-neutral-900 dark:text-neutral-100 font-medium">semantic vector search systems</span>,
+        orchestrate multi-step AI workflows with{" "}
+        <span className="text-neutral-900 dark:text-neutral-100 font-medium">LangGraph</span>,
+        and ship full-stack TypeScript products — from{" "}
+        <span className="text-neutral-900 dark:text-neutral-100 font-medium">NestJS</span>{" "}
+        backends with{" "}
+        <span className="text-neutral-900 dark:text-neutral-100 font-medium">pgvector-powered retrieval</span>{" "}
+        to{" "}
+        <span className="text-neutral-900 dark:text-neutral-100 font-medium">Next.js</span>{" "}
+        frontends — that go beyond demos into reliable, scalable systems. I think in systems:
+        how context flows, where models fail, and how to engineer around their limits with the
+        right retrieval, memory, and tooling strategies.
       </p>
     </section>
   );

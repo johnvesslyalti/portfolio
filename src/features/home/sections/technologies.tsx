@@ -11,8 +11,12 @@ import {
   SiPython,
   SiFastapi,
   SiOpenai,
+  SiVercel,
+  SiGithubactions,
+  SiTurborepo,
+  SiDrizzle,
 } from "react-icons/si";
-import { Bot, Database } from "lucide-react";
+import { Bot, Database, Workflow } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HiOutlineQueueList } from "react-icons/hi2";
 
@@ -26,19 +30,24 @@ export default function Technologies() {
   const technologies: Record<string, Technology[]> = {
     "AI & RAG": [
       {
-        name: "LlamaIndex",
+        name: "LangChain",
         icon: <Bot className="w-4 h-4" />,
-        link: "https://www.llamaindex.ai/",
+        link: "https://www.langchain.com/",
       },
       {
-        name: "FAISS",
-        icon: <Database className="w-4 h-4" />,
-        link: "https://github.com/facebookresearch/faiss",
+        name: "LangGraph",
+        icon: <Workflow className="w-4 h-4" />,
+        link: "https://www.langchain.com/langgraph",
       },
       {
         name: "OpenAI",
         icon: <SiOpenai />,
         link: "https://openai.com/",
+      },
+      {
+        name: "LlamaIndex",
+        icon: <Bot className="w-4 h-4" />,
+        link: "https://www.llamaindex.ai/",
       },
       {
         name: "Ollama",
@@ -87,6 +96,16 @@ export default function Technologies() {
         link: "https://www.postgresql.org/",
       },
       {
+        name: "pgvector",
+        icon: <Database className="w-4 h-4" />,
+        link: "https://github.com/pgvector/pgvector",
+      },
+      {
+        name: "Drizzle ORM",
+        icon: <SiDrizzle />,
+        link: "https://orm.drizzle.team/",
+      },
+      {
         name: "Redis",
         icon: <SiRedis />,
         link: "https://redis.io/",
@@ -104,6 +123,21 @@ export default function Technologies() {
         name: "Docker",
         icon: <SiDocker />,
         link: "https://www.docker.com/",
+      },
+      {
+        name: "GitHub Actions",
+        icon: <SiGithubactions />,
+        link: "https://github.com/features/actions",
+      },
+      {
+        name: "Vercel",
+        icon: <SiVercel />,
+        link: "https://vercel.com/",
+      },
+      {
+        name: "Turborepo",
+        icon: <SiTurborepo />,
+        link: "https://turbo.build/repo",
       },
       {
         name: "AWS",
