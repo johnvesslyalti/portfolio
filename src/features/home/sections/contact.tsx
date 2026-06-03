@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaXTwitter, FaYoutube, FaDiscord } from "react-icons/fa6";
 import { Mail } from "lucide-react";
 
 export default function Contact() {
@@ -8,6 +8,7 @@ export default function Contact() {
     { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub /> },
     { name: "X (Twitter)", link: "https://x.com/zavxai", icon: <FaXTwitter /> },
     { name: "YouTube", link: "https://www.youtube.com/@zavxai", icon: <FaYoutube /> },
+    { name: "Community", link: "https://discord.gg/pBqEaJgCFn", icon: <FaDiscord /> },
   ];
 
   return (
