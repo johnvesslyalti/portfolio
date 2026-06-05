@@ -2,21 +2,20 @@ export const projects = [
   {
     name: "Inferr",
     src: "/projects/inferr.mp4",
-    github: "https://github.com/johnvesslyalti/ai-developer-feed",
+    github: "https://github.com/johnvesslyalti/inferr",
     live: "https://inferr.xyz",
     shortDescription:
-      "Personalized AI developer feed that ranks Hacker News and Dev.to articles with pgvector embeddings and answers questions through RAG chat.",
+      "Personalized AI developer feed with a three-stage ingestion pipeline, pgvector HNSW semantic ranking, and a LangGraph agentic RAG chat that supports multi-turn conversation history.",
     detailedDescription:
-      "- Built a full-stack AI developer feed with a Next.js 16 frontend and NestJS 11 API in a pnpm/Turborepo monorepo.\n- Implemented Google OAuth 2.0 authentication with HTTP-only refresh cookies, short-lived JWT access tokens, and protected user feed, profile, and chat routes.\n- Designed a PostgreSQL 16 + pgvector data model for articles, embeddings, refresh tokens, and user interests using Drizzle ORM migrations.\n- Engineered semantic feed ranking by embedding each user's interest tags and ordering articles by vector similarity against summarized Hacker News and Dev.to content.\n- Built a Redis/Bull scrape pipeline that runs daily, retries failures with exponential backoff, and processes unsummarized articles through OpenAI embeddings and summaries.\n- Added a RAG chat endpoint that retrieves the most relevant article summaries and answers developer questions with cited feed sources.",
+      "- Built a full-stack AI developer feed in a pnpm/Turborepo monorepo — Next.js 15 frontend, NestJS 11 API — deployed on Vercel and Render with a Neon serverless PostgreSQL database.\n- Engineered a three-stage daily ingestion pipeline: parallel metadata fetch from Hacker News and Dev.to → HTML content extraction via Cheerio in concurrent batches of 5 → sequential gpt-4o-mini summarisation and text-embedding-3-small embeddings, triggered by a GitHub Actions cron job and idempotent via URL deduplication.\n- Designed a personalized feed ranking system using a pgvector HNSW index (1536-dim, cosine) with a tag-overlap bonus (−0.12 per matching tag), cosine distance threshold < 0.5, and a 48-hour recency filter applied in TypeScript — falling back gracefully when no recent articles clear the threshold.\n- Built a LangGraph agentic RAG chat — a four-node state machine (retrieve → grade → rewrite → generate) that accepts multi-turn conversation history, separates the search query from the original question to prevent rewrite contamination, and retries up to twice before generating with the best available context.\n- Implemented a dual-token auth system: short-lived JWT access tokens (15 min) paired with SHA-256-hashed refresh tokens stored in a dedicated table and delivered via HttpOnly cookie (7 days), with atomic Drizzle transactions for rotation and replacement-chain traversal (depth 10) for multi-tab reuse detection.",
     tech: [
-      "Next.js 16",
+      "Next.js 15",
       "NestJS 11",
       "TypeScript",
       "PostgreSQL",
       "pgvector",
       "Drizzle ORM",
-      "Redis",
-      "Bull",
+      "LangGraph",
       "OpenAI",
       "Google OAuth",
     ],
