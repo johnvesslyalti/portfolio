@@ -3,17 +3,17 @@ import { Mail } from "lucide-react";
 
 export default function Contact() {
   const contact = [
-    { name: "Email", link: "mailto:altijohnvessly@gmail.com", icon: <Mail className="w-4 h-4 sm:w-6 sm:h-6" /> },
-    { name: "LinkedIn", link: "https://www.linkedin.com/in/johnvesslyalti-ai-engineer", icon: <FaLinkedin /> },
-    { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub /> },
-    { name: "X (Twitter)", link: "https://x.com/zavxai", icon: <FaXTwitter /> },
-    { name: "YouTube", link: "https://www.youtube.com/@zavxai", icon: <FaYoutube /> },
-    { name: "Community", link: "https://discord.gg/pBqEaJgCFn", icon: <FaDiscord /> },
+    { name: "Email", link: "mailto:altijohnvessly@gmail.com", icon: <Mail className="w-7 h-7 sm:w-6 sm:h-6" /> },
+    { name: "LinkedIn", link: "https://www.linkedin.com/in/johnvesslyalti-ai-engineer", icon: <FaLinkedin className="w-7 h-7 sm:w-6 sm:h-6" /> },
+    { name: "GitHub", link: "https://github.com/johnvesslyalti", icon: <FaGithub className="w-7 h-7 sm:w-6 sm:h-6" /> },
+    { name: "X (Twitter)", link: "https://x.com/zavxai", icon: <FaXTwitter className="w-7 h-7 sm:w-6 sm:h-6" /> },
+    { name: "YouTube", link: "https://www.youtube.com/@zavxai", icon: <FaYoutube className="w-7 h-7 sm:w-6 sm:h-6" /> },
+    { name: "Community", link: "https://discord.gg/pBqEaJgCFn", icon: <FaDiscord className="w-7 h-7 sm:w-6 sm:h-6" /> },
   ];
 
   return (
     <section className="flex justify-center items-center w-full py-2">
-      <div className="flex flex-nowrap justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl
+      <div className="flex flex-nowrap justify-center gap-1 sm:gap-3 px-2 sm:px-6 py-3 sm:py-4 rounded-2xl
                       bg-white/10 dark:bg-white/5
                       backdrop-blur-2xl
                       border border-white/30 dark:border-white/10
@@ -24,7 +24,7 @@ export default function Contact() {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative group flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-xl
+            className="relative group flex items-center justify-center w-11 h-11 sm:w-11 sm:h-11 rounded-xl
                        bg-white/20 dark:bg-white/8
                        border border-white/30 dark:border-white/10
                        shadow-[0_2px_8px_rgba(0,0,0,0.08)]
