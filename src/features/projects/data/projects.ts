@@ -5,19 +5,18 @@ export const projects = [
     github: "https://github.com/johnvesslyalti/inferr",
     live: "https://inferr.xyz",
     shortDescription:
-      "Personalized AI developer feed with a three-stage ingestion pipeline, pgvector HNSW semantic ranking, and a LangGraph agentic RAG chat that supports multi-turn conversation history.",
+      "Personalized AI developer feed with a three-stage ingestion pipeline, pgvector HNSW semantic ranking, a LangGraph agentic RAG chat, and an MCP server secured with OAuth 2.1 + PKCE so AI agents can query your feed directly.",
     detailedDescription:
-      "- Built a full-stack AI developer feed in a pnpm/Turborepo monorepo — Next.js 15 frontend, NestJS 11 API — deployed on Vercel and Render with a Neon serverless PostgreSQL database.\n- Engineered a three-stage daily ingestion pipeline: parallel metadata fetch from Hacker News and Dev.to → HTML content extraction via Cheerio in concurrent batches of 5 → sequential gpt-4o-mini summarisation and text-embedding-3-small embeddings, triggered by a GitHub Actions cron job and idempotent via URL deduplication.\n- Designed a personalized feed ranking system using a pgvector HNSW index (1536-dim, cosine) with a tag-overlap bonus (−0.12 per matching tag), cosine distance threshold < 0.5, and a 48-hour recency filter applied in TypeScript — falling back gracefully when no recent articles clear the threshold.\n- Built a LangGraph agentic RAG chat — a four-node state machine (retrieve → grade → rewrite → generate) that accepts multi-turn conversation history, separates the search query from the original question to prevent rewrite contamination, and retries up to twice before generating with the best available context.\n- Implemented a dual-token auth system: short-lived JWT access tokens (15 min) paired with SHA-256-hashed refresh tokens stored in a dedicated table and delivered via HttpOnly cookie (7 days), with atomic Drizzle transactions for rotation and replacement-chain traversal (depth 10) for multi-tab reuse detection.",
+      "- Built a full-stack AI developer feed in a pnpm/Turborepo monorepo — Next.js 15 frontend, NestJS 11 API — deployed on Vercel and Render with a Neon serverless PostgreSQL database.\n- Engineered a three-stage daily ingestion pipeline: parallel metadata fetch from Hacker News and Dev.to → HTML content extraction via Cheerio in concurrent batches of 5 → sequential gpt-4o-mini summarisation and text-embedding-3-small embeddings, triggered by a GitHub Actions cron job and idempotent via URL deduplication.\n- Designed a personalized feed ranking system using a pgvector HNSW index (1536-dim, cosine) with a tag-overlap bonus (−0.12 per matching tag), cosine distance threshold < 0.5, and a 48-hour recency filter applied in TypeScript — falling back gracefully when no recent articles clear the threshold.\n- Built a LangGraph agentic RAG chat — a four-node state machine (retrieve → grade → rewrite → generate) that accepts multi-turn conversation history, separates the search query from the original question to prevent rewrite contamination, and retries up to twice before generating with the best available context.\n- Exposed the backend as an MCP (Model Context Protocol) server over Streamable HTTP, secured with a full OAuth 2.1 authorization server with PKCE — Google-delegated sign-in, SHA-256-hashed refresh tokens in a dedicated mcp_tokens table, and reuse detection that revokes the entire token chain on replay. MCP JWTs carry a type: 'mcp_access' claim to prevent cross-use with web-app tokens. Exposes three tools to AI agents: search_articles, get_personalized_feed, and ask_inferr.\n- Implemented a dual-token auth system for the web app: 15-min JWT access tokens paired with SHA-256-hashed refresh tokens (HttpOnly cookie, 7 days), rotated atomically via Drizzle transactions with depth-10 replacement-chain traversal for safe multi-tab reuse detection.\n- Built a Tech Market feature — daily Remotive job scraper, gpt-4o-mini demand analysis, PostgreSQL-cached 24 h — surfacing real hiring signal from live job data.",
     tech: [
       "Next.js 15",
       "NestJS 11",
       "TypeScript",
-      "PostgreSQL",
       "pgvector",
-      "Drizzle ORM",
       "LangGraph",
       "OpenAI",
-      "Google OAuth",
+      "MCP SDK",
+      "OAuth 2.1",
     ],
     category: "AI / Full Stack",
   },

@@ -54,6 +54,11 @@ export default function Technologies() {
         icon: <Bot className="w-4 h-4" />,
         link: "https://ollama.ai/",
       },
+      {
+        name: "MCP",
+        icon: <Workflow className="w-4 h-4" />,
+        link: "https://modelcontextprotocol.io/",
+      },
     ],
     LANGUAGE: [
       {
