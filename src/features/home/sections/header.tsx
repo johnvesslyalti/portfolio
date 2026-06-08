@@ -6,7 +6,7 @@ export default function Header() {
                         border border-white/30 dark:border-white/10
                         shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
       <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4">
-        <div className="text-2xl sm:text-3xl font-bold tracking-tight">
+        <div className="text-2xl sm:text-3xl font-bold tracking-tight whitespace-nowrap">
           Johnvessly Alti
         </div>
 
