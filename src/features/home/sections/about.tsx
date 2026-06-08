@@ -22,7 +22,11 @@ export default function About() {
         <span className="text-neutral-900 dark:text-neutral-100 font-medium">semantic vector search systems</span>,
         orchestrate multi-step AI workflows with{" "}
         <span className="text-neutral-900 dark:text-neutral-100 font-medium">LangGraph</span>,
-        and ship full-stack TypeScript products — from{" "}
+        and expose AI capabilities as{" "}
+        <span className="text-neutral-900 dark:text-neutral-100 font-medium">MCP servers</span>{" "}
+        secured with{" "}
+        <span className="text-neutral-900 dark:text-neutral-100 font-medium">OAuth 2.1</span>{" "}
+        so agents can interact with production systems directly. I ship full-stack TypeScript products — from{" "}
         <span className="text-neutral-900 dark:text-neutral-100 font-medium">NestJS</span>{" "}
         backends with{" "}
         <span className="text-neutral-900 dark:text-neutral-100 font-medium">pgvector-powered retrieval</span>{" "}
