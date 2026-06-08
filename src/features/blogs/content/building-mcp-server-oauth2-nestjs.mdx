@@ -31,6 +31,8 @@ Rather than building a full identity system, I delegated authentication to Googl
 
 Here's the full sequence:
 
+![OAuth 2.1 + PKCE Flow](/blogs/building-mcp-server-oauth2-nestjs/oauth_pkce_flow.png)
+
 1. Claude Code discovers the auth server via `GET /.well-known/oauth-authorization-server`
 2. It registers itself at `POST /register` and gets back a `client_id`
 3. It opens `GET /authorize?code_challenge=...&state=...` (PKCE)
@@ -123,6 +125,8 @@ verifyAccessToken(token: string): Promise<AuthInfo> {
 }
 ```
 
+![Token Isolation Model](/blogs/building-mcp-server-oauth2-nestjs/token_isolation.png)
+
 A web-app JWT — even if valid and unexpired — will be rejected by the MCP resource server. And an MCP JWT won't be accepted by the web API's `GoogleTokenGuard`. The systems are cryptographically isolated.
 
 MCP refresh tokens go into their own `mcp_tokens` table, stored as SHA-256 hashes. On every use, the old token is revoked and a new one is issued atomically:
@@ -163,6 +167,8 @@ async createTransport(userId: string): Promise<StreamableHTTPServerTransport> {
   return transport;
 }
 ```
+
+![Per-User MCP Server Instances](/blogs/building-mcp-server-oauth2-nestjs/mcp_isolation.png)
 
 The `get_personalized_feed` tool never accepts `userId` as a caller-supplied argument. It's baked in at construction time:
 
