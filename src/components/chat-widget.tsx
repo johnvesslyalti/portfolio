@@ -263,11 +263,9 @@ export default function ChatWidget() {
         <div
           className="block fixed bottom-[68px] right-3 sm:right-auto sm:left-3 z-50
                      px-3 py-2 rounded-xl text-xs font-medium
-                     bg-white/15 dark:bg-black/60
-                     backdrop-blur-xl
-                     border border-white/25 dark:border-white/10
+                     bg-white dark:bg-neutral-900
+                     border border-neutral-200 dark:border-neutral-800
                      text-neutral-800 dark:text-neutral-200
-                     shadow-[0_4px_20px_rgba(0,0,0,0.2)]
                      whitespace-nowrap
                      animate-in fade-in slide-in-from-bottom-2 duration-300"
         >
@@ -276,8 +274,8 @@ export default function ChatWidget() {
           <span
             className="absolute -bottom-[6px] right-4 sm:right-auto sm:left-4
                        w-3 h-3 rotate-45
-                       bg-white/15 dark:bg-black/60
-                       border-r border-b border-white/25 dark:border-white/10"
+                       bg-white dark:bg-neutral-900
+                       border-r border-b border-neutral-200 dark:border-neutral-800"
           />
         </div>
       )}
