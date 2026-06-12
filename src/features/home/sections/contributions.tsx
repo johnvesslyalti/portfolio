@@ -82,29 +82,29 @@ export default function Contributions() {
                         shadow-[0_8px_32px_rgba(0,0,0,0.10)]">
       
       {/* Header Row */}
-      <div className="flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 mb-5 pb-3">
-        <h2 className="text-xl font-semibold flex items-center gap-2">
-          <GitPullRequest className="text-emerald-500 dark:text-emerald-400 w-5 h-5" />
-          Open Source Contributions
+      <div className="flex items-center justify-between gap-4 border-b border-neutral-200 dark:border-neutral-800 mb-5 pb-3">
+        <h2 className="text-base sm:text-lg md:text-xl font-semibold flex items-center gap-2 text-neutral-900 dark:text-neutral-100 min-w-0 leading-tight">
+          <GitPullRequest className="text-emerald-500 dark:text-emerald-400 w-5 h-5 shrink-0" />
+          <span>Open Source Contributions</span>
         </h2>
 
         {/* Slideshow Controls */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 shrink-0">
           <button
             onClick={handlePrev}
-            className="p-1 rounded-lg bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-white/10 transition cursor-pointer"
+            className="p-1 rounded-lg bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-white/10 transition cursor-pointer shrink-0"
             aria-label="Previous contribution"
           >
             <ChevronLeft className="w-4 h-4 text-neutral-700 dark:text-neutral-300" />
           </button>
           
-          <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 font-mono">
+          <span className="text-xs font-medium text-neutral-500 dark:text-neutral-400 font-mono px-1 shrink-0 whitespace-nowrap select-none">
             {activeIndex + 1} / {contributions.length}
           </span>
 
           <button
             onClick={handleNext}
-            className="p-1 rounded-lg bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-white/10 transition cursor-pointer"
+            className="p-1 rounded-lg bg-white/10 dark:bg-white/5 border border-white/20 dark:border-white/10 hover:bg-white/20 dark:hover:bg-white/10 transition cursor-pointer shrink-0"
             aria-label="Next contribution"
           >
             <ChevronRight className="w-4 h-4 text-neutral-700 dark:text-neutral-300" />
