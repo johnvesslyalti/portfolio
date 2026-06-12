@@ -1,4 +1,5 @@
 import Projects from "@/features/home/sections/projects";
+import Contributions from "@/features/home/sections/contributions";
 import GitHub from "@/features/home/sections/github";
 import Header from "@/features/home/sections/header";
 import Blogs from "@/features/home/sections/blogs";
@@ -13,9 +14,11 @@ export default function Page() {
       <About />
       <Technologies />
       <Projects />
+      <Contributions />
       <GitHub />
       <Blogs />
       <Contact />
     </div>
   );
 }
+
