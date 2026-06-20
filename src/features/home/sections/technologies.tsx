@@ -15,6 +15,7 @@ import {
   SiGithubactions,
   SiTurborepo,
   SiDrizzle,
+  SiKubernetes,
 } from "react-icons/si";
 import { Bot, Database, Workflow } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -58,6 +59,11 @@ export default function Technologies() {
         name: "MCP",
         icon: <Workflow className="w-4 h-4" />,
         link: "https://modelcontextprotocol.io/",
+      },
+      {
+        name: "Langfuse",
+        icon: <Bot className="w-4 h-4" />,
+        link: "https://langfuse.com/",
       },
     ],
     LANGUAGE: [
@@ -130,6 +136,11 @@ export default function Technologies() {
         link: "https://www.docker.com/",
       },
       {
+        name: "Kubernetes",
+        icon: <SiKubernetes />,
+        link: "https://kubernetes.io/",
+      },
+      {
         name: "GitHub Actions",
         icon: <SiGithubactions />,
         link: "https://github.com/features/actions",
@@ -143,6 +154,11 @@ export default function Technologies() {
         name: "Turborepo",
         icon: <SiTurborepo />,
         link: "https://turbo.build/repo",
+      },
+      {
+        name: "OpenTelemetry",
+        icon: <Workflow className="w-4 h-4" />,
+        link: "https://opentelemetry.io/",
       },
       {
         name: "AWS",
