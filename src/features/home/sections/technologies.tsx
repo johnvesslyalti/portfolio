@@ -1,25 +1,16 @@
 import { ReactNode } from "react";
 import {
-  SiTypescript,
-  SiNextdotjs,
   SiNestjs,
   SiNodedotjs,
   SiPostgresql,
   SiRedis,
-  SiDocker,
+  SiKubernetes,
   SiAmazonwebservices,
-  SiPython,
   SiFastapi,
   SiOpenai,
-  SiVercel,
   SiGithubactions,
-  SiTurborepo,
-  SiDrizzle,
-  SiKubernetes,
 } from "react-icons/si";
 import { Bot, Database, Workflow } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { HiOutlineQueueList } from "react-icons/hi2";
 
 interface Technology {
   name: string;
@@ -30,11 +21,6 @@ interface Technology {
 export default function Technologies() {
   const technologies: Record<string, Technology[]> = {
     "AI & RAG": [
-      {
-        name: "LangChain",
-        icon: <Bot className="w-4 h-4" />,
-        link: "https://www.langchain.com/",
-      },
       {
         name: "LangGraph",
         icon: <Workflow className="w-4 h-4" />,
@@ -51,31 +37,21 @@ export default function Technologies() {
         link: "https://www.llamaindex.ai/",
       },
       {
-        name: "Ollama",
-        icon: <Bot className="w-4 h-4" />,
-        link: "https://ollama.ai/",
-      },
-      {
         name: "MCP",
         icon: <Workflow className="w-4 h-4" />,
         link: "https://modelcontextprotocol.io/",
       },
+    ],
+    "AI EVALUATIONS": [
       {
         name: "Langfuse",
         icon: <Bot className="w-4 h-4" />,
         link: "https://langfuse.com/",
       },
-    ],
-    LANGUAGE: [
       {
-        name: "TypeScript",
-        icon: <SiTypescript />,
-        link: "https://www.typescriptlang.org/",
-      },
-      {
-        name: "Python",
-        icon: <SiPython />,
-        link: "https://www.python.org/",
+        name: "Langsmith",
+        icon: <Workflow className="w-4 h-4" />,
+        link: "https://www.langchain.com/langsmith",
       },
     ],
     BACKEND: [
@@ -88,11 +64,6 @@ export default function Technologies() {
         name: "NestJS",
         icon: <SiNestjs />,
         link: "https://nestjs.com/",
-      },
-      {
-        name: "BullMQ",
-        icon: <HiOutlineQueueList />,
-        link: "https://bullmq.io/",
       },
       {
         name: "FastAPI",
@@ -112,29 +83,12 @@ export default function Technologies() {
         link: "https://github.com/pgvector/pgvector",
       },
       {
-        name: "Drizzle ORM",
-        icon: <SiDrizzle />,
-        link: "https://orm.drizzle.team/",
-      },
-      {
         name: "Redis",
         icon: <SiRedis />,
         link: "https://redis.io/",
       },
     ],
-    FRONTEND: [
-      {
-        name: "Next.js",
-        icon: <SiNextdotjs />,
-        link: "https://nextjs.org/",
-      },
-    ],
     DEVOPS: [
-      {
-        name: "Docker",
-        icon: <SiDocker />,
-        link: "https://www.docker.com/",
-      },
       {
         name: "Kubernetes",
         icon: <SiKubernetes />,
@@ -146,24 +100,16 @@ export default function Technologies() {
         link: "https://github.com/features/actions",
       },
       {
-        name: "Vercel",
-        icon: <SiVercel />,
-        link: "https://vercel.com/",
+        name: "AWS",
+        icon: <SiAmazonwebservices />,
+        link: "https://aws.amazon.com/",
       },
-      {
-        name: "Turborepo",
-        icon: <SiTurborepo />,
-        link: "https://turbo.build/repo",
-      },
+    ],
+    OBSERVABILITY: [
       {
         name: "OpenTelemetry",
         icon: <Workflow className="w-4 h-4" />,
         link: "https://opentelemetry.io/",
-      },
-      {
-        name: "AWS",
-        icon: <SiAmazonwebservices />,
-        link: "https://aws.amazon.com/",
       },
     ],
   };

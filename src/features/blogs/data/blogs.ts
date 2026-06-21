@@ -1,5 +1,13 @@
 export const blogs = [
     {
+        slug: "what-networking-taught-me",
+        title: "What Networking Taught Me (The Hard Way)",
+        description: "A candid look at my journey from spamming identical cold DMs to building authentic professional relationships as a software engineer.",
+        date: "Jun 21, 2026",
+        readingTime: "5 mins read",
+        heroImage: "/blogs/what-networking-taught-me/hero.png"
+    },
+    {
         slug: "building-mcp-server-oauth2-nestjs",
         title: "Building a Production MCP Server with OAuth 2.1 in NestJS",
         description: "How I built a full OAuth 2.1 authorization server inside NestJS to secure an MCP server — PKCE, token isolation, reuse detection, and per-user sandboxing.",

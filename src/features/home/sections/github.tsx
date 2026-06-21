@@ -21,7 +21,7 @@ export default function GitHub() {
           rel="noopener noreferrer"
           className="hidden sm:block text-xs text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
         >
-          @johnvesslyalti ↗
+          @johnvesslyalti
         </a>
       </div>
 

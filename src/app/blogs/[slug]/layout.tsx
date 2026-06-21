@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { IoIosArrowBack } from "react-icons/io";
 import { notFound } from "next/navigation";
 import { blogs } from "@/features/blogs/data/blogs";
@@ -26,6 +27,20 @@ export default async function BlogPostLayout({
   return (
     <section className="py-6">
       <div className="max-w-2xl mx-auto px-4">
+
+        {/* Header Photo */}
+        {("heroImage" in blog) && blog.heroImage && (
+          <div className="mb-6 w-full rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700">
+            <Image
+              src={blog.heroImage as string}
+              alt={blog.title}
+              width={800}
+              height={450}
+              priority
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        )}
 
         {/* Header */}
         <div className="relative mb-8">
